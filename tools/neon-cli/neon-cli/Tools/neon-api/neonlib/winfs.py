@@ -1,0 +1,618 @@
+from __future__ import annotations
+
+import ctypes
+import os
+from ctypes import wintypes
+from pathlib import Path
+
+
+if os.name != "nt":
+    raise ImportError("the Windows handle backend is only available on Windows")
+
+
+FILE_LIST_DIRECTORY = 0x0001
+FILE_READ_DATA = 0x0001
+FILE_WRITE_DATA = 0x0002
+FILE_APPEND_DATA = 0x0004
+FILE_ADD_SUBDIRECTORY = 0x0004
+FILE_TRAVERSE = 0x0020
+FILE_READ_ATTRIBUTES = 0x0080
+FILE_WRITE_ATTRIBUTES = 0x0100
+DELETE = 0x00010000
+SYNCHRONIZE = 0x00100000
+FILE_SHARE_ALL = 0x00000007
+FILE_OPEN = 0x00000001
+FILE_CREATE = 0x00000002
+FILE_OPEN_IF = 0x00000003
+FILE_DIRECTORY_FILE = 0x00000001
+FILE_SYNCHRONOUS_IO_NONALERT = 0x00000020
+FILE_NON_DIRECTORY_FILE = 0x00000040
+FILE_OPEN_REPARSE_POINT = 0x00200000
+FILE_ATTRIBUTE_DIRECTORY = 0x00000010
+FILE_ATTRIBUTE_REPARSE_POINT = 0x00000400
+FILE_FLAG_BACKUP_SEMANTICS = 0x02000000
+FILE_FLAG_OPEN_REPARSE_POINT = 0x00200000
+OPEN_EXISTING = 3
+OBJ_CASE_INSENSITIVE = 0x00000040
+FILE_ATTRIBUTE_TAG_INFO_CLASS = 9
+FILE_RENAME_INFORMATION = 10
+FILE_DISPOSITION_INFORMATION = 13
+INVALID_HANDLE_VALUE = ctypes.c_void_p(-1).value
+PIPE_NOWAIT = 0x00000001
+PROCESS_TERMINATE = 0x0001
+WAIT_OBJECT_0 = 0x00000000
+WAIT_TIMEOUT = 0x00000102
+JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE = 0x00002000
+JOB_OBJECT_EXTENDED_LIMIT_INFORMATION_CLASS = 9
+TH32CS_SNAPTHREAD = 0x00000004
+THREAD_SUSPEND_RESUME = 0x0002
+CREATE_SUSPENDED = 0x00000004
+
+
+class _UNICODE_STRING(ctypes.Structure):
+    _fields_ = [
+        ("Length", wintypes.USHORT),
+        ("MaximumLength", wintypes.USHORT),
+        ("Buffer", wintypes.LPWSTR),
+    ]
+
+
+class _OBJECT_ATTRIBUTES(ctypes.Structure):
+    _fields_ = [
+        ("Length", wintypes.ULONG),
+        ("RootDirectory", wintypes.HANDLE),
+        ("ObjectName", ctypes.POINTER(_UNICODE_STRING)),
+        ("Attributes", wintypes.ULONG),
+        ("SecurityDescriptor", wintypes.LPVOID),
+        ("SecurityQualityOfService", wintypes.LPVOID),
+    ]
+
+
+class _IO_STATUS_VALUE(ctypes.Union):
+    _fields_ = [("Status", wintypes.LONG), ("Pointer", wintypes.LPVOID)]
+
+
+class _IO_STATUS_BLOCK(ctypes.Structure):
+    _anonymous_ = ("value",)
+    _fields_ = [("value", _IO_STATUS_VALUE), ("Information", ctypes.c_size_t)]
+
+
+class _FILE_ATTRIBUTE_TAG_INFO(ctypes.Structure):
+    _fields_ = [("FileAttributes", wintypes.DWORD), ("ReparseTag", wintypes.DWORD)]
+
+
+class _BY_HANDLE_FILE_INFORMATION(ctypes.Structure):
+    _fields_ = [
+        ("FileAttributes", wintypes.DWORD),
+        ("CreationTime", wintypes.FILETIME),
+        ("LastAccessTime", wintypes.FILETIME),
+        ("LastWriteTime", wintypes.FILETIME),
+        ("VolumeSerialNumber", wintypes.DWORD),
+        ("FileSizeHigh", wintypes.DWORD),
+        ("FileSizeLow", wintypes.DWORD),
+        ("NumberOfLinks", wintypes.DWORD),
+        ("FileIndexHigh", wintypes.DWORD),
+        ("FileIndexLow", wintypes.DWORD),
+    ]
+
+
+class _FILE_RENAME_HEADER(ctypes.Structure):
+    _fields_ = [
+        ("ReplaceIfExists", wintypes.BOOLEAN),
+        ("RootDirectory", wintypes.HANDLE),
+        ("FileNameLength", wintypes.DWORD),
+    ]
+
+
+class _JOBOBJECT_BASIC_LIMIT_INFORMATION(ctypes.Structure):
+    _fields_ = [
+        ("PerProcessUserTimeLimit", ctypes.c_longlong),
+        ("PerJobUserTimeLimit", ctypes.c_longlong),
+        ("LimitFlags", wintypes.DWORD),
+        ("MinimumWorkingSetSize", ctypes.c_size_t),
+        ("MaximumWorkingSetSize", ctypes.c_size_t),
+        ("ActiveProcessLimit", wintypes.DWORD),
+        ("Affinity", ctypes.c_size_t),
+        ("PriorityClass", wintypes.DWORD),
+        ("SchedulingClass", wintypes.DWORD),
+    ]
+
+
+class _IO_COUNTERS(ctypes.Structure):
+    _fields_ = [
+        ("ReadOperationCount", ctypes.c_ulonglong),
+        ("WriteOperationCount", ctypes.c_ulonglong),
+        ("OtherOperationCount", ctypes.c_ulonglong),
+        ("ReadTransferCount", ctypes.c_ulonglong),
+        ("WriteTransferCount", ctypes.c_ulonglong),
+        ("OtherTransferCount", ctypes.c_ulonglong),
+    ]
+
+
+class _JOBOBJECT_EXTENDED_LIMIT_INFORMATION(ctypes.Structure):
+    _fields_ = [
+        ("BasicLimitInformation", _JOBOBJECT_BASIC_LIMIT_INFORMATION),
+        ("IoInfo", _IO_COUNTERS),
+        ("ProcessMemoryLimit", ctypes.c_size_t),
+        ("JobMemoryLimit", ctypes.c_size_t),
+        ("PeakProcessMemoryUsed", ctypes.c_size_t),
+        ("PeakJobMemoryUsed", ctypes.c_size_t),
+    ]
+
+
+class _THREADENTRY32(ctypes.Structure):
+    _fields_ = [
+        ("dwSize", wintypes.DWORD),
+        ("cntUsage", wintypes.DWORD),
+        ("th32ThreadID", wintypes.DWORD),
+        ("th32OwnerProcessID", wintypes.DWORD),
+        ("tpBasePri", wintypes.LONG),
+        ("tpDeltaPri", wintypes.LONG),
+        ("dwFlags", wintypes.DWORD),
+    ]
+
+
+_kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+_ntdll = ctypes.WinDLL("ntdll")
+
+_kernel32.CreateFileW.argtypes = [
+    wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD, wintypes.LPVOID,
+    wintypes.DWORD, wintypes.DWORD, wintypes.HANDLE,
+]
+_kernel32.CreateFileW.restype = wintypes.HANDLE
+_kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
+_kernel32.CloseHandle.restype = wintypes.BOOL
+_kernel32.DuplicateHandle.argtypes = [
+    wintypes.HANDLE, wintypes.HANDLE, wintypes.HANDLE, ctypes.POINTER(wintypes.HANDLE),
+    wintypes.DWORD, wintypes.BOOL, wintypes.DWORD,
+]
+_kernel32.DuplicateHandle.restype = wintypes.BOOL
+_kernel32.GetCurrentProcess.restype = wintypes.HANDLE
+_kernel32.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
+_kernel32.OpenProcess.restype = wintypes.HANDLE
+_kernel32.TerminateProcess.argtypes = [wintypes.HANDLE, wintypes.UINT]
+_kernel32.TerminateProcess.restype = wintypes.BOOL
+_kernel32.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+_kernel32.WaitForSingleObject.restype = wintypes.DWORD
+_kernel32.CreateJobObjectW.argtypes = [wintypes.LPVOID, wintypes.LPCWSTR]
+_kernel32.CreateJobObjectW.restype = wintypes.HANDLE
+_kernel32.SetInformationJobObject.argtypes = [wintypes.HANDLE, ctypes.c_int, wintypes.LPVOID, wintypes.DWORD]
+_kernel32.SetInformationJobObject.restype = wintypes.BOOL
+_kernel32.AssignProcessToJobObject.argtypes = [wintypes.HANDLE, wintypes.HANDLE]
+_kernel32.AssignProcessToJobObject.restype = wintypes.BOOL
+_kernel32.CreateToolhelp32Snapshot.argtypes = [wintypes.DWORD, wintypes.DWORD]
+_kernel32.CreateToolhelp32Snapshot.restype = wintypes.HANDLE
+_kernel32.Thread32First.argtypes = [wintypes.HANDLE, ctypes.POINTER(_THREADENTRY32)]
+_kernel32.Thread32First.restype = wintypes.BOOL
+_kernel32.Thread32Next.argtypes = [wintypes.HANDLE, ctypes.POINTER(_THREADENTRY32)]
+_kernel32.Thread32Next.restype = wintypes.BOOL
+_kernel32.OpenThread.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
+_kernel32.OpenThread.restype = wintypes.HANDLE
+_kernel32.ResumeThread.argtypes = [wintypes.HANDLE]
+_kernel32.ResumeThread.restype = wintypes.DWORD
+_kernel32.GetFileInformationByHandleEx.argtypes = [
+    wintypes.HANDLE, ctypes.c_int, wintypes.LPVOID, wintypes.DWORD,
+]
+_kernel32.GetFileInformationByHandleEx.restype = wintypes.BOOL
+_kernel32.GetFileInformationByHandle.argtypes = [wintypes.HANDLE, ctypes.POINTER(_BY_HANDLE_FILE_INFORMATION)]
+_kernel32.GetFileInformationByHandle.restype = wintypes.BOOL
+_kernel32.GetFileSizeEx.argtypes = [wintypes.HANDLE, ctypes.POINTER(ctypes.c_longlong)]
+_kernel32.GetFileSizeEx.restype = wintypes.BOOL
+_kernel32.ReadFile.argtypes = [
+    wintypes.HANDLE, wintypes.LPVOID, wintypes.DWORD, ctypes.POINTER(wintypes.DWORD), wintypes.LPVOID,
+]
+_kernel32.ReadFile.restype = wintypes.BOOL
+_kernel32.WriteFile.argtypes = [
+    wintypes.HANDLE, wintypes.LPCVOID, wintypes.DWORD, ctypes.POINTER(wintypes.DWORD), wintypes.LPVOID,
+]
+_kernel32.WriteFile.restype = wintypes.BOOL
+_kernel32.SetNamedPipeHandleState.argtypes = [
+    wintypes.HANDLE, ctypes.POINTER(wintypes.DWORD), ctypes.POINTER(wintypes.DWORD), ctypes.POINTER(wintypes.DWORD),
+]
+_kernel32.SetNamedPipeHandleState.restype = wintypes.BOOL
+_kernel32.FlushFileBuffers.argtypes = [wintypes.HANDLE]
+_kernel32.FlushFileBuffers.restype = wintypes.BOOL
+_ntdll.NtCreateFile.argtypes = [
+    ctypes.POINTER(wintypes.HANDLE), wintypes.DWORD, ctypes.POINTER(_OBJECT_ATTRIBUTES),
+    ctypes.POINTER(_IO_STATUS_BLOCK), ctypes.POINTER(ctypes.c_longlong), wintypes.ULONG,
+    wintypes.ULONG, wintypes.ULONG, wintypes.ULONG, wintypes.LPVOID, wintypes.ULONG,
+]
+_ntdll.NtCreateFile.restype = wintypes.LONG
+_ntdll.NtSetInformationFile.argtypes = [
+    wintypes.HANDLE, ctypes.POINTER(_IO_STATUS_BLOCK), wintypes.LPVOID, wintypes.ULONG, wintypes.ULONG,
+]
+_ntdll.NtSetInformationFile.restype = wintypes.LONG
+_ntdll.RtlNtStatusToDosError.argtypes = [wintypes.LONG]
+_ntdll.RtlNtStatusToDosError.restype = wintypes.ULONG
+
+
+def _winerror() -> OSError:
+    return ctypes.WinError(ctypes.get_last_error())
+
+
+def _raise_status(status: int, operation: str) -> None:
+    if status >= 0:
+        return
+    error = int(_ntdll.RtlNtStatusToDosError(status))
+    if error in {2, 3}:
+        raise FileNotFoundError(error, operation)
+    if error in {80, 183}:
+        raise FileExistsError(error, operation)
+    raise OSError(error, f"{operation}: {ctypes.FormatError(error)}")
+
+
+def _attributes(handle: int) -> int:
+    info = _FILE_ATTRIBUTE_TAG_INFO()
+    if not _kernel32.GetFileInformationByHandleEx(
+        handle, FILE_ATTRIBUTE_TAG_INFO_CLASS, ctypes.byref(info), ctypes.sizeof(info),
+    ):
+        raise _winerror()
+    return int(info.FileAttributes)
+
+
+def _validate_handle(handle: int, *, directory: bool) -> None:
+    attributes = _attributes(handle)
+    if attributes & FILE_ATTRIBUTE_REPARSE_POINT:
+        raise ValueError("approved path contains a Windows reparse point")
+    if bool(attributes & FILE_ATTRIBUTE_DIRECTORY) != directory:
+        raise ValueError("approved handle has the wrong filesystem type")
+
+
+def handle_identity(handle: int) -> tuple[int, int]:
+    information = _BY_HANDLE_FILE_INFORMATION()
+    if not _kernel32.GetFileInformationByHandle(handle, ctypes.byref(information)):
+        raise _winerror()
+    file_index = (int(information.FileIndexHigh) << 32) | int(information.FileIndexLow)
+    return int(information.VolumeSerialNumber), file_index
+
+
+def open_directory(path: Path, *, writable: bool = False) -> int:
+    desired = FILE_LIST_DIRECTORY | FILE_TRAVERSE | FILE_READ_ATTRIBUTES | SYNCHRONIZE
+    if writable:
+        desired |= FILE_WRITE_DATA | FILE_ADD_SUBDIRECTORY
+    handle = _kernel32.CreateFileW(
+        os.fspath(path),
+        desired,
+        FILE_SHARE_ALL, None, OPEN_EXISTING,
+        FILE_FLAG_BACKUP_SEMANTICS | FILE_FLAG_OPEN_REPARSE_POINT, None,
+    )
+    if handle in {None, INVALID_HANDLE_VALUE}:
+        raise _winerror()
+    value = int(handle)
+    try:
+        _validate_handle(value, directory=True)
+        return value
+    except Exception:
+        close(value)
+        raise
+
+
+def _relative_handle(
+    parent: int, name: str, *, directory: bool, create: bool = False,
+    open_if: bool = False, writable: bool = False, append: bool = False,
+) -> int:
+    if not name or name in {".", ".."} or "/" in name or "\\" in name or "\x00" in name:
+        raise ValueError("Windows handle-relative path component is unsafe")
+    buffer = ctypes.create_unicode_buffer(name)
+    encoded_length = len(name.encode("utf-16-le"))
+    unicode = _UNICODE_STRING(encoded_length, encoded_length + 2, ctypes.cast(buffer, wintypes.LPWSTR))
+    attributes = _OBJECT_ATTRIBUTES(
+        ctypes.sizeof(_OBJECT_ATTRIBUTES), parent, ctypes.pointer(unicode),
+        OBJ_CASE_INSENSITIVE, None, None,
+    )
+    output = wintypes.HANDLE()
+    status_block = _IO_STATUS_BLOCK()
+    desired = FILE_READ_ATTRIBUTES | SYNCHRONIZE
+    options = FILE_OPEN_REPARSE_POINT | FILE_SYNCHRONOUS_IO_NONALERT
+    if directory:
+        desired |= FILE_LIST_DIRECTORY | FILE_TRAVERSE
+        if writable or create or open_if:
+            desired |= FILE_WRITE_DATA | FILE_ADD_SUBDIRECTORY
+        if writable:
+            desired |= DELETE
+        options |= FILE_DIRECTORY_FILE
+    else:
+        desired |= FILE_APPEND_DATA if append else FILE_READ_DATA
+        if (writable or create or open_if) and not append:
+            desired |= FILE_WRITE_DATA | FILE_WRITE_ATTRIBUTES | DELETE
+        options |= FILE_NON_DIRECTORY_FILE
+    disposition = FILE_CREATE if create else FILE_OPEN_IF if open_if else FILE_OPEN
+    status = int(_ntdll.NtCreateFile(
+        ctypes.byref(output), desired, ctypes.byref(attributes), ctypes.byref(status_block),
+        None, 0, FILE_SHARE_ALL, disposition, options, None, 0,
+    ))
+    _raise_status(status, f"open relative component {name}")
+    handle = int(output.value)
+    try:
+        _validate_handle(handle, directory=directory)
+        return handle
+    except Exception:
+        close(handle)
+        raise
+
+
+def open_directory_at(parent: int, name: str, *, create: bool = False, writable: bool = False) -> int:
+    return _relative_handle(parent, name, directory=True, create=create, writable=writable)
+
+
+def duplicate(handle: int) -> int:
+    process = _kernel32.GetCurrentProcess()
+    output = wintypes.HANDLE()
+    if not _kernel32.DuplicateHandle(process, handle, process, ctypes.byref(output), 0, False, 0x2):
+        raise _winerror()
+    return int(output.value)
+
+
+def close(handle: int) -> None:
+    if not _kernel32.CloseHandle(handle):
+        raise _winerror()
+
+
+def set_pipe_nonblocking(descriptor: int) -> None:
+    # os.set_blocking only gained Windows pipe support in Python 3.12. Use the
+    # native primitive so the documented Python 3.10 minimum remains true.
+    import msvcrt
+
+    handle = msvcrt.get_osfhandle(descriptor)
+    mode = wintypes.DWORD(PIPE_NOWAIT)
+    if not _kernel32.SetNamedPipeHandleState(handle, ctypes.byref(mode), None, None):
+        raise _winerror()
+
+
+def open_process_for_termination(pid: int) -> int:
+    # Retaining this kernel handle binds cleanup to the original process even
+    # if its numeric PID is later reused.
+    handle = _kernel32.OpenProcess(PROCESS_TERMINATE | SYNCHRONIZE, False, pid)
+    if handle in {None, INVALID_HANDLE_VALUE}:
+        raise _winerror()
+    return int(handle)
+
+
+def terminate_process_handle(handle: int) -> None:
+    state = _kernel32.WaitForSingleObject(handle, 0)
+    if state == WAIT_OBJECT_0:
+        return
+    if state != WAIT_TIMEOUT:
+        raise _winerror()
+    if not _kernel32.TerminateProcess(handle, 1):
+        # A concurrent natural exit is safe; recheck before surfacing a real
+        # inability to clean the exact process retained by this handle.
+        if _kernel32.WaitForSingleObject(handle, 0) != WAIT_OBJECT_0:
+            raise _winerror()
+    _kernel32.WaitForSingleObject(handle, 5000)
+
+
+def create_kill_on_close_job(process_handle: int) -> int:
+    """Bind a launched client tree to one kernel-owned cleanup identity."""
+    job = _kernel32.CreateJobObjectW(None, None)
+    if job in {None, INVALID_HANDLE_VALUE}:
+        raise _winerror()
+    value = int(job)
+    try:
+        information = _JOBOBJECT_EXTENDED_LIMIT_INFORMATION()
+        information.BasicLimitInformation.LimitFlags = JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE
+        if not _kernel32.SetInformationJobObject(
+            value, JOB_OBJECT_EXTENDED_LIMIT_INFORMATION_CLASS,
+            ctypes.byref(information), ctypes.sizeof(information),
+        ):
+            raise _winerror()
+        if not _kernel32.AssignProcessToJobObject(value, process_handle):
+            raise _winerror()
+        return value
+    except Exception:
+        close(value)
+        raise
+
+
+def resume_suspended_process(process_id: int) -> None:
+    """Resume the initial thread only after its process is confined to a job."""
+    snapshot = _kernel32.CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, 0)
+    if snapshot in {None, INVALID_HANDLE_VALUE}:
+        raise _winerror()
+    resumed = False
+    try:
+        entry = _THREADENTRY32()
+        entry.dwSize = ctypes.sizeof(entry)
+        available = _kernel32.Thread32First(snapshot, ctypes.byref(entry))
+        while available:
+            if entry.th32OwnerProcessID == process_id:
+                thread = _kernel32.OpenThread(THREAD_SUSPEND_RESUME, False, entry.th32ThreadID)
+                if not thread:
+                    raise _winerror()
+                try:
+                    if _kernel32.ResumeThread(thread) == 0xFFFFFFFF:
+                        raise _winerror()
+                    resumed = True
+                finally:
+                    close(int(thread))
+                break
+            available = _kernel32.Thread32Next(snapshot, ctypes.byref(entry))
+    finally:
+        close(int(snapshot))
+    if not resumed:
+        raise OSError("suspended client process has no resumable primary thread")
+
+
+def read_regular_at(parent: int, name: str, maximum: int) -> bytes:
+    payload, _ = read_regular_at_identified(parent, name, maximum)
+    return payload
+
+
+def read_regular_at_identified(parent: int, name: str, maximum: int) -> tuple[bytes, tuple[int, int]]:
+    handle = _relative_handle(parent, name, directory=False)
+    try:
+        identity = handle_identity(handle)
+        size = ctypes.c_longlong()
+        if not _kernel32.GetFileSizeEx(handle, ctypes.byref(size)):
+            raise _winerror()
+        if size.value > maximum:
+            raise ValueError(f"configured input exceeds {maximum} bytes")
+        chunks: list[bytes] = []
+        remaining = size.value
+        while remaining:
+            length = min(1024 * 1024, remaining)
+            buffer = ctypes.create_string_buffer(length)
+            received = wintypes.DWORD()
+            if not _kernel32.ReadFile(handle, buffer, length, ctypes.byref(received), None):
+                raise _winerror()
+            if received.value == 0:
+                break
+            chunks.append(buffer.raw[:received.value])
+            remaining -= received.value
+        payload = b"".join(chunks)
+        if len(payload) != size.value:
+            raise OSError("configured input changed while it was being read")
+        return payload, identity
+    finally:
+        close(handle)
+
+
+def identity_at(parent: int, name: str, *, directory: bool) -> tuple[int, int]:
+    handle = _relative_handle(parent, name, directory=directory)
+    try:
+        return handle_identity(handle)
+    finally:
+        close(handle)
+
+
+def regular_at(parent: int, name: str) -> bool:
+    try:
+        handle = _relative_handle(parent, name, directory=False)
+    except FileNotFoundError:
+        return False
+    try:
+        return True
+    finally:
+        close(handle)
+
+
+def unlink_at(parent: int, name: str) -> None:
+    """Delete one non-directory entry without following a reparse point."""
+    try:
+        handle = _relative_handle(parent, name, directory=False, writable=True)
+    except FileNotFoundError:
+        return
+    try:
+        _delete_on_close(handle)
+    finally:
+        close(handle)
+
+
+def rmdir_at(parent: int, name: str) -> None:
+    """Delete one empty directory without following a reparse point."""
+    try:
+        handle = _relative_handle(parent, name, directory=True, writable=True)
+    except FileNotFoundError:
+        return
+    try:
+        _delete_on_close(handle)
+    finally:
+        close(handle)
+
+
+def unlink_if_identity_at(
+    parent: int, name: str, expected: tuple[int, int], *, directory: bool,
+) -> bool:
+    """Delete the exact Windows object opened by handle, never a later name replacement."""
+    try:
+        handle = _relative_handle(parent, name, directory=directory, writable=True)
+    except FileNotFoundError:
+        return True
+    try:
+        if handle_identity(handle) != expected:
+            return False
+        _delete_on_close(handle)
+        return True
+    finally:
+        close(handle)
+
+
+def write_new_at(parent: int, name: str, payload: bytes) -> tuple[int, int]:
+    handle = _relative_handle(parent, name, directory=False, create=True, writable=True)
+    written = False
+    try:
+        _write_all(handle, payload)
+        written = True
+        return handle_identity(handle)
+    finally:
+        if not written:
+            try:
+                _delete_on_close(handle)
+            except OSError:
+                pass
+        close(handle)
+
+
+def _write_all(handle: int, payload: bytes, *, flush: bool = True) -> None:
+    offset = 0
+    while offset < len(payload):
+        chunk = payload[offset:offset + 1024 * 1024]
+        written = wintypes.DWORD()
+        buffer = ctypes.create_string_buffer(chunk)
+        if not _kernel32.WriteFile(handle, buffer, len(chunk), ctypes.byref(written), None):
+            raise _winerror()
+        if written.value == 0:
+            raise OSError("Windows handle write made no progress")
+        offset += written.value
+    if flush and not _kernel32.FlushFileBuffers(handle):
+        raise _winerror()
+
+
+def append_bounded_at(parent: int, name: str, payload: bytes, maximum: int) -> bool:
+    handle = _relative_handle(parent, name, directory=False, open_if=True, append=True)
+    try:
+        size = ctypes.c_longlong()
+        if not _kernel32.GetFileSizeEx(handle, ctypes.byref(size)):
+            raise _winerror()
+        if size.value + len(payload) > maximum:
+            return False
+        # There is exactly one daemon audit writer. FILE_APPEND_DATA makes the
+        # kernel choose EOF, while avoiding an O(n^2) read/rewrite cycle.
+        _write_all(handle, payload, flush=False)
+        return True
+    finally:
+        close(handle)
+
+
+def _rename(handle: int, parent: int, target: str) -> None:
+    encoded = target.encode("utf-16-le")
+    name_offset = _FILE_RENAME_HEADER.FileNameLength.offset + ctypes.sizeof(wintypes.DWORD)
+    storage = ctypes.create_string_buffer(name_offset + len(encoded))
+    header = ctypes.cast(storage, ctypes.POINTER(_FILE_RENAME_HEADER)).contents
+    header.ReplaceIfExists = True
+    header.RootDirectory = parent
+    header.FileNameLength = len(encoded)
+    ctypes.memmove(ctypes.addressof(storage) + name_offset, encoded, len(encoded))
+    status_block = _IO_STATUS_BLOCK()
+    status = int(_ntdll.NtSetInformationFile(
+        handle, ctypes.byref(status_block), storage, len(storage), FILE_RENAME_INFORMATION,
+    ))
+    _raise_status(status, f"replace relative file {target}")
+
+
+def _delete_on_close(handle: int) -> None:
+    value = wintypes.BOOLEAN(True)
+    status_block = _IO_STATUS_BLOCK()
+    status = int(_ntdll.NtSetInformationFile(
+        handle, ctypes.byref(status_block), ctypes.byref(value), ctypes.sizeof(value),
+        FILE_DISPOSITION_INFORMATION,
+    ))
+    _raise_status(status, "delete temporary relative file")
+
+
+def atomic_write_at(parent: int, name: str, payload: bytes, temporary: str) -> tuple[int, int]:
+    handle = _relative_handle(parent, temporary, directory=False, create=True, writable=True)
+    renamed = False
+    try:
+        _write_all(handle, payload)
+        identity = handle_identity(handle)
+        _rename(handle, parent, name)
+        renamed = True
+        return identity
+    finally:
+        if not renamed:
+            try:
+                _delete_on_close(handle)
+            except OSError:
+                pass
+        close(handle)

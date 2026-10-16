@@ -1,0 +1,290 @@
+{
+  "$id": "https://schemas.mtasa-neon.com/agent/neon-api-1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "catalogueVersion": {"format": "semver", "type": "string"},
+    "engine": {
+      "additionalProperties": false,
+      "properties": {
+        "family": {"enum": ["mta-neon"], "type": "string"},
+        "version": {"format": "semver", "type": "string"}
+      },
+      "required": ["family", "version"],
+      "type": "object"
+    },
+    "schemaVersion": {"format": "semver", "type": "string"},
+    "sources": {
+      "additionalProperties": false,
+      "properties": {
+        "neon": {"$ref": "#/$defs/source"},
+        "neonWiki": {"$ref": "#/$defs/wikiSource"},
+        "upstream": {"$ref": "#/$defs/source"},
+        "upstreamWiki": {"$ref": "#/$defs/wikiSource"}
+      },
+      "required": ["neon", "upstream", "upstreamWiki", "neonWiki"],
+      "type": "object"
+    },
+    "statistics": {
+      "additionalProperties": false,
+      "properties": {
+        "documented": {"minimum": 0, "type": "integer"},
+        "documentedOnly": {"minimum": 0, "type": "integer"},
+        "classes": {"minimum": 0, "type": "integer"},
+        "elements": {"minimum": 0, "type": "integer"},
+        "enums": {"minimum": 0, "type": "integer"},
+        "events": {"minimum": 0, "type": "integer"},
+        "functions": {"minimum": 0, "type": "integer"},
+        "runtimeOnly": {"minimum": 0, "type": "integer"},
+        "types": {"minimum": 0, "type": "integer"}
+      },
+      "required": ["functions", "events", "elements", "types", "classes", "enums", "documented", "documentedOnly", "runtimeOnly"],
+      "type": "object"
+    },
+    "symbols": {"items": {"$ref": "#/$defs/symbol"}, "type": "array"}
+  },
+  "required": ["schemaVersion", "catalogueVersion", "engine", "sources", "statistics", "symbols"],
+  "type": "object",
+  "$defs": {
+    "contract": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {"minLength": 1, "type": "string"},
+        "example": {"minLength": 1, "type": "string"},
+        "notes": {"items": {"type": "string"}, "type": "array"},
+        "oop": {"$ref": "#/$defs/oop"},
+        "oopMethods": {"items": {"type": "string"}, "type": "array", "uniqueItems": true},
+        "parameters": {"items": {"$ref": "#/$defs/parameter"}, "type": "array"},
+        "provider": {"enum": ["mta", "neon"], "type": "string"},
+        "requiresReview": {"type": "boolean"},
+        "returnDescription": {"minLength": 1, "type": "string"},
+        "returns": {"items": {"$ref": "#/$defs/return"}, "type": "array"},
+        "side": {"enum": ["client", "server", "shared"], "type": "string"},
+        "signature": {"minLength": 1, "type": "string"},
+        "sourceCommit": {"minLength": 7, "type": "string"},
+        "sourcePath": {"format": "relative-path", "type": "string"},
+        "testResource": {"format": "relative-path", "type": "string"},
+        "version": {"$ref": "#/$defs/version"}
+      },
+      "required": ["side", "provider", "parameters", "returns", "requiresReview", "sourcePath"],
+      "type": "object"
+    },
+    "oop": {
+      "additionalProperties": false,
+      "properties": {
+        "constructorClass": {"minLength": 1, "type": "string"},
+        "element": {"minLength": 1, "type": "string"},
+        "method": {"minLength": 1, "type": "string"},
+        "staticClass": {"minLength": 1, "type": "string"}
+      },
+      "type": "object"
+    },
+    "oopMethod": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {"minLength": 1, "type": "string"},
+        "parameters": {"items": {"$ref": "#/$defs/parameter"}, "type": "array"},
+        "signature": {"minLength": 1, "type": "string"}
+      },
+      "required": ["name", "parameters"],
+      "type": "object"
+    },
+    "runtimeOopMember": {
+      "additionalProperties": false,
+      "properties": {
+        "bindings": {"items": {"$ref": "#/$defs/runtimeOopBinding"}, "type": "array"},
+        "getters": {"items": {"minLength": 1, "type": "string"}, "type": "array", "uniqueItems": true},
+        "globalFunctions": {"items": {"minLength": 1, "type": "string"}, "type": "array", "uniqueItems": true},
+        "inheritedGetters": {"items": {"minLength": 1, "type": "string"}, "type": "array", "uniqueItems": true},
+        "inheritedGlobalFunctions": {"items": {"minLength": 1, "type": "string"}, "type": "array", "uniqueItems": true},
+        "inheritedSetters": {"items": {"minLength": 1, "type": "string"}, "type": "array", "uniqueItems": true},
+        "inheritedBindings": {"items": {"$ref": "#/$defs/runtimeOopBinding"}, "type": "array"},
+        "inheritedSides": {"items": {"enum": ["client", "server"], "type": "string"}, "type": "array", "uniqueItems": true},
+        "name": {"minLength": 1, "type": "string"},
+        "setters": {"items": {"minLength": 1, "type": "string"}, "type": "array", "uniqueItems": true},
+        "sides": {"items": {"enum": ["client", "server"], "type": "string"}, "type": "array", "uniqueItems": true},
+        "sources": {"items": {"$ref": "#/$defs/sourceLocation"}, "type": "array"}
+      },
+      "required": ["name", "sides", "inheritedSides", "sources", "bindings", "inheritedBindings"],
+      "type": "object"
+    },
+    "runtimeOopBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "getter": {"minLength": 1, "type": "string"},
+        "globalFunction": {"minLength": 1, "type": "string"},
+        "nativeFunction": {"minLength": 1, "type": "string"},
+        "nativeGetter": {"minLength": 1, "type": "string"},
+        "nativeSetter": {"minLength": 1, "type": "string"},
+        "setter": {"minLength": 1, "type": "string"},
+        "side": {"enum": ["client", "server", "shared"], "type": "string"},
+        "source": {"$ref": "#/$defs/sourceLocation"}
+      },
+      "required": ["side", "source"],
+      "type": "object"
+    },
+    "runtimeDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "cppType": {"minLength": 1, "type": "string"},
+        "parent": {"minLength": 1, "type": "string"},
+        "side": {"enum": ["client", "server", "shared"], "type": "string"},
+        "source": {"$ref": "#/$defs/sourceLocation"},
+        "static": {"type": "boolean"},
+        "values": {"items": {"type": "string"}, "type": "array", "uniqueItems": true}
+      },
+      "required": ["side", "source"],
+      "type": "object"
+    },
+    "runtimeEventDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "allowRemoteTrigger": {"type": "boolean"},
+        "arguments": {"items": {"minLength": 1, "type": "string"}, "type": "array"},
+        "side": {"enum": ["client", "server", "shared"], "type": "string"},
+        "source": {"$ref": "#/$defs/sourceLocation"}
+      },
+      "required": ["side", "arguments", "allowRemoteTrigger", "source"],
+      "type": "object"
+    },
+    "parameter": {
+      "additionalProperties": false,
+      "properties": {
+        "default": {"type": "string"},
+        "description": {"minLength": 1, "type": "string"},
+        "name": {"minLength": 1, "type": "string"},
+        "optional": {"type": "boolean"},
+        "type": {"minLength": 1, "type": "string"}
+      },
+      "required": ["name", "type", "optional"],
+      "type": "object"
+    },
+    "provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "license": {"minLength": 1, "type": "string"},
+        "path": {"format": "relative-path", "type": "string"},
+        "repository": {"pattern": "^https://.*$", "type": "string"},
+        "revision": {"pattern": "^[0-9a-f]{7,40}$", "type": "string"}
+      },
+      "required": ["repository", "revision", "path", "license"],
+      "type": "object"
+    },
+    "return": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {"minLength": 1, "type": "string"},
+        "name": {"minLength": 1, "type": "string"},
+        "type": {"minLength": 1, "type": "string"}
+      },
+      "required": ["type"],
+      "type": "object"
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "registrationDigest": {"format": "sha256", "type": "string"},
+        "repository": {"pattern": "^https://.*$", "type": "string"},
+        "revision": {"pattern": "^[0-9a-f]{40}$", "type": "string"}
+      },
+      "required": ["repository", "revision", "registrationDigest"],
+      "type": "object"
+    },
+    "sourceElement": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {"minLength": 1, "type": "string"},
+        "type": {"minLength": 1, "type": "string"}
+      },
+      "type": "object"
+    },
+    "sourceLocation": {
+      "additionalProperties": false,
+      "properties": {
+        "line": {"minimum": 1, "type": "integer"},
+        "path": {"format": "relative-path", "type": "string"},
+        "side": {"enum": ["client", "server", "shared"], "type": "string"}
+      },
+      "required": ["path", "line", "side"],
+      "type": "object"
+    },
+    "symbol": {
+      "additionalProperties": false,
+      "properties": {
+        "allowRemoteTrigger": {"type": "boolean"},
+        "canceling": {"minLength": 1, "type": "string"},
+        "category": {"minLength": 1, "type": "string"},
+        "cppTypes": {"items": {"minLength": 1, "type": "string"}, "type": "array", "uniqueItems": true},
+        "contracts": {"items": {"$ref": "#/$defs/contract"}, "type": "array"},
+        "description": {"minLength": 1, "type": "string"},
+        "definitions": {"items": {"$ref": "#/$defs/runtimeDefinition"}, "type": "array"},
+        "evidence": {
+          "items": {"enum": ["documented", "source-inspected", "static-checked", "built", "server-checked", "client-checked", "in-game-checked", "multiplayer-checked", "visual-checked", "native-trace-checked", "performance-checked"], "type": "string"},
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "eventDefinitions": {"items": {"$ref": "#/$defs/runtimeEventDefinition"}, "type": "array"},
+        "id": {"format": "stable-id", "type": "string"},
+        "inheritedSides": {"items": {"enum": ["client", "server"], "type": "string"}, "type": "array", "uniqueItems": true},
+        "inheritedParents": {"items": {"minLength": 1, "type": "string"}, "type": "array", "uniqueItems": true},
+        "inheritedDefinitions": {"items": {"$ref": "#/$defs/runtimeDefinition"}, "type": "array"},
+        "inheritedEventDefinitions": {"items": {"$ref": "#/$defs/runtimeEventDefinition"}, "type": "array"},
+        "inheritedStatic": {"type": "boolean"},
+        "inheritedValues": {"items": {"type": "string"}, "type": "array", "uniqueItems": true},
+        "kind": {"enum": ["function", "event", "element", "type", "class", "enum"], "type": "string"},
+        "methods": {"items": {"$ref": "#/$defs/runtimeOopMember"}, "type": "array"},
+        "name": {"minLength": 1, "type": "string"},
+        "oopOnlyMethods": {"items": {"$ref": "#/$defs/oopMethod"}, "type": "array"},
+        "origin": {"enum": ["mta", "neon"], "type": "string"},
+        "parameters": {"items": {"$ref": "#/$defs/parameter"}, "type": "array"},
+        "parents": {"items": {"minLength": 1, "type": "string"}, "type": "array", "uniqueItems": true},
+        "profiles": {"items": {"enum": ["mta-upstream", "neon-client", "neon-server", "neon-pair", "neon-multiclient"], "type": "string"}, "type": "array", "uniqueItems": true},
+        "provenance": {"items": {"$ref": "#/$defs/provenance"}, "minItems": 1, "type": "array"},
+        "properties": {"items": {"$ref": "#/$defs/runtimeOopMember"}, "type": "array"},
+        "registrationArguments": {"items": {"minLength": 1, "type": "string"}, "type": "array"},
+        "registrationDifferences": {
+          "items": {"enum": ["parameter-count", "parameter-names"], "type": "string"},
+          "type": "array",
+          "uniqueItems": true
+        },
+        "redirect": {"minLength": 1, "type": "string"},
+        "restricted": {"type": "boolean"},
+        "returns": {"items": {"$ref": "#/$defs/return"}, "type": "array"},
+        "runtimeType": {"minLength": 1, "type": "string"},
+        "sides": {"items": {"enum": ["client", "server"], "type": "string"}, "type": "array", "uniqueItems": true},
+        "sourceElement": {"$ref": "#/$defs/sourceElement"},
+        "sources": {"items": {"$ref": "#/$defs/sourceLocation"}, "type": "array"},
+        "state": {"enum": ["verified", "documented-only", "runtime-only", "opaque", "conflict", "unavailable"], "type": "string"},
+        "static": {"type": "boolean"},
+        "values": {"items": {"type": "string"}, "type": "array", "uniqueItems": true},
+        "version": {"$ref": "#/$defs/version"}
+      },
+      "required": ["id", "kind", "name", "origin", "state", "sides", "inheritedSides", "profiles", "restricted", "parameters", "returns", "evidence", "sources", "provenance"],
+      "type": "object"
+    },
+    "version": {
+      "additionalProperties": false,
+      "properties": {
+        "added": {"type": "string"},
+        "deprecated": {"type": "string"},
+        "removed": {"type": "string"},
+        "replacement": {"type": "string"},
+        "updated": {"type": "string"}
+      },
+      "type": "object"
+    },
+    "wikiSource": {
+      "additionalProperties": false,
+      "properties": {
+        "imported": {"type": "boolean"},
+        "license": {"minLength": 1, "type": "string"},
+        "repository": {"pattern": "^https://.*$", "type": "string"},
+        "revision": {"pattern": "^[0-9a-f]{40}$", "type": "string"},
+        "snapshotDigest": {"format": "sha256", "type": "string"}
+      },
+      "required": ["repository", "revision", "license", "snapshotDigest", "imported"],
+      "type": "object"
+    }
+  }
+}

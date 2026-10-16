@@ -1,0 +1,61 @@
+<meta>
+
+    <info author="OvileAmriam" name="Animify Library" type="Library" version="1.0.0"/>
+    <min_mta_version client="1.5.8"/>
+
+    <!-- Imports -->
+    <include resource="beautify_library"/>
+
+    <!-- Settings & Utilities -->
+    <script src="utilities/client.lua" type="client" cache="false"/>
+    <script src="settings/client.lua" type="client" cache="false"/>
+
+    <!-- Configurations -->
+    <script src="configurations/templates/initial.lua" type="client" cache="false"/>
+    <script src="configurations/templates/scrollbar.lua" type="client" cache="false"/>
+    <script src="configurations/templates/window.lua" type="client" cache="false"/>
+    <script src="configurations/templates/gridlist.lua" type="client" cache="false"/>
+    <script src="configurations/templates/button.lua" type="client" cache="false"/>
+    <script src="configurations/templates/label.lua" type="client" cache="false"/>
+    <script src="configurations/templates/slider.lua" type="client" cache="false"/>
+    <script src="configurations/templates/selector.lua" type="client" cache="false"/>
+    <script src="configurations/templates/checkbox.lua" type="client" cache="false"/>
+    <script src="configurations/templates/deck.lua" type="client" cache="false"/>
+    <script src="configurations/templates/card.lua" type="client" cache="false"/>
+
+    <!-- GUIs -->
+    <script src="gui/viewportUI.lua" type="client" cache="false"/>
+    <script src="gui/optUI.lua" type="client" cache="false"/>
+    <script src="gui/coreUI.lua" type="client" cache="false"/>
+
+    <!-- Handlers -->
+    <script src="handlers/modelLoader.lua" type="client" cache="false"/>
+    <script src="handlers/cache.lua" type="client" cache="false"/>
+    <script src="handlers/cinemator.lua" type="client" cache="false"/>
+    <script src="handlers/initial.lua" type="client" cache="false"/>
+
+    <!-- Files: Assets: Fonts -->
+    <file src="files/assets/fonts/impact.rw"/>
+    <file src="files/assets/fonts/teko_regular.rw"/>
+    <file src="files/assets/fonts/teko_medium.rw"/>
+    <file src="files/assets/fonts/signika_semibold.rw"/>
+    <file src="files/assets/fonts/poppins_medium.rw"/>
+
+    <!-- Files: Assets: Images -->
+    <file src="files/assets/images/icons/create.png"/>
+    <file src="files/assets/images/icons/delete.png"/>
+    <file src="files/assets/images/icons/edit.png"/>
+    <file src="files/assets/images/icons/export.png"/>
+    <file src="files/assets/images/icons/import.png"/>
+
+    <!-- Files: Assets: Models -->
+    <file src="files/assets/models/ring/ring.dff"/>
+    <file src="files/assets/models/ring/ring.txd"/>
+    <file src="files/assets/models/ring/ring.col"/>
+
+    <!-- Files: Assets: Shaders -->
+    <file src="files/assets/shaders/mta-helper.fx"/>
+    <script src="files/assets/shaders/initial.lua" type="client" cache="false"/>
+    <script src="files/assets/shaders/axisify/main.lua" type="client" cache="false"/>
+
+</meta>

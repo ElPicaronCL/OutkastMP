@@ -1,0 +1,24 @@
+<meta>
+    <info author="vStudio" name="Assetify.widget" type="Library" version="1.0.0"/>
+
+    <!-- Utilities -->
+    <script src="utilities/index.lua" type="client" cache="true"/>
+    <script src="utilities/property.lua" type="client" cache="true"/>
+    <script src="utilities/store.lua" type="client" cache="true"/>
+
+    <!-- Handlers -->
+    <script src="handlers/widgets/text.lua" type="client" cache="true"/>
+    <script src="handlers/widgets/box.lua" type="client" cache="true"/>
+    <script src="handlers/widgets/button.lua" type="client" cache="true"/>
+    <script src="handlers/widgets/progress.lua" type="client" cache="true"/>
+
+    <!-- Files -->
+    <file src="files/**"/>
+
+
+    <!-- Test -->
+    <script src=".test/index.lua" type="client" cache="true"/>
+    <script src=".test/button.lua" type="client" cache="true"/>
+    <script src=".test/progress.lua" type="client" cache="true"/>
+    <file src=".test/fonts/**"/>
+</meta>

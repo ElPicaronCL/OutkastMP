@@ -1,0 +1,6 @@
+<meta>
+    <info author="OutkastMP" version="0.1.0" name="OV Core" description="Authoritative server foundation for the Neon project." type="script" />
+
+    <script src="shared/config.lua" type="shared" />
+    <script src="server/core.lua" type="server" />
+</meta>

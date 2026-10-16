@@ -1,0 +1,35 @@
+# Runtime state and secrets
+mods/deathmatch/logs/
+mods/deathmatch/resource-cache/
+mods/deathmatch/backups/
+mods/deathmatch/databases/
+mods/deathmatch/internal.db
+mods/deathmatch/registry.db
+mods/deathmatch/settings.xml
+mods/deathmatch/server-id.keys
+
+# Local Neon sessions and temporary diagnostics
+.neon/sessions/
+*.log
+
+# Local Python and CLI caches
+__pycache__/
+*.pyc
+
+# Local asset build output
+assets/build/
+assets/review/
+
+# Preserve source checkouts as a local workspace unless explicitly vendored
+mods/deathmatch/ov-source/
+
+# Visual Studio Code
+.vscode/
+
+# OS
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db

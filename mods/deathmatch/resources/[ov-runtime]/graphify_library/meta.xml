@@ -1,0 +1,39 @@
+<meta>
+
+    <info author="vStudio" name="Graphify.library" type="Script" version="1.0.0"/>
+    <min_mta_version server="1.6.0-9.22195" client="1.6.0-9.22195"/>
+	<oop>true</oop>
+
+    <!-- Files -->
+    <script src="files/shaders/zbuffer.lua" type="client" cache="false"/>
+	<script src="files/shaders/layer.lua" type="client" cache="false"/>
+	<script src="files/shaders/invisible.lua" type="client" cache="false"/>
+	<script src="files/shaders/pointlight.lua" type="client" cache="false"/>
+	<script src="files/shaders/spotlight.lua" type="client" cache="false"/>
+
+    <!-- Handlers -->
+	<script src="handlers/index.lua" type="client" cache="false"/>
+	<script src="handlers/pointlight.lua" type="client" cache="false"/>	
+	<script src="handlers/spotlight.lua" type="client" cache="false"/>
+
+    <!-- Exports -->
+    <export function="getLayerRT" type="client"/>
+    <export function="createPointLight" type="client"/>
+    <export function="setPointLightPosition" type="client"/>
+    <export function="setPointLightAttenuation" type="client"/>
+    <export function="setPointLightAttenuationPower" type="client"/>
+    <export function="setPointLightColor" type="client"/>
+    <export function="setPointLightFadeDistance" type="client"/>
+    <export function="createSpotLight" type="client"/>
+    <export function="setSpotLightPosition" type="client"/>
+    <export function="setSpotLightRotation" type="client"/>
+    <export function="setSpotLightAttenuation" type="client"/>
+    <export function="setSpotLightAttenuationPower" type="client"/>
+    <export function="setSpotLightTheta" type="client"/>
+    <export function="setSpotLightPhi" type="client"/>
+    <export function="setSpotLightFallOff" type="client"/>
+    <export function="setSpotLightDirection" type="client"/>
+    <export function="setSpotLightColor" type="client"/>
+    <export function="setSpotLightFadeDistance" type="client"/>
+
+</meta>

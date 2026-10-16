@@ -1,0 +1,1 @@
+{"$schema":"https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json","diagnostics":{"globals":["exports","resource","resourceRoot","root","source"]},"runtime":{"version":"Lua 5.1"},"workspace":{"checkThirdParty":false,"library":["mta-shared.lua","mta-server.lua","project-server.lua"]}}
