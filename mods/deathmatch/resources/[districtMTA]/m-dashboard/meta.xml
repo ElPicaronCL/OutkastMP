@@ -1,0 +1,24 @@
+<meta>
+    <script src='client.lua' type='client' cache='false'/>
+    <script src='server.lua' type='server'/>
+    <script src='season-pass/data.lua' type='server'/>
+    <script src='season-pass/server.lua' type='server'/>
+
+    <file src='data/interface.html'/>
+    <file src='data/settings.js'/>
+    <file src='data/main.js'/>
+    <file src='data/logs.js'/>
+    <file src='data/vehicles.js'/>
+    <file src='data/punishment.js'/>
+    <file src='data/daily-reward.js'/>
+    <file src='data/daily-tasks.js'/>
+    <file src='data/info.js'/>
+    <file src='data/achievements.js'/>
+    <file src='data/controller.js'/>
+    <file src='data/discord.js'/>
+    <file src='data/season-pass.js'/>
+
+    <file src='season-pass/data/*.png'/>
+
+    <export function='addPlayerSeasonPassStars' type='server'/>
+</meta>

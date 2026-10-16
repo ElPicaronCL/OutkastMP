@@ -1,0 +1,1555 @@
+<style>
+    #dashboard {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(23, 23, 23, 0.94);
+        display: flex;
+        flex-direction: column;
+        color: #ffffff;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    #dashboard .logo {
+        display: flex;
+        text-wrap: nowrap;
+        gap: 0.313rem;
+        width: 15rem;
+        align-items: center;
+        font-weight: 500;
+        font-size: 1.6rem;
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 400;
+    }
+
+    #dashboard .gradient-text {
+        margin-left: 0.213rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #ffab48 0.01%, #ffb762 21.88%, #fc8c5b 44.06%, #dc604f 70%, #ffab48 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 200%;
+        animation: gradient 3s linear infinite;
+    }
+    
+    #dashboard .text-glow {
+        filter: blur(1.275rem);
+        position: absolute;
+        transform: translateX(-100%);
+    }
+
+    #dashboard .text-glow-bit {
+        filter: blur(1.25rem);
+        position: absolute;
+        opacity: 1;
+        transform: translateX(-100%);
+    }
+
+    #dashboard #top {
+        background: rgba(35, 35, 35, 0.5);
+        padding: 0.4rem;
+        position: relative;
+        border-bottom: 2px solid rgba(54, 54, 54, 0.4);
+    }
+
+    #dashboard #bottom {
+        height: 100%;
+        max-height: 100%;
+    }
+
+    #dashboard .avatar {
+        background-image: url('/m-hud/data/images/user.png?v2');
+        background-size: cover;
+        width: 3rem;
+        height: 3rem;
+        margin: 0.5rem;
+        border-radius: 50%;
+    }
+
+    #dashboard .rank {
+        font-size: 0.8rem;
+        color: #ffab48;
+    }
+
+    #dashboard #list-wrapper {
+        width: 20rem;
+        position: relative;
+        overflow-y: auto;
+    }
+
+    #dashboard #list {
+        width: calc(100% - 0rem);
+        background: rgba(35, 35, 35, 0.3);
+        height: 100%;
+        max-height: 100%;
+        position: absolute;
+    }
+
+    #dashboard #list .item {
+        position: relative;
+        padding: 1rem 0.9rem;
+        cursor: pointer;
+        color: #ffffffaa;
+        border-bottom: 1px solid rgba(54, 54, 54, 0.6);
+        background: rgba(42, 42, 42, 0.4);
+        transition: background 0.2s, padding-left 0.2s, color 0.2s;
+    }
+
+    #dashboard #list .item:hover {
+        background: rgba(137, 137, 137, 0.1);
+    }
+
+    #dashboard #list .item.active {
+        background: rgba(255, 180, 98, 0.1);
+        padding-left: 1.1rem;
+        color: #ffffff;
+        cursor: default;
+    }
+
+    #dashboard #list .item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0.3rem;
+        height: 100%;
+        box-shadow: 0 0 0.3125rem 0 rgba(255, 180, 98, 1);
+        background: #ffb462;
+        transform: translateX(-200%) scaleY(0.8);
+        border-radius: 0 0.3rem 0.3rem 0;
+        transition: transform 0.2s;
+    }
+
+    #dashboard #list .item.active::before {
+        transform: translateX(0) scaleY(0.8);
+    }
+
+    #dashboard #tabs {
+        position: relative;
+        flex-grow: 1;
+        padding: 1rem;
+        overflow-y: auto;
+        margin-right: 0.5rem;
+    }
+
+    #dashboard .tab {
+        position: absolute;
+        width: calc(100% - 2rem);
+        padding-bottom: 1rem;
+        display: none;
+    }
+
+    #dashboard .tab.active {
+        display: block;
+    }
+
+    #dashboard h2 {
+        margin-top: 0;
+        color: #ffffffee;
+    }
+
+    #dashboard p {
+        color: #ffffffaa;
+        margin-block: 0.1rem;
+    }
+
+    #dashboard .input {
+        background: rgba(42, 42, 42, 0.7);
+        border: 1px solid rgba(54, 54, 54, 0.6);
+        padding: 0.8rem;
+        color: #ffffffcc;
+        border-radius: 0.5rem;
+        width: 20rem;
+        font-size: 0.9rem;
+    }
+
+    #dashboard .range-container {
+        width: 20rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    #dashboard #vehicle-map {
+        height: max(20rem, 35vh);
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    #dashboard .vehicle-blip {
+        width: 3rem !important;
+        height: 3rem !important;
+    }
+
+    #dashboard .player-blip {
+        width: 2rem !important;
+        height: 2rem !important;
+        filter: invert(1);
+    }
+
+    #dashboard .icon {
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+    }
+
+    #dashboard .daily-reward-card {
+        background: rgba(54, 54, 54, 0.8);
+        border: 1px solid rgba(54, 54, 54, 0.4);
+        padding: 1rem;
+        width: 14rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0.85rem;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 0 1.325rem #00000000;
+        transition: all 0.3s;
+    }
+
+    #dashboard .daily-reward-card:not(.small):hover {
+        box-shadow: 0 0 1.325rem #0000006b;
+        border: 1px solid rgba(99, 99, 99, 0.4);
+    }
+
+    #dashboard .daily-reward-card.small {
+        scale: 0.9;
+        background: rgba(47, 47, 47, 0.6);
+    }
+
+    #dashboard .daily-reward-card .day {
+        font-size: 7rem;
+        color: #ffffffdd;
+        font-weight: 600;
+        transition: all 0.3s;
+        text-shadow: 0 0 3.5rem #ffffff33;
+        z-index: 1;
+        transition: all 0.3s;
+    }
+
+    #dashboard .daily-reward-card:not(.small):hover .day {
+        color: #ffffff;
+        font-size: 8rem;
+        text-shadow: 0 0 4.5rem #ffffff88;
+    }
+
+    #dashboard .daily-reward-card .title {
+        font-size: 1.5rem;
+        color: #ffffffcc;
+        z-index: 1;
+    }
+
+    #dashboard .daily-reward-card .reward {
+        font-size: 1.1rem;
+        color: #ffffffaa;
+        z-index: 1;
+    }
+
+    #dashboard .daily-reward-card .box {
+        position: absolute;
+        background-color: rgba(241, 145, 60, 0.05);
+        width: 0rem;
+        height: 0rem;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.3;
+        transition: all 0.3s;
+        z-index: -1;
+    }
+
+    #dashboard .daily-reward-card:not(.small):hover .box {
+        width: 30rem;
+        height: 30rem;
+        opacity: 1;
+    }
+
+    #dashboard .daily-reward-card.yesterday {
+        background: linear-gradient(0deg, rgba(56, 175, 89, 0.1) 0%, rgba(99, 161, 117, 0.063) 100%) !important;
+    }
+
+    #dashboard .daily-reward-card.yesterday .button {
+        color: #38af59;
+        font-weight: 600;
+        font-size: 1.4rem;
+    }
+
+    #dashboard .daily-reward-card.today {
+        background: linear-gradient(0deg, rgba(255, 166, 65, 0.1) 0%, rgba(161, 141, 99, 0.063) 100%) !important;
+    }
+
+    #dashboard .daily-reward-card.tommorow {
+        background: linear-gradient(0deg, rgba(255, 65, 65, 0.1) 0%, rgba(161, 99, 99, 0.063) 100%) !important;
+    }
+    
+    #dashboard .daily-reward-card.tommorow .button {
+        color: #c82929;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    #dashboard #daily-reward-history {
+        background: rgba(42, 42, 42, 0.5);
+        border: 1px solid rgba(54, 54, 54, 0.4);
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        color: #ffffffcc;
+    }
+
+    #dashboard .nice-table-wrapper {
+        background: rgba(42, 42, 42, 0.5);
+        border: 1px solid rgba(54, 54, 54, 0.4);
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+        color: #ffffffcc;
+    }
+
+    #dashboard .task {
+        background: rgba(42, 42, 42, 0.5);
+        border: 1px solid rgba(54, 54, 54, 0.4);
+        border-radius: 0.5rem;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+        color: #ffffffcc;
+    }
+
+    #dashboard .task-header {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #ffffffdd;
+    }
+
+    #dashboard .task-details {
+        color: #ffffffaa;
+    }
+
+    #dashboard .task-progress {
+        text-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    #dashboard .task-progress .progress {
+        width: 100%;
+        background: rgba(58, 58, 58, 0.7);
+        border-radius: 0.5rem;
+        height: 0.5rem;
+        overflow: hidden;
+    }
+
+    #dashboard #missions-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #dashboard #missions-list .item {
+        padding: 0.5rem;
+        background: rgba(34, 34, 34, 0.5);
+        border-radius: 0.5rem;
+        display: flex;
+        gap: 0.5rem;
+        position: relative;
+        overflow: hidden;
+        height: 4rem;
+        transition: height 0.3s;
+    }
+
+    #dashboard #missions-list .item:hover {
+        height: 12rem;
+    }
+
+    #dashboard #missions-list .item .mission-image {
+        border-radius: 0.5rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        min-height: 6rem;
+        z-index: -1;
+    }
+
+    #dashboard #missions-list .item .title {
+        font-size: 1.3rem;
+        color: #ffffffcc;
+        font-weight: 600;
+        text-shadow: 2px 2px 2px #00000055;
+    }
+
+    #dashboard #missions-list .item .description {
+        font-size: 0.9rem;
+        text-shadow: 2px 2px 2px #00000055;
+    }
+
+    #dashboard .task-progress .progress-bar {
+        height: 100%;
+    }
+
+    #dashboard .bg-inprogress {
+        background: linear-gradient(90deg, #ffab48 0%, #ffb762 100%);
+    }
+
+    #dashboard .bg-success {
+        background: linear-gradient(90deg, #1cac2d 0%, #29d543 100%);
+    }
+
+    #dashboard .bg-danger {
+        background: linear-gradient(90deg, #ff4848 0%, #ff544e 100%);
+    }
+
+    #dashboard .task:has(.bg-success) {
+        background: linear-gradient(90deg, #6d9f7311 0%, #76c48211 100%);
+        border: 1px solid rgba(15, 55, 15, 0.4);
+    }
+
+    #dashboard .task:has(.bg-danger) {
+        background: linear-gradient(90deg, #9f6d6d11 0%, #c4767611 100%);
+        border: 1px solid rgba(70, 15, 15, 0.4);
+    }
+
+    #dashboard #daily-tasks {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+
+    #dashboard .info-card {
+        background: rgba(42, 42, 42, 0.5);
+        border: 1px solid rgba(54, 54, 54, 0.4);
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        color: #ffffffcc;
+        overflow: hidden;
+    }
+
+    #dashboard .info-header {
+        background: rgba(54, 54, 54, 0.3);
+        border: 1px solid rgba(54, 54, 54, 0.4);
+        padding: 0.6rem 0.8rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #ffffffdd;
+    }
+
+    #dashboard .info-body {
+        padding: 0.8rem;
+    }
+
+    #dashboard .list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #dashboard .info-card .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.3rem;
+        background: rgba(54, 54, 54, 0.1);
+    }
+
+    #dashboard .info-card .item:nth-child(2n+1) {
+        padding-right: 0.7rem;
+    }
+
+    #dashboard .info-card .item:nth-child(2n) {
+        padding-left: 0.7rem;
+    }
+
+    #dashboard .info-card .item:nth-child(4n+1), #dashboard .info-card .item:nth-child(4n+2) {
+        background: rgba(54, 54, 54, 0.4);
+    }
+
+    #dashboard .info-card .item span:nth-child(odd) {
+        color: rgb(195, 195, 195);
+        font-weight: 500;
+    }
+
+    #dashboard .info-card .item span:nth-child(even) {
+        color: #f8f8f8cc;
+        font-weight: 400;
+    }
+
+    #dashboard .money-card {
+        background: linear-gradient(to bottom, rgba(42, 42, 42, 0.5) 0%, rgba(35, 50, 53, 0.6) 100%);
+        background-size: 100% 200%;
+        background-position: 0 0;
+        transition: background-position 0.3s;
+    }
+
+    #dashboard .money-card:hover {
+        background-position: 0 100%;
+    }
+
+    #dashboard .level-card {
+        background: linear-gradient(to bottom, rgba(42, 42, 42, 0.5) 0%, rgba(70, 57, 45, 0.6) 100%);
+        background-size: 100% 200%;
+        background-position: 0 0;
+        position: relative;
+        transition: background-position 0.3s;
+    }
+
+    #dashboard .level-card:hover {
+        background-position: 0 100%;
+    }
+
+    #dashboard .info-card .level {
+        width: 11rem;
+        height: 11rem;
+    }
+
+    #dashboard .info-card .level-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, calc(-50% - 0.5rem));
+        font-size: 4.1rem;
+        font-weight: 600;
+        color: white;
+    }
+
+    #dashboard .info-card .level-text::after {
+        content: 'poziom';
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.71);
+        position: absolute;
+        bottom: -10%;
+        left: 50%;
+        transform: translate(-50%, 0.2rem);
+    }
+
+    #dashboard .info-card .money {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #ffffffdd;
+        text-shadow: 0 0 4.5rem #ffffff77;
+    }
+
+    #dashboard .info-card .info {
+        font-size: 1rem;
+        color: #ffffffaa;
+    }
+
+    #dashboard .three-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    #dashboard #achievements {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        gap: 0.8rem;
+    }
+
+    #dashboard .achievement-card {
+        background-color: rgba(42, 42, 42, 0.7);
+        border: 1px solid rgba(54, 54, 54, 0.4);
+        border-radius: 0.5rem;
+        padding: 1.3rem;
+        font-size: 0.9rem;
+        color: #ffffffcc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.1rem;
+        transition: all 0.2s;
+        text-align: center;
+    }
+
+    #dashboard .achievement-card.achieved {
+        background-color: #ffaa4811;
+        border: 1px solid rgba(70, 57, 45, 0.4);
+        transition: all 0.2s;
+    }
+
+    #dashboard .achievement-card:hover {
+        box-shadow: 0 0 2.325rem #00000022;
+        background-color: rgba(42, 42, 42, 0.8);
+        border: 1px solid rgba(99, 99, 99, 0.3);
+    }
+
+    #dashboard .achievement-card.achieved:hover {
+        background-color: #ffaa4816;
+        border: 1px solid rgba(70, 57, 45, 0.7);
+        box-shadow: 0 0 2.325rem #ffaa4815;
+    }
+
+    #dashboard .achievement-card .title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #ffffffdd;
+    }
+
+    #dashboard .achievement-card.achieved .title {
+        color: transparent;
+        background: linear-gradient(90deg, #ffab48 0.01%, #ffb762 21.88%, #fc8c5b 44.06%, #dc604f 70%, #ffab48 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        /* background-size: 200% 200%; */
+        /* animation: gradient 3s linear infinite; */
+        font-weight: 900;
+    }
+
+    #dashboard .achievement-card .description {
+        font-size: 0.9rem;
+        color: #ffffffaa;
+    }
+
+    #dashboard .achievement-card.achieved .description {
+        color: #ffffffdd;
+    }
+
+    #dashboard .achievement-card .progress {
+        margin-top: 0.6rem;
+        width: 100%;
+        background: rgba(58, 58, 58, 0.7);
+        border-radius: 0.5rem;
+        height: 0.5rem;
+        overflow: hidden;
+    }
+
+    #dashboard .achievement-card .progress-bar {
+        height: 100%;
+        background: rgba(168, 168, 168, 0.8);
+    }
+
+    #dashboard .achievement-card.achieved .progress-bar {
+        background: linear-gradient(90deg, #ffab48 0%, #ffb762 100%);
+    }
+
+    #dashboard .achievement-card .percent {
+        font-size: 0.75rem;
+        color: #ffffff88;
+        margin-top: 0.2rem;
+    }
+
+    #dashboard .achievement-card.achieved .percent {
+        color: #ffffffcc;
+    }
+
+    #dashboard .hidden-info {
+        filter: blur(0.25rem);
+        transition: filter 0.3s;
+    }
+
+    #dashboard .hidden-info:hover {
+        filter: blur(0);
+    }
+
+    #dashboard #controller-preview {
+        height: 40rem;
+    }
+
+    #dashboard a {
+        color: #ffab48;
+        text-decoration: none;
+        text-shadow: 0px 0px 1rem #ffab4aaa;
+    }
+
+    #dashboard a:hover {
+        text-decoration: underline;
+    }
+
+    #dashboard .slant {
+        -moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-10deg, 0deg);
+        -webkit-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-10deg, 0deg);
+        -o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-10deg, 0deg);
+        -ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-10deg, 0deg);
+        transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-10deg, 0deg);
+    }
+
+    /* #dashboard #paint0_radial_1052_70_div {
+        animation: paint0_radial_1052_70 12s cubic-bezier(0.1, 0.4, 0.8, 1) infinite;
+    }
+
+    @keyframes paint0_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(15%, 8%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+
+    #paint1_radial_1052_70_div {
+        animation: paint1_radial_1052_70 16s cubic-bezier(0.6, 0.1, 0.2, 1) infinite;
+    }
+
+    @keyframes paint1_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(-25%, -0%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+
+    #paint2_radial_1052_70_div {
+        animation: paint2_radial_1052_70 14s cubic-bezier(0.1, 0.4, 0.8, 1) infinite;
+    }
+
+    @keyframes paint2_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(-23%, -8%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+
+    #paint3_radial_1052_70_div {
+        animation: paint3_radial_1052_70 18s cubic-bezier(0.6, 0.1, 0.2, 1) infinite;
+    }
+
+    @keyframes paint3_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(30%, 6%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+
+    #paint4_radial_1052_70_div {
+        animation: paint4_radial_1052_70 12s cubic-bezier(0.1, 0.4, 0.8, 1) infinite;
+    }
+
+    @keyframes paint4_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(-20%, 0%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+
+    #paint5_radial_1052_70_div {
+        animation: paint5_radial_1052_70 14s cubic-bezier(0.6, 0.1, 0.2, 1) infinite;
+    }
+
+    @keyframes paint5_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(0%, 23%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+
+    #paint6_radial_1052_70_div {
+        animation: paint6_radial_1052_70 16s cubic-bezier(0.1, 0.4, 0.8, 1) infinite;
+    }
+
+    @keyframes paint6_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(0%, -20%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+
+    #paint7_radial_1052_70_div {
+        animation: paint7_radial_1052_70 18s cubic-bezier(0.6, 0.1, 0.2, 1) infinite;
+    }
+
+    @keyframes paint7_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(0%, 30%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+
+    #paint8_radial_1052_70_div {
+        animation: paint8_radial_1052_70 12s cubic-bezier(0.1, 0.4, 0.8, 1) infinite;
+    }
+
+    @keyframes paint8_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(20%, 0%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+
+    #paint9_radial_1052_70_div {
+        animation: paint9_radial_1052_70 14s cubic-bezier(0.6, 0.1, 0.2, 1) infinite;
+    }
+
+    @keyframes paint9_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(0%, 20%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+
+    #paint10_radial_1052_70_div {
+        animation: paint10_radial_1052_70 16s cubic-bezier(0.1, 0.4, 0.8, 1) infinite;
+    }
+
+    @keyframes paint10_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(0%, -30%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+
+    #paint11_radial_1052_70_div {
+        animation: paint11_radial_1052_70 18s cubic-bezier(0.6, 0.1, 0.2, 1) infinite;
+    }
+
+    @keyframes paint11_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(0%, 20%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+
+    #paint12_radial_1052_70_div {
+        animation: paint12_radial_1052_70 12s cubic-bezier(0.1, 0.4, 0.8, 1) infinite;
+    }
+
+    @keyframes paint12_radial_1052_70 {
+        0% {
+            transform: translate(0%, 0%);
+        }
+        
+        50% {
+            transform: translate(20%, 0%);
+        }
+
+        100% {
+            transform: translate(0%, 0%);
+        }
+    } */
+
+    #dashboard .page-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0.8rem;
+        width: 50rem;
+        grid-auto-rows: 8rem;
+        position: relative;
+    }
+
+    #dashboard #season-pass .page {
+        position: absolute;
+        transform: translateY(-50%); 
+        transition: all 0.3s cubic-bezier(0.1, 0.4, 0.8, 1);
+        z-index: 1001;
+    }
+
+    #dashboard #season-pass .page.prev {
+        top: -50%;
+        opacity: 0.1;
+    }
+
+    #dashboard .season-pass-image {
+        width: 100%;
+        height: calc(100% - 2rem);
+    }
+
+    #dashboard #season-pass .page.active {
+        top: 50%;
+    }
+
+    #dashboard #season-pass .page.next {
+        top: calc(100% + 10rem);
+        opacity: 0.1;
+    }
+
+    #dashboard .season-pass-card.locked {
+        opacity: 0.5;
+        /* cursor: not-allowed; */
+    }
+
+    #dashboard .season-pass-card {
+        display: flex;
+        flex-direction: column;
+        border: 0.0625rem solid #191E1A;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    #dashboard .season-pass-card.active {
+        background-color: #191E1A;
+        border: 0.25rem solid #ffffff;
+        cursor: default;
+    }
+
+    #dashboard .owned {
+        margin-top: auto;
+        margin-bottom: 0;
+        background-color: #191E1A;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #bebebe;
+        height: 2rem;
+        padding-inline: 0.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: all 0.2s;
+    }
+
+    #dashboard .owned svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    #dashboard .season-pass-card.active .owned {
+        background-color: #d9d9d9;
+        color: #000000;
+    }
+
+    #dashboard #active-season-item {
+        position: absolute;
+        right: 5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #dashboard #active-season-item img {
+        scale: 2;
+        max-width: 20rem;
+    }
+
+    #dashboard #active-season-item-info {
+        z-index: 1000;
+        position: absolute;
+        right: 0rem;
+        top: calc(50% + 10rem);
+        text-align: right;
+        text-wrap: nowrap;
+    }
+
+    #dashboard .redeem-button {
+        background: linear-gradient(-90deg, #8214a9 0%, #f14eff 25%, #ffabf7 50%, #f14eff 75%, #8214a9 100%);
+        background-size: 200% 200%;
+        padding: 0.7rem 1.3rem;
+        border-radius: 5rem;
+        font-size: 1.4rem;
+        font-weight: 900;
+        text-align: center;
+        text-shadow: 0 0 0rem #ffffff;
+        transition: all 0.4s;
+        cursor: pointer;
+    }
+
+    #dashboard .get-pass {
+        background: linear-gradient(-90deg, #A95014 0%, #FFD04E 25%, #FFEE83 50%, #FFD04E 75%, #A95014 100%);
+        text-shadow: 0.1rem 0.1rem 0.2rem #00000055;
+        background-size: 200% 200%;
+    }
+
+    #dashboard .blue-button {
+        background: linear-gradient(-90deg, #1474A9 0%, #4E9DFF 25%, #83C3FF 50%, #4E9DFF 75%, #1474A9 100%);
+        text-shadow: 0.1rem 0.1rem 0.2rem #00000055;
+        background-size: 200% 200%;
+    }
+
+    #dashboard .redeem-button:hover {
+        text-shadow: 0 0 0.5rem #ffffff;
+        box-shadow: 0 0 2.75rem 0 #ff58e488;
+        background-position: 100% 100%;
+    }
+
+    #dashboard .get-pass:hover {
+        text-shadow: 0.1rem 0.1rem 0.2rem #00000055;
+        box-shadow: 0 0 2.75rem 0 #ffee5888;
+        background-position: 100% 100%;
+    }
+
+    #dashboard .blue-button:hover {
+        text-shadow: 0 0 0.5rem #ffffff;
+        box-shadow: 0 0 2.75rem 0 #4e9dff88;
+        background-position: 100% 100%;
+    }
+
+    #dashboard #season-stars {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        display: flex;
+        gap: 0.9rem;
+        align-items: center;
+        font-size: 1.4rem;
+        font-weight: 900;
+    }
+
+    #dashboard #season-stars svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    #dashboard #season-info {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        font-size: 0.9rem;
+        opacity: 0.8;
+        text-align: right;
+        font-weight: 500;
+        -moz-transform: skew(-10deg, 0deg);
+        -webkit-transform: skew(-10deg, 0deg);
+        -o-transform: skew(-10deg, 0deg);
+        -ms-transform: skew(-10deg, 0deg);
+        transform: skew(-10deg, 0deg);
+    }
+
+    #dashboard .item-tag {
+        background: #882CF9;
+        -moz-transform: skew(-10deg, 0deg);
+        -webkit-transform: skew(-10deg, 0deg);
+        -o-transform: skew(-10deg, 0deg);
+        -ms-transform: skew(-10deg, 0deg);
+        transform: skew(-10deg, 0deg);
+        padding: 0.3rem;
+        font-size: 0.9rem;
+        font-weight: 900;
+    }
+
+    #dashboard .item-rarity {
+        margin-left: auto;
+        margin-right: 0;
+        font-weight: 900;
+        -moz-transform: skew(-10deg, 0deg);
+        -webkit-transform: skew(-10deg, 0deg);
+        -o-transform: skew(-10deg, 0deg);
+        -ms-transform: skew(-10deg, 0deg);
+        transform: skew(-10deg, 0deg);
+    }
+
+    #dashboard #active-season-item-info .item-name {
+        font-size: 2.4rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        -moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-10deg, 0deg);
+        -webkit-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-10deg, 0deg);
+        -o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-10deg, 0deg);
+        -ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-10deg, 0deg);
+        transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-10deg, 0deg);
+    }
+
+    #dashboard .card-bg-small {
+        background: radial-gradient(6rem 6rem at 50% 50%, rgb(139, 207, 255) 0%, rgb(35, 94, 250) 100%);
+        transition: background-size 0.2s, background-position 0.2s;
+    }
+
+    #dashboard .card-bg-mid {
+        background: radial-gradient(9rem 9rem at 50% 50%, rgb(139, 207, 255) 0%, rgb(35, 94, 250) 100%);
+    }
+
+    #dashboard .card-bg-big {
+        background: radial-gradient(12rem 12rem at 50% 50%, rgb(139, 207, 255) 0%, rgb(35, 94, 250) 100%);
+    }
+
+    #dashboard #season-pass .pagination {
+        position: absolute;
+        left: calc(28rem);
+        transform: translate(-50%, -50%);
+        opacity: 0.4;
+        border: 1px solid rgba(54, 54, 54, 0.4);
+        background: rgba(0, 179, 255, 1);
+        padding: 0.5rem 1rem;
+        border-radius: 10rem;
+        font-size: 1rem;
+        font-weight: 900;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    #dashboard #season-pass .pagination:hover {
+        opacity: 0.8;
+    }
+
+    #dashboard #season-pass #prev-page {
+        top: calc(50% - 17rem);
+    }
+
+    #dashboard #season-pass #next-page {
+        top: calc(50% + 17rem);
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 200% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<div id="top" class="d-flex justify-between align-items-center">
+    <div class="d-flex gap-1 logo">
+        <img src="/m-login/data/logo.png" style="width: 3.5rem;"/>
+        <span>
+            <span>district</span><span class="text-glow-bit">district</span><span class="gradient-text">MTA</span>
+            <span class="gradient-text text-glow">MTA</span>
+        </span>
+    </div>
+    <div class="d-flex align-items-center gap-1">
+        <div class="d-flex flex-column text-end">
+            <span id="username">-</span>
+            <span class="rank" id="rank">-</span>
+        </div>
+        <div class="avatar"></div>
+    </div>
+</div>
+
+<div id="bottom" class="d-flex nice-scroll">
+    <div id="list-wrapper">
+        <div id="list">
+            <div class="item active" tab="main" onclick="dashboard_changeTab(this)">Strona główna</div>
+            <div class="item" tab="season-pass" onclick="dashboard_changeTab(this)">Przepustka sezonowa</div>
+            <div class="item" tab="missions" onclick="dashboard_changeTab(this)">Misje</div>
+            <div class="item" tab="daily-tasks" onclick="dashboard_changeTab(this)">Zadania dzienne</div>
+            <div class="item" tab="daily-reward" onclick="dashboard_changeTab(this)">Nagroda dzienna</div>
+            <div class="item" tab="achievements" onclick="dashboard_fetchData('achievements'); dashboard_changeTab(this)">Osiągnięcia</div>
+            <div class="item" tab="vehicles" onclick="dashboard_fetchData('vehicles'); dashboard_changeTab(this)">Pojazdy</div>
+            <div class="item" tab="punishments" onclick="dashboard_fetchData('punishments'); dashboard_changeTab(this)">Kary</div>
+            <div class="item" tab="logs" onclick="dashboard_fetchData('logs'); dashboard_changeTab(this)">Logi</div>
+            <div class="item" tab="money-logs" onclick="dashboard_fetchData('money-logs'); dashboard_changeTab(this)">Historia pieniędzy</div>
+            <div class="item" tab="discord" onclick="dashboard_fetchData('discord'); dashboard_changeTab(this)">Discord</div>
+            <div class="item" tab="controller" onclick="dashboard_changeTab(this)">Kontroler</div>
+            <div class="item" tab="settings" onclick="dashboard_changeTab(this)">Ustawienia</div>
+        </div>
+    </div>
+    <div id="tabs">
+        <div class="tab active" tab="main">
+            <div class="info-card">
+                <div class="info-header">Konto</div>
+                <div class="info-body">
+                    <div class="d-flex flex-grow-1 flex-column justify-center align-items-center mt-3 mb-3 label loading">
+                        <svg style="width: 3rem; height: 3rem;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_6kVp{transform-origin:center;animation:spinner_irSm .75s infinite linear}@keyframes spinner_irSm{100%{transform:rotate(360deg)}}</style><path d="M10.72,19.9a8,8,0,0,1-6.5-9.79A7.77,7.77,0,0,1,10.4,4.16a8,8,0,0,1,9.49,6.52A1.54,1.54,0,0,0,21.38,12h.13a1.37,1.37,0,0,0,1.38-1.54,11,11,0,1,0-12.7,12.39A1.54,1.54,0,0,0,12,21.34h0A1.47,1.47,0,0,0,10.72,19.9Z" class="spinner_6kVp" fill="currentColor"/></svg>
+                        <span class="mt-3">Ładowanie...</span>
+                    </div>
+                    <div class="list">
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 three-cards">
+                <div class="info-card d-flex flex-column p-3 text-center justify-center money-card">
+                    <span class="money">$0</span>
+                    <span class="info">Gotówka przy sobie</span>
+                    <span class="money mt-2">$0</span>
+                    <span class="info">Gotówka w banku</span>
+                </div>
+                <div class="info-card level-card d-flex flex-column gap-2 p-3 justify-center align-items-center">
+                    <svg class="level" viewBox="0 0 110 110">
+                        <defs>
+                            <mask id="circleMask">
+                                <rect x="0" y="0" width="100%" height="100%" fill="white"/>
+                                <circle cx="50%" cy="50%" r="35%" fill="black" transform="translate(-5, -5)"/>
+                            </mask>
+                            <linearGradient id="gradientColor" x1="79" y1="1.92046e-06" x2="25" y2="100" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#fca64a" />
+                                <stop offset="0.5" stop-color="#e97d4c" />
+                                <stop offset="1" stop-color="#dd644d" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="50" transform="translate(5, 5)" fill="#00000044" mask="url(#circleMask)"/>
+                        <path mask="url(#circleMask)" transform="translate(5, 5)" fill="url(#gradientColor)"/>
+                    </svg>
+                    <div class="level-text">0</div>
+                </div>
+            </div>
+        </div>
+        <div class="tab" style="height: calc(100% - 3rem); overflow: hidden;" tab="season-pass">
+            <div class="h-100">
+                <svg style="width: 100%; height: 100%; position: absolute;" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1729 -124H249V1356H1729V-124Z" fill="url(#paint0_radial_1072_82)" />
+                    <path d="M840 -174H-640V1306H840V-174Z" fill="url(#paint1_radial_1072_82)" />
+                    <path d="M2609 -124H1129V1356H2609V-124Z" fill="url(#paint2_radial_1072_82)" />
+                    <path d="M2096 -124H616V1356H2096V-124Z" fill="url(#paint3_radial_1072_82)" />
+                    <path d="M1451 -124H-29V1356H1451V-124Z" fill="url(#paint4_radial_1072_82)" />
+                    <path d="M1700 -1020H220V460H1700V-1020Z" fill="url(#paint5_radial_1072_82)" />
+                    <path d="M1700 690H220V2170H1700V690Z" fill="url(#paint6_radial_1072_82)" />
+                    <path d="M819 616H-661V2096H819V616Z" fill="url(#paint7_radial_1072_82)" />
+                    <path d="M2609 496H1129V1976H2609V496Z" fill="url(#paint8_radial_1072_82)" />
+                    <path d="M1920 519H440V1999H1920V519Z" fill="url(#paint9_radial_1072_82)" />
+                    <path d="M1221 395H-259V1875H1221V395Z" fill="url(#paint10_radial_1072_82)" />
+                    <path d="M2264 -174H784V1306H2264V-174Z" fill="url(#paint11_radial_1072_82)" />
+                    <path d="M2141 -144H661V1336H2141V-144Z" fill="url(#paint12_radial_1072_82)" />
+                    <path d="M878 -713H-602V767H878V-713Z" fill="url(#paint13_radial_1072_82)" />
+                    <path d="M2502 -688H1022V792H2502V-688Z" fill="url(#paint14_radial_1072_82)" />
+                    <defs>
+                        <radialGradient id="paint0_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(989 616) rotate(90) scale(740)">
+                            <stop stop-color="#7230FF" stop-opacity="0.35" />
+                            <stop offset="1" stop-color="#8F00FF" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint1_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 566) rotate(90) scale(740)">
+                            <stop stop-color="#8B30FF" stop-opacity="0.35" />
+                            <stop offset="1" stop-color="#8F00FF" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint2_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1869 616) rotate(90) scale(740)">
+                            <stop stop-color="#8B30FF" stop-opacity="0.35" />
+                            <stop offset="1" stop-color="#8F00FF" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint3_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1356 616) rotate(90) scale(740)">
+                            <stop stop-color="#B030FF" stop-opacity="0.15" />
+                            <stop offset="1" stop-color="#8F00FF" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint4_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(711 616) rotate(90) scale(740)">
+                            <stop stop-color="#B030FF" stop-opacity="0.15" />
+                            <stop offset="1" stop-color="#8F00FF" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint5_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 -280) rotate(90) scale(740)">
+                            <stop stop-color="#FF30F7" stop-opacity="0.15" />
+                            <stop offset="1" stop-color="#AD00FF" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint6_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 1430) rotate(90) scale(740)">
+                            <stop stop-color="#FF30F7" stop-opacity="0.15" />
+                            <stop offset="1" stop-color="#AD00FF" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint7_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(79 1356) rotate(90) scale(740)">
+                            <stop stop-color="#FF30F7" stop-opacity="0.15" />
+                            <stop offset="1" stop-color="#AD00FF" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint8_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1869 1236) rotate(90) scale(740)">
+                            <stop stop-color="#FF30F7" stop-opacity="0.15" />
+                            <stop offset="1" stop-color="#AD00FF" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint9_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 1259) rotate(90) scale(740)">
+                            <stop stop-color="#C930FF" stop-opacity="0.15" />
+                            <stop offset="1" stop-color="#FF00F5" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint10_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(481 1135) rotate(90) scale(740)">
+                            <stop stop-color="#C930FF" stop-opacity="0.15" />
+                            <stop offset="1" stop-color="#FF00F5" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint11_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1524 566) rotate(90) scale(740)">
+                            <stop stop-color="#3051FF" stop-opacity="0.25" />
+                            <stop offset="1" stop-color="#7000FF" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint12_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1401 596) rotate(90) scale(740)">
+                            <stop stop-color="#3051FF" stop-opacity="0.25" />
+                            <stop offset="1" stop-color="#7000FF" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint13_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(138 27) rotate(90) scale(740)">
+                            <stop stop-color="#C930FF" stop-opacity="0.15" />
+                            <stop offset="1" stop-color="#FF00F5" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint14_radial_1072_82" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1762 52) rotate(90) scale(740)">
+                            <stop stop-color="#C930FF" stop-opacity="0.15" />
+                            <stop offset="1" stop-color="#FF00F5" stop-opacity="0" />
+                        </radialGradient>
+                        <clipPath id="clip0_1072_82">
+                            <rect width="1920" height="1080" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                
+                <div class="p-4 d-flex flex-column justify-between" style="height: calc(100% - 3rem);" id="season-pass">
+                </div>
+            </div>
+        </div>
+        <div class="tab" tab="missions">
+            <div id="missions-list">
+                <div class="item d-flex gap-2 mission"></div>
+            </div>
+        </div>
+        <div class="tab" tab="daily-tasks">
+            <div id="daily-tasks">
+                <div class="d-flex p-5 flex-grow-1 flex-column justify-center align-items-center mt-5 label">
+                    <svg style="width: 3rem; height: 3rem;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_6kVp{transform-origin:center;animation:spinner_irSm .75s infinite linear}@keyframes spinner_irSm{100%{transform:rotate(360deg)}}</style><path d="M10.72,19.9a8,8,0,0,1-6.5-9.79A7.77,7.77,0,0,1,10.4,4.16a8,8,0,0,1,9.49,6.52A1.54,1.54,0,0,0,21.38,12h.13a1.37,1.37,0,0,0,1.38-1.54,11,11,0,1,0-12.7,12.39A1.54,1.54,0,0,0,12,21.34h0A1.47,1.47,0,0,0,10.72,19.9Z" class="spinner_6kVp" fill="currentColor"/></svg>
+                    <span class="mt-3">Ładowanie...</span>
+                </div>
+            </div>
+        </div>
+        <div class="tab" tab="daily-reward">
+            <div class="d-flex w-100 gap-3 align-items-start justify-center mt-4">
+                <div class="daily-reward-card small yesterday">
+                    <div class="box"></div>
+                    <div class="day">1</div>
+                    <div class="title">Wczoraj</div>
+                    <div class="reward">Ładowanie...</div>
+                    <div class="button mt-3 mb-2">Odebrano</div>
+                </div>
+                <div class="daily-reward-card today">
+                    <div class="box"></div>
+                    <div class="day">2</div>
+                    <div class="title">Dzisiaj</div>
+                    <div class="reward">Ładowanie...</div>
+                    <div class="nice-button mt-4 button" style="width: calc(100% - 3rem);">Odbierz</div>
+                </div>
+                <div class="daily-reward-card small tommorow">
+                    <div class="box"></div>
+                    <div class="day">3</div>
+                    <div class="title">Jutro</div>
+                    <div class="reward" style="filter: blur(0.5rem);">tajemnica</div>
+                    <div class="button mt-3 mb-2">Zaloguj się jutro</div>
+                </div>
+            </div>
+
+            <div class="info-card mt-4">
+                <div class="info-header">Ostatnie 10 nagród</div>
+                <div class="info-body d-flex flex-column gap-1" id="daily-reward-history"></div>
+            </div>
+        </div>
+        <div class="tab" tab="achievements">
+            <div id="achievements"></div>
+        </div>
+        <div class="tab" tab="vehicles">
+            <div class="d-flex p-5 flex-column justify-center align-items-center mt-5 label">
+                <svg style="width: 3rem; height: 3rem;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_6kVp{transform-origin:center;animation:spinner_irSm .75s infinite linear}@keyframes spinner_irSm{100%{transform:rotate(360deg)}}</style><path d="M10.72,19.9a8,8,0,0,1-6.5-9.79A7.77,7.77,0,0,1,10.4,4.16a8,8,0,0,1,9.49,6.52A1.54,1.54,0,0,0,21.38,12h.13a1.37,1.37,0,0,0,1.38-1.54,11,11,0,1,0-12.7,12.39A1.54,1.54,0,0,0,12,21.34h0A1.47,1.47,0,0,0,10.72,19.9Z" class="spinner_6kVp" fill="currentColor"/></svg>
+                <span class="mt-3">Ładowanie...</span>
+            </div>
+        </div>
+        <div class="tab" tab="punishments">
+            <div class="d-flex p-5 flex-column justify-center align-items-center mt-5 label">
+                <svg style="width: 3rem; height: 3rem;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_6kVp{transform-origin:center;animation:spinner_irSm .75s infinite linear}@keyframes spinner_irSm{100%{transform:rotate(360deg)}}</style><path d="M10.72,19.9a8,8,0,0,1-6.5-9.79A7.77,7.77,0,0,1,10.4,4.16a8,8,0,0,1,9.49,6.52A1.54,1.54,0,0,0,21.38,12h.13a1.37,1.37,0,0,0,1.38-1.54,11,11,0,1,0-12.7,12.39A1.54,1.54,0,0,0,12,21.34h0A1.47,1.47,0,0,0,10.72,19.9Z" class="spinner_6kVp" fill="currentColor"/></svg>
+                <span class="mt-3">Ładowanie...</span>
+            </div>
+        </div>
+        <div class="tab" tab="logs">
+            <div class="d-flex p-5 flex-column justify-center align-items-center mt-5 label">
+                <svg style="width: 3rem; height: 3rem;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_6kVp{transform-origin:center;animation:spinner_irSm .75s infinite linear}@keyframes spinner_irSm{100%{transform:rotate(360deg)}}</style><path d="M10.72,19.9a8,8,0,0,1-6.5-9.79A7.77,7.77,0,0,1,10.4,4.16a8,8,0,0,1,9.49,6.52A1.54,1.54,0,0,0,21.38,12h.13a1.37,1.37,0,0,0,1.38-1.54,11,11,0,1,0-12.7,12.39A1.54,1.54,0,0,0,12,21.34h0A1.47,1.47,0,0,0,10.72,19.9Z" class="spinner_6kVp" fill="currentColor"/></svg>
+                <span class="mt-3">Ładowanie...</span>
+            </div>
+        </div>
+        <div class="tab" tab="money-logs">
+            <div class="d-flex p-5 flex-column justify-center align-items-center mt-5 label">
+                <svg style="width: 3rem; height: 3rem;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_6kVp{transform-origin:center;animation:spinner_irSm .75s infinite linear}@keyframes spinner_irSm{100%{transform:rotate(360deg)}}</style><path d="M10.72,19.9a8,8,0,0,1-6.5-9.79A7.77,7.77,0,0,1,10.4,4.16a8,8,0,0,1,9.49,6.52A1.54,1.54,0,0,0,21.38,12h.13a1.37,1.37,0,0,0,1.38-1.54,11,11,0,1,0-12.7,12.39A1.54,1.54,0,0,0,12,21.34h0A1.47,1.47,0,0,0,10.72,19.9Z" class="spinner_6kVp" fill="currentColor"/></svg>
+                <span class="mt-3">Ładowanie...</span>
+            </div>
+        </div>
+        <div class="tab" tab="discord">
+            <div class="d-flex p-5 flex-column justify-center align-items-center mt-5 label">
+                <svg style="width: 3rem; height: 3rem;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_6kVp{transform-origin:center;animation:spinner_irSm .75s infinite linear}@keyframes spinner_irSm{100%{transform:rotate(360deg)}}</style><path d="M10.72,19.9a8,8,0,0,1-6.5-9.79A7.77,7.77,0,0,1,10.4,4.16a8,8,0,0,1,9.49,6.52A1.54,1.54,0,0,0,21.38,12h.13a1.37,1.37,0,0,0,1.38-1.54,11,11,0,1,0-12.7,12.39A1.54,1.54,0,0,0,12,21.34h0A1.47,1.47,0,0,0,10.72,19.9Z" class="spinner_6kVp" fill="currentColor"/></svg>
+                <span class="mt-3">Ładowanie...</span>
+            </div>
+        </div>
+        <div class="tab" tab="controller" id="controller">
+            <div class="d-flex justify-center mt-4">
+                <svg width="1167" height="830" viewBox="0 0 1167 830" fill="none" id="controller-preview">
+                    <path d="M703.475 264.5C724.869 264.5 740.331 264.5 741.975 264.5C747.475 264.5 749.975 264.5 752.475 259C754.475 254.6 757.642 253.5 758.975 253.5C761.146 253.5 763.493 253.5 765.975 253.5M765.975 253.5C794.924 253.5 842.264 253.5 844.475 253.5C845.292 253.5 846.22 253.426 847.279 253.429M765.975 253.5L764.475 243.5C769.142 241 784.175 236 806.975 236C829.775 236 843.808 241 847.975 243.5L847.279 253.429M847.279 253.429C850.111 253.437 853.881 253.997 858.975 258C865.975 263.5 876.975 286 882.975 294C888.975 302 910.975 350 933.475 461C955.975 584 954.975 664 893.975 686.5C845.175 704.5 810.642 666.666 799.475 645.5C788.142 614.166 764.775 549.4 761.975 541C758.475 530.5 758.475 526.5 751.475 526.5C741.475 526.5 724.975 546 696.475 546C673.675 546 655.642 533 649.475 526.5H583.975H517.475C511.308 533 493.275 546 470.475 546C441.975 546 425.475 526.5 415.475 526.5C408.475 526.5 408.475 530.5 404.975 541C402.175 549.4 378.808 614.166 367.475 645.5C356.308 666.666 321.775 704.5 272.975 686.5C211.975 664 210.975 584 233.475 461C255.975 350 277.975 302 283.975 294C289.975 286 300.975 263.5 307.975 258C313.069 253.997 316.839 253.437 319.671 253.429M319.671 253.429C320.73 253.426 321.658 253.5 322.475 253.5C324.685 253.5 372.026 253.5 400.975 253.5M319.671 253.429L318.975 243.5C323.142 241 337.175 236 359.975 236C382.775 236 397.808 241 402.475 243.5L400.975 253.5M463.475 264.5C442.081 264.5 426.619 264.5 424.975 264.5C419.475 264.5 416.975 264.5 414.475 259C412.475 254.6 409.308 253.5 407.975 253.5C405.804 253.5 403.457 253.5 400.975 253.5M528 473C528 506.689 500.689 534 467 534C433.311 534 406 506.689 406 473C406 439.311 433.311 412 467 412C500.689 412 528 439.311 528 473ZM762 473C762 506.689 734.689 534 701 534C667.311 534 640 506.689 640 473C640 439.311 667.311 412 701 412C734.689 412 762 439.311 762 473ZM889 368C889 413.287 852.287 450 807 450C761.713 450 725 413.287 725 368C725 322.713 761.713 286 807 286C852.287 286 889 322.713 889 368ZM442 368C442 413.287 405.287 450 360 450C314.713 450 278 413.287 278 368C278 322.713 314.713 286 360 286C405.287 286 442 322.713 442 368Z" stroke="white" stroke-opacity="0.8" stroke-width="3" />
+                    <path d="M511 473C511 497.301 491.301 517 467 517C442.699 517 423 497.301 423 473C423 448.699 442.699 429 467 429C491.301 429 511 448.699 511 473Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="4" id="Axis1" />
+                    <path d="M744 473C744 497.301 724.301 517 700 517C675.699 517 656 497.301 656 473C656 448.699 675.699 429 700 429C724.301 429 744 448.699 744 473Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="4" id="Axis2" />
+                    <path d="M808.5 427C818.165 427 826 419.165 826 409.5C826 399.835 818.165 392 808.5 392C798.835 392 791 399.835 791 409.5C791 419.165 798.835 427 808.5 427Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="4" id="B0" />
+                    <path d="M850.5 385C860.165 385 868 377.165 868 367.5C868 357.835 860.165 350 850.5 350C840.835 350 833 357.835 833 367.5C833 377.165 840.835 385 850.5 385Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="4" id="B1" />
+                    <path d="M766.5 385C776.165 385 784 377.165 784 367.5C784 357.835 776.165 350 766.5 350C756.835 350 749 357.835 749 367.5C749 377.165 756.835 385 766.5 385Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="4" id="B2" />
+                    <path d="M808.5 344C818.165 344 826 336.165 826 326.5C826 316.835 818.165 309 808.5 309C798.835 309 791 316.835 791 326.5C791 336.165 798.835 344 808.5 344Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="4" id="B3" />
+                    <path d="M382 214C382 221.874 376.5 225 360 225C343.5 225 338 222.548 338 214C338 205.452 342.125 203 360 203C377.875 203 382 206.126 382 214Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="3" id="B4" />
+                    <path d="M830 214C830 221.874 824.5 225 808 225C791.5 225 786 222.548 786 214C786 205.452 790.125 203 808 203C825.875 203 830 206.126 830 214Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="3" id="B5" />
+                    <path d="M382 179.603C382 187.761 376.5 191 360 191C343.5 191 338 188.46 338 179.603C338 170.746 342.125 139 360 139C377.875 139 382 171.444 382 179.603Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="3" id="B6" />
+                    <path d="M830 179.603C830 187.761 824.5 191 808 191C791.5 191 786 188.46 786 179.603C786 170.746 790.125 139 808 139C825.875 139 830 171.444 830 179.603Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="3" id="B7" />
+                    <path d="M437.974 309C432.108 309 429.779 305 429.779 293C429.779 281 431.606 277 437.974 277C444.343 277 446.17 280 446.17 293C446.17 306 443.841 309 437.974 309Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="3" id="B8" />
+                    <path d="M728.974 309C734.841 309 737.17 305 737.17 293C737.17 281 735.343 277 728.974 277C722.606 277 720.779 280 720.779 293C720.779 306 723.108 309 728.974 309Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="3" id="B9" />
+                    <path d="M378.5 341L360 358L343 341V309H378.5V341Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="3" id="B12"/>
+                    <path d="M342.475 395.5L360.975 378.5L377.975 395.5V427.5H342.475V395.5Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="3" id="B13"/>
+                    <path d="M333 351L350 369.5L333 386.5H301V351H333Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="3" id="B14"/>
+                    <path d="M388 386.5L371 368L388 351H420V386.5H388Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="3" id="B15"/>
+                    <path d="M601 472.5C601 482.165 593.165 490 583.5 490C573.835 490 566 482.165 566 472.5C566 462.835 573.835 455 583.5 455C593.165 455 601 462.835 601 472.5Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="4" id="B16"/>
+                    <path d="M583.5 264.5H703V381.5C703 384.333 701.3 390 694.5 390H583.5H471.5C464.7 390 463 384.333 463 381.5V264.5H583.5Z" fill="#FFFFFF00" stroke="white" stroke-opacity="0.8" stroke-width="3" id="B17"/>
+                    
+                    <path d="M583.5 321.5V85" stroke="#FFFFFF99" stroke-opacity="0.8" stroke-linecap="round" stroke-width="3" />
+                    <text x="583.5" y="75" fill="white" font-size="20" text-anchor="middle">Mapa</text>
+                    <path d="M321 368L148 541" stroke="#FFFFFF99" stroke-width="2" stroke-linecap="round" stroke-width="3" />
+                    <text x="148" y="567" fill="white" font-size="20" text-anchor="middle">Scoreboard</text>
+                    <path d="M361 328L188 181" stroke="#FFFFFF99" stroke-width="2" stroke-linecap="round" stroke-width="3" />
+                    <text x="188" y="165" fill="white" font-size="20" text-anchor="middle">Ekwipunek</text>
+                    <path d="M729 292L916 145" stroke="#FFFFFF99" stroke-width="2" stroke-linecap="round" stroke-width="3" />
+                    <text x="916" y="131" fill="white" font-size="20" text-anchor="middle">Dashboard</text>
+                    <path d="M437.5 293.5L417.5 85" stroke="#FFFFFF99" stroke-opacity="0.8" stroke-linecap="round" stroke-width="3" />
+                    <text x="417.5" y="75" fill="white" font-size="20" text-anchor="middle">Panel pomocy</text>
+                    <path d="M470 665.5L400 369" stroke="#FFFFFF99" stroke-opacity="0.8" sstroke-linecap="round" stroke-width="3" />
+                    <text x="470" y="690" fill="white" font-size="20" text-anchor="middle">Wsiądź jako pasażer</text>
+                    <path d="M361 215.5L229.5 84" stroke="#FFFFFF99" stroke-opacity="0.8" stroke-linecap="round" stroke-width="3" />
+                    <text x="229.5" y="74" fill="white" font-size="20" text-anchor="middle">Interakcja pojazdu</text>
+                    <path d="M1032.5 518.5L851 367" stroke="#FFFFFF99" stroke-opacity="0.8" stroke-width="3" />
+                    <text x="1032.5" y="543" fill="white" font-size="20" text-anchor="middle">Cofnij/Anuluj</text>
+                    <path d="M860.5 730.5L809 409" stroke="#FFFFFF99" stroke-opacity="0.8" stroke-width="3" />
+                    <text x="860.5" y="755" fill="white" font-size="20" text-anchor="middle">Zatwierdź</text>
+                </svg>
+            </div>
+
+            <div id="controller-text" class="mt-4">
+                Wykryty kontroler: <span id="controller-name">Nie wykryto</span>
+            </div>
+        </div>
+        <div class="tab" tab="settings" id="settings">
+            <h2>Ustawienia</h2>
+            
+            <div class="d-flex flex-column gap-2" id="settings-rows"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #dashboard #buy-pass {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1rem;
+        background-color: #222222d3;
+        border: 0.1rem solid #3232329e;
+        backdrop-filter: blur(0.5rem);
+        border-radius: 0.8rem;
+        max-width: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        z-index: 2000;
+    }
+
+    #dashboard #buy-pass .title {
+        font-size: 2rem;
+        font-weight: 900;
+        color: white;
+        text-align: center;
+    }
+
+    #dashboard #buy-pass .description {
+        text-align: center;
+    }
+
+    #dashboard #buy-pass .price {
+        font-weight: 800;
+        color: #ffe1b6;
+    }
+
+    #dashboard #pass-qr {
+        width: 14rem;
+        height: 14rem;
+    }
+</style>
+
+<div id="buy-pass" class="d-none">
+    <div class="title slant">Przepustka sezonowa</div>
+    <div class="d-flex justify-center p-4" id="pass-loading">
+        <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 24 24"><path fill="currentColor" d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z"><animateTransform attributeName="transform" dur="0.75s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></svg>
+    </div>
+    <img id="pass-qr" class="d-none"></img>
+    <div class="description">
+        Aby zakupić przepustkę sezonową zeskanuj kod QR widoczny powyżej, koszt przepustki wynosi <span class="price">18,00zł z VAT</span>, przepustka jest przedmiotem jednorazowym, który pozwala na odbieranie nagród sezonowych przez cały okres trwania sezonu, po zakończeniu go przepustka zostanie zdezaktywowana<br>
+        Kupując przepustkę zgadzasz się na <a href="#">regulamin</a> oraz <a href="#">politykę prywatności</a>
+    </div>
+    <input class="simple-input" placeholder="Kod promocyjny" id="promo-code"/>
+    <div class="d-flex gap-2 w-100">
+        <div class="redeem-button get-pass flex-grow-1" style="font-size: 1rem; font-weight: 600;" onclick="seasonPass_buyPassForDists(this)">Zakup za disty</div>
+        <div class="redeem-button flex-grow-1" style="font-size: 1rem; font-weight: 600;" onclick="seasonPass_usePromoCode(this)">Wykorzystaj kod</div>
+        <div class="redeem-button blue-button flex-grow-1" style="font-size: 1rem; font-weight: 600;" onclick="seasonPass_closeBuyPass(this)">Anuluj</div>
+    </div>
+</div>
+
+<script>
+    async function loadIncludes() {
+        let tasks = [];
+
+        tasks.push(include('/m-dashboard/data/main.js'));
+        tasks.push(include('/m-dashboard/data/settings.js'));
+        tasks.push(include('/m-dashboard/data/vehicles.js'));
+        tasks.push(include('/m-dashboard/data/punishment.js'));
+        tasks.push(include('/m-dashboard/data/daily-reward.js'));
+        tasks.push(include('/m-dashboard/data/daily-tasks.js'));
+        tasks.push(include('/m-dashboard/data/info.js'));
+        tasks.push(include('/m-dashboard/data/achievements.js'));
+        tasks.push(include('/m-dashboard/data/logs.js'));
+        tasks.push(include('/m-dashboard/data/controller.js'));
+        tasks.push(include('/m-dashboard/data/discord.js'));
+        tasks.push(include('/m-dashboard/data/season-pass.js'));
+
+        await Promise.all(tasks);
+        await new Promise(resolve => setTimeout(resolve, 100));
+        finishIncludes('dashboard');
+        dashboard_fetchData('account');
+    }
+
+    loadIncludes();
+</script>

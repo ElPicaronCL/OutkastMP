@@ -1,0 +1,78 @@
+<meta>
+    <script src='shared.lua' type='shared' cache='false'/>
+    
+    <script src='client/client.lua' type='client' cache='false'/>
+    <script src='client/lobby.lua' type='client' cache='false'/>
+    <script src='client/jobs.lua' type='client' cache='false'/>
+    <script src='server/server.lua' type='server'/>
+    <script src='server/lobby.lua' type='server'/>
+    <script src='server/job.lua' type='server'/>
+
+    <file src='data/interface.html'/>
+    <file src='data/main.js'/>
+    <file src='data/top.js'/>
+    <file src='data/upgrades.js'/>
+    <file src='data/history.js'/>
+    <file src='data/lobby.js'/>
+
+    <file src='data/images/forest.png'/>
+    <file src='data/images/trash.png'/>
+    <file src='data/images/burger.png'/>
+
+    <export function='showJobGui' type='client'/>
+    <export function='hideJobGui' type='client'/>
+    <export function='createLobbyObject' type='server'/>
+    <export function='createLobbyBlip' type='server'/>
+    <export function='createLobbyMarker' type='server'/>
+    <export function='setLobbyMarkerCustomData' type='server'/>
+    <export function='getLobbyMarkerCustomData' type='server'/>
+    <export function='destroyLobbyMarker' type='server'/>
+    <export function='updateLobbyMarkers' type='server'/>
+    <export function='createLobbyPed' type='server'/>
+    <export function='updateLobbyPeds' type='server'/>
+    <export function='destroyLobbyObject' type='server'/>
+    <export function='destroyLobbyBlip' type='server'/>
+    <export function='destroyLobbyPed' type='server'/>
+    <export function='updateLobbyObjects' type='server'/>
+    <export function='setLobbyObjectOption' type='server'/>
+    <export function='attachObjectToPlayer' type='server'/>
+    <export function='detachObjectFromPlayer' type='server'/>
+    <export function='setLobbyObjectCustomData' type='server'/>
+    <export function='getLobbyObjectCustomData' type='shared'/>
+    <export function='getAllLobbyObjectsWithCustomData' type='shared'/>
+    <export function='getLobbyObjectModel' type='server'/>
+    <export function='attachObject' type='server'/>
+    <export function='detachObject' type='server'/>
+    <export function='setLobbyObjectPosition' type='server'/>
+    <export function='attachObjectToLobbyObject' type='server'/>
+    <export function='detachObjectFromLobbyObject' type='server'/>
+    <export function='playSound3D' type='server'/>
+    <export function='setLobbyData' type='server'/>
+    <export function='getLobbyData' type='server'/>
+    <export function='getLobbyPlayers' type='server'/>
+    <export function='getLobbyPed' type='server'/>
+    <export function='setPedRotation' type='server'/>
+    <export function='setPedControlState' type='server'/>
+    <export function='makePedGoAway' type='server'/>
+    <export function='leaveJob' type='server'/>
+    <export function='getJobData' type='client'/>
+    <export function='getJobDataAsObject' type='client'/>
+    <export function='getObjectHash' type='client'/>
+    <export function='findElementByHash' type='client'/>
+    <export function='getObjectByHash' type='shared'/>
+    <export function='getPedByHash' type='client'/>
+    <export function='getPedHash' type='client'/>
+    <export function='giveMoney' type='server'/>
+    <export function='setLobbyTimer' type='server'/>
+    <export function='killLobbyTimer' type='server'/>
+    <export function='setPlayerLobbyTimer' type='server'/>
+    <export function='killPlayerLobbyTimer' type='server'/>
+    <export function='giveUpgradePoints' type='server'/>
+    <export function='setJobMultiplier' type='server'/>
+    <export function='getJobMultiplier' type='shared'/>
+    <export function='giveTopPoints' type='server'/>
+    <export function='getPlayerJobUpgrades' type='server'/>
+    <export function='getJobName' type='shared'/>
+
+    <min_mta_version server='1.5.8' client='1.5.8'/>
+</meta>
