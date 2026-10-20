@@ -87,3 +87,6 @@
 [submodule "references/real-traffic-fix"]
 	path = references/real-traffic-fix
 	url = https://github.com/JuniorDjjr/real-traffic-fix
+[submodule "references/rwsrc-v3.7.0.2"]
+	path = references/rwsrc-v3.7.0.2
+	url = https://github.com/sigmaco/rwsrc-v3.7.0.2
