@@ -61,10 +61,11 @@ When any documentation layer disagrees with the Neon CLI, the CLI wins.
 | 7 | Runtime evidence | `mods/deathmatch/logs/`, `mtaserver.conf`, `acl.xml`, `resources/[custom]/ov-core` | ~200ms | `Read()` / grep |
 | 8 | Reference sources | `references/*` and `scripts/*` submodules | Slow | `grep`/`find` |
 
-Known-broken layer: the project MCP server `mcp-mta-tools/` (task F-01 in
-`implementation_plan.md`) has no build output and a broken registration in
-`.vscode/mcp.json`. Do not plan retrieval around MCP; use the Neon CLI and
-runtime logs directly until F-01 is fixed.
+No MCP layer: the project previously shipped a local MCP server
+(`mcp-mta-tools/`, task F-01) which was retired on 2026-10-20 as obsolete —
+no harness ever had it registered, and its single log-reading tool duplicated
+native capabilities. The agent interface is the Neon CLI plus native file
+read/grep; there are no MCP tools to plan retrieval around.
 
 ## Octree Traversal Protocol
 
@@ -356,7 +357,6 @@ A layer is **stale** if:
 - Plan stale → update §11 progress log with change summary and evidence
 - Docs stale → edit the vault note (Obsidian frontmatter/tags/wikilinks preserved)
 - Submodule drifted → note it; do not update submodules as a side effect of another task
-- MCP broken → known issue F-01; work around with CLI + logs, do not block
 
 ## Hard Rules (inherited from AGENTS.md / NEON_AGENT.md)
 

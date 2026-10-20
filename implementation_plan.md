@@ -42,25 +42,26 @@ process is not proof that gameplay works (see `tests/README.md`).
 
 ---
 
-## 2. Analysis method and tooling status (MCP)
+## 2. Analysis method and tooling status
 
 This plan was produced from a repository-wide analysis. Important tooling facts:
 
-- The OpenCode agent harness had **no MCP servers registered** at analysis time.
-  `list_mcp_resources` returned empty, so MCP tools could not be called directly from
-  this session.
-- The repository does ship a project-local MCP server, `mcp-mta-tools/`
-  (`mta-neon-tools` v1.0.0), exposing a single tool `read_mta_logs`.
-- That MCP server is currently **not usable** (see task F-01). It has no build output,
-  is registered with a broken path, and reads a wrong log location.
-- Because MCP was unavailable, the equivalent analysis was performed with the Neon CLI
-  and direct repository inspection. The Neon CLI is the project's declared API and
-  validation authority (`NEON_AGENT.md`), so it remains the primary tool even once MCP
-  is repaired.
+- The OpenCode agent harness has **no MCP servers registered**. `list_mcp_resources`
+  returns empty, so MCP tools are not available to agents.
+- The project-local MCP server `mcp-mta-tools/` (`mta-neon-tools` v1.0.0, single tool
+  `read_mta_logs`) was **retired on 2026-10-20** (task F-01, closed obsolete). It was
+  never buildable, was registered with a broken path, read a wrong log location, and
+  duplicated capabilities agents already have natively (file read/grep for logs,
+  shell for the Neon CLI). Its `.vscode/mcp.json` registration was local-only
+  (`.vscode/` is git-ignored) and pointed at a stale path.
+- The agent interface for this project is therefore: **the Neon CLI (declared API and
+  validation authority, `NEON_AGENT.md`) plus native file read/grep** for docs, source,
+  and `mods/deathmatch/logs/`.
 
-Recommended direction: keep the Neon CLI as the authority and make the MCP server a
-thin, read-only adapter over it (section 5, workstream F). Do not duplicate Neon
-business logic inside the MCP server.
+Revisit MCP only if a concrete gap appears that the CLI cannot express (e.g. a second
+agent frontend that cannot run shell, or bounded live-runtime observation beyond
+`tools/neon supervisor`). If that happens, build a thin, read-only adapter over the
+Neon CLI; never duplicate Neon business logic inside an MCP server.
 
 ---
 
@@ -95,7 +96,6 @@ tests/README.md            test strategy
 tools/neon                 Python Neon CLI launcher
 tools/neon-cli/            Neon CLI implementation + API catalogue
 .neon/, .neon-tooling/     generated context (do not hand-edit)
-mcp-mta-tools/             local MCP server (index.ts, not yet built)
 .github/workflows/ci.yml   CI (currently broken, see F-02)
 ```
 
@@ -127,7 +127,7 @@ Priority: P0 = blocks everything; P1 = needed for the first slice; P2 = later.
 
 | ID | Priority | Finding | Evidence | Impact |
 | --- | --- | --- | --- | --- |
-| F-01 | P0 | MCP server unusable | `mcp-mta-tools/package.json` `main: index.js` but only `index.ts` exists; no build script; `.vscode/mcp.json` path `.../mcp-mta-toolsindex.js` (missing `/`) | Agents cannot read logs via MCP |
+| F-01 | P0 | ~~MCP server unusable~~ **Closed 2026-10-20 (obsolete)**: `mcp-mta-tools/` and `.vscode/mcp.json` removed; logs are read directly (`mods/deathmatch/logs/`), Neon API via CLI | — | None; CLI + file access cover it |
 | F-02 | P0 | CI is broken | `.github/workflows/ci.yml` runs `npm ci && npm test` at repo root; no root `package.json`; triggers on `main` but default branch is `master` | No automated validation on push/PR |
 | F-03 | P1 | OV runtime ACL/errors unresolved | `server.log`: `Access denied @ 'loadstring'`, `Access denied @ 'fetchRemote'`, then `scene.lua:37: attempt to call a nil value` | OV libraries may be partially broken at runtime |
 | F-04 | P1 | Neon project context omits OV runtime | `neon.project.json` `resources` contains only `ov-core`; `modules` and `externalDependencies` empty | `check` passes without covering OV resources; API requirements invisible |
@@ -144,25 +144,19 @@ Priority: P0 = blocks everything; P1 = needed for the first slice; P2 = later.
 
 ### F — Agent tooling and CI (P0, do first)
 
-Goal: make repository state observable and validated automatically, through MCP and CI.
+Goal: make repository state observable and validated automatically, through the Neon
+CLI and CI.
 
-- F-01 Repair the MCP server:
-  - Move the server into a buildable layout (e.g. `mcp-mta-tools/src/index.ts` with an
-    `outDir`), or run it directly with a TS runner.
-  - Add `build` and `start` scripts to `mcp-mta-tools/package.json`.
-  - Fix the log path to `mods/deathmatch/logs/server.log` (or make it configurable via
-    env), and resolve it relative to the repo root.
-  - Fix the `.vscode/mcp.json` argument to the real built entry point.
-  - Note: `.vscode/` is git-ignored, so the registration is local-only. Document the
-    config in a tracked file (e.g. `docs/agents/mcp.md`) so it is reproducible.
-- F-11 Extend the MCP server with read-only, project-scoped tools (never write, never
-  execute arbitrary shells):
-  - `read_mta_logs` (existing, repaired)
-  - `neon_check` → wraps `tools/neon check --json`
-  - `neon_api_search` / `neon_api_get` → wrap `tools/neon api search|get --json`
-  - `neon_context_verify` → wraps `tools/neon context verify --json`
-  - `list_resources` → enumerate `meta.xml` files, sides, dependencies, exports
-  - Enforce an allowlist of Neon sub-commands; reject anything else.
+- F-01 ~~Repair the MCP server~~ **Closed 2026-10-20 (obsolete)**: MCP was retired
+  instead of repaired. `mcp-mta-tools/` (including committed `node_modules`) and the
+  local `.vscode/mcp.json` registration were removed. Rationale: the server was never
+  buildable, its single tool (`read_mta_logs`) duplicated native file read/grep, and
+  no harness had it registered. Revisit only if a CLI-unexpressible need appears; see
+  section 2.
+- F-11 ~~Extend the MCP server with read-only, project-scoped tools~~ **Closed
+  2026-10-20 (obsolete, depended on F-01)**: the covered capabilities already exist as
+  CLI commands (`tools/neon check|api search|api get|context verify --json`) that
+  agents run directly. No MCP wrapper planned.
 - F-02 Fix CI:
   - Add a root `package.json` (private) or change the workflow to validate the Neon
     project instead: run `tools/neon check --json` and `tools/neon context verify --json`
@@ -220,9 +214,9 @@ Ordered so that dependencies come first. Each task needs a filled-in manifest.
 
 | ID | Task | Agent role | Depends on | Acceptance check |
 | --- | --- | --- | --- | --- |
-| F-01 | Repair + build the MCP server | Integration | — | `read_mta_logs` returns real log lines from a tracked setup |
+| F-01 | ~~Repair + build the MCP server~~ Closed 2026-10-20: obsolete, MCP retired | — | — | — |
 | F-02 | Fix CI (Neon check + context verify, branch `master`) | Integration | — | CI run is green on push |
-| F-11 | Add read-only Neon CLI MCP tools | Integration | F-01 | Tools return Neon CLI JSON; allowlist enforced |
+| F-11 | ~~Add read-only Neon CLI MCP tools~~ Closed 2026-10-20: obsolete, depended on F-01 | — | — | — |
 | F-03 | Review/resolve `assetify_library` ACL + `scene.lua` error | Security + MTA | human decision | Clean startup log, no access-denied errors, documented decision |
 | F-04 | Register `[ov-runtime]` resources in `neon.project.json` | MTA/Neon | F-03 | `tools/neon check --json` covers them, `pass` |
 | F-06 | Add documented `ov-core` facade exports | MTA/Neon | — | `<export>` present, `check` pass, README updated |
@@ -272,7 +266,7 @@ sequence above; known warnings are documented.
 ### 8.2 Task manifest template
 
 ```
-Task ID:            <F-01, A-01, ...>
+Task ID:            <F-02, A-01, ...>
 Goal:               <one sentence>
 Target resource:    <ov-core | new resource id>
 Sides:              server / client / shared
@@ -310,7 +304,7 @@ Rollback/cleanup:   <how to revert safely>
 - Granting ACL rights (especially `loadstring`, `fetchRemote`, `restartResource`,
   `ModifyOtherObjects`).
 - Adding secrets, keys, DB files, logs, or backups to the repo.
-- Broad shell execution from MCP tools.
+- Broad shell execution from agent tools (project agents use narrow, explicit commands).
 
 ---
 
@@ -359,6 +353,10 @@ Append entries as tasks complete or block.
 ```
 2026-10-16  analysis  Repository analyzed; plan created. Baseline validations pass.
                       Open: F-01 (MCP), F-02 (CI), F-03 (OV ACL/runtime errors).
+2026-10-20  tooling   MCP retired: removed mcp-mta-tools/ (incl. committed
+                      node_modules) and local .vscode/mcp.json. F-01 and F-11
+                      closed as obsolete. Agent interface = Neon CLI + native
+                      file read/grep. Still open: F-02 (CI), F-03 (OV ACL).
 ```
 
 ---
@@ -387,8 +385,6 @@ tools/neon resource start|stop|restart ...
 | `mods/deathmatch/mtaserver.conf` | Active startup config and resource list |
 | `mods/deathmatch/acl.xml` | ACL groups |
 | `mods/deathmatch/resources/[custom]/ov-core/meta.xml` | First project resource |
-| `mcp-mta-tools/index.ts` | Local MCP server (needs repair) |
-| `.vscode/mcp.json` | Local MCP registration (git-ignored) |
 | `.github/workflows/ci.yml` | CI (needs repair) |
 | `.neon/agent-context.json` | Generated project context (do not edit) |
 | `.neon/api-index.json` | Generated compact API index (do not edit) |

@@ -11,10 +11,14 @@
             "id": "aa4dd05c9b007b57",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "gamemode/revamp-plan.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "revamp-plan"
             }
           }
         ]
@@ -181,8 +185,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "8d23785aaf5c7dca",
+  "active": "aa4dd05c9b007b57",
   "lastOpenFiles": [
+    "contexts/lua-neon.md",
+    "assets/README.md",
+    "agents/README.md",
+    "gamemode/_index.md",
     "fla75/radar/GTA San Andreas/radar_grid_6000.xls",
     "fla75/radar/GTA San Andreas/radar_grid_6000.txt",
     "fla75/radar/GTA San Andreas/radar_grid_48000.txt",
@@ -193,7 +201,6 @@
     "fla75/paths/GTA San Andreas/path_grid_24000.txt",
     "fla75/paths/GTA San Andreas/path_grid_12000.txt",
     "fla75/radar/GTA San Andreas",
-    "fla75/paths/GTA San Andreas",
     "gamemode/systems/world.md",
     "gamemode/systems/economy.md",
     "gamemode/systems/characters.md",
@@ -201,7 +208,6 @@
     "gamemode/revamp-plan.md",
     "gamemode/districtmta-reference.md",
     "gamemode/overview.md",
-    "gamemode/_index.md",
     "Welcome.md"
   ]
 }
