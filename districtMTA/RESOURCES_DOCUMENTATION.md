@@ -1,4 +1,12 @@
-# districtMTA Resources Documentation
+---
+title: districtMTA Resources Documentation (Reference)
+tags: [#districtmta, #reference, #resources, #gamemode]
+type: note
+related: [../docs/gamemode/districtmta-reference, ../docs/gamemode/revamp-plan]
+---
+# districtMTA Resources Documentation (Reference - Read-only)
+
+> Reference material for OutkastMP revamp. Our implementation will use OV-MTA module boundaries (ov-core, ov-characters, ov-economy, ov-world, ov-missions, ov-population, ov-ui, ov-admin, ov-persistence, neon-adapters) rather than mirroring this structure directly.
 
 This document provides a comprehensive overview of all resources in the districtMTA server and their functionalities, along with system interconnections.
 

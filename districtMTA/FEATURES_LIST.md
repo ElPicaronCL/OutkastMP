@@ -1,4 +1,12 @@
-# districtMTA - Gameplay Features List
+---
+title: districtMTA Features List (Reference)
+tags: [#districtmta, #reference, #features, #gamemode]
+type: note
+related: [../docs/gamemode/districtmta-reference, ../docs/gamemode/revamp-plan]
+---
+# districtMTA - Gameplay Features List (Reference - Read-only)
+
+> Reference material for OutkastMP revamp. Concepts extracted for redesign with OV-MTA + Neon; code is not merged. 
 
 A comprehensive list of all gameplay features available in the districtMTA RPG server.
 

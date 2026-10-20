@@ -1,4 +1,13 @@
-# districtMTA
+---
+title: districtMTA (Reference)
+tags: [#districtmta, #reference, #gamemode, #original]
+type: note
+related: [../docs/gamemode/overview, ../docs/gamemode/districtmta-reference, ../docs/gamemode/revamp-plan]
+---
+# districtMTA (Reference - Read-only)
+
+> **Note:** This is the original districtMTA design/spec. OutkastMP does **not** copy this code; it uses these ideas as reference while revamping with [OV-MTA Framework](https://github.com/ov-sa) (all except DayZ) and [MTA:SA Neon](https://github.com/multitheftauto/mtasa-blue/tree/neon). See [[../docs/gamemode/overview|OutkastMP Gamemode Overview]] and [[../docs/gamemode/revamp-plan|Revamp Plan]].
+
 Full CEF based gamemode for Multi Theft Auto with security-aimed protection, non client-trust!
 It's basically **impossible** to cheat on this gamemode.
 

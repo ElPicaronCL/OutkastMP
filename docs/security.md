@@ -1,3 +1,9 @@
+---
+title: Security and Release Contract
+tags: [#security, #acl, #neon, #release]
+type: note
+related: [architecture, gamemode/_index]
+---
 # Security and release contract
 
 - Keep `server-id.keys`, databases, logs, backups, passwords, tokens, and private endpoints out of Git.
@@ -6,3 +12,4 @@
 - Record licenses and attribution for OV libraries, models, textures, sounds, maps, fonts, and generated content.
 - Package only intended runtime files. Do not ship source documents, secrets, test fixtures, or development commands.
 - Perform a clean-server startup and focused gameplay test before a closed test release.
+- When revamping gameplay from districtMTA, re-evaluate original resource permissions, exposed exports, and event surfaces; do not inherit privileged access unless explicitly reviewed.

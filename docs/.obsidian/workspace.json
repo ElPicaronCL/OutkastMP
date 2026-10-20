@@ -181,8 +181,18 @@
       "bases:Create new base": false
     }
   },
-  "active": "aa4dd05c9b007b57",
+  "active": "8d23785aaf5c7dca",
   "lastOpenFiles": [
+    "gamemode/systems/world.md",
+    "gamemode/systems/economy.md",
+    "gamemode/systems/characters.md",
+    "gamemode/systems/README.md",
+    "gamemode/systems",
+    "gamemode/revamp-plan.md",
+    "gamemode/districtmta-reference.md",
+    "gamemode/overview.md",
+    "gamemode/_index.md",
+    "gamemode",
     "Welcome.md"
   ]
 }

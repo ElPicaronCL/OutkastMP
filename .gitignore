@@ -33,3 +33,5 @@ mods/deathmatch/ov-source/
 *.swp
 .DS_Store
 Thumbs.db
+
+.fake

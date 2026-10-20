@@ -1,3 +1,9 @@
+---
+title: Implementation Plan - OutkastMP (AI Agents)
+tags: [#plan, #implementation, #ov-mta, #neon, #agents]
+type: note
+related: [docs/gamemode/revamp-plan, docs/architecture, NEON_AGENT, docs/agents/README]
+---
 # OutkastMP — Implementation Plan for AI Agents
 
 Status: active plan
@@ -14,6 +20,7 @@ Neon CLI (`tools/neon`). It is meant to be read together with:
 - `docs/agents/README.md` (roles and task manifests)
 - `docs/architecture.md` (resource boundaries and authority model)
 - `docs/security.md` (release and security rules)
+- `docs/gamemode/revamp-plan.md` (districtMTA -> OutkastMP revamp using OV-MTA + Neon)
 - `tests/README.md` (test strategy)
 
 Do not edit generated files under `.neon/` or `.neon-tooling/` by hand. Regenerate them

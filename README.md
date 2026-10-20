@@ -61,6 +61,14 @@ Read [NEON_AGENT.md](NEON_AGENT.md) and [docs/agents/README.md](docs/agents/READ
 - `tools/`: local CLI and project tooling.
 - `.neon/` and `.neon-tooling/`: generated Neon context. Do not edit by hand.
 
+## Gameplay base: districtMTA (reference, being revamped)
+
+We are using [districtMTA](https://github.com/borsuczyna/districtMTA) as a **gameplay design reference**, not as a direct code import. The goal is to **revamp** its systems with our own content, ideas, and guidelines, built on top of the [OV-MTA Framework](https://github.com/ov-sa) (all OV-SA repositories except the DayZ framework) and [MTA:SA Neon](https://github.com/multitheftauto/mtasa-blue/tree/neon) features.
+
+- `districtMTA/` in the repo contains the original design docs (`README.md`, `FEATURES_LIST.md`, `RESOURCES_DOCUMENTATION.md`) and is treated as read-only reference material.
+- New gameplay will be implemented as Neon/MTA resources under `mods/deathmatch/resources/` following OV module boundaries and Neon validation rules.
+- See `docs/gamemode/overview.md` for the full revamp plan, system mapping, and Obsidian-friendly documentation.
+
 ## Planned resource layers
 
 Add these only when each resource has a real manifest, tests, and an explicit startup/dependency decision:

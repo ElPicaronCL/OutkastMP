@@ -6,7 +6,7 @@ Turns a feature request into a task manifest with resource, asset IDs, dependenc
 
 ## MTA/Neon engineer
 
-Owns Lua, `meta.xml`, server/client boundaries, exports, events, ACL requests, Neon API usage, and resource startup. Uses the Neon CLI as the API authority.
+Owns Lua, `meta.xml`, server/client boundaries, exports, events, ACL requests, Neon API usage, and resource startup. Uses the Neon CLI as the API authority. When working with gameplay revamps (districtMTA -> OutkastMP), follow OV module boundaries and the revamp plan in `docs/gamemode/`.
 
 ## Blender engineer
 
