@@ -1,0 +1,89 @@
+[submodule "references/mtasa-neon"]
+	path = references/mtasa-neon
+	url = https://github.com/Dryxio/mtasa-neon
+[submodule "scripts/dgs"]
+	path = scripts/dgs
+	url = https://github.com/thisdp/dgs
+[submodule "scripts/MTASA-SkyGfx"]
+	path = scripts/MTASA-SkyGfx
+	url = https://github.com/gta191977649/MTASA-SkyGfx
+[submodule "scripts/mtasa-chat2"]
+	path = scripts/mtasa-chat2
+	url = https://github.com/nrzull/mtasa-chat2
+[submodule "scripts/mta-add-models"]
+	path = scripts/mta-add-models
+	url = https://github.com/Fernando-A-Rocha/mta-add-models
+[submodule "scripts/mta-nandocrypt"]
+	path = scripts/mta-nandocrypt
+	url = https://github.com/Fernando-A-Rocha/mta-nandocrypt
+[submodule "scripts/mta-modloader-reborn"]
+	path = scripts/mta-modloader-reborn
+	url = https://github.com/Fernando-A-Rocha/mta-modloader-reborn
+[submodule "scripts/mta-collectibles"]
+	path = scripts/mta-collectibles
+	url = https://github.com/Fernando-A-Rocha/mta-collectibles
+[submodule "scripts/mtasa-pAttach"]
+	path = scripts/mtasa-pAttach
+	url = https://github.com/gptrk0/mtasa-pAttach
+[submodule "scripts/Assetify.library"]
+	path = scripts/Assetify.library
+	url = https://github.com/ov-sa/Assetify.library
+[submodule "scripts/Graphify.library"]
+	path = scripts/Graphify.library
+	url = https://github.com/ov-sa/Graphify.library
+[submodule "scripts/Beautify.library"]
+	path = scripts/Beautify.library
+	url = https://github.com/ov-sa/Beautify.library
+[submodule "scripts/DBify.library"]
+	path = scripts/DBify.library
+	url = https://github.com/ov-sa/DBify.library
+[submodule "scripts/Animify.library"]
+	path = scripts/Animify.library
+	url = https://github.com/ov-sa/Animify.library
+[submodule "scripts/Cinemify-Library"]
+	path = scripts/Cinemify-Library
+	url = https://github.com/ov-sa/Cinemify-Library
+[submodule "scripts/districtMTA"]
+	path = scripts/districtMTA
+	url = https://github.com/borsuczyna/districtMTA
+[submodule "references/openal-soft"]
+	path = references/openal-soft
+	url = https://github.com/kcat/openal-soft
+[submodule "references/skygfx_plus"]
+	path = references/skygfx_plus
+	url = https://github.com/silskrill89/skygfx_plus
+[submodule "reference/skygfx-extended"]
+	path = reference/skygfx-extended
+	url = https://github.com/JuniorDjjr/skygfx
+[submodule "reference/PhysX"]
+	path = reference/PhysX
+	url = https://github.com/NVIDIA-Omniverse/PhysX
+[submodule "reference/gta-reversed"]
+	path = reference/gta-reversed
+	url = https://github.com/0x232323/gta-reversed
+	branch = session/reversals-round1
+[submodule "reference/ModelExtras"]
+	path = reference/ModelExtras
+	url = https://github.com/user-grinch/ModelExtras
+[submodule "references/skygfx-extended"]
+	path = references/skygfx-extended
+	url = https://github.com/JuniorDjjr/skygfx
+[submodule "references/PhysX"]
+	path = references/PhysX
+	url = https://github.com/NVIDIA-Omniverse/PhysX
+[submodule "references/gta-reversed"]
+	path = references/gta-reversed
+	url = https://github.com/0x232323/gta-reversed
+	branch = session/reversals-round1
+[submodule "references/ModelExtras"]
+	path = references/ModelExtras
+	url = https://github.com/user-grinch/ModelExtras
+[submodule "references/PedFuncs"]
+	path = references/PedFuncs
+	url = https://github.com/JuniorDjjr/PedFuncs
+[submodule "references/PedSkills"]
+	path = references/PedSkills
+	url = https://github.com/JuniorDjjr/PedSkills
+[submodule "references/real-traffic-fix"]
+	path = references/real-traffic-fix
+	url = https://github.com/JuniorDjjr/real-traffic-fix
