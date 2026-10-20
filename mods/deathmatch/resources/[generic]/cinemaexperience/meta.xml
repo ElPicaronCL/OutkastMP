@@ -1,0 +1,52 @@
+<meta>
+    <min_mta_version server="1.5.2-9.07879" client="1.5.2-9.07879"/>
+    <info author="G&amp;T Mapping &amp; Loki" facebook="https://www.fb.com/gtmapping" name="Cinema Experience" version="2.3.5" type="script"/>
+    <config src="help.xml" type="client"/>
+    <oop>true</oop>
+
+    <!-- frameworks -->
+    <script src="frameworks/dxGrid/dxGrid.lua" type="client"/>
+    <script src="frameworks/dxRender/dxRender.lua" type="client"/>
+
+    <!-- fonts -->
+    <file src="fonts/primetime.ttf"/>
+    <file src="fonts/sans.ttf"/>
+
+    <!-- textures -->
+    <file src="img/textures.txd"/>
+    <script src="img/textures.lua" type="client"/>
+
+    <!-- shaders / screen -->
+    <script src="screen/screen.lua" type="client"/>
+
+    <file src="screen/screen.txd"/>
+
+    <file src="screen/models/screen.dff"/>
+    <file src="screen/models/screen.col"/>
+
+    <file src="screen/models/screen_curved.dff"/>
+    <file src="screen/models/screen_curved.col"/>
+
+    <file src="screen/screen.fx"/>
+    <file src="screen/screen_frame.fx"/>
+
+    <!-- images -->
+    <file src="img/add.png"/>
+    <file src="img/bg.png"/>
+    <file src="img/button.png"/>
+    <file src="img/loading.png"/>
+
+    <file src="img/checked.png"/>
+    <file src="img/unchecked.png"/>
+
+    <!-- resource -->
+    <script src="shared.lua" type="shared"/>
+    <script src="s-api.lua"/>
+    <script src="c-settings.lua" type="client"></script>
+    <script src="c-main.lua" type="client"/>
+    <script src="c-gui.lua" type="client"/>
+
+    <script src="s-settings.lua"></script>
+    <script src="s-main.lua"/>
+    <script src="s-binds.lua"/>
+</meta>

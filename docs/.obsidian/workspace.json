@@ -183,16 +183,25 @@
   },
   "active": "8d23785aaf5c7dca",
   "lastOpenFiles": [
+    "fla75/radar/GTA San Andreas/radar_grid_6000.xls",
+    "fla75/radar/GTA San Andreas/radar_grid_6000.txt",
+    "fla75/radar/GTA San Andreas/radar_grid_48000.txt",
+    "fla75/radar/GTA San Andreas/radar_grid_24000.txt",
+    "fla75/radar/GTA San Andreas/radar_grid_12000.txt",
+    "fla75/paths/GTA San Andreas/path_grid_6000.txt",
+    "fla75/paths/GTA San Andreas/path_grid_48000.txt",
+    "fla75/paths/GTA San Andreas/path_grid_24000.txt",
+    "fla75/paths/GTA San Andreas/path_grid_12000.txt",
+    "fla75/radar/GTA San Andreas",
+    "fla75/paths/GTA San Andreas",
     "gamemode/systems/world.md",
     "gamemode/systems/economy.md",
     "gamemode/systems/characters.md",
     "gamemode/systems/README.md",
-    "gamemode/systems",
     "gamemode/revamp-plan.md",
     "gamemode/districtmta-reference.md",
     "gamemode/overview.md",
     "gamemode/_index.md",
-    "gamemode",
     "Welcome.md"
   ]
 }

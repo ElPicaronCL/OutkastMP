@@ -1,0 +1,130 @@
+Solution platform: WIN_X86
+
+		1. GTA III 1.0:
+			EXE size:  2383872 bytes
+			will use fastman92limitAdjuster_GTAIII.ini
+		
+		2. GTA VC 1.0:
+			EXE size:  3088896 bytes
+			will use fastman92limitAdjuster_GTAVC.ini
+		
+		3. GTA SA 1.0 US HOODLUM:
+			EXE size:  14383616 bytes
+			will use fastman92limitAdjuster_GTASA.ini
+		
+		4. GTA SA 1.0 US Compact:
+			EXE size:  5189632 bytes
+			will use fastman92limitAdjuster_GTASA.ini
+		
+		5. GTA SA 1.01 EURO No-CD Fixed EXE:
+			EXE size:  15806464 bytes
+			will use fastman92limitAdjuster_GTASA.ini
+		
+		6. GTA IV 1.0.4.0:
+			EXE size:  13822600 bytes
+			will use fastman92limitAdjuster_GTAIII.ini
+		
+		7. GTA IV 1.0.7.0:
+			EXE size:  15505792 bytes
+			will use fastman92limitAdjuster_GTAIV.ini
+		
+		8. GTA IV 1.0.8.0:
+			EXE size:  15628696 bytes
+			will use fastman92limitAdjuster_GTAIV.ini
+		
+		9. GTA EFLC 1.1.2.0:
+			EXE size:  14948736 bytes
+			will use fastman92limitAdjuster_GTAIV.ini
+		
+		10. GTA EFLC 1.1.3.0:
+			EXE size:  15075784 bytes
+			will use fastman92limitAdjuster_GTAIV.ini
+		
+		11. GTA EFLC 1.1.2.0:
+			EXE size:  8204288 bytes
+			will use fastman92limitAdjuster_BullyScholarship.ini
+		
+Solution platform: WIN_X64
+
+		1. GTA SA Definitive Edition 1.0.0.14718:
+			EXE size:  87614464 bytes
+			EXE size:  87617840 bytes
+			will use fastman92limitAdjuster_GTASA.ini
+		
+		2. GTA SA Definitive Edition 1.0.17.37984884:
+			EXE size:  88819032 bytes
+			will use fastman92limitAdjuster_GTASA.ini
+		
+		3. GTA V:
+			EXE size:  does not matter
+			will use fastman92limitAdjuster_GTAV.ini
+		
+Solution platform: ANDROID_ARMEABI_V7A
+
+		1. GTA III 1.8:
+			SO library identifier: "GTA_III|1.8|armeabi-v7a"
+			will use fastman92limitAdjuster_GTAIII.ini
+		
+		2. GTA III 1.8:
+			SO library identifier: "GTA_III|1.8|armeabi-v7a"
+			will use fastman92limitAdjuster_GTAVC.ini
+		
+		3. GTA III 1.9:
+			SO library identifier: "GTA_III|1.9|armeabi-v7a"
+			will use fastman92limitAdjuster_GTAVC.ini
+		
+		4. GTA VC 1.09:
+			SO library identifier: "GTA_VC|1.09|armeabi-v7a"
+			will use fastman92limitAdjuster_GTAVC.ini
+		
+		5. GTA SA 1.08:
+			SO library identifier: "GTA_SA|1.08|armeabi-v7a"
+			will use fastman92limitAdjuster_GTASA.ini
+		
+		6. GTA SA 2.00:
+			SO library identifier: "GTA_SA|2.00|armeabi-v7a"
+			will use fastman92limitAdjuster_GTASA.ini
+		
+		7. GTA SA 2.10:
+			SO library identifier: "GTA_SA|2.10|armeabi-v7a"
+			will use fastman92limitAdjuster_GTASA.ini
+		
+		8. GTA SA GER 2.09:
+			SO library identifier: "GTA_SA_GER|2.09|armeabi-v7a"
+			will use fastman92limitAdjuster_GTASA.ini
+		
+		9. GTA LCS 2.4:
+			SO library identifier: "GTA_LCS|2.4|armeabi-v7a"
+			will use fastman92limitAdjuster_GTALCS.ini
+		
+		10. GTA CTW 1.04:
+			SO library identifier: "GTA_CTW|1.04|armeabi-v7a"
+			will use fastman92limitAdjuster_GTACTW.ini
+		
+		11. Bully Anniversary Edition 1.0.0.18:
+			SO library identifier: "Bully_AE|1.0.0.18|armeabi-v7a"
+			will use fastman92limitAdjuster_BullyScholarship.ini
+		
+Solution platform: ANDROID_ARM64_V8A
+
+		1. GTA SA 2.10:
+			SO library identifier: "GTA_SA|2.10|arm64-v8a"
+			will use fastman92limitAdjuster_GTASA.ini
+		
+		2. GTA SA 2.11.32:
+			SO library identifier: "GTA_SA|2.11.32|arm64-v8a"
+			will use fastman92limitAdjuster_GTASA.ini
+		
+		3. GTA SA Definitive Edition Rockstar Games 1.72.42919648:
+			SO library identifier: "GTA_SA_DE_ROCKSTAR_GAMES|1.72.42919648|arm64-v8a"
+			will use fastman92limitAdjuster_GTASA.ini
+		
+		4. GTA SA Definitive Edition Rockstar Games 1.86.44544238:
+			SO library identifier: "GTA_SA_DE_ROCKSTAR_GAMES|1.86.44544238|arm64-v8a"
+		
+Solution platform: ANDROID_X64
+
+		1. GTA SA 2.11.32:
+			SO library identifier: "GTA_SA|2.11.32|x86_64"
+			will use fastman92limitAdjuster_GTASA.ini
+		
