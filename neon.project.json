@@ -1,1 +1,25 @@
-{"catalogue":".neon-tooling/neon-api.json","engine":{"maximumVersionExclusive":"1.8.0","minimumVersion":"1.7.0"},"externalDependencies":[],"modules":[],"name":"OutkastMP","profile":"neon-pair","requiredApis":[],"resources":[{"name":"ov-core","path":"mods/deathmatch/resources/[custom]/ov-core"}],"schemaVersion":"1.1.0","unknownApis":"allow","unknownComponents":"allow-opaque"}
+{
+  "schemaVersion": "1.1.0",
+  "name": "OutkastMP",
+  "profile": "neon-pair",
+  "engine": {
+    "minimumVersion": "1.7.0",
+    "maximumVersionExclusive": "1.8.0"
+  },
+  "catalogue": ".neon-tooling/neon-api.json",
+  "resources": [
+    {
+      "name": "ov-core",
+      "path": "mods/deathmatch/resources/[custom]/ov-core"
+    },
+    {
+      "name": "ov-worldgen",
+      "path": "mods/deathmatch/resources/[custom]/ov-worldgen"
+    }
+  ],
+  "modules": [],
+  "externalDependencies": [],
+  "requiredApis": [],
+  "unknownApis": "allow",
+  "unknownComponents": "allow-opaque"
+}

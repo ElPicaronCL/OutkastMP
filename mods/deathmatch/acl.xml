@@ -70,6 +70,16 @@
         <acl name="autoACL_assetify_library"/>
         <object name="resource.assetify_library"/>
     </group>
+    <!--
+        Approved grant for the worldgen HTTP pipeline (OSM/Overpass,
+        Open-Meteo, OpenSky, radio-browser, local Ollama). The matching
+        <aclrequest> lives in the resource meta.xml. Reviewed as part of the
+        worldgen change: scoped to this single resource and this single right.
+    -->
+    <group name="autoGroup_ov-worldgen">
+        <acl name="autoACL_ov-worldgen"/>
+        <object name="resource.ov-worldgen"/>
+    </group>
     <acl name="Default">
         <right name="general.ModifyOtherObjects" access="false"/>
         <right name="general.http" access="false"/>
@@ -323,5 +333,8 @@
         <right name="function.fetchRemote" access="false" who="" pending="true" date=""/>
         <right name="function.restartResource" access="false" who="" pending="true" date=""/>
         <right name="function.loadstring" access="false" who="" pending="true" date=""/>
+    </acl>
+    <acl name="autoACL_ov-worldgen">
+        <right name="function.fetchRemote" access="true" who="project" pending="false" date="2026-10-22"/>
     </acl>
 </acl>

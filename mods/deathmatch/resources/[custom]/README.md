@@ -13,6 +13,8 @@ Imported OV-SA source checkouts live outside the runtime resource tree in `mods/
 - `ov-characters`: account and character state.
 - `ov-economy`: money, inventory, ownership, and businesses.
 - `ov-world`: zones, interiors, properties, and persistent vehicles.
+- `ov-worldgen`: semi-procedural world generation (OSM world layer, liveness,
+  local NPC AI, streaming runtime, vanilla map replacement).
 - `ov-missions`: jobs, story missions, objectives, and rewards.
 - `ov-population`: Neon synchronized NPCs and traffic adapters.
 - `ov-ui`: HUD and player-facing interfaces.

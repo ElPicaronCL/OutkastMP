@@ -1,0 +1,71 @@
+<meta>
+    <info author="OutkastMP" version="0.2.0" name="OV WorldGen" description="Semi-procedural world generation: OSM world layer, liveness, local NPC AI and streaming runtime." type="script" />
+    <min_mta_version server="1.6.0-9.22470" client="1.6.0-9.22470" />
+
+    <!--
+        The world layer talks to public OSM/Overpass, Open-Meteo, OpenSky and
+        radio-browser endpoints. function.fetchRemote is denied to resources by
+        the Default ACL, so this resource declares the right it needs. The
+        request must still be approved by an administrator:
+
+            aclrequest allow ov-worldgen function.fetchRemote
+    -->
+    <aclrequest>
+        <right name="function.fetchRemote" access="true" />
+    </aclrequest>
+
+    <!-- Shared library (one VM for the whole resource, so globals are shared). -->
+    <script src="shared/config.lua" type="shared" />
+    <script src="shared/utils.lua" type="shared" />
+    <script src="shared/projection.lua" type="shared" />
+    <script src="shared/tiles.lua" type="shared" />
+    <script src="shared/rng.lua" type="shared" />
+    <script src="shared/personality.lua" type="shared" />
+
+    <!-- Infrastructure -->
+    <script src="server/http.lua" type="server" />
+    <script src="server/store.lua" type="server" />
+
+    <!-- Layer 1: World -->
+    <script src="server/terrain.lua" type="server" />
+    <script src="server/water.lua" type="server" />
+    <script src="server/rail.lua" type="server" />
+    <script src="server/osm/overpass.lua" type="server" />
+    <script src="server/osm/parser.lua" type="server" />
+    <script src="server/osm/roads.lua" type="server" />
+    <script src="server/osm/buildings.lua" type="server" />
+    <script src="server/osm/pois.lua" type="server" />
+    <script src="server/osm/core.lua" type="server" />
+
+    <!-- Layer 2: Liveness and gameplay -->
+    <script src="server/liveness/weather.lua" type="server" />
+    <script src="server/liveness/traffic.lua" type="server" />
+    <script src="server/liveness/air.lua" type="server" />
+    <script src="server/liveness/radio.lua" type="server" />
+    <script src="server/liveness/tv.lua" type="server" />
+    <script src="server/liveness/core.lua" type="server" />
+
+    <!-- Layer 2: Local NPC AI -->
+    <script src="server/npcai/ollama.lua" type="server" />
+    <script src="server/npcai/dialogue.lua" type="server" />
+    <script src="server/npcai/intent.lua" type="server" />
+    <script src="server/npcai/npc.lua" type="server" />
+    <script src="server/npcai/core.lua" type="server" />
+
+    <!-- Layer 3: Runtime orchestration -->
+    <script src="server/runtime/streamer.lua" type="server" />
+    <script src="server/runtime/spawner.lua" type="server" />
+    <script src="server/runtime/mapreplace.lua" type="server" />
+    <script src="server/runtime/interops.lua" type="server" />
+    <script src="server/runtime/core.lua" type="server" />
+
+    <script src="server/core.lua" type="server" />
+
+    <script src="client/npc.lua" type="client" />
+    <script src="client/mapreplace.lua" type="client" />
+
+    <!-- Public API for ov-core and future OV modules. -->
+    <export function="ovWorldgenGetTile" type="server" />
+    <export function="ovWorldgenGetWeather" type="server" />
+    <export function="ovWorldgenGetStats" type="server" />
+</meta>
