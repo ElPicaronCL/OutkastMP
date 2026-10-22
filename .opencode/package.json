@@ -1,0 +1,10 @@
+{
+  "name": "outkastmp-opencode-harness",
+  "private": true,
+  "type": "module",
+  "description": "Local OpenCode plugin dependencies for the OutkastMP agent harness. Installed into .opencode/node_modules and loaded from .opencode/plugins/.",
+  "dependencies": {
+    "@opencode/plugin": "2.1.2",
+    "harness-memory": "0.5.1"
+  }
+}

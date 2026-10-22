@@ -1,0 +1,6 @@
+{
+  "replace_default_agents": true,
+  "default_agent": "cline-plan",
+  "plan_model": null,
+  "act_model": null
+}
