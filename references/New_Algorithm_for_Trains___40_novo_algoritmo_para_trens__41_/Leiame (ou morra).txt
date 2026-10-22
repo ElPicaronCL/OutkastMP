@@ -1,0 +1,33 @@
+  __  __ _      __  __           _     
+ |  \/  (_)    |  \/  |         | | BMS
+ | \  / |___  _| \  / | ___   __| |___ 
+ | |\/| | \ \/ / |\/| |/ _ \ / _` / __|
+ | |  | | |>  <| |  | | (_) | (_| \__ \
+ |_|  |_|_/_/\_\_|  |_|\___/ \__,_|___/
+                                       
+
+=======   MixMods.blogspot.com   =======
+
+
+------- Instruções:
+
+Extraia a pasta "modloader" para a pasta do seu GTA.
+NÃO troque o nome da pasta dentro do Modloader.
+
+-- Download da última versão do Modloader: MixMods.blogspot.com/2015/01/SA-Modloader.html
+
+
+ Detalhes: 
+
+O mod não é recomendado instalar manualmente (sem Mod Loader), por vários motivos de compatibilidade e limites. Usando Mod Loader você não deverá se preocupar com nada.
+
+Este mod foi editado por Junior_Djjr para ser compatível com a maioria de outros mods que adicionam objetos ao jogo.
+
+
+
+--------------------
+
+Autor: Den_Spb
+
+
+====   MixMods.blogspot.com        ====

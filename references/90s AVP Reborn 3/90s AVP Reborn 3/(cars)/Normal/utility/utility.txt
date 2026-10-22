@@ -1,0 +1,62 @@
+Chevrolet Silverado 2500HD Utility 2001 IVF
+------------------------------------------------------------------------------------------------
+Utility the Chevrolet Silverado 2500HD 2001 for GTA San Andreas. 
+
+Features: 
+- Model fits perfectly into the atmosphere of the game 
+- Supports all major functions of the game 
+- Own collision 
+- Custom settings 
+- Good quality textures 
+- Own shadow 
+- Fully functioning front and rear lights 
+- Adaptation to IVF 2.0.2 
+
+Free download mod Chevrolet Silverado 2500HD Utility 2001 for GTA San Andreas the links below. The model replaces Utility Van, but thanks to our autoinstaller, you can replace any game model!
+
+################################################################################################
+
+AUTHORS
+------------------------------------------------------------------------------------------------
+Main author nik287 nik287@rambler.ru
+Converter StratenSurf/533 d533rs@mail.ru
+
+################################################################################################
+
+INSTALLATION INSTRUCTIONS
+------------------------------------------------------------------------------------------------
+1. Import files in the IMG archive
+You can download IMG Manager 2.0 here: http://www.gtaall.com/gta-san-andreas/programs/37425-img-manager-20.html
+Crazy IMG Editor here : http://www.gtaall.com/gta-san-andreas/programs/3884-gta-sa-crazy-img-editor.html
+
+Use IMG Manager 2.0 or Crazy IMG Editor to import files from the folder "01 - Import to gta3.img" to archive [GAME FOLDER]\models\gta3.img:
+utility.dff
+utility.txd
+------------------------------------------------------------------------------------------------
+2. Changes in text files
+
+In file [Game folder]\data\vehicles.ide
+Find the line that starts with
+
+552, 	utility,	utility,	car, 		UTILITY, 	UTILITY, 	null,	worker, 	2,      0,      0,              -1, 0.83, 0.83,           0
+
+In file [Game folder]\data\handling.cfg
+
+UTILITY       2551.7 10955.4 1.6 0 0.188 0 125 0.86 0.44 0.5 4 160.0 16.743 33.0 4 P 3.0 0.69 1 39.335 0.6 0.09 0.09 0.15 -0.15 0.53 0.0 0.1 0.4 41550 00210040	01800002 1 1 0
+
+In file [Game folder]\data\carcols.dat
+
+utility, 1,1,14,0, 1,1,36,0, 1,1,120,0, 1,1,36,0, 1,1,14,0, 1,36,36,0, 1,36,14,0, 1,36,120,0
+
+
+################################################################################################
+
+This modification has been downloaded from www.gtaall.com
+
+Permanent link to modification`s page: https://www.gtaall.com/gta-san-andreas/cars/87741-chevrolet-silverado-2500hd-utility-2001-ivf.html
+
+Check out our social groups!
+http://vk.com/gtaallcom
+https://twitter.com/gtaallcom
+http://www.facebook.com/gtaallcom
+http://www.youtube.com/gtaallcom

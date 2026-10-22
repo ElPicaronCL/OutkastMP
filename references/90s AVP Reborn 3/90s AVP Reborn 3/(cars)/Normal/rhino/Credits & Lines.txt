@@ -1,0 +1,12 @@
+;M1A1 Abrams
+
+;---- Credits ----
+Original model by: Raven Software (Call of Duty: MW Remastered)
+Rip model: Ant3ks
+Convert to GTA SA, adaptations: Crowdigger
+
+
+;Script tracks author : (UNKNOWN)
+
+
+

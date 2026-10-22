@@ -90,3 +90,24 @@
 [submodule "references/rwsrc-v3.7.0.2"]
 	path = references/rwsrc-v3.7.0.2
 	url = https://github.com/sigmaco/rwsrc-v3.7.0.2
+[submodule "tools/inu_gta_core"]
+	path = tools/inu_gta_core
+	url = https://github.com/INU-ez/inu_gta_core.git
+[submodule "references/ExGangWars"]
+	path = references/ExGangWars
+	url = https://github.com/CookiePLMonster/ExGangWars
+[submodule "references/ModelVariations"]
+	path = references/ModelVariations
+	url = https://github.com/ViperJohnGR/ModelVariations
+[submodule "references/compInjector"]
+	path = references/compInjector
+	url = https://github.com/damianjurkiewicz/comp.injector
+[submodule "references/compModLoader"]
+	path = references/compModLoader
+	url = https://github.com/damianjurkiewicz/comp-modloader
+[submodule "references/ProjectProps"]
+	path = references/ProjectProps
+	url = https://github.com/user-grinch/Project-Props
+[submodule "references/RenderHook"]
+	path = references/RenderHook
+	url = https://github.com/petrgeorgievsky/gtarenderhook

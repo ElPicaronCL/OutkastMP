@@ -1,0 +1,15 @@
+--- Português
+Este mod possibilita adicionar independências nas instâncias dos veículos do jogo,
+por exemplo, cada carro pode ter handling ou tamanho de roda diferentes, independente do modelo.
+Este mod é necessário para alguns mods, como novas versões do Tuning Mod e VehFuncs.
+Caso você baixou um mod que inclui este arquivo, cuidado na hora de substituir!
+Se você substituir o arquivo por uma versão mais antiga, causará "downgrade" e mods podem parar de funcionar.
+Você encontra o download da versão mais recente (e mais informações) em MixMods.com.br
+
+--- English
+This mod allows to add independence in the instances of the game vehicles,
+for example, each car can have different handling or wheel size, regardless of model.
+This mod is required for some mods, such as new versions of Tuning Mod and VehFuncs.
+If you downloaded a mod that includes this file, be careful when replacing!
+If you replace the file with an older version, it will cause "downgrade" and mods may stop working.
+You can find the latest version (and more informations) at MixMods.com.br

@@ -1,0 +1,21 @@
+;handling.dat
+
+STRATUM      1600.0    4800.0   0.96   0.0 0.11 -0.15 125 0.74 0.72 0.48    5 245.0 22.8 50.5 4 P   6.0   0.60 1 26.0   0.6  0.2   0.1   0.15 -0.08 0.56 0.3        0.24 0.48 18000     80100020    04002208    1  1    0
+
+;vehicles.dat
+
+561,	stratum,	stratum,	car, 		STRATUM, 	STRATUM, null, richfamily, 7, 0, 0, -1, 0.745, 0.745, 1
+
+;carcols.dat
+
+stratum, 0,0, 1,1, 86,86, 43,43, 65,65, 79,79, 26,26, 18,18, 10,10
+
+;------------------------------------------
+;The author of the original 3D model: Mad EA
+;Author of conversion and refinement: Mad Driver (Mad_Driver10 - 2nd nickname)
+;         Author of some textures: EA Games (NFS: S2U), Atari (TDU2), Turn 10 (FM4)
+
+;The release is exclusive to GTA-Unlimited.ru!
+
+;Version: 1.0
+;Release Date: 07/07/2013

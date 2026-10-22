@@ -1,0 +1,7 @@
+544, 	firela, 	firela, 	car, 		FIRETRUK, 	FIRELA, 	truck,	ignore,		10,	0,	0,		-1, 1.0, 1.0,		-1
+
+407, 	firetruk, 	firetruk, 	car, 		FIRETRUK, 	FIRETRK, 	truck,	ignore,		10,	0,	0,		-1, 1.0, 1.0,		-1
+
+firela, 1,1
+
+FIRETRUK     6500.0    36670.8  3.0    0.0 0.5  0.0  125 0.55 0.8  0.5      5 170.0 27.0 10.0 R D   10.00 0.45 0 27.0   1.2  0.32  0.0   0.47 -0.17 0.5  0.0        0.2  0.26 15000     4098        2200        0  1    2

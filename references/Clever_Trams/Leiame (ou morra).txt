@@ -1,0 +1,32 @@
+  __  __ _      __  __           _     
+ |  \/  (_)    |  \/  |         | | 2020
+ | \  / |___  _| \  / | ___   __| |___ 
+ | |\/| | \ \/ / |\/| |/ _ \ / _` / __|
+ | |  | | |>  <| |  | | (_) | (_| \__ \
+ |_|  |_|_/_/\_\_|  |_|\___/ \__,_|___/
+                                       
+
+=======   MixMods.com.br   ======= - Melhor visualizável em fontes mono-espaçadas, como "Consolas".
+
+
+------- Instruções:
+
+Extraia a pasta "Clever Trams" para a pasta do Modloader.
+
+-- Download da última versão do Modloader: MixMods.com.br/2015/01/SA-Modloader.html
+
+
+ Você pode roubar o bonde normalmente.
+ Para entrar como passageiro, use o comando de chamar gangue (por padrão, tecla "G").
+
+
+Versão: Unofficial fix by Junior_Djjr
+--------------------
+
+Autor: Den_spb
+
+
+====   MixMods.com.br                ====
+====   fb.com/FamiliaMixMods         ====
+====   youtube.com/JuniorDjjrMixMods ====
+

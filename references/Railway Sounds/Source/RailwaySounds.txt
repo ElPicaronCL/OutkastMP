@@ -1,0 +1,951 @@
+{$CLEO}
+
+{
+    Railway Sounds
+        by LINK/2012
+    
+    Uses Deji's SCR Keywords (INI v2)
+    Download it here when available:
+        http://gtag.gtagaming.com/opcode-database.php?act=generator
+}
+
+
+const
+    // 0@ ~ 5@ = Pseudo registers
+    // 29@ ~ 30@ = Don't use
+
+    // Local-Global variables (find a better name for this :P)
+    iFor        = 8@
+    _gflags     = 9@
+    TrainHandle = 10@
+    TrainStruct = 11@
+    bShouldHorn = 12@
+    TrainX = 13@
+    TrainY = 14@
+    TrainZ = 15@
+    
+    Timer_Process = 32@
+    GreatTimer   = 33@
+
+    // @FIND_AND_PROCESS_TRAIN_HORNS Variables 
+    NodeID = 18@
+    TrackID = 19@
+    pCurrentNode = 20@
+    pLastCheckedNode = 21@    
+    LastCheckedNodeX = 22@
+    LastCheckedNodeY = 23@
+    LastCheckedNodeZ = 24@
+    CurrentNodeX = 25@
+    CurrentNodeY = 26@
+    CurrentNodeZ = 27@
+    
+    // @FIND_AND_PROCESS_TRAIN_CROSSINGS Variables
+    hCrossing = 17@
+    miTraincross1 = 18@
+    
+    // @CHECK_TRAINS_IN_HORNING_LIST Variables
+    
+    // @CHECK_CROSSINGS_IN_LIST Variables
+    
+     
+
+// Constants
+    MIN_TIME_HORNING = 2000
+    Delay_Process = 300
+    
+    player = $PLAYER_CHAR
+    scplayer = $PLAYER_ACTOR
+    
+    TRAIN_MAX_DISTANCE_FROM_CAMERA_TO_HORN = 100000.0
+    
+    TRAINCROSS_DISTANCE_TO_ALERT    = 175.0
+    
+    SoundCrossingAlertPath  = "CLEO\CLEO_SOUNDS\TrainCrossAlert1.mp3"
+    SoundTrainHornPath      = "CLEO\CLEO_SOUNDS\TrainHorn1.mp3" 
+end
+
+GOSUB @PATCH_TRAINCROSS
+
+_gflags = 0x0
+Timer_Process = 0
+GreatTimer = 0
+bShouldHorn = false
+
+WHILE TRUE
+    WAIT 0
+    //GOSUB @DEBUG_TELEPORTS
+    
+    GOSUB @PROCESS_PLAYER_TRAIN
+    
+    IF AND
+        IS_PLAYER_PLAYING player
+        Timer_Process >= Delay_Process        
+    THEN
+        Timer_Process = 0
+        GOSUB @FIND_AND_PROCESS_TRAIN_HORNS
+        GOSUB @FIND_AND_PROCESS_TRAIN_CROSSINGS
+        WAIT 0
+        GOSUB @CHECK_TRAINS_IN_HORNING_LIST
+        GOSUB @CHECK_CROSSINGS_IN_LIST        
+    END
+END
+
+
+{ ---------------------------------- RANDOM TRAIN HORNS CODE ------------------------------ }
+:FIND_AND_PROCESS_TRAIN_HORNS
+//  Loop through the Vehicles pool in search for trains to process the horn.
+//      The code won't process the player train here, only random trains created by the game
+//
+//  TODO: Disable this code for trains created by scripting?
+
+READ_MEMORY 0xB74494 size 4 vp 0 -> 29@
+29@ += 0x4
+READ_MEMORY 29@ size 4 vp 0 -> 29@
+FOR 30@ = 0 TO 27904 STEP 0x100
+    READ_MEMORY 29@ size 1 vp 0 -> TrainHandle
+    29@ += 0x1
+    IF AND
+        TrainHandle >= 0x0
+        0x80 > TrainHandle
+    THEN    
+        005A: TrainHandle += 30@
+        GET_CAR_STRUCT TrainHandle TrainStruct
+        0A8E: 0@ = TrainStruct + 0x590
+        READ_MEMORY 0@ size 4 vp 0 -> 0@
+        IF 0@ == 6  // Is Train?
+        THEN
+            IF AND
+                NOT IS_CAR_MODEL TrainHandle #TRAM
+                NOT HAS_TRAIN_DERAILED TrainHandle            
+            THEN
+                0A8E: 0@ = TrainStruct + 0x5B8
+                READ_MEMORY 0@ 1 false -> 0@
+                IF IS_BIT_SET_L 0@ 3    // Is main carriage
+                THEN
+                    GET_DRIVER_OF_CAR TrainHandle -> 0@
+                    IF AND
+                        0@ <> -1        // The train must have a driver
+                        803B: 0@ <> scplayer  // The driver must not be the player
+                    THEN                
+                        GET_CAR_COORDINATES TrainHandle 0@ 1@ 2@ 
+                        GET_CAMERA_POSITION -> 3@ 4@ 5@
+                        GET_DISTANCE_BETWEEN_COORDS_3D 0@ 1@ 2@ 3@ 4@ 5@ -> 0@
+                        IF 0@ < TRAIN_MAX_DISTANCE_FROM_CAMERA_TO_HORN
+                        THEN 
+                            GOSUB @PROCESS_TRAIN_HORN
+                        END
+                    END
+                END
+            END
+        END
+    END
+END
+RETURN
+
+:PROCESS_TRAIN_HORN
+//  See if the train should or shouldn't horn, if yes, add to the trains horning list
+//
+
+bShouldHorn = FALSE
+
+{ If the trains is near a station start the horn }
+GET_VAR_POINTER 0@ -> 0@
+CALL_METHOD {CTrain__GetDistanceToNextStation} 0x6F5BA0 _struct TrainStruct 1 0 0@
+0085: 1@ = TrainStruct
+1@ += 0x5A4 // CruiseSpeed
+READ_MEMORY 1@ 4 0 -> 1@
+ABSF 1@
+ 
+IF AND
+    0@ <= 30.0
+    0@ >= 10.0
+    1@ >= 0.3
+THEN
+    bShouldHorn = TRUE
+ELSE
+    IF AND
+        0@ <= 0.47
+        1@ >= 0.001
+    THEN
+        bShouldHorn = TRUE
+    END
+END
+
+{ Still not horning? Check if there's any obstacle ahead! }
+IF bShouldHorn == FALSE
+THEN
+    IF 1@ >= 0.07
+    THEN
+        GOSUB @CHECK_FOR_OBSTACLES_AHEAD
+    END       
+END
+
+
+
+IF bShouldHorn == TRUE
+THEN 
+    GOSUB @ADD_TRAIN_TO_HORNING_LIST
+END
+RETURN
+
+
+
+:CHECK_FOR_OBSTACLES_AHEAD
+//  Check if there's any obstacle ahead the train, if yes, turn bShouldHorn to true
+//
+//      TODO:  Check also if vec is clear in a Z a bit higher?
+
+// Get node index
+0085: 1@ = TrainStruct
+1@ += 0x5A0
+READ_MEMORY 1@ 2 0 -> 1@
+0085: NodeID = 1@
+
+// Get track array
+0085: 0@ = TrainStruct
+0@ += 0x5C0
+READ_MEMORY 0@ 1 false -> 0@
+0085: TrackID = 0@
+0@ *= 0x4
+0@ += 0xC38024
+READ_MEMORY 0@ 4 false -> 0@ 
+
+// Get node pointer
+1@ *= 0xA
+005A: 1@ += 0@
+0085: pCurrentNode = 1@
+
+// HACK HACK -  If the train is in direction clockwise, it uses a different way to go through the paths
+//              That's: the path will be gone when the REAR SIDE of the train pass in the node
+//              To fix this, I increase the node to check by 2, but it doesn't solve the problem at all!!!
+IF IS_TRAIN_HEADING_CLOCKWISE TrainHandle
+THEN
+    GOSUB @INCREASE_CURRENT_NODE
+    GOSUB @INCREASE_CURRENT_NODE
+END
+
+
+// Get coordinates at the front of the train
+GET_CAR_MODEL TrainHandle 0@
+GET_MODEL_DIMENSIONS 0@ -> 0@ 0@ 2@ 0@ 1@ 0@
+1@ += 1.0
+2@ += 1.2
+GET_OFFSET_FROM_CAR_IN_WORLD_COORDS TrainHandle 0.0 1@ 2@ -> TrainX TrainY TrainZ
+
+// If the node is too near the train, go to the next node
+GOSUB @GET_CURRENT_NODE_COORDS
+GET_DISTANCE_BETWEEN_COORDS_2D CurrentNodeX CurrentNodeY TrainX TrainY -> 0@
+IF 0@ <= 2.5
+THEN
+    GOSUB @INCREASE_CURRENT_NODE
+END
+
+//
+pLastCheckedNode = 0
+0087: LastCheckedNodeX = TrainX
+0087: LastCheckedNodeY = TrainY
+0087: LastCheckedNodeZ = TrainZ
+
+// Maximum nodes to check: 10
+FOR iFor = 1 TO 10 STEP 1 
+    
+    GOSUB @GET_CURRENT_NODE_COORDS
+
+    // Continue only if the train driver can see the node
+    IF IS_AREA_BETWEEN_VECTORS_CLEAR CurrentNodeX CurrentNodeY CurrentNodeZ and TrainX TrainY TrainZ buildings 1 cars 0 characters 0 objects 0 particles 0
+    THEN
+        0085: pLastCheckedNode = pCurrentNode
+        IF NOT IS_AREA_BETWEEN_VECTORS_CLEAR CurrentNodeX CurrentNodeY CurrentNodeZ and LastCheckedNodeX LastCheckedNodeY LastCheckedNodeZ buildings 0 cars 1 characters 1 objects 0 particles 0
+        THEN
+            bShouldHorn = TRUE
+            BREAK
+        END
+        0087: LastCheckedNodeX = CurrentNodeX
+        0087: LastCheckedNodeY = CurrentNodeY
+        0087: LastCheckedNodeZ = CurrentNodeZ 
+    ELSE
+        BREAK
+    END
+
+    // Continue only if the node is not too distant
+    GET_DISTANCE_BETWEEN_COORDS_2D CurrentNodeX CurrentNodeY TrainX TrainY -> 0@
+    IF 0@ >= 220.0
+    THEN
+        BREAK
+    END
+
+    GOSUB @INCREASE_CURRENT_NODE    
+END
+
+bShouldHorn == TRUE
+RETURN
+
+
+
+:INCREASE_CURRENT_NODE
+{
+0@ = 0
+IF NOT IS_BIT_SET _gflags 0
+THEN
+    IF IS_TRAIN_HEADING_CLOCKWISE TrainHandle
+    THEN 0@ = 1
+    END
+ELSE
+    IF NOT IS_TRAIN_HEADING_CLOCKWISE TrainHandle
+    THEN 0@ = 1
+    END
+    
+    CLEAR_BIT _gflags 0    
+END
+}
+
+IF IS_TRAIN_HEADING_CLOCKWISE TrainHandle
+THEN    
+    pCurrentNode += 0xA
+    NodeID += 1
+
+    // Get node count
+    0085: 2@ = TrackID
+    2@ *= 0x4
+    2@ += 0xC38014
+    READ_MEMORY 2@ 4 false -> 2@
+    
+    IF 002D: NodeID >= 2@
+    THEN
+        0085: pCurrentNode = TrackID
+        pCurrentNode *= 0x4
+        pCurrentNode += 0xC38024
+        READ_MEMORY pCurrentNode 4 false -> pCurrentNode
+        NodeID = 0 
+    END
+    
+ELSE
+
+    // Check if is first node, if it's, go to the last node    
+    IF NodeID == 0
+    THEN       
+        0085: 2@ = TrackID
+        2@ *= 0x4
+        2@ += 0xC38014
+        READ_MEMORY 2@ 4 false -> 2@
+        0085: NodeID = 2@
+        2@ *= 0xA
+        005A: pCurrentNode += 2@
+        
+        // Now decrease by 0xA to be in the last node        
+    END
+    
+    pCurrentNode -= 0xA
+    NodeID -= 1
+END
+RETURN
+
+{
+:DECREASE_CURRENT_NODE
+SET_BIT _gflags 0
+GOTO @INCREASE_CURRENT_NODE
+}
+
+
+:GET_CURRENT_NODE_COORDS
+GET_VAR_POINTER CurrentNodeX -> 0@
+CALL_METHOD {CTrainNode__GetCoords} 0x6F5440 _this pCurrentNode 1 0 _out 0@ 
+CurrentNodeZ += 1.2
+RETURN
+
+
+
+{--------------------------- TRAIN HORNING LIST MANAGEMENT -------------------- }
+
+// struct
+//  { CTrain* hTrain; int Timer; int hHorn[STREAMCOUNT_TRAIN]; }
+//      Trains[4]
+:TRAIN_LIST
+hex
+{   hTrain      Timer       hHorns       }
+    FFFFFFFF    FFFFFFFF    FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+    FFFFFFFF    FFFFFFFF    FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+    FFFFFFFF    FFFFFFFF    FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+    FFFFFFFF    FFFFFFFF    FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+end
+
+:PLAYER_TRAIN_HORN
+hex
+{   hTrain    Timer     hHorns    }  
+    FFFFFFFF  FFFFFFFF  FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+end
+
+CONST
+    STREAMCOUNT_TRAIN = 5
+    SIZE_TRAINLIST    = 4
+    SIZEOF_TRAINITEM  = 0x1C
+END
+
+:CHECK_TRAINS_IN_HORNING_LIST
+GET_LABEL_POINTER @TRAIN_LIST -> 1@
+FOR 0@ = 1 TO SIZE_TRAINLIST
+    READ_MEMORY 1@ 4 0 -> 2@
+    IF 2@ <> -1
+    THEN
+        
+        1@ += 0x4
+        READ_MEMORY 1@ 4 0 -> 3@
+        0085: 4@ = GreatTimer
+        0062: 4@ -= 3@        
+        1@ -= 0x4 
+    
+        3@ = FALSE  // ShouldRemoveFromList?
+        IF DOES_VEHICLE_EXIST 2@
+        THEN
+            IF 4@ >= MIN_TIME_HORNING
+            THEN
+                // Horning more than MIN_TIME_HORNING, stop that, plz.
+                3@ = TRUE
+                PRINTSTRING "REM TRAIN REASON TIME"
+            ELSE
+                // Check if the player car == this train
+                IF IS_CHAR_IN_ANY_CAR scplayer
+                THEN
+                    STORE_CAR_CHAR_IS_IN_NO_SAVE scplayer -> 4@
+                    IF 003B: 4@ == 2@
+                    THEN
+                        // Should remove, this train is from the player
+                        3@ = TRUE
+                        PRINTSTRING "REM TRAIN REASON PLAYER"
+                    END
+                END               
+            END
+            
+            IF 3@ == FALSE
+            THEN
+                // Check if is a train, if not remove from the list
+                GET_CAR_STRUCT 2@ -> 4@ 
+                4@ += 0x590
+                READ_MEMORY 4@ 4 0 -> 4@
+                IF 4@ <> 6
+                THEN
+                    3@ = TRUE
+                END
+            END                       
+        ELSE
+            // Car doesn't exist, yeah, should remove from the list
+            3@ = TRUE
+            PRINTSTRING "REM TRAIN REASON NOEX"
+        END
+            
+        IF 3@ == TRUE
+        THEN
+            0085: 3@ = 1@
+                    
+            WRITE_MEMORY 3@ 4 -1 0
+            3@ += 0x4
+            WRITE_MEMORY 3@ 4 0 0
+            FOR 2@ = 1 TO STREAMCOUNT_TRAIN
+                3@ += 0x4
+                READ_MEMORY 3@ 4 0 -> 4@
+                WRITE_MEMORY 3@ 4 -1 0
+                RELEASE_AUDIO_STREAM 4@                
+            END
+            
+        END        
+    END
+    
+    1@ += SIZEOF_TRAINITEM  
+END
+RETURN
+
+:REM_TRAIN_FROM_HORNING_LIST
+RETURN
+
+
+:ADD_TRAIN_TO_HORNING_LIST
+
+// Check if train is already on list, if yes, update the timer
+GET_LABEL_POINTER @TRAIN_LIST -> 1@
+3@ = 0  // Store here the a free slot on the list
+FOR 0@ = 1 TO SIZE_TRAINLIST
+    READ_MEMORY 1@ 4 0 -> 2@
+    IF 2@ <> -1
+    THEN
+        IF 003B: TrainHandle == 2@
+        THEN
+            1@ += 0x4
+            WRITE_MEMORY 1@ 4 GreatTimer 0
+            RETURN
+        END
+    ELSE
+        0085: 3@ = 1@
+    END   
+    1@ += SIZEOF_TRAINITEM
+END
+
+// Train not found in the list, add it
+IF 3@ <> 0
+THEN
+
+    WRITE_MEMORY 3@ 4 TrainHandle 0
+    3@ += 0x4
+    WRITE_MEMORY 3@ 4 GreatTimer 0
+    
+    FOR 1@ = 1 TO STREAMCOUNT_TRAIN
+        3@ += 0x4        
+        LOAD_3D_AUDIO_STREAM SoundTrainHornPath -> 0@        
+        SET_PLAY_3D_AUDIO_STREAM_AT_CAR 0@ TrainHandle
+        SET_AUDIO_STREAM_LOOPED 0@ TRUE
+        SET_AUDIO_STREAM_VOLUME 0@ 1.0
+        SET_AUDIO_STREAM_STATE 0@ 1
+        
+        WRITE_MEMORY 3@ 4 0@ 0
+    END
+        
+    PRINTSTRING "ADDING TRAIN"
+ELSE
+    PRINTSTRING "FAILED TO ADD TRAIN - LIST IS FULL"
+END
+RETURN
+
+
+{--------------------------- TRAIN CROSSINGS LIST MANAGEMENT -------------------- }
+
+// struct
+//  { CObject* hObjCross; int hSounds[STREAMCOUNT_CROSSINGS]; }
+//      Crossings[6]
+:TRAIN_CROSSING_LIST
+hex
+{   hObjCross   hSounds      }
+    FFFFFFFF    FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+    FFFFFFFF    FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+    FFFFFFFF    FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+    FFFFFFFF    FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+    FFFFFFFF    FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+    FFFFFFFF    FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF
+end
+
+CONST
+    STREAMCOUNT_CROSSINGS = 4
+    SIZE_CROSSINGS    = 6
+    SIZEOF_CROSSINGITEM  = 0x14
+END
+
+:CHECK_CROSSINGS_IN_LIST
+GET_LABEL_POINTER @TRAIN_CROSSING_LIST -> 1@
+FOR 0@ = 1 TO SIZE_CROSSINGS
+    READ_MEMORY 1@ 4 0 -> 2@
+    IF 2@ <> -1
+    THEN
+        IF NOT DOES_OBJECT_EXIST 2@ 
+        THEN
+            0085: 3@ = 1@        
+            WRITE_MEMORY 3@ 4 -1 0
+
+            FOR 4@ = 1 TO STREAMCOUNT_CROSSINGS
+                3@ += 0x4
+                READ_MEMORY 3@ 4 0 -> 2@
+                WRITE_MEMORY 3@ 4 -1 0        
+                RELEASE_AUDIO_STREAM 2@        
+            END
+            
+            PRINTSTRING "REM CROSS REASON NOEX"          
+        END
+    END
+    
+    1@ += SIZEOF_CROSSINGITEM
+END
+RETURN
+
+:ADD_TRAIN_CROSS_TO_LIST
+// Check if crossing is already on list
+GET_LABEL_POINTER @TRAIN_CROSSING_LIST -> 1@
+3@ = 0  // Store here the a free slot on the list
+FOR 0@ = 1 TO SIZE_CROSSINGS
+    READ_MEMORY 1@ 4 0 -> 2@
+    IF 2@ <> -1
+    THEN
+        IF 003B: hCrossing == 2@
+        THEN
+            RETURN
+        END
+    ELSE
+        0085: 3@ = 1@
+    END   
+    1@ += SIZEOF_CROSSINGITEM   
+END
+
+// Crossing not found in the list, add it
+IF 3@ <> 0
+THEN
+    WRITE_MEMORY 3@ 4 hCrossing 0
+
+    FOR 1@ = 1 TO STREAMCOUNT_CROSSINGS
+        3@ += 0x4
+        
+        LOAD_3D_AUDIO_STREAM SoundCrossingAlertPath -> 0@        
+        SET_PLAY_3D_AUDIO_STREAM_AT_OBJECT 0@ hCrossing
+        SET_AUDIO_STREAM_LOOPED 0@ TRUE
+        SET_AUDIO_STREAM_VOLUME 0@ 1.0
+        SET_AUDIO_STREAM_STATE 0@ 1
+        
+        WRITE_MEMORY 3@ 4 0@ 0        
+    END    
+
+    
+    PRINTSTRING "ADDING CROSS"
+ELSE
+    PRINTSTRING "FAILED TO ADD CROSS"
+END
+RETURN
+
+:REMOVE_TRAIN_CROSS_FROM_LIST
+GET_LABEL_POINTER @TRAIN_CROSSING_LIST -> 1@
+FOR 0@ = 1 TO SIZE_CROSSINGS
+    READ_MEMORY 1@ 4 0 -> 2@
+    IF 2@ <> -1
+    THEN
+        IF 003B: hCrossing == 2@
+        THEN
+            0085: 3@ = 1@
+            WRITE_MEMORY 3@ 4 -1 0
+            FOR 4@ = 1 TO STREAMCOUNT_CROSSINGS
+                3@ += 0x4
+                READ_MEMORY 3@ 4 0 -> 2@
+                WRITE_MEMORY 3@ 4 -1 0        
+                RELEASE_AUDIO_STREAM 2@        
+            END
+            
+            PRINTSTRING "REM CROSS REASON 0"
+            RETURN
+        END
+    END   
+    1@ += SIZEOF_CROSSINGITEM   
+END
+
+RETURN
+
+
+:FIND_AND_PROCESS_TRAIN_CROSSINGS
+READ_MEMORY 0x8CD6B8 2 0 -> miTraincross1   // Traincross1 model
+
+READ_MEMORY 0xB9ACCC 4 0 -> iFor
+WHILE iFor <> 0x0
+    
+    READ_MEMORY iFor 4 0 -> 1@
+    IF 1@ <> 0x0
+    THEN
+        GET_OBJECT_HANDLE_BY_STRUCT 1@ -> hCrossing
+        IF DOES_OBJECT_HAVE_THIS_MODEL hCrossing miTraincross1        
+        THEN
+        
+        // Check if the cross is active and if the cross is not broken
+            GET_OBJECT_STRUCT hCrossing -> 0@
+            0@ += 0x140
+            READ_MEMORY 0@ 4 0 -> 0@
+            IF AND
+                IS_BIT_SET_L 0@ 11
+                NOT HAS_OBJECT_BEEN_DAMAGED hCrossing 
+            THEN
+            
+                GET_OBJECT_COORDINATES hCrossing -> 2@ 3@ 4@
+                CALL_FUNCTION_RETURN {CTrain__GetTrainNearPoint} 0x6F7090 4 4 _mustBeMainTrain TRUE _ZYX 4@ 3@ 2@ -> TrainStruct
+                IF TrainStruct <> 0x0
+                THEN
+                    GET_VEHICLE_HANDLE_BY_STRUCT TrainStruct -> TrainHandle
+                    
+                    GET_CAR_COORDINATES TrainHandle -> TrainX TrainY TrainZ
+                    GET_DISTANCE_BETWEEN_COORDS_2D TrainX TrainY 2@ 3@ -> 2@
+                    IF 2@ <= TRAINCROSS_DISTANCE_TO_ALERT
+                    THEN
+                        
+                        GET_DRIVER_OF_CAR TrainHandle -> 0@                    
+                        IF AND
+                            0@ <> -1
+                            803B: 0@ <> scplayer                    
+                        THEN
+                            GOSUB @ADD_TRAIN_TO_HORNING_LIST
+                        END
+                        
+                        GOSUB @ADD_TRAIN_CROSS_TO_LIST
+                    
+                    ELSE                
+                        GOSUB @REMOVE_TRAIN_CROSS_FROM_LIST                    
+                    END  
+                ELSE
+                    GOSUB @REMOVE_TRAIN_CROSS_FROM_LIST
+                END
+            ELSE
+                GOSUB @REMOVE_TRAIN_CROSS_FROM_LIST
+            END                       
+        END        
+    END    
+        
+    iFor += 0x4
+    READ_MEMORY iFor 4 0 -> iFor
+END
+RETURN
+
+
+
+
+
+{ ---------------- Player train horn ---------------- }
+
+:PROCESS_PLAYER_TRAIN
+IF IS_PLAYER_PLAYING player
+THEN
+    IF GOSUB @PROCESS_PLAYER_PRESSING_HORN
+    THEN
+        0000: NOP
+    ELSE
+        // Remove player train horn, player is not pressing horn
+        GOSUB @REMOVE_PLAYER_TRAIN_HORN                    
+    END
+ELSE
+    // Player is busted\wasted, remove the player train
+    GOSUB @REMOVE_PLAYER_TRAIN_HORN
+END
+RETURN
+
+
+:ADD_PLAYER_TRAIN_HORN
+PRINTSTRING "ADD PLAYER TRAIN"
+
+GET_LABEL_POINTER @PLAYER_TRAIN_HORN -> 0@
+WRITE_MEMORY 0@ 4 TrainHandle 0
+0@ += 0x4   // Do nothing with the timer
+
+FOR 1@ = 1 TO STREAMCOUNT_TRAIN
+    0@ += 0x4
+    
+    LOAD_3D_AUDIO_STREAM SoundTrainHornPath -> 2@        
+    SET_PLAY_3D_AUDIO_STREAM_AT_CAR 2@ TrainHandle
+    SET_AUDIO_STREAM_LOOPED 2@ TRUE
+    SET_AUDIO_STREAM_VOLUME 2@ 1.0
+    SET_AUDIO_STREAM_STATE 2@ 1    
+    
+    
+    WRITE_MEMORY 0@ 4 2@ 0    
+END
+RETURN
+
+
+:REMOVE_PLAYER_TRAIN_HORN
+GET_LABEL_POINTER @PLAYER_TRAIN_HORN -> 0@
+READ_MEMORY 0@ 4 0 -> 1@
+IF 1@ <> -1
+THEN
+    PRINTSTRING "REM PLAYER TRAIN"
+
+    WRITE_MEMORY 0@ 4 -1 0
+    0@ += 0x4   // Do nothing with the timer, useless for player train
+        
+    FOR 1@ = 1 TO STREAMCOUNT_TRAIN
+        0@ += 0x4
+        READ_MEMORY 0@ 4 0 -> 2@
+        WRITE_MEMORY 0@ 4 -1 0
+        RELEASE_AUDIO_STREAM 2@                        
+    END               
+END
+RETURN
+
+:PROCESS_PLAYER_PRESSING_HORN
+IF IS_CHAR_IN_ANY_TRAIN scplayer
+THEN
+    STORE_CAR_CHAR_IS_IN_NO_SAVE scplayer -> TrainHandle
+
+    // Check if player is in the main carriage of the train
+    GET_CAR_STRUCT TrainHandle -> 1@
+    1@ += 0x5B8
+    READ_MEMORY 1@ 1 false -> 1@
+    IF NOT IS_BIT_SET_L 1@ 3    // Is NOT main carriage
+    THEN
+        RETURN_FALSE
+        RETURN
+    END
+    
+	IF IS_BUTTON_PRESSED 0 18 // KEY HORN
+    THEN
+        GET_LABEL_POINTER @PLAYER_TRAIN_HORN -> 1@
+        READ_MEMORY 1@ 4 0 -> 2@
+        IF 803B: TrainHandle <> 2@
+        THEN
+            IF 2@ <> -1
+            THEN
+                GOSUB @REMOVE_PLAYER_TRAIN_HORN                
+            END
+            
+            GOSUB @ADD_PLAYER_TRAIN_HORN             
+        END    
+        RETURN_TRUE
+        RETURN        
+    END          
+
+END
+
+RETURN_FALSE
+RETURN
+
+
+
+
+{ -------------------------------- PATCHS -------------------------- }
+
+HEX
+    9090909090909090    // For better reading of the code below on cheat engine 
+END
+
+:_ASM_PATCH_CROSS_ALERT_1
+HEX
+
+{00000000}	898E40010000            // mov [esi+0x140], ecx	; Restore the code that we've replaced 
+{00000006}	51                      // push	ecx
+
+{00000007}	85C0                    // test eax, eax		; Found the train?
+{00000009}	7428                    // jz Train_Not_Found
+
+{0000000B}	8B8860040000            // mov ecx, dword [eax+0x460]
+{00000011}	85C9                    // test ecx, ecx		; Train has driver?
+{00000013}	741E                    // jz Train_Not_Found
+
+{00000015}	50                      // push	eax
+{00000016}	D980A4050000            // fld	dword [eax+0x5A4]
+{0000001C}	D9E1                    // fabs
+{0000001E}	D81D508B8500            // fcomp	dword [0x858B50]
+{00000024}	DFE0                    // fnstsw	ax
+{00000026}	F6C401                  // test	ah, 1
+{00000029}	58                      // pop	eax
+{0000002A}	7507                    // jnz	Train_Not_Found
+
+					       // Train_Found:
+{0000002C}	59                      // pop ecx
+{0000002D}	68B90B5A00              // push 0x5A0BB9
+{00000032}	C3                      // retn
+
+					       // Train_Not_Found:
+{00000033}	59                      // pop ecx
+{00000034}	68080C5A00              // push 0x5A0C08
+{00000039}	C3                      // retn
+END
+
+:DISTANCE_TO_ALERT_FLOAT_BUFFER
+HEX
+    90909090 
+END
+:MIN_TRAIN_SPEED_TO_ALERT
+HEX
+    90909090
+END
+
+:PATCH_TRAINCROSS
+
+{ ======= Patch distance to alert ===== }
+// Patch:
+// 0x5A0BEF = fcomp   ds:flt_858BB0
+// With:
+// 0x5A0BEF = fcomp   DISTANCE_TO_ALERT_FLOAT_BUFFER
+GET_LABEL_POINTER @DISTANCE_TO_ALERT_FLOAT_BUFFER -> 0@
+WRITE_MEMORY 0@ 4 TRAINCROSS_DISTANCE_TO_ALERT FALSE
+WRITE_MEMORY 0x5A0BF1 4 0@ TRUE
+
+{ ======= Patch some more intelligence to the train crossing ===== }
+GET_LABEL_POINTER @_ASM_PATCH_CROSS_ALERT_1 -> 0@
+0@ -= 0x5A0BB6
+WRITE_MEMORY 0x5A0BB1 1 0xE9 TRUE
+WRITE_MEMORY 0x5A0BB2 4 0@ TRUE
+WRITE_MEMORY 0x5A0BB6 1 0x90 TRUE // NOP here to better reading on Debuggers and Cheat Engine  
+
+// Patch my patch (wut) 
+GET_LABEL_POINTER @_ASM_PATCH_CROSS_ALERT_1 -> 0@
+GET_LABEL_POINTER @MIN_TRAIN_SPEED_TO_ALERT -> 1@
+WRITE_MEMORY 1@ 4 0.04 0
+0@ += 0x20
+WRITE_MEMORY 0@ 4 1@ 0
+
+RETURN
+
+
+
+
+HEX
+    "LINK/2012"
+END
+
+
+{----------------------------------------------------------------------------------}
+:DEBUG_TELEPORTS
+GOSUB @DEBUG_TELEPORT_STATION
+GOSUB @DEBUG_TELEPORT_CROSSING
+GOSUB @DEBUG_TELEPORT_NODES
+RETURN
+
+
+:DEBUG_TELEPORT_STATION
+IF TEST_CHEAT "LVYARD"
+THEN
+    SET_CHAR_COORDINATES scplayer 2780.98 1768.52 11.0
+    RETURN    
+END
+
+IF TEST_CHEAT "LINDEN"
+THEN
+    SET_CHAR_COORDINATES scplayer 2864.79 1275.23 11.0
+    RETURN    
+END
+
+IF TEST_CHEAT "UNITY"
+THEN
+    SET_CHAR_COORDINATES scplayer 1725.12 -1953.81 14.0
+    RETURN    
+END
+
+IF TEST_CHEAT "MARKET"
+THEN
+    SET_CHAR_COORDINATES scplayer 814.997 -1366.51 0.668
+    RETURN    
+END
+
+IF TEST_CHEAT "BERRY"
+THEN
+    SET_CHAR_COORDINATES scplayer -1944.1 139.877 25.7148
+    RETURN    
+END
+
+IF TEST_CHEAT "BELL"
+THEN
+    SET_CHAR_COORDINATES scplayer 1439.62 2632.26 11.0
+    RETURN    
+END
+RETURN
+
+:DEBUG_TELEPORT_CROSSING
+IF TEST_CHEAT "CROSSLS"
+THEN
+    SET_CHAR_COORDINATES scplayer 2190.4463 -1895.4253 13.618
+    RETURN    
+END
+
+IF TEST_CHEAT "CROSSSF"
+THEN
+    SET_CHAR_COORDINATES scplayer -1970.6047 -578.6605 25.4629
+    RETURN    
+END
+
+IF TEST_CHEAT "CROSSLV"
+THEN
+    SET_CHAR_COORDINATES scplayer 2086.6462 2684.7429 10.1907
+    RETURN    
+END
+RETURN
+
+:DEBUG_TELEPORT_NODES
+IF TEST_CHEAT "NODEFIRST"
+THEN
+    SET_CHAR_COORDINATES scplayer 2555.46 2292.25 3.0
+    RETURN
+END
+
+IF TEST_CHEAT "NODELAST"
+THEN
+    SET_CHAR_COORDINATES scplayer 2553.54 2307.62 3.0
+    RETURN
+END
+RETURN
+

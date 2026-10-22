@@ -1,0 +1,760 @@
+#
+# 			Arquivo .fxt do mod Tuning Mod by Junior_Djjr
+# 		JuniorDjjr.MixMods.com.br - www.MixMods.com.br - TuningMod.MixMods.com.br
+#
+#===================
+#--------------- ARQUIVO "FXT" - Textos da interface do Tuning Mod.
+#
+
+# -- Common
+_TM_3 ~s~AutoSave: ~y~ON
+_TM_4 ~s~AutoSave: ~r~OFF
+_TM_5 ~<~ ~1~/~1~ ~>~
+_TM_6 ~u~ INI ~1~/~1~ ~d~
+#_TM_7 (internal)
+_TM_8 ~s~Autosaving...
+#_TM_9 (internal)
+
+# -- Main menu
+_TM_10 Add Peœa
+_TM_11 Gerenciar
+_TM_12 Mais
+_TM_13 Mover
+_TM_14 Ajustes
+_TM_15 Instalar
+_TM_16 Tunar
+_TM_17 (Sobre)
+
+# - Add Extra
+_TM_21 Geral
+_TM_22 Portas
+_TM_23 Rodas
+_TM_24 (Lista)
+
+# Geral
+_TM_37 (Corpo)
+_TM_38 (P.Choque Frente)
+_TM_39 (P.Choque Atr˜s)
+
+# Geral (BIKE)
+_TM_503 (Corpo)
+_TM_504 (Guidšo)
+_TM_505 (Garfo Frente)
+_TM_506 (Garfo Atr˜s)
+_TM_507 (Para-lama)
+
+# Pedal (BMX)
+_TM_508 Pedais
+_TM_509 (Coroa)
+_TM_510 (Pedal Direito)
+_TM_511 (Pedal Esquerdo)
+
+# Suspension (QUAD)
+_TM_512 Suspensšo
+_TM_513 (Frente Direita)
+_TM_514 (Frente Esquerda)
+_TM_515 (Atr˜s)
+
+# Doors
+_TM_31 (Porta-malas)
+_TM_32 (Cap§)
+_TM_33 (Frente Direita)
+_TM_34 (Frente Esquerda)
+_TM_35 (Atr˜s Direita)
+_TM_36 (Atr˜s Esquerda)
+
+# Wheels (GERAL)
+_TM_41 (Frente Direita)
+_TM_42 (Frente Esquerda)
+_TM_43 (Atr˜s Direita)
+_TM_44 (Atr˜s Esquerda)
+
+# Wheels (BIKE)
+_TM_501 (Frente)
+_TM_502 (Atr˜s)
+
+# - Manage
+_TM_25 (Gerenciar)
+
+# - More
+_TM_26 (Mais)
+
+# - Move
+_TM_55 (Dummies)
+_TM_56 (Nodes)
+
+# - Tuning
+_TM_30 (Tunar)
+
+# - Adjust
+_TM_27 (Suspensšo)
+_TM_28 (Molas)
+_TM_29 (Rodas)
+
+# - Tuning
+_TM_51 Turbo
+_TM_52 Pneu
+_TM_53 Freio
+
+# Turbo
+_TM_61 (Fraco)
+_TM_62 (Forte)
+_TM_63 (Rua)
+_TM_64 (Pro)
+
+# Tire
+_TM_71 (Padršo)
+_TM_72 (Duro)
+_TM_73 (Esportivo)
+_TM_74 (Macio)
+
+# Brake
+_TM_81 (ABS Fraco)
+_TM_82 (Frente)
+_TM_83 (Atr˜s)
+_TM_84 (4 Rodas)
+
+#########################
+#_TM_01 (internal)
+_TM_02 ~s~Press ~y~-Y-~s~ para continuar.
+_TM_03 Leve
+_TM_04 Forte
+_TM_05 ~w~Preœo: ~y~$~1~
+_TM_06 ~r~Dinheiro insuficiente!
+_TM_07 $~1~
+_TM_08 Durabilidade: ~y~~1~/100
+_TM_09 ~r~INSTALADO
+
+_TM_66 ~w~Press ~y~-H-~w~ para ouvir
+
+#########################
+_TM_101 Sim
+_TM_102 Nšo
+_TM_103 ~s~ID~y~ ~1~ ~s~(~y~Y~s~)
+_TM_104 ~s~Destino:
+#_TM_105 (internal)
+_TM_106 ~w~ID ~y~~1~~w~ Press ~y~-Y-
+#_TM_108
+_TM_109 ~s~Baixe novas peœas em ~y~TuningMod.MixMods.com.br
+_TM_110 ~w~Peso:
+_TM_111 ~s~Tris: ~b~~1~
+_TM_112 ~s~Vert: ~b~~1~
+_TM_113 Digite o ID ou nome do dff da peœa ou ve¢culo.
+_TM_114 Ao usar Espaœo automaticamente ser˜ substitu¢do por Underline (mesmo que nšo veja). Nomes com espaœo sšo incompat¢veis.
+_TM_115 Escolha em que parte do ve¢culo vocŸ quer 'grudar' (attachar) a peœa.
+_TM_116 Esconder, deletar, renomear e pintar as peœas do seu ve¢culo.
+_TM_117 Mudar cor do farol, handling, som do motor e mais.
+_TM_118 Ajustar altura e inclinaœšo da suspensšo. Tambžm ž poss¢vel ter um 'camber negativo'.
+_TM_119 Ajustar o comprimento e maciez das molas. Žtimo para rebaixar o carro.
+#_TM_120~_TM_139 (internal)
+_TM_140 ~s~Press ~y~-J-~s~ para ver os comandos.
+_TM_141 ~s~Press ~y~-Y-~s~ ou ~y~-N-~s~ para voltar.
+_TM_142 Aceitar pintura?
+#_TM_143
+_TM_144 ~s~Ao aceitar a pintura, vocŸ nunca mais poder˜~n~voltar ao estado original.
+_TM_145 ~s~A peœa inteira ser˜ pintada. Isso pode incluir~n~locais onde vocŸ nšo quer que pinte.
+_TM_146 ~r~Este local esta indispon¢vel neste ve¢culo! Tente outro.
+_TM_147 Instalar esta peœa?
+_TM_148 Instalar tambžm...?
+_TM_149 Em todas
+_TM_150 Outro lado
+_TM_151 Somente aqui
+_TM_152 Na outra
+#_TM_153 (internal)
+#_TM_154
+#_TM_155
+#_TM_156
+#_TM_157
+_TM_158 ~s~~u~ID ~y~~1~~s~~d~
+_TM_159 ~s~Press ~y~-J-~s~ para ver dicas.
+_TM_160 Cuidado! Se vocŸ est˜ instalando~n~ uma roda nova, possivelmente ~n~ela ir˜ cambalear. Leia as dicas.
+_TM_161 ~s~Digite o ID do som ou o nome do .dff do ve¢culo que vocŸ quer o som do motor.
+_TM_162 ~s~Alguns ve¢culos tŸm som incompat¢vel. Se o seu ve¢culo ficar mudo, tente outro.
+_TM_163 ~r~Por favor, use ~y~-Y-~r~ para selecionar e ~y~-N-~r~ para voltar.
+_TM_164 ~s~Digite algum novo nome para esta peœa e press ~y~Enter~s~.
+_TM_165 ~s~VocŸ pode usar ~y~-Espaœo-~s~ em vez de ~y~-Underline-~s~ que funcionar˜ como underline.
+_TM_166 ~s~“til para organizar, ou outros mods (como VehFuncs) adicionarem funœ¨es nas peœas.
+_TM_167 ~s~Esconder roda original?
+_TM_168 ~s~Digite o ID ou nome do .dff do ve¢culo que vocŸ deseja ter o handling (f¢sicas etc).
+_TM_169 ~s~Velocidade, peso, suspensšo etc, tudo ser˜ copiado.
+_TM_170 ~s~Esta funœšo ž experimental. Pode apresentar pequenos problemas no comportamento do seu ve¢culo.
+_TM_171 PRIM
+_TM_172 SEC
+_TM_173 THRD
+_TM_174 FRTH
+_TM_175 ~s~Press ~y~-Y-~s~ para trocar a cor.
+#_TM_176 
+_TM_177 ~s~Press ~y~-N-~s~ para voltar.
+_TM_178 Salvar alteraœ¨es?
+_TM_179 ~s~Navegue pelas cores usando as setas ~u~ e ~d~.
+#_TM_180 
+#_TM_181 
+_TM_182 ~s~Digite o nªmero da cor desejada. Por exemplo, no carcols.dat original, o '3' ž vermelho.
+_TM_183 ~s~O nªmero m˜ximo ž 255. E por padršo o GTA SA somente suporta atž a cor 126, portanto cuidado ao usar nªmeros maiores.
+_TM_184 ~s~VocŸ pode consultar os IDs das cores na internet ou no carcols.dat.
+_TM_185 ~r~Info:~s~ A interface foi adaptada ao GTA V Hud.
+_TM_186 Nome do arquivo:
+_TM_187 Nome do autor:
+_TM_188 Salvar ve¢culo
+_TM_189 ~r~Este arquivo j˜ existe e ser˜ substitu¢do.
+_TM_190 ~y~Encontrado!
+_TM_191 ~s~Troque o campo usando as setas ~u~ e ~d~.
+_TM_192 ~s~O seu ve¢culo ser˜ salvo em: ~y~'cleo\Tuning Mod\Vehicles\'
+_TM_193 ~s~Use ~y~T+L~s~ para carregar um ve¢culo.
+_TM_194 ~s~Digite o nome do arquivo .tmv para ser carregado.
+_TM_195 ~r~Lembre-se que para carregar o AutoSave aperte -B- no menu de carregar.
+_TM_196 ve¢culo ~y~~1~~s~ (~y~-B-~s~)
+_TM_197 Modelo:
+_TM_198 Autor:
+_TM_199 Data:
+_TM_601 ~s~Press ~y~-Y-~s~ ou ~y~-~<~-~s~ para carregar, ~y~-Enter-~s~ ou ~y~-N-~s~ para sair.
+_TM_602 ~s~Segure ~y~-J-~s~ para ver mais comandos.
+_TM_603 ~s~Press ~y~G~s~ para digitar o nome do arquivo.
+_TM_604 ~s~Press ~y~B~s~ para carregar o ªltimo AutoSave.
+_TM_605 ~s~Press ~y~DELETE~s~ para deletar o arquivo.
+_TM_606 ~y~TAB+Y~s~ para adicionar as alteraœ¨es sem criar novo ve¢culo,~n~assim tendo melhor compatibilidade com SAMP e miss¨es.
+_TM_607 Para um melhor funcionamento desta ferramenta, o seu carro ser˜ arrumado.
+_TM_608 O modo anti-cheat est˜ ativado no 'Tuning Mod - CFG.ini'.
+_TM_609 ~y~CTRL+A~s~ para add no INI ~y~~1~
+_TM_610 ~s~Segure ~y~Z~s~ para instalar a mesma do outro lado
+#_TM_611
+#_TM_612
+_TM_613 ~s~Salvar trailer ao~n~invžs do ve¢culo?
+_TM_614 ~s~Caso 'nšo', salvar˜ a cabine\carro.
+_TM_615 Ajustar o tamanho da roda. Isso te possibilita a instalar rodas de aro maior sem afundar no chšo.
+_TM_616 Antes de usar esta ferramenta, ž~n~recomendado esconder a roda original~n~do carro e instalar uma nova.
+#_TM_617
+_TM_618 Mudar posiœšo do banco do motorista, escapamento etc.
+_TM_619 Mudar posiœšo dos nodes/peœas padr¨es.
+_TM_620 RGB
+_TM_621 R
+_TM_622 G
+_TM_623 B
+_TM_624 Alpha
+_TM_625 HSV
+_TM_626 Hue
+_TM_627 Satur
+_TM_628 Value
+_TM_629 ~1~
+_TM_630 ~1~%
+_TM_631 ~s~Forœar cor branca (~b~-B-~s~): ~y~ON
+_TM_632 ~s~Forœar cor branca (~b~-B-~s~): ~r~OFF
+_TM_633 ~s~Carregado:
+#_TM_634 (internal)
+_TM_635 Aceitar esta posiœšo?
+_TM_636 Digite o novo texto para a placa.
+_TM_637 Se seu ve¢culo nšo tem placa funcional, vocŸ nšo notar˜ mudanœa.
+_TM_638 ~r~A peœa poder˜ ficar com rotaœšo errada na primeira vez que for selecionada.
+_TM_639 ~s~Press ~y~-F-~s~ para editar sub-peœas
+_TM_640 Mais
+_TM_641 ~s~Segure ~y~SHIFT~s~ enquanto carrega para as alteraœ¨es~n~serem carregadas lentamente.
+_TM_642 ~s~Pržvia (~b~C~s~): ~y~ON
+_TM_643 ~s~Pržvia (~b~C~s~): ~r~OFF
+_TM_644 ~s~Seu ve¢culo precisa ser~n~consertado. Continuar?
+_TM_645 ~s~$150
+_TM_646 ~r~Somente posiœšo.~n~Lembre-se que a posiœšo ž relativa ao node pai.
+_TM_647 ~s~Press ~y~-T-~s~ para Gerenciar.
+_TM_648 ~y~TEST~s~ para testar.
+_TM_649 ~s~Se vocŸ colocou uma placa de outro carro, salve o seu carro e reinicie o jogo para funcionar corretamente.
+
+_TM_750 ~g~CJ: ~s~Al§... Preciso de um guincho em ~a~.
+_TM_751 ~b~Atendente: ~s~Para onde, senhor?
+#_TM_752 (internal)
+_TM_753 ~b~CJ: ~s~Mudei de ideia... Tchau.
+
+
+
+#########################
+# automobile
+_TM_200 Corpo
+_TM_201 Roda Dir Fr
+_TM_202 Roda Dir Me
+_TM_203 Roda Dir At
+_TM_204 Roda Esq Fr
+_TM_205 Roda Esq Me
+_TM_206 Roda Esq At
+_TM_207 Porta Dir Fr
+_TM_208 Porta Dir At
+_TM_209 Porta Esq Fr
+_TM_210 Porta Esq At
+_TM_211 Para-choque Fr
+_TM_212 Para-choque At
+_TM_213 Para-Lama Dir Fr
+_TM_214 Para-Lama Esq Fr
+_TM_215 Cap§
+_TM_216 Porta-Malas
+_TM_217 Para-brisa
+_TM_218 Escapamento
+_TM_219 Misc_A
+_TM_220 Misc_B
+_TM_221 Misc_C
+_TM_222 Misc_D
+_TM_223 Misc_E
+
+# monster truck
+_TM_224 Transmissšo Esq
+_TM_225 Transmissšo Dir
+_TM_226 Caœamba
+_TM_227 Misc_A
+
+# quad
+_TM_228 Carroceria Fr
+_TM_229 Carroceria At
+_TM_230 Suspensšo Dir Fr
+_TM_231 Suspensšo Esq Fr
+_TM_232 Eixo At
+_TM_233 Guidšo
+_TM_234 Misc_a
+_TM_235 Misc_b
+
+# heli
+_TM_236 Hžlice Est˜tica
+_TM_237 Hžlice Movendo
+_TM_238 Hžlice Est˜tica 2
+_TM_239 Hžlice Movendo 2
+_TM_240 Leme
+_TM_241 Profundor
+_TM_242 Misc_a
+_TM_243 Misc_b
+_TM_244 Misc_c
+_TM_245 Misc_d
+
+# plane
+_TM_246 Hžlice Est˜tica
+_TM_247 Hžlice Movendo
+_TM_248 Hžlice Est˜tica 2
+_TM_249 Hžlice Movendo 2
+_TM_250 Leme
+_TM_251 Profundor Esq
+_TM_252 Profundor Dir
+_TM_253 P˜s Esq
+_TM_254 P˜s Dir
+_TM_255 P˜s Asas Esq
+_TM_256 P˜s Asas Dir
+_TM_257 Misc_a
+_TM_258 Misc_b
+
+# boat
+_TM_259 Radar
+_TM_260 Para-Brisa
+_TM_261 Leme
+_TM_262 Aba Esq
+_TM_263 Aba Dir
+_TM_264 Aba At Esq
+_TM_265 Aba Ar Dir
+_TM_266 Hžlice Est˜tica
+_TM_267 Hžlice Movendo
+_TM_268 Hžlice Est˜tica 2
+_TM_269 Hžlice Movendo 2
+
+# bike
+_TM_271 Corpo
+_TM_272 Garfo Fr
+_TM_273 Garfo At
+_TM_274 Roda Fr
+_TM_275 Roda At
+_TM_276 Para-Lama
+_TM_277 Guidšo
+_TM_278 Misc_A
+_TM_279 Misc_B
+
+# bmx
+_TM_280 Corpo
+_TM_281 Garfo Fr
+_TM_282 Garfo At
+_TM_283 Roda Fr
+_TM_284 Roda At
+_TM_285 Guidšo
+_TM_286 Coroa
+_TM_287 Pedal Dir
+_TM_288 Pedal Esq
+
+# dummies
+_TM_701 Far¦is
+_TM_702 Lanternas
+_TM_703 Far¦is 2
+_TM_704 Lanternas 2
+_TM_705 Banco Frente
+_TM_706 Banco Atr˜s
+_TM_707 Escapamento
+_TM_708 Motor
+_TM_709 Combust¢vel
+_TM_710 Gancho
+_TM_711 Pos Braœo
+_TM_712 Miscpos_c
+_TM_713 Miscpos_d
+_TM_714 Miscpos_a
+_TM_715 Miscpos_b
+_TM_716 Pos Mšo
+
+     
+############## Install ###################
+_TM_301 ~u~ Frente
+_TM_302 ~d~ Atr˜s
+_TM_303 ~<~ Esquerda
+_TM_304 ~>~ Direita
+_TM_305 [PageUp] Cima
+_TM_306 [PageDown] Baixo
+
+_TM_307 [X] Centralizar
+_TM_308 [S] Reset. Tamanho
+_TM_309 [CTRL] ‹mš Rotaœšo
+_TM_310 [CTRL] Reset. Deformaœšo
+_TM_311 [X] Resetar
+_TM_312 [X] ‹mš
+_TM_313 [Z] Inverter
+_TM_314 [CTRL] Inv. Rotaœšo
+_TM_315 [S] Inv. Tamanho
+_TM_316 [CTRL] Tamanho Total
+_TM_317 [S] Esticar
+_TM_318 [S] Tamanho
+_TM_319 [CTRL] Rotacionar
+_TM_320 [CTRL] Deformar
+_TM_321 [CTRL] Inv. Deformaœšo
+_TM_322 [S] Reset. Tamanho
+
+_TM_323 ~u~ R. Frente
+_TM_324 ~d~ R. Atr˜s
+_TM_325 ~<~ R. Esquerda
+_TM_326 ~>~ R. Direita
+_TM_327 [PgUp] G. Esquerda
+_TM_328 [PgDown] G. Direita
+
+_TM_329 ~u~ Deformar +Y
+_TM_330 ~d~ Deformar -Y
+_TM_331 ~<~ Deformar +X
+_TM_332 ~>~ Deformar -X
+_TM_333 [PgUp] Deformar +Z
+_TM_334 [PgDown] Deformar -Z
+_TM_335 [Home] Deformar +W
+_TM_336 [End] Deformar -W
+
+_TM_337 [D] Deformaœšo: ON
+_TM_338 [D] Deformaœšo: OFF
+_TM_339 [B] Comandos Modo: 1
+_TM_340 [B] Comandos Modo: 2
+_TM_341 [V] C™mera Modo: 1
+_TM_342 [V] C™mera Modo: 2
+_TM_343 [C] Fechar Portas
+_TM_344 [C] Abrir Portas
+_TM_389 [P] Mostrar Pivot
+_TM_390 [P] Esconder Pivot
+_TM_391 [M] Espelhar: 1
+_TM_392 [M] Espelhar: 2
+_TM_393 [M] Espelhar: OFF
+
+_TM_345 ~u~ Esticar +Y
+_TM_346 ~d~ Esticar -Y
+_TM_347 ~<~ Esticar +X
+_TM_348 ~>~ Esticar -X
+_TM_349 [PgUp] Esticar +Z
+_TM_350 [PgDown] Esticar -Z
+
+_TM_351 ~u~ +Tamanho
+_TM_352 ~d~ -Tamanho
+
+_TM_353 ~u~ Inverter Y
+_TM_354 ~>~ Inverter X
+_TM_355 [PgDown] Inverter Z
+
+_TM_356 ~u~ Inv. Tam. Y
+_TM_357 ~>~ Inv. Tam. X
+_TM_358 [PgDown] Inv. Tam. Z
+
+_TM_359 ~u~ Inv. Rot. Y
+_TM_360 ~>~ Inv. Rot. X
+_TM_361 [PgDown] Inv. Rot. Z
+
+_TM_362 ~u~ Res. Def. Y
+_TM_363 ~>~ Res. Def. X
+_TM_364 [PgDown] Res. Def. Z
+_TM_365 [End] Res. Def. W
+
+_TM_366 ~s~Press ~y~-Y-~s~ para aceitar ou ~y~-N-~s~ para voltar.
+_TM_367 ~s~Press ~y~-G+1234-~s~ para salvar a posiœšo atual, ou ~y~-H+1234-~s~ para carregar uma posiœšo salva.
+
+_TM_369 ~u~ Resetar Y
+_TM_370 ~>~ Resetar X
+_TM_371 [PgDown] Resetar Z
+
+_TM_372 [TAB] Devagar
+_TM_373 [SHIFT] R˜pido
+_TM_377 [BACKSPACE] Desfazer
+
+_TM_378 [TAB] Somente Pos.
+
+_TM_379 ~r~Salvar~s~: ~r~1 ~s~2 3 4
+_TM_380 ~r~Salvar~s~: 1 ~r~2 ~s~3 4
+_TM_381 ~r~Salvar~s~: 1 2 ~r~3 ~s~4
+_TM_382 ~r~Salvar~s~: 1 2 3 ~r~4
+_TM_383 ~r~Salvar~s~: 1 2 3 4
+_TM_384 ~b~Carregar~s~: ~b~1 ~s~2 3 4
+_TM_385 ~b~Carregar~s~: 1 ~b~2 ~s~3 4
+_TM_386 ~b~Carregar~s~: 1 2 ~b~3 ~s~4
+_TM_387 ~b~Carregar~s~: 1 2 3 ~b~4
+_TM_388 ~b~Carregar~s~: 1 2 3 4
+
+#################################
+# Stats
+_TM_acc Aceleraœšo
+_TM_vel Vel M˜x
+_TM_fre Freios
+_TM_dir Estabilidade
+_TM_val Valor: $~1~
+_TM_pes Peso: ~1~ kgs
+_TM_dan Danos
+_TM_mt1 Diesel
+_TM_mt2 Petr¦leo
+_TM_mt3 Elžtrico
+_TM_pn1 Padršo
+_TM_pn2 Duro
+_TM_pn3 Mždio
+_TM_pn4 Macio
+_TM_tr1 Traœšo: F
+_TM_tr2 Traœšo: R
+_TM_tr3 Traœšo: 4
+_TM_avs ~s~Stats retirados do handling.cfg~n~podem nšo ser realistas
+
+#################################
+# Manage
+_TM_401 ~s~Press ~y~-~<~-~s~ para esconder\aparecer uma peœa.
+_TM_481 ~s~Press ~y~-~>~-~s~ para todas as peœas filhas nativas.
+_TM_402 ~s~Press ~y~-H-~s~ para renomear uma peœa instalada.
+_TM_403 ~s~Press ~y~-DELETE-~s~ para deletar uma peœa instalada.
+_TM_404 ~s~Press ~y~-P-~s~ para pintar uma peœa.
+_TM_480 ~s~Press ~y~-C-~s~ para abrir-fechar as portas.
+
+# Choose
+_TM_405 ~s~Use ~y~CTRL+C~s~ e ~y~CTRL+V~s~ para copiar e colar o nome ou ID da peœa.
+_TM_406 ~s~Carregue o ID ou nome do .dff de um ve¢culo para ter as peœas dele.
+_TM_407 ~s~Press ~y~G~s~ para digitar o nome ou ID de algum modelo.
+_TM_408 ~s~Press ~y~H~s~ para acessar a lista completa de locais.
+_TM_409 ~s~Segure ~y~CTRL~s~ para navegar pelos IDs manualmente.
+_TM_410 ~s~Segure ~y~SHIFT~s~ para passar mais rapidamente.
+_TM_411 ~s~Use ~y~PageUp~s~ e ~y~PageDown~s~ para mudar o tamanho.
+_TM_412 ~s~Use o scroll do mouse, ou ~y~O~s~ e ~y~L~s~ para zoom.
+_TM_413 ~s~Abra os arquivos em 'cleo\Tuning Mod\PARTS\' para trocar as peœas.
+_TM_414 ~s~A quantidade de arquivos INI e peœas dentro deles ž ilimitada!
+
+# More
+_TM_450 ~s~Press ~y~-Y-~s~ para acionar a funœšo.
+_TM_451 Danos nšo vis¢veis
+_TM_452 Ve¢culo forte
+_TM_453 Player invis¢vel
+_TM_454 Scissor door - Frente
+_TM_455 Scissor door - Atr˜s
+_TM_456 Farol halogŸno
+_TM_457 Escapes duplos
+_TM_458 Escape sem fumaœa
+_TM_459 Desativar camber
+_TM_460 Hidr˜ulicos
+_TM_461 Testar
+_TM_462 Mudar som do motor
+_TM_463 Mudar handling
+_TM_464 Mudar cor dos farois
+_TM_465 Mudar placa
+
+#################################
+# --- Tutorial
+# chassis car
+_TM_551 VocŸ est˜ instalando uma peœa em geral no ve¢culo, onde ž presa no 'corpo' geral dele.
+_TM_552 Sinta-se — vontade em explorar bem os comandos, principalmente o inverter (Z) e centralizar (X), podem ser ªteis aqui.
+_TM_553 Apertando por exemplo G+1 vocŸ salva a posicšo 1, caso queira uma outra peœa na mesma posicšo e tamanho, use H+1.
+_TM_554 Instalar um aerof¦lio geralmente requer instalar em 'porta-malas' e nšo em 'corpo'.
+_TM_555 Lembre-se que estas dicas mudam dependente do lugar que vocŸ est˜ instalando.
+
+# door car
+_TM_556 VocŸ est˜ instalando uma peœa numa porta.
+_TM_557 Se vocŸ quer instalar a mesma peœa em outra porta, lembre de salvar e carregar a posicšo (G+1/2/3/4 e H+1/2/3/4).
+_TM_558 Abra as portas (C) para ver/testar melhor.
+_TM_559 VocŸ pode mudar a posiœšo de uma porta em 'Move - Nodes' no menu principal.
+#_TM_560
+
+# trunk car
+_TM_561 VocŸ est˜ instalando uma peœa no porta-malas.
+_TM_562 Se vocŸ est˜ instalando por exemplo um aerof¦lio, o comando centralizar (X) pode ajudar, aperte X+~>~ para ficar no centro.
+_TM_563 Lembre-se de abrir as portas (C) para ver/testar melhor.
+_TM_564 Se vocŸ est˜ tentando instalar uma peœa dentro do porta-malas, vocŸ entendeu errado o mod. O correto ž no 'corpo'.
+#_TM_565
+
+# bonnet car
+_TM_566 VocŸ est˜ instalando uma peœa no cap§.
+_TM_567 Os comandos centralizar (X) e inverter (Z) podem ser super ªteis aqui.
+_TM_568 Abra as portas (C) para ver/testar melhor.
+_TM_569 Ao instalar entradas de ar duplas, lembre-se de segurar Z enquanto aceita a peœa para criar uma igual do outro lado.
+#_TM_570
+
+# wheel car bike
+_TM_521 Aparentemente vocŸ est˜ instalando uma roda nova. Se vocŸ nšo escondeu a roda original, poder˜ no fim da instalaœšo.
+_TM_522 No fim da instalaœšo vocŸ ter˜ opœ¨es de instalar a mesma roda do outro lado (esquerda-direita, caso carro) ou em todas.
+_TM_523 Nunca mexa no Y ou Z (seja posicšo ou tamanho) ou rotaœ¨es, senšo a roda ir˜ cambalear! Deixe ela centralizada.
+_TM_524 Use X+~u~ e X+PageDown para centralizar a posicšo. CTRL+X para centralizar a rotaœšo e S+X para resetar o tamanho.
+_TM_525 S+~>~ para enlarguecer e S+CTRL+~u~/~d~ para aumentar/diminuir. Depois v˜ em 'Ajustes > Roda' para corrigir a roda afundada.
+
+# bike bmx
+_TM_526 VocŸ est˜ instalando uma peœa nova no garfo. Ou um garfo novo.
+_TM_527 Preste bem a atenœšo onde ž ou nšo ž um garfo para nšo instalar no lugar errado.
+_TM_528 O garfo numa moto amortece, se vocŸ nšo quer amortecer, instale no para-lama.
+_TM_529 Numa bicicleta nšo amortece, somente vira.
+#_TM_530
+
+_TM_531 VocŸ est˜ instalando uma peœa nova no para-lama da moto.
+_TM_532 Preste bem a atenœšo onde ž ou nšo ž um para-lama para nšo instalar no lugar errado.
+_TM_533 O para-lama nšo amortece, somente vira, se vocŸ quer amortecer, instale no garfo.
+_TM_534 Dica: Peœa no para-lama pode ser usado por exemplo para instalar uma pinœa de freio — disco.
+#_TM_535
+
+_TM_536 Aparentemente vocŸ est˜ instalando um novo pedal ou coroa de uma bicicleta.
+_TM_537 Use comando de centralizar a peœa (X) caso vocŸ a mova sem querer, pois geralmente aqui vocŸ nšo precisar˜ mudar a posicšo.
+_TM_538 Instalando os pedais, pode ser necess˜rio salvar e carregar a posicšo. E o inverter tamanho (Z+S+~>~) tambžm pode ser ªtil.
+#_TM_539
+#_TM_540
+
+_TM_546 Aparentemente vocŸ est˜ instalando um novo guidao.
+_TM_547 VocŸ possivelmente nšo precisar˜ mover para os lados direito e esquerdo. Se fazer isso sem querer, centralize usando X+~>~
+_TM_548 Aperte para aceitar a instalaœšo para o CJ aparecer em cima da sua bicicleta ou moto e assim ver se est˜ na posicšo correta.
+#_TM_549
+#_TM_550
+
+# plane heli
+_TM_541 VocŸ est˜ instalando uma peœa em geral num avišo, helic¦ptero ou barco.
+_TM_542 Se vocŸ quer instalar a peœa por exemplo numa hžlice ou qualquer outro local, volte na escolha da peœa e press 'H'
+_TM_543 Sinta-se — vontade em explorar bem os comandos, principalmente o inverter (Z) e centralizar (X), podem ser ªteis aqui.
+#_TM_544
+#_TM_545
+
+# error
+_TM_600 ~y~-~w~ Desculpe, nšo h˜ dicas espec¢ficas para o local onde vocŸ est˜ instalando ~y~-  
+_TM_800 ~y~-~w~ Desculpe, nšo h˜ dicas espec¢ficas para o dummy que vocŸ est˜ posicionando ~y~-
+
+# suspension
+_TM_571 ~s~Use ~y~Y~s~ para levantar e ~y~N~s~ para abaixar.~n~Use ~y~G~s~ para inclinar pra tr˜s e ~y~J~s~ pra frente.
+_TM_572 ~s~Ande com seu carro enquanto levanta/abaixa para suavizar o movimento. Use ~y~H~s~ para voltar ao original.
+_TM_573 ~s~Use ~y~B~s~ para resetar o camber. ~y~V~s~ para mudar o ™ngulo da c™mera.
+_TM_574 ~s~Use a tecla de retorno (por padršo ~y~ENTER~s~ ou ~y~F~s~) para aceitar a suspensšo atual.
+
+# springs
+_TM_575 ~s~Use ~y~Y~s~ e ~y~N~s~ para ajustar a maciez.~n~Use ~y~U~s~ e ~y~M~s~ para ajustar o comprimento das molas.
+_TM_576 ~s~Use ~y~H~s~ para voltar ao original. ~y~V~s~ para mudar o ™ngulo da c™mera.
+_TM_577 ~s~Nšo endureœa muito as molas para seu carro nšo bugar ou pular caso baixo FPS. Aumente a maciez caso isso aconteœa.
+_TM_578 ~s~Use a tecla de retorno (por padršo ~y~ENTER~s~ ou ~y~F~s~) para aceitar as molas atuais.
+
+# wheel
+_TM_585 ~s~Use ~y~Y~s~ e ~y~N~s~ para aumentar/diminuir o tamanho de todas as rodas ao mesmo tempo.
+_TM_586 ~s~Esta ferramenta serve para controlar o tamanho da colisšo da roda. VocŸ ainda ter˜ que instalar uma nova roda maior.
+_TM_587 ~y~U~s~ e ~y~M~s~ para frente e ~y~T~s~ e ~y~B~s~ para atr˜s. Caso a roda ficar torta, desative o Camber na tela 'Mais'.
+_TM_588 ~s~Use ~y~H~s~ para voltar ao original. ~y~V~s~ para mudar o ™ngulo da c™mera.
+_TM_589 ~s~Use a tecla de retorno (por padršo ~y~ENTER~s~ ou ~y~F~s~) para aceitar as rodas atuais.
+
+# main
+_TM_580 ~s~Dica para dica: Use e abuse desta tecla ~y~J~s~, ela pode te ajudar muito em quase todas as telas deste mod.
+_TM_581 ~s~Use TAB+U para desligar/ligar, ou TAB+i para passar a mªsica. VocŸ pode adicionar mªsicas na pasta 'cleo\Tuning Mod\Songs'.
+_TM_582 ~s~VocŸ pode configurar v˜rias coisas do mod nos arquivos .ini localizados na pasta 'cleo\Tuning Mod'.
+_TM_583 ~s~Segure V para mostrar o ve¢culo. Perceba que vocŸ pode usar o mouse normalmente e dar zoom com o scroll ou O e L.
+_TM_584 ~s~As teclas principais deste mod sšo Y, N, H, G e B. Tambžm SHIFT e TAB podem servir para comandos r˜pidos ou lentos.
+
+# dummy lights
+_TM_801 ~s~Posiœšo da luz do farol ou lanterna.
+_TM_802 ~s~Note que em ve¢culos de luzes duplas, a posiœšo ser˜ repetida do lado oposto igualmente.
+_TM_803 ~r~Alterar esta posiœšo alterar˜ todos os ve¢culos de mesmo modelo.
+
+# dummy seat front - geral   
+_TM_805 ~s~Posiœšo dos bancos da frente.
+_TM_806 ~s~Note que a posiœšo do passageiro ser˜ repetida do lado aposto igualmente.
+_TM_807 ~g~Alterar esta posiœšo NšO alterar˜ outros ve¢culos de mesmo modelo.
+ 
+# dummy seat front - bikes   
+_TM_811 ~s~Posiœšo do banco do piloto.
+_TM_812 ~g~Alterar esta posiœšo NšO alterar˜ outros ve¢culos de mesmo modelo.
+
+# dummy seat back - geral 
+_TM_815 ~s~Posiœšo do banco detr˜s.  
+_TM_816 ~s~Note que a posiœšo deste dummy ž o centro dos dois passageiros.
+_TM_817 ~r~Alterar esta posiœšo alterar˜ todos os ve¢culos de mesmo modelo.
+
+# dummy seat back - bikes   
+_TM_821 ~s~Posiœšo do banco do garupa.
+_TM_822 ~r~Alterar esta posiœšo alterar˜ todos os ve¢culos de mesmo modelo.
+
+# dummy exhaust
+_TM_825 ~s~Posiœšo da fumaœa do escapamento.
+_TM_826 ~s~Note que caso esteja ativado escapamentos duplos, a posiœšo do segundo escapamento ser˜ repetida no lado oposto.
+_TM_827 ~s~Lembre-se que vocŸ pode ativar-desativar escapamento duplo no menu Mais.
+_TM_828 ~g~Alterar esta posiœšo NšO alterar˜ outros ve¢culos de mesmo modelo.
+  
+# dummy engine
+_TM_861 ~s~Posiœšo da fumaœa do motor quando o ve¢culo est˜ danificado.
+_TM_862 ~r~Alterar esta posiœšo alterar˜ todos os ve¢culos de mesmo modelo.
+
+# dummy petrol cap
+_TM_831 ~s~Posiœšo da tampa de combust¢vel.
+_TM_832 ~s~Quando o local deste dummy receber um tiro, o ve¢culo ir˜ explodir.
+_TM_833 ~r~Alterar esta posiœšo alterar˜ todos os ve¢culos de mesmo modelo.
+ 
+# dummy hook up
+_TM_835 ~s~Posiœšo do engate frontal.
+_TM_836 ~s~Este dummy ž geralmente usado na parte da frente dos trailers e pode ser inªtil em outros ve¢culos.
+_TM_837 ~r~Alterar esta posiœšo alterar˜ todos os ve¢culos de mesmo modelo.
+
+# dummy ped arm - geral
+_TM_841 ~s~Posiœšo onde fica o braœo das pessoas quando colocam o braœo para fora.
+_TM_842 ~s~Aparentemente originalmente nšo utilizado pelo jogo.
+_TM_843 ~r~Alterar esta posiœšo alterar˜ todos os ve¢culos de mesmo modelo.
+           
+# dummy bar grip - bikes
+_TM_845 ~s~Posiœšo onde fica a mšo das pessoas.
+_TM_846 ~s~Note que os braœos podem se esticar ou comprimir — medida do necess˜rio.
+_TM_847 ~r~Alterar esta posiœšo alterar˜ todos os ve¢culos de mesmo modelo.
+
+# dummy miscpos
+_TM_851 ~s~Posiœšo usada internamente.
+_TM_852 ~s~Pode ser usada para v˜rios diferentes propositos.
+_TM_853 ~r~Alterar esta posiœšo alterar˜ todos os ve¢culos de mesmo modelo.   
+
+# move wheel 
+_TM_855 ~s~A posiœšo da roda s¦ ž poss¢vel alterar em 2D, j˜ que o Z ž constantemente atualizado pelo jogo.
+_TM_856 ~s~Isso quer dizer que nšo ž poss¢vel mudar altura da roda, obviamente, pois a posiœšo da roda sempre ž o chšo.
+_TM_857 ~s~Outra limitaœšo ž que, ž claro, esta mudanœa ž somente visual e nšo mudar˜ em nada o comportamento do ve¢culo.
+
+#################################
+# --- Tour
+_TM_900 ~s~Press -~y~K~s~-
+
+_TM_910 ~s~‡ aqui onde tudo comeœa! Segure -~y~J~s~- para ver umas dicas e aprender uns comandos. Press -~y~K~s~- para continuar.
+_TM_911 ~s~VocŸ pode querer comeœar adicionando uma nova peœa em seu ve¢culo em 'Add Peœa' na esquerda.
+_TM_912 ~s~Perceba que h˜ v˜rios 'locais' para instalar a peœa. Essa escolha quer dizer onde a peœa ficar˜ 'grudada'.
+_TM_913 ~s~Exemplo pr˜tico: Um aerof¦lio deve ser instalado em 'porta-malas', assim quando o porta-malas abrir o aerof¦lio ir˜ junto.
+_TM_914 ~s~Se nšo sabe onde instalar, v˜ em 'corpo', onde ž o corpo geral do ve¢culo.
+
+_TM_915 ~s~Aqui vocŸ escolhe a peœa que quer instalar! H˜ MUITOS comandos dispon¢veis, segure -~y~J~s~- para vŸ-los.
+_TM_916 ~s~As peœas sšo armazenadas em diferentes arquivos .ini onde vocŸ pode editar. Use seta pra cima e baixo para trocar de .ini.
+_TM_917 ~s~Originalmente o Tuning Mod s¦ vem com alguns objetos do jogo no .ini, tudo fica mais legal quando vocŸ baixa novas peœas.
+_TM_918 ~s~Literalmente qualquer modelo do jogo pode ser usado, atž um prždio inteiro! Assim como uma peœa de um ve¢culo em outro!
+_TM_919 ~s~Explore esta tela e escolha alguma coisa.
+
+_TM_920 ~s~Veja do lado direito da tela a quantidade de comandos!
+_TM_921 ~s~Segure algumas teclas (como S, X, Z etc) e veja como os comandos mudam. VocŸ pode fazer v˜rias combinaœ¨es!
+_TM_922 ~s~Por exemplo, segurando S e CTRL vocŸ pode usar as setas pra cima e baixo para mudar o tamanho total da peœa.
+_TM_923 ~s~Lembre-se de controlar a c™mera pelo mouse, assim como o zoom no scroll ou teclas O e L.
+_TM_924 ~s~Perceba tambžm que, ao pressionar a seta pra cima a peœa se move para frente do ve¢culo, nšo importando a c™mera.
+_TM_925 ~s~Caso vocŸ prefira que ela se mova pra frente DA C‚MERA e nšo do ve¢culo, troque o modo de comando usando -~y~B~s~-.
+_TM_926 ~s~Note tambžm que vocŸ pode salvar e carregar posiœ¨es (incluindo rotaœšo, tamanho etc) mostrado embaixo da tela.
+_TM_927 ~s~Para isso, pressione por exemplo G+1 para salvar no espaœo '1'. Agora a qualquer momento use H+1 para voltar l˜.
+_TM_928 ~s~O uso das dicas (tecla -~y~J~s~-) aqui tambžm ž importante e muda conforme o local que vocŸ esteja instalando.
+_TM_929 ~s~Por fim, treine e conheœa as possibilidades!
+_TM_930 ~s~Por favor, pressione -~y~B~s~- novamente para voltar ao 'Comandos Modo: 1'
+
+_TM_931 ~s~VocŸ instalou sua primeira peœa! VocŸ pode querer voltar ao menu principal e ir em 'Gerenciar' ver novas coisas.
+
+_TM_935 ~s~Aqui ž uma tela mais 'avanœada' da escolha do local que ir˜ instalar a peœa.
+_TM_936 ~s~Aqui h˜ locais que nšo estšo listados no menu. Pode ser ªtil por exemplo para instalar peœas na hžlice de um helic¦ptero.
+
+_TM_941 ~s~Aqui est˜ a lista de todas as peœas do seu ve¢culo. Segure -~y~J~s~- para ver os comandos!
+_TM_942 ~s~Perceba que vocŸ pode esconder as peœas, assim como renomear as que vocŸ instalou entre outras coisas.
+
+_TM_945 ~s~Pronto? VocŸ pode salvar as suas alteraœ¨es no seu carro com o comando T+M.
+_TM_946 ~s~No entanto h˜ v˜rias coisas que vocŸ precisa entender, nšo deixe de ler o arquivo Leiame do download do mod!
+
+_TM_951 ~s~Possibilidades nšo faltam, e aqui ž onde umas funœ¨es 'b§nus' estšo.
+_TM_952 ~s~H˜ realmente muita coisa que vocŸ pode fazer aqui! Explore-as.
+

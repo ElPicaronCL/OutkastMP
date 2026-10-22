@@ -1,0 +1,96 @@
+  __  __ _      __  __           _     
+ |  \/  (_)    |  \/  |         | | 2019
+ | \  / |___  _| \  / | ___   __| |___ 
+ | |\/| | \ \/ / |\/| |/ _ \ / _` / __|
+ | |  | | |>  <| |  | | (_) | (_| \__ \
+ |_|  |_|_/_/\_\_|  |_|\___/ \__,_|___/
+
+
+=======   MixMods.com.br   ======= - Melhor visualizável em fontes mono-espaçadas, como "Consolas".
+
+
+------- Instruções:
+
+Extraia tudo da pasta "(instalação)" para a pasta do seu GTA SA.
+
+-- Download da última versão do Modloader: MixMods.com.br/2015/01/SA-Modloader.html
+
+Você também pode instalar tudo no ModLoader (exceto "_noDEP.asi", "cleo\Tuning Mod\PARTS" e "cleo\Tuning Mod\Vehicles"), mas devido à relatos de problemas, primeiro teste o mod da maneira que ele veio.
+Há outros idiomas em "(bônus)\(languages)".
+
+Continue lendo...
+
+
+
+=== Princípios de instalação ===
+ Bom GTA:                Recomendo que siga pelo menos os primeiros passos deste tutorial: https://www.mixmods.com.br/2014/11/primeiros-passos-para-montar-um-gta.html
+ CLEO:                   É necessário CLEO 4.3 ou mais recente: https://www.mixmods.com.br/2014/02/Livraria-CLEO.html
+ Veja mais:              O mod contém vários arquivos .ini e você pode querer configurá-los ao seu gosto.
+
+-- Caso você já tenha instalado alguma versão muito antiga do Tuning Mod (como v2):
+ Apague o mod COMPLEMENTE antes de instalar este novo, exceto as pastas "EXTRAS" e "Vehicles" (onde há as configurações de suas peças e veículos).
+ A pasta "CLEO\Tuning Mod\EXTRAS" agora se chama "CLEO\Tuning Mod\PARTS", se você só arrastar os arquivos da pasta do Tuning Mod v2 para esta nova já deve funcionar (mas para uma melhor ordem alfabética, use "01" em vez de "1" no nome do arquivo).
+
+
+=== Princípios de uso ===
+ Esta funcionando?       Segurar a tecla TAB dentro de um carro aparecerá uma barra de stats, se não aparecer, o mod não está funcionando, revise tudo.
+ Começando a usar:       Simplesmente pegue um veículo e vá até a marca vermelha em alguma garagem própria para ele (veja "Local.jpg"). Você tem a opção de digitar "TM555" (como um cheat) para ligar para um guincho te levar até a garagem rapidamente.
+ Marca de entrada:       A marca vermelha só aparecerá caso você estiver dentro do veículo e seja a garagem correta. Por exemplo a garagem para motos só aparecerá a marca vermelha caso você esteja numa moto.
+ Marca não aparece:      Se a marca não aparecer mesmo assim, pode ser incompatibilidade com algum mod que você tenha, mas mesmo assim o mod pode funcionar.
+ Está tudo preto:        Se ao entrar na garagem ficou tudo preto e você está usando SkyGfx com colocycle do Mobile, desative o colorcycle ou abra o "Tuning Mod - GRG.ini" e troque os "WorldColor_Int" e "WorldColor_Ext" para outros números, ou desative-o configurando para "-1".
+ Como usar o mod:        Tudo o que você precisa saber o mod te fala, é sério, tudo está na interface do jogo, tudo está na tela, leia a tela!
+ Como desinstalar:       Você pode apagar todos os arquivos do mod, mas NÃO recomendo que delete o "IndieVehicles.asi" e "_NoDEP.asi" pois outros mods podem precisar deles. Se você salvou o jogo com este mod instalado, abra o "Tuning Mod - CFG.ini" e leia a descrição do "ShowRadarIcons".
+
+
+=== Salvando / carregando veículos ===
+ Sem garagens:           As garagens convencionais do jogo não suportam nossos carros, portanto...
+ Comandos:               Dentro do veículo, aperte as teclas T+M para salvá-lo. Para carregar um carro salvo aperte T+L.
+ Auto-save:              O mod tem sistema de auto-save (salvamento automático) para caso o jogo crashar em algum momento. Basta apertar B na tela de carregamento de carros para carregar o último carro salvo automaticamente.
+ Como funciona:          O mod usa arquivos de extensão .tmv na qual só armazena as alterações feitas. Para ter o carro em total funcionamento, é necessário ter as peças e veículos corretos na qual ele foi montado. Se você por exemplo usou um Elegy e em seguida trocou o Elegy por algum Skyline, o seu veículo será carregado de modo incompleto.
+ Compartilhando:         Para enviar seus veículos para outras pessoas, possivelmente você terá que enviar também as peças e veículos utilizados. Cuidado com os créditos, respeite os autores.
+
+
+=== Para pessoas específicas ===
+ Webmasters:             Peço para que se for re-hospedar o mod, que deixe todos os arquivos originais. De preferência redirecione para a minha postagem oficial, pois o mod pode passar por atualizações.
+ Youtubers:              Se você só está fazendo um vídeo para o mod sem destino à um site, POR FAVOR, USE A POSTAGEM OFICIAL DO MOD EM MIXMODS.COM.BR, não faz absolutamente nenhum sentido você dar um link de download de um site concorrente meu em vez do meu próprio site com a versão mais recente do mod.
+ Scripters:              Você pode aprender como o mod funciona e ter o código dele aqui: https://forum.mixmods.com.br/f15-tutoriais/t695-como-o-tuning-mod-funciona
+ Modelers:               Você pode aprender como criar peças aqui: https://forum.mixmods.com.br/f52-tutoriais-utilidades/t1419-tuning-mod-como-criar-pecas
+
+
+=== Links ===
+ Tuning Mod:             Você pode baixar peças, utilidades e ler tutoriais e truques sobre o Tuning Mod no blog oficial do mod: TuningMod.MixMods.com.br - Lembre-se de ter Open Limit Adjuster instalado no seu jogo para poder instalar novas peças.
+ Junior_Djjr:            Baixe mais mods criados por mim em: https://forum.mixmods.com.br/f94-workshops/t30-junior_djjr-s-workshop
+ TM no Facebook:         Participe do grupo do mod no facebook: https://www.facebook.com/groups/tuningmod
+
+
+
+=== CASO PROBLEMAS, ERROS, BUGS, LAG ===
+
+ !!!!!! PROCURE SEU PROBLEMA NESTA PÁGINA !!!!!!
+https://tuningmod.mixmods.com.br/p/problemas-e-solucoes.html
+
+
+
+Versão: v3.0.1
+--------------------
+
+Autor: Junior_Djjr
+
+Créditos:
+- Funcionalidades/Ajudas: Fabio, Wesser, DK22Pac, MTA Team, madleg, PepLegal, fastman92, Thayná, LINK/2012
+- ClipboardCommands.cleo: Deji
+- Ícones: War Drum Studios, Meck
+- Sons: Turn 10 Studios, EA Games, Adnan
+Agradecimentos:
+- Apoiadores: Michtogino, robin_be/yugecin, Jeferson Francelino, Leonardo dos Santos Feitoza, Joao Vitor Lopes, Jeferson Francelino, Billy Haze Sidewinder, RetrKill0 (FJB) (youtube.com/fjbgames), Kelvin Carvalho, Franz Littig, Ruben Angel Viera, Pedro Oliveira, Bruno Santos Neles, Tiago José Viana Baloneker, Magdiel Abreu, DYXiCZ
+- Todos os contribuidores do modding, principalmente dos IDB.
+- Todas as pessoas do grupo do Tuning Mod no facebook - Que criaram coisas incríveis, assim me motivando à continuar o projeto: fb.com/groups/tuningmod
+- E a todos os visitantes da família MixMods.
+Traduções alternativas:
+- Francês: Michtogino
+
+
+====   MixMods.com.br                ====
+====   fb.com/FamiliaMixMods         ====
+====   youtube.com/JuniorDjjrMixMods ====
+

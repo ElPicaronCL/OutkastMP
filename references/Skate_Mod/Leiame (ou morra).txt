@@ -1,0 +1,58 @@
+  __  __ _      __  __           _     
+ |  \/  (_)    |  \/  |         | | 2019
+ | \  / |___  _| \  / | ___   __| |___ 
+ | |\/| | \ \/ / |\/| |/ _ \ / _` / __|
+ | |  | | |>  <| |  | | (_) | (_| \__ \
+ |_|  |_|_/_/\_\_|  |_|\___/ \__,_|___/
+                                       
+
+=======   MixMods.com.br   ======= - Melhor visualizável com fontes mono-espaçadas, como "Consolas".
+
+
+------- Instruções:
+
+Extraia a pasta "Skate Mod" para a pasta do Modloader. Ou se preferir instale manualmente.
+Na pasta "(hq version)" há uma versão com texturas mais definidas, se quiser, basta colocar os arquivos na pasta "Skate Mod".
+
+-- Download da última versão do Modloader: MixMods.com.br/2015/01/SA-Modloader.html
+-- Necessário Open Limit Adjuster: MixMods.com.br/2014/09/iiivcsa-open-limit-adjuster.html
+-- Necessário fastman92 limit adjuster: MixMods.com.br/2015/09/fastman92-limit-adjuster.html
+
+ 
+
+ SE NÃO SEGUIR OS PASSOS ABAIXO O SOM DO JOGO PODE PARAR DE FUNCIONAR OCASIONALMENTE E AS MOTOS FICARÃO BUGADAS:
+ O skate é adicionado sem substituir, aqui no download ele já vem pronto para adicionar. Se quiser, veja o tutorial completo: https://www.mixmods.com.br/2015/12/tutorial-adicionar-carros-sem-substituir.html
+                  Baixe e instale o fastman92 limit adjuster: MixMods.com.br/2015/09/fastman92-limit-adjuster.html
+                  Abra o "fastman92limitAdjuster_GTASA.ini" e procure e configure as linhas abaixo. 
+                    Coloque 1 na linha "Apply handling.cfg patch"
+                    Aumente pelo menos +1 na linha "Number of standard lines"
+                    Aumente pelo menos +1 na linha "Number of bike lines"
+                    Se você NÃO usa Open Limit Adjuster: Aumente pelo menos +1 na linha "Vehicle Models"
+                    NÃO SE ESQUEÇA DE REMOVER O "#" NO INÍCIO DE CADA LINHA, SENÃO NÃO IRÁ FUNCIONAR.
+
+ Comandos: Pegue a bengala (gun_cane, use weapon spawner ou encontre pickups por SA) para ter o skate (você pode usar algum spawner), enquanto com o skate na mão, pressione o botão de stats (TAB) para começar a andar com ele.
+           Para andar, é os básicos de controle de uma bicicleta, sem mistérios, em pouco tempo você entenderá as manobras.
+
+ Substitui a bengala (cane), se quiser adicionar a arma sem substituir, siga o tutorial: https://www.mixmods.com.br/2016/05/tutorial-adicionar-armas-sem-substituir.html
+ em seguida, edite o arquivo .ini do mod colocando o ID dela (por exemplo "WeaponID = 70")
+
+ Detalhe: bikearmfix.asi é para corrigir o braço bugado (esticado para prender corretamente no guidão da bicicleta, mas não é mais uma bicicleta, né)
+          Agora o CJ irá segurar o guidão mais pra baixo do que o normal. Basta baixar algum mod de BMX ou Montain Bike e substituir pela Bike: MixMods.com.br/2011/02/tutorial-substituir-qualquer-carro.html
+
+ Problemas: Caso problemas, provavelmente você tem outro mod no Modloader que também substituir estes arquivos. Remova-o ou veja o tutorial de .Priority: MixMods.com.br/2015/07/tutorial-dicas-tudo-sobre-mod-loader.html#priority
+
+
+
+
+Versão: 08/12/19 (DD/MM/YY)
+--------------------
+
+Autor original: Linevariy
+Correções e melhorias: Junior_Djjr, M. Osborn
+bikearmfix.asi: Ryosuke839
+Correção de segurar o skate: Victor Troquetti
+
+
+====   MixMods.com.br         ====
+====   fb.com/FamiliaMixMods  ====
+

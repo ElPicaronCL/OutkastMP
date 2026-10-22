@@ -1,0 +1,14 @@
+- Model your penknife or anything like that
+
+- Let the mesh of his blade with the name "knifeblade"
+ - The axis it has to be positioned at the base and when rotate Y will make the movement of opening and closing. Recommended to leave the axis in rotation 0 when closed.
+
+- Create a cfg file in this folder with the .dff name of the gun that it will replace (eg knifecur.cfg)
+ - Within the "Example" folder has a cfg file already fully configured example, you can use it yourself, just take a copy of it, put in this folder and configure if necessary
+ - The cfg file must be in "CLEO\EnhFuncs\knifeblade" folder, eg "CLEO\EnhFuncs\knifeblade\knifecur.cfg"
+
+- By publish your weapon, publish the .dff .txd it normally, and accompanied the .cfg file, nothing more
+ - NEVER publish .cs, .BMS files etc along with it! provide the official link to download of the Enhanced Functions with the latest and newest version! http://juniordjjr.blogspot.com/2014/02/down-enhfuncs-enhanced-functions-inedito.html
+
+=====
+Work with: All melee weapons with animation "knife". Originally the "knife" and "gun_dildo2" has come, to use in other weapons you need to edit the data\weapon.dat

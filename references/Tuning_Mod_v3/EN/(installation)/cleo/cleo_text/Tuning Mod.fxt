@@ -1,0 +1,760 @@
+#
+# 			.fxt file of mod Tuning Mod by Junior_Djjr
+# 		JuniorDjjr.MixMods.com.br - www.MixMods.com.br - TuningMod.MixMods.com.br
+#
+#===================
+#--------------- FILE "FXT" - Interface texts of Tuning Mod.
+#
+
+# -- Common
+_TM_3 ~s~AutoSave: ~y~ON
+_TM_4 ~s~AutoSave: ~r~OFF
+_TM_5 ~<~ ~1~/~1~ ~>~
+_TM_6 ~u~ INI ~1~/~1~ ~d~
+#_TM_7 (internal)
+_TM_8 ~s~Autosaving...
+#_TM_9 (internal)
+
+# -- Main menu
+_TM_10 Add Part
+_TM_11 Manage
+_TM_12 More
+_TM_13 Move
+_TM_14 Adjusts
+_TM_15 Install
+_TM_16 Tune
+_TM_17 (About)
+
+# - Add Extra
+_TM_21 General
+_TM_22 Doors
+_TM_23 Wheels
+_TM_24 (List)
+
+# Geral
+_TM_37 (Body)
+_TM_38 (Front Bumper)
+_TM_39 (Rear Bumper)
+
+# Geral (BIKE)
+_TM_503 (Body)
+_TM_504 (Handlebar)
+_TM_505 (Front Fork)
+_TM_506 (Rear Fork)
+_TM_507 (Mudguard)
+
+# Pedal (BMX)
+_TM_508 Pedals
+_TM_509 (Chainset)
+_TM_510 (Right Pedal)
+_TM_511 (Left Pedal)
+
+# Suspension (QUAD)
+_TM_512 Suspension
+_TM_513 (Front Right)
+_TM_514 (Front Left)
+_TM_515 (Rear)
+
+# Doors
+_TM_31 (Boot)
+_TM_32 (Hood)
+_TM_33 (Front Right)
+_TM_34 (Front Left)
+_TM_35 (Rear Right)
+_TM_36 (Rear Left)
+
+# Wheels (GERAL)
+_TM_41 (Front Right)
+_TM_42 (Front Left)
+_TM_43 (Rear Right)
+_TM_44 (Rear Left)
+
+# Wheels (BIKE)
+_TM_501 (Front)
+_TM_502 (Rear)
+
+# - Manage
+_TM_25 (Manage)
+
+# - More
+_TM_26 (More)
+
+# - Move
+_TM_55 (Dummies)
+_TM_56 (Nodes)
+
+# - Tuning
+_TM_30 (Tune)
+
+# - Adjust
+_TM_27 (Suspension)
+_TM_28 (Springs)
+_TM_29 (Wheel)
+
+# - Tuning
+_TM_51 Turbo
+_TM_52 Tire
+_TM_53 Brake
+
+# Turbo
+_TM_61 (Weak)
+_TM_62 (Strong)
+_TM_63 (Street)
+_TM_64 (Pro)
+
+# Tire
+_TM_71 (Default)
+_TM_72 (Hard)
+_TM_73 (Sport)
+_TM_74 (Soft)
+
+# Brake
+_TM_81 (Weak ABS)
+_TM_82 (Front)
+_TM_83 (Rear)
+_TM_84 (4 Wheels)
+
+#########################
+#_TM_01 (internal)
+_TM_02 ~s~Press ~y~-Y-~s~ to continue.
+_TM_03 Weak
+_TM_04 Strong
+_TM_05 ~w~Price: ~y~$~1~
+_TM_06 ~r~Insufficient money!
+_TM_07 $~1~
+_TM_08 Durability: ~y~~1~/100
+_TM_09 ~r~INSTALLED
+
+_TM_66 ~w~Press ~y~-H-~w~ to listen
+
+#########################
+_TM_101 Yes
+_TM_102 No
+_TM_103 ~s~ID~y~ ~1~ ~s~(~y~Y~s~)
+_TM_104 ~s~Destination:
+#_TM_105 (internal)
+_TM_106 ~w~ID ~y~~1~~w~ Press ~y~-Y-
+#_TM_108
+_TM_109 ~s~Download new parts at ~y~TuningMod.MixMods.com.br
+_TM_110 ~w~Size:
+_TM_111 ~s~Tris: ~b~~1~
+_TM_112 ~s~Vert: ~b~~1~
+_TM_113 Enter the ID or dff name of the part or vehicle.
+_TM_114 When using Space it will automatically be replaced by Underline (even if you don't see). Names with Spaces are incompatible.
+_TM_115 Choose which vehicle part you want to 'attach' the new part.
+_TM_116 Hide, delete, rename and paint your vehicle parts.
+_TM_117 Change headlight color, handling, engine sound and more.
+_TM_118 Adjust the height and inclination of the suspension. Also possible to get a 'negative camber'.
+_TM_119 Adjust the length and softness of the springs. Great to lower the car.
+#_TM_120~_TM_139 (internal)
+_TM_140 ~s~Press ~y~-J-~s~ to see the commands.
+_TM_141 ~s~Press ~y~-Y-~s~ or ~y~-N-~s~ to go back.
+_TM_142 Accept paint?
+#_TM_143
+_TM_144 ~s~When accepting, you can't go back~n~to the original state.
+_TM_145 ~s~The full part will be painted. This may include~n~locations where you don't want.
+_TM_146 ~r~This location is unavailable in this vehicle! Try another.
+_TM_147 Install this part?
+_TM_148 Install also...?
+_TM_149 All
+_TM_150 Other side
+_TM_151 Only here
+_TM_152 Other
+#_TM_153 (internal)
+#_TM_154
+#_TM_155
+#_TM_156
+#_TM_157
+_TM_158 ~s~~u~ID ~y~~1~~s~~d~
+_TM_159 ~s~Press ~y~-J-~s~ to see tips.
+_TM_160 Caution! If you're installing a~n~new wheel, it possibly will~n~wooble. Read the tips.
+_TM_161 ~s~Enter the sound ID or the name of vehicle you need to change the engine sound.
+_TM_162 ~s~Some vehicles have incompatible sound. If your vehicle stay soundless, try another.
+_TM_163 ~r~Please, use ~y~-Y-~r~ to select and ~y~-N-~r~ to go back.
+_TM_164 ~s~Enter a new some for this part and press ~y~Enter~s~.
+_TM_165 ~s~You can use ~y~-Space-~s~ instead of ~y~-Underline-~s~ that will work as underline.
+_TM_166 ~s~Useful to organize, or other mods (like VehFuncs) add functions to the parts.
+_TM_167 ~s~Hide original wheel?
+_TM_168 ~s~Enter the ID or .dff name from the vehicle that you want the handling (physics etc).
+_TM_169 ~s~Speed, mass, suspension etc, all will be copied.
+_TM_170 ~s~This function is experimental. May cause small problems on your vehicle behavior.
+_TM_171 PRIM
+_TM_172 SEC
+_TM_173 THRD
+_TM_174 FRTH
+_TM_175 ~s~Press ~y~-Y-~s~ to change the color.
+#_TM_176
+_TM_177 ~s~Press ~y~-N-~s~ to go back.
+_TM_178 Save changes?
+_TM_179 ~s~Browse colors using the arrows ~u~ and ~d~.
+#_TM_180
+#_TM_181
+_TM_182 ~s~Enter the number of the color you want. For example, at vanilla carcols.dat, the '3' is red.
+_TM_183 ~s~The max number is 255. And by default the GTA SA only supports up to color 126, so caution to use bigger numbers.
+_TM_184 ~s~You can consult the color IDs on the internet or at carcols.dat.
+_TM_185 ~r~Info:~s~ The interface was adapted to GTA V Hud.
+_TM_186 File name:
+_TM_187 Author Name:
+_TM_188 Save Vehicle
+_TM_189 ~r~This file already exists and will be replaced.
+_TM_190 ~y~Found!
+_TM_191 ~s~Change the fields using arrows ~u~ and ~d~.
+_TM_192 ~s~Your vehicle will be saved at: ~y~'cleo\Tuning Mod\Vehicles\'
+_TM_193 ~s~Use ~y~T+L~s~ to load a vehicle.
+_TM_194 ~s~Enter the .tmv file name to be loaded.
+_TM_195 ~r~Remember that to load the AutoSave press -B- on the load menu.
+_TM_196 vehicle ~y~~1~~s~ (~y~-B-~s~)
+_TM_197 Model:
+_TM_198 Author:
+_TM_199 Date:
+_TM_601 ~s~Press ~y~-Y-~s~ or ~y~-~<~-~s~ to load, ~y~-Enter-~s~ or ~y~-N-~s~ to exit.
+_TM_602 ~s~Hold ~y~-J-~s~ to see more commands.
+_TM_603 ~s~Press ~y~G~s~ to enter the name of the file.
+_TM_604 ~s~Press ~y~B~s~ to load the last AutoSave.
+_TM_605 ~s~Press ~y~DELETE~s~ to delete the file.
+_TM_606 ~y~TAB+Y~s~ to add the changes without create a new vehicle,~n~so having better compatibility with SAMP and missions.
+_TM_607 To better work of this feature, your car will be repaired.
+_TM_608 The anti-cheat is enabled at 'Tuning Mod - CFG.ini'.
+_TM_609 ~y~CTRL+A~s~ to add at INI ~y~~1~
+_TM_610 ~s~hold ~y~Z~s~ to install the same at other side
+#_TM_611
+#_TM_612
+_TM_613 ~s~Save the trailer~n~instead of vehicle?
+_TM_614 ~s~If 'no', it will save the cab/car.
+_TM_615 Adjust the wheel size. This allows you to install larger rim wheels without sinking in the ground.
+_TM_616 Using this tool, is~n~recommended to hide original wheel~n~and install a new one.
+#_TM_617
+_TM_618 Change the seat position, exhaust etc.
+_TM_619 Change the position of default nodes/parts.
+_TM_620 RGB
+_TM_621 R
+_TM_622 G
+_TM_623 B
+_TM_624 Alpha
+_TM_625 HSV
+_TM_626 Hue
+_TM_627 Satur
+_TM_628 Value
+_TM_629 ~1~
+_TM_630 ~1~%
+_TM_631 ~s~Force white color (~b~-B-~s~): ~y~ON
+_TM_632 ~s~Force white color (~b~-B-~s~): ~r~OFF
+_TM_633 ~s~Loaded:
+#_TM_634 (internal)
+_TM_635 Accept this position?
+_TM_636 Enter the new license plate text.
+_TM_637 If your vehicle doesn't have functional license plate, you will not notice changes.
+_TM_638 ~r~The part may be with wrong rotation at the first time you select it.
+_TM_639 ~s~Press ~y~-F-~s~ to edit sub-parts.
+_TM_640 More
+_TM_641 ~s~Hold ~y~SHIFT~s~ while loading to the changes be~n~loaded slower.
+_TM_642 ~s~Preview (~b~C~s~): ~y~ON
+_TM_643 ~s~Preview (~b~C~s~): ~r~OFF
+_TM_644 ~s~Your vehicle need~n~repair. Continue?
+_TM_645 ~s~$150
+_TM_646 ~r~Only position.~n~Remember that the position is relative to the parent.
+_TM_647 ~s~Press ~y~-T-~s~ to Manage.
+_TM_648 ~y~TEST~s~ to test.
+_TM_649 ~s~If you added a license plate of other car, save your car and restart the game to work correctly.
+
+_TM_750 ~g~CJ: ~s~Hello... I need a tow in ~a~.
+_TM_751 ~b~Clerk: ~s~Where to, sir?
+#_TM_752 (internal)
+_TM_753 ~b~CJ: ~s~I changed my mind... Bye.
+
+
+
+#########################
+# automobile
+_TM_200 Body
+_TM_201 Wheel R. Front
+_TM_202 Wheel R. Mid
+_TM_203 Wheel R. Back
+_TM_204 Wheel L. Front
+_TM_205 Wheel L. Mid
+_TM_206 Wheel L. Back
+_TM_207 Porta R. Front
+_TM_208 Porta R. Back
+_TM_209 Porta L. Front
+_TM_210 Porta L. Back
+_TM_211 Bumper Front
+_TM_212 Bumper Back
+_TM_213 Fender R. Front
+_TM_214 Fender L. Front
+_TM_215 Hood
+_TM_216 Boot
+_TM_217 Windshield
+_TM_218 Exhaust
+_TM_219 Misc_A
+_TM_220 Misc_B
+_TM_221 Misc_C
+_TM_222 Misc_D
+_TM_223 Misc_E
+
+# monster truck
+_TM_224 Transmission L.
+_TM_225 Transmission R.
+_TM_226 Dump
+_TM_227 Misc_A
+
+# quad
+_TM_228 Body Front
+_TM_229 Body Back
+_TM_230 Suspension R. Fr.
+_TM_231 Suspension L. Fr.
+_TM_232 Axis Back
+_TM_233 Handlebar
+_TM_234 Misc_a
+_TM_235 Misc_b
+
+# heli
+_TM_236 Static propeller
+_TM_237 Moving propeller
+_TM_238 Static propeller 2
+_TM_239 Moving propeller 2
+_TM_240 Rudder
+_TM_241 Elevator
+_TM_242 Misc_a
+_TM_243 Misc_b
+_TM_244 Misc_c
+_TM_245 Misc_d
+
+# plane
+_TM_246 Static propeller
+_TM_247 Moving propeller
+_TM_248 Static propeller 2
+_TM_249 Moving propeller 2
+_TM_250 Rudder
+_TM_251 Elevator L.
+_TM_252 Elevator R.
+_TM_253 Gear L.
+_TM_254 Gear R.
+_TM_255 Gear Wing L.
+_TM_256 Gear Wing R.
+_TM_257 Misc_a
+_TM_258 Misc_b
+
+# boat
+_TM_259 Radar
+_TM_260 Windshield
+_TM_261 Rudder
+_TM_262 Flap Left
+_TM_263 Flap Right
+_TM_264 Flap Back Left
+_TM_265 Flap Back Right
+_TM_266 Static propeller
+_TM_267 Moving propeller
+_TM_268 Static propeller 2
+_TM_269 Moving propeller 2
+
+# bike
+_TM_271 Body
+_TM_272 Fork Front
+_TM_273 Fork Rear
+_TM_274 Wheel Front
+_TM_275 Wheel Rear
+_TM_276 Mudguard
+_TM_277 Handlebar
+_TM_278 Misc_A
+_TM_279 Misc_B
+
+# bmx
+_TM_280 Body
+_TM_281 Fork Front
+_TM_282 Fork Rear
+_TM_283 Wheel Front
+_TM_284 Wheel Rear
+_TM_285 Handlebar
+_TM_286 Chainset
+_TM_287 Pedal Right
+_TM_288 Pedal Left
+
+# dummies
+_TM_701 Headlights
+_TM_702 Tailights
+_TM_703 Headlights 2
+_TM_704 Tailights 2
+_TM_705 Front Seat
+_TM_706 Back Seat
+_TM_707 Exhaust
+_TM_708 Engine
+_TM_709 Petrol Cap
+_TM_710 Hitch
+_TM_711 Arm Pos
+_TM_712 Miscpos_c
+_TM_713 Miscpos_d
+_TM_714 Miscpos_a
+_TM_715 Miscpos_b
+_TM_716 Hand Pos
+
+
+############## Install ###################
+_TM_301 ~u~ Front
+_TM_302 ~d~ Back
+_TM_303 ~<~ Left
+_TM_304 ~>~ Right
+_TM_305 [PageUp] Up
+_TM_306 [PageDown] Down
+
+_TM_307 [X] Center
+_TM_308 [S] Reset Size
+_TM_309 [CTRL] Rotat. Snap
+_TM_310 [CTRL] Reset Deform
+_TM_311 [X] Reset
+_TM_312 [X] Snap
+_TM_313 [Z] Invert
+_TM_314 [CTRL] Inv. Rotation
+_TM_315 [S] Inv. Size
+_TM_316 [CTRL] Total Size
+_TM_317 [S] Stretch
+_TM_318 [S] Size
+_TM_319 [CTRL] Rotate
+_TM_320 [CTRL] Deform
+_TM_321 [CTRL] Inv. Deform
+_TM_322 [S] Reset Size
+
+_TM_323 ~u~ Rot. Front
+_TM_324 ~d~ Rot. Back
+_TM_325 ~<~ Rot. Left
+_TM_326 ~>~ Rot. Right
+_TM_327 [PgUp] Spin Left
+_TM_328 [PgDown] Spin Right
+
+_TM_329 ~u~ Deform +Y
+_TM_330 ~d~ Deform -Y
+_TM_331 ~<~ Deform +X
+_TM_332 ~>~ Deform -X
+_TM_333 [PgUp] Deform +Z
+_TM_334 [PgDown] Deform -Z
+_TM_335 [Home] Deform +W
+_TM_336 [End] Deform -W
+
+_TM_337 [D] Deform: ON
+_TM_338 [D] Deform: OFF
+_TM_339 [B] Commands Mode: 1
+_TM_340 [B] Commands Mode: 2
+_TM_341 [V] Camera Mode: 1
+_TM_342 [V] Camera Mode: 2
+_TM_343 [C] Close Doors
+_TM_344 [C] Open Doors
+_TM_389 [P] Show Pivot
+_TM_390 [P] Hide Pivot
+_TM_391 [M] Mirror: 1
+_TM_392 [M] Mirror: 2
+_TM_393 [M] Mirror: OFF
+
+_TM_345 ~u~ Stretch +Y
+_TM_346 ~d~ Stretch -Y
+_TM_347 ~<~ Stretch +X
+_TM_348 ~>~ Stretch -X
+_TM_349 [PgUp] Stretch +Z
+_TM_350 [PgDown] Stretch -Z
+
+_TM_351 ~u~ +Size
+_TM_352 ~d~ -Size
+
+_TM_353 ~u~ Invert Y
+_TM_354 ~>~ Invert X
+_TM_355 [PgDown] Invert Z
+
+_TM_356 ~u~ Inv. Siz. Y
+_TM_357 ~>~ Inv. Siz. X
+_TM_358 [PgDown] Inv. Siz. Z
+
+_TM_359 ~u~ Inv. Rot. Y
+_TM_360 ~>~ Inv. Rot. X
+_TM_361 [PgDown] Inv. Rot. Z
+
+_TM_362 ~u~ Res. Def. Y
+_TM_363 ~>~ Res. Def. X
+_TM_364 [PgDown] Res. Def. Z
+_TM_365 [End] Res. Def. W
+
+_TM_366 ~s~Press ~y~-Y-~s~ to accept or ~y~-N-~s~ to go back.
+_TM_367 ~s~Press ~y~-G+1234-~s~ to save the current position, or ~y~-H+1234-~s~ to load a saved position.
+
+_TM_369 ~u~ Reset Y
+_TM_370 ~>~ Reset X
+_TM_371 [PgDown] Reset Z
+
+_TM_372 [TAB] Slower
+_TM_373 [SHIFT] Faster
+_TM_377 [BACKSPACE] Undo
+
+_TM_378 [TAB] Only Position
+
+_TM_379 ~r~Salve~s~: ~r~1 ~s~2 3 4
+_TM_380 ~r~Salve~s~: 1 ~r~2 ~s~3 4
+_TM_381 ~r~Salve~s~: 1 2 ~r~3 ~s~4
+_TM_382 ~r~Salve~s~: 1 2 3 ~r~4
+_TM_383 ~r~Salve~s~: 1 2 3 4
+_TM_384 ~b~Load~s~: ~b~1 ~s~2 3 4
+_TM_385 ~b~Load~s~: 1 ~b~2 ~s~3 4
+_TM_386 ~b~Load~s~: 1 2 ~b~3 ~s~4
+_TM_387 ~b~Load~s~: 1 2 3 ~b~4
+_TM_388 ~b~Load~s~: 1 2 3 4
+
+#################################
+# Stats
+_TM_acc Acceleration
+_TM_vel Max Speed
+_TM_fre Brakes
+_TM_dir Stability
+_TM_val Value: $~1~
+_TM_pes Mass: ~1~ kgs
+_TM_dan Damage
+_TM_mt1 Diesel
+_TM_mt2 Petrol
+_TM_mt3 Electric
+_TM_pn1 Default
+_TM_pn2 Hard
+_TM_pn3 Medium
+_TM_pn4 Soft
+_TM_tr1 Traction: F
+_TM_tr2 Traction: R
+_TM_tr3 Traction: 4
+_TM_avs ~s~Stats taken from handling.cfg~n~may not be realistic
+
+#################################
+# Manage
+_TM_401 ~s~Press ~y~-~<~-~s~ to hide\show a part.
+_TM_481 ~s~Press ~y~-~>~-~s~ for all native child parts.
+_TM_402 ~s~Press ~y~-H-~s~ to rename an installed part.
+_TM_403 ~s~Press ~y~-DELETE-~s~ to delete an installed part.
+_TM_404 ~s~Press ~y~-P-~s~ to paint an installed part.
+_TM_480 ~s~Press ~y~-C-~s~ to open-close doors.
+
+# Choose
+_TM_405 ~s~Use ~y~CTRL+C~s~ and ~y~CTRL+V~s~ to copy-paste the name or part ID.
+_TM_406 ~s~Load the ID or .dff name of some vehicle to have its parts.
+_TM_407 ~s~Press ~y~G~s~ to enter the name or ID of some model.
+_TM_408 ~s~Press ~y~H~s~ to access the complete list of locations.
+_TM_409 ~s~Hold ~y~CTRL~s~ to manually navigate in IDs.
+_TM_410 ~s~Hold ~y~SHIFT~s~ to pass faster.
+_TM_411 ~s~Use ~y~PageUp~s~ and ~y~PageDown~s~ to change the size.
+_TM_412 ~s~Use mouse scroll, or ~y~O~s~ and ~y~L~s~ for zoom.
+_TM_413 ~s~Open the files at 'cleo\Tuning Mod\PARTS\' to change the parts.
+_TM_414 ~s~The amount of INI files and parts inside them is unlimited!
+
+# More
+_TM_450 ~s~Press ~y~-Y-~s~ to activate the function.
+_TM_451 Damage not visible
+_TM_452 Stronger vehicle
+_TM_453 Invisible player
+_TM_454 Scissor door - Front
+_TM_455 Scissor door - Rear
+_TM_456 Halogen headlights
+_TM_457 Double exhausts
+_TM_458 No exhaust smoke
+_TM_459 Disable camber
+_TM_460 Hydraulics
+#_TM_461
+_TM_462 Change engine sound
+_TM_463 Change handling
+_TM_464 Change headlight colors
+_TM_465 Change license plate
+
+#################################
+# --- Tutorial
+# chassis car
+_TM_551 You're installing a general part in the vehicle, where is glue in the 'body' of it.
+_TM_552 Feel free to explore well the commands, mainly invert (Z) and centralize (X), may be useful here.
+_TM_553 Pressing, for example G+1 you can save position 1, if you want another part in same position and size, use H+1.
+_TM_554 Install an spoiler usually requires installing in 'Boot' (trunk) and not in 'chassis'.
+_TM_555 Remember that these tips changes dependent the location of you're installing.
+
+# door car
+_TM_556 You're installing a part in a door.
+_TM_557 If you want to install the same part in other door, remember to save and load position (G+1/2/3/4 and H+1/2/3/4).
+_TM_558 Open doors (C) to see/test better.
+_TM_559 You can change the door position at 'Move - Nodes' in main menu.
+#_TM_560
+
+# trunk car
+_TM_561 You're installing a part in the boot (trunk).
+_TM_562 If you're installing for example a spoiler, the centralize command (X) may help, press X+~>~ to become in the center.
+_TM_563 Open doors (C) to see/test better.
+_TM_564 If you're trying to install a part inside the trunk, you didn't understood. The correct way is in 'body'.
+#_TM_565
+
+# bonnet car
+_TM_566 You're installing a part in the bonnet (hood).
+_TM_567 The commands centralize (X) and invert (Z) can be super useful here.
+_TM_568 Open doors (C) to see/test better.
+_TM_569 To install double scoops, remember to hold Z while accept the part to create a clone in other side.
+#_TM_570
+
+# wheel car bike
+_TM_521 Apparently you're installing a new wheel. If you don't hid the original wheel, you can in the end of installation.
+_TM_522 At the end of installation you have options to install the same wheel on the other side (left-right if car) or at all.
+_TM_523 Never edit Y or Z (be position or size) or rotations, otherwise the wheel will wobble! Keep it centralized.
+_TM_524 Use X+~u~ and X+PageDown to centralize the position. CTRL+X to centralize the rotation S+X to reset the size.
+_TM_525 S+~>~ to enlarge and S+CTRL+~u~/~d~ to increase/decrease. Then go to 'Adjusts > Wheel' to fix wheel sink on ground.
+
+# bike bmx
+_TM_526 You're installing a new part on the fork. Or a new fork.
+_TM_527 Pay close attention where it is or is not a fork to not install in the wrong place.
+_TM_528 The fork on motorcycle dampens, if you don't want to dampen, install it in mudguard.
+_TM_529 A bicycle, not dampens only turns.
+#_TM_530
+
+_TM_531 You're installing a new part on the bike mudguard.
+_TM_532 Pay close attention where it is or is not a mudguard to not install in the wrong place.
+_TM_533 The mudguard don't dampens, only turns, if you want to dampen, install in the fork.
+_TM_534 Tip: Part in mudguard can be used for example to install a disk brake caliper.
+#_TM_535
+
+_TM_536 Apparently you're installing a new pedal or chainset of a bicycle.
+_TM_537 Use the command to center the part (X) if you move unintentionally because usually here you don't need change the position.
+_TM_538 Installing pedals, may be necessary to save and load the position. And the Invert Size (Z+S+~>~) can also be useful.
+#_TM_539
+#_TM_540
+
+_TM_546 Apparently you are installing a new handlebar.
+_TM_547 You probably will not need to move to the right and left sides. If you do this unintentionally, center using X+~>~
+_TM_548 Press to accept the installation for CJ appear on your bicycle or motorcycle and so see if this in the correct position.
+#_TM_549
+#_TM_550
+
+# plane heli
+_TM_541 You are installing a general part in a plane, heli or boat.
+_TM_542 If you want to install the part for example in propeller or any other place, go back to choose the part and press 'H'
+_TM_543 Feel free to explore well the commands, mainly invert (Z) and centralize (X), may be useful here.
+#_TM_544
+#_TM_545
+
+# error
+_TM_600 ~y~-~w~ Sorry, there is no specific tips for where you are installing ~y~-
+_TM_800 ~y~-~w~ Sorry, there is no specific tips for the dummy you are positioning ~y~-
+
+# suspension
+_TM_571 ~s~Use ~y~Y~s~ to lift and ~y~N~s~ to lower.~n~Use ~y~G~s~ to tilt to rear and ~y~J~s~ to front.
+_TM_572 ~s~Drive with your car while lifting/lowering to smooth movement. Use ~y~H~s~ to go back to the original.
+_TM_573 ~s~Use ~y~B~s~ to reset camber. ~y~V~s~ to change camera angle.
+_TM_574 ~s~Use the return key (by default ~y~ENTER~s~ or ~y~F~s~) to accept the current suspension.
+
+# springs
+_TM_575 ~s~Use ~y~Y~s~ and ~y~N~s~ to adjust the softness.~n~~y~U~s~ and ~y~M~s~ to adjust the length of the springs.
+_TM_576 ~s~Use ~y~H~s~ to go back to the original. ~y~V~s~ to change camera angle.
+_TM_577 ~s~Don't stiff springs too much to your car don't bug or jumps in low FPS. Increase the softness if this happens.
+_TM_578 ~s~Use return key (by default ~y~ENTER~s~ or ~y~F~s~) to accept the current springs.
+
+# wheel
+_TM_585 ~s~Use ~y~Y~s~ and ~y~N~s~ to increase/decrease the size of wheels at same time.
+_TM_586 ~s~This tool serves to ajust the size of wheel collision. You will also need to install a new bigger wheel.
+_TM_587 ~y~U~s~ and ~y~M~s~ for front ~y~T~s~ and ~y~B~s~ for rear. If wheel get tilt, disable camber in 'More' screen.
+_TM_588 ~s~Use ~y~H~s~ to go back to the original. ~y~V~s~ to change camera angle.
+_TM_589 ~s~Use return key (by default ~y~ENTER~s~ or ~y~F~s~) to accept the current wheels.
+
+# main
+_TM_580 ~s~Tip for tip: Use and abuse of ~y~J~s~ key, will help a lot in almost any screen in this mod.
+_TM_581 ~s~Use TAB+U to enable/disable, or TAB+i to pass the song. You can add songs in 'cleo\Tuning Mod\Songs'.
+_TM_582 ~s~You can configure several things in .ini files located in folder 'cleo\Tuning Mod'.
+_TM_583 ~s~Hold V to show the vehicle. Note that you can use the mouse normally and do zoom by using scroll or O and L.
+_TM_584 ~s~The main keys of this mod are Y, N, H, G and B. Also SHIFT and TAB also can be used for fast and slower commands.
+
+# dummy lights
+_TM_801 ~s~Position of the headlights or taillights.
+_TM_802 ~s~Note that in vehicles with double lights, the position will be repeated on other side.
+_TM_803 ~r~Change this position will change all vehicles with the same model.
+
+# dummy seat front - geral
+_TM_805 ~s~Front seat position.
+_TM_806 ~sNote that the passenger position will be repeated on other side.
+_TM_807 ~g~Change this position will NOT change all vehicles with the same model.
+
+# dummy seat front - bikes
+_TM_811 ~s~Seat position of the driver.
+_TM_812 ~g~Change this position will NOT change all vehicles with the same model.
+
+# dummy seat back - geral
+_TM_815 ~s~Seat position of the back passenger.
+_TM_816 ~s~The position of this dummy is the center position of the two passengers.
+_TM_817 ~r~Change this position will change all vehicles with the same model.
+
+# dummy seat back - bikes
+_TM_821 ~s~Seat position of the croup.
+_TM_822 ~r~Change this position will change all vehicles with the same model.
+
+# dummy exhaust
+_TM_825 ~s~Exhaust smoke position.
+_TM_826 ~s~If you have double exhaust activated, the position of the exhaust will be repeated at other side.
+_TM_827 ~s~Remember that you can enable the double exhaust at More screen.
+_TM_828 ~g~Change this position will NOT change all vehicles with the same model.
+
+# dummy engine
+_TM_861 ~s~Engine smoke position when the vehicle is damaged.
+_TM_862 ~r~Change this position will change all vehicles with the same model.
+
+# dummy petrol cap
+_TM_831 ~s~Position of the petrol cap.
+_TM_832 ~s~When this location be hit by a gun, the vehicle will explode.
+_TM_833 ~r~Change this position will change all vehicles with the same model.
+
+# dummy hook up
+_TM_835 ~s~Position of the frontal hitch.
+_TM_836 ~s~This dummy is used on front of trailer, may be useless on other vehicles.
+_TM_837 ~r~Change this position will change all vehicles with the same model.
+
+# dummy ped arm - geral
+_TM_841 ~s~Position where the peoples put the arms at car windows.
+_TM_842 ~s~Apparently originally not used by the game.
+_TM_843 ~r~Change this position will change all vehicles with the same model.
+
+# dummy bar grip - bikes
+_TM_845 ~s~Position where the hands be positioned on handlebar.
+_TM_846 ~s~The arms will be stretched as needed.
+_TM_847 ~r~Change this position will change all vehicles with the same model.
+
+# dummy miscpos
+_TM_851 ~s~Position used internally.
+_TM_852 ~s~Can be used by several proposes.
+_TM_853 ~r~Change this position will change all vehicles with the same model.
+
+# move wheel
+_TM_855 ~s~The wheel position can only be changed with 2D, because the Z is constantly updated by the game.
+_TM_856 ~s~So, you can't change the height of the wheel, obviously, because the position of the wheel is always the ground.
+_TM_857 ~s~Do note also that this position is just visual, will not change the behaviour of your vehicle.
+
+#################################
+# --- Tour
+_TM_900 ~s~Press -~y~K~s~-
+
+_TM_910 ~s~It's here where all starts! Hold -~y~J~s~- to see tips and learn some commands. Press ~y~K~s~- to continue.
+_TM_911 ~s~You may start adding a new part on your vehicle in 'Add Part' at left.
+_TM_912 ~s~Note that there are several 'locations' to install the part. This choice means where the part will be 'glued'.
+_TM_913 ~s~Practical example: A spoiler may be installed at 'boot', so when the boot opens up the spoiler will go along.
+_TM_914 ~s~If you don't know where to install, go to 'body', where the general body of the vehicle is.
+
+_TM_915 ~s~Here you choose the part to install! There are SEVERAL commands available, hold -~y~J~s~- to see them.
+_TM_916 ~s~The parts are stored in different .ini files where you can edit. Use the up and down arrows to change the .ini.
+_TM_917 ~s~Originally the Tuning Mod only comes with some game objects on .ini, everything gets cooler when you download new parts.
+_TM_918 ~s~Literally any game model can be used, even a whole building! As so use a part of some vehicle in other!
+_TM_919 ~s~Explore this screen and choose something.
+
+_TM_920 ~s~See the right side of the screen for the number of commands!
+_TM_921 ~s~Hold some keys (as S, X, Z etc) and see the commands changing. You can do several combinations!
+_TM_922 ~s~For example, holding S and CTRL you can use arrows up and down to change the total size of the part model.
+_TM_923 ~s~Remember to control the camera by mouse, as so using zoom with scroll or O and L.
+_TM_924 ~s~Note also that, when pressing the up arrow the part will move to the front of vehicle, no matter the camera position.
+_TM_925 ~s~If you prefer to move to the front of the CAMERA and not the vehicle, change the command mode using -~y~B~s~-.
+_TM_926 ~s~Note that you can also save and load positions (including rotation, size etc) as shown in the screen bottom.
+_TM_927 ~s~For this, press for example G+1 to save at slot '1'. Now at any momment use H+1 to go back.
+_TM_928 ~s~The use of tips (key -~y~J~s~-) here is also important and changes according to location where you're installing.
+_TM_929 ~s~Finally, train and know the possibilities!
+_TM_930 ~s~Please, press -~y~B~s~- again to go back to the 'Commands Mode: 1'
+
+_TM_931 ~s~You installed your first part! You may want to go back to the main menu or in 'Manage' see other things.
+
+_TM_935 ~s~Here is a more 'advanced' screen for choose the location to install the part.
+_TM_936 ~s~Here is locations where are not listed on menu. May be useful for example to install parts at helicopter propeller.
+
+_TM_941 ~s~Here is the list of all your vehicle parts. Hold -~y~J~s~- to see commands!
+_TM_942 ~s~Note that you can hide the parts, as so renaming the parts you installed and other things.
+
+_TM_945 ~s~Done? You can save the changes in your vehicle using command T+M.
+_TM_946 ~s~However there are several things you need to understand, be sure to read the Readme file from the mod!
+
+_TM_951 ~s~There are many possibilities, this is where the "bonus" features are.
+_TM_952 ~s~There's really a lot you can do here! Explore them.
+

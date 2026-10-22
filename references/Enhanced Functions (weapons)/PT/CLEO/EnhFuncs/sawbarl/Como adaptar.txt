@@ -1,0 +1,18 @@
+1 - Modele sua garrucha, espingarda ou qualquer coisa do tipo
+
+2 - Deixe a mesh do cano com o nome "sawbarl"
+ 2.1 - O eixo dele tem que estar posicionado em local específico quando rotacionar ao lado Y ele fazer o movimento abrindo e fechando
+
+3 - Crie nesta pasta um arquivo .cfg com o nome do .dff da arma que ele irá substituir (por exemplo: sawnoff.cfg)
+ 3.1 - Dentro da pasta "Exemplo" tem um arquivo .cfg de exemplo totalmente já configurado, você pode usar ele mesmo, basta tirar uma copia dele, colocar nesta pasta e configurar se preciso
+ 3.2 - O arquivo .cfg tem que estar na pasta "CLEO\EnhFuncs\sawbarl", como por exemplo "CLEO\EnhFuncs\sawbarl\sawnoff.cfg"
+
+4 - Ao publicar sua arma, publique o .dff e .txd dela normalmente, e acompanhado, o arquivo .cfg, nada mais
+ 4.1 - NUNCA publique arquivos .cs, .BMS etc junto com ela! forneça o link de download oficial do Enhanced Functions com a ultima e mais recente versão! http://juniordjjr.blogspot.com/2014/02/down-enhfuncs-enhanced-functions-inedito.html
+
+
+
+===========
+Funciona com: Todas as armas de fogo
+===========
+A Sawnoff original do GTA SA já é adaptada e funciona a função

@@ -1,0 +1,29 @@
+Mr Tasty
+http://www.gtanetwork.it/zone/pafiledb.php?action=file&id=6519
+
+
+
+---- Credits ----
+Original Model: GTA IV
+Converted & Edited: AUTOMAN
+
+Corrigido por: Crowdigger
+Agradecimentos a Ceec por enviar texturas. 
+
+- Edits -
+Specular corrections, San Andreas Plates: Killer_xD
+
+
+----- Lines ----- = Keep inside Mod Loader.
+mrwhoop, 1,108
+
+mrwhoop, nto_b_l, nto_b_s, nto_b_tw
+
+MRWHOOP     5500.0   23489.6   3.0    0.0 0.0  0.00 125 0.82 0.70 0.46 	    5 140.0 14.0 55.0 R D 	4.5   0.60 0 30.0  	0.9  0.08  0.0   0.25 -0.25 0.5  0.6		0.46 0.40 22000     4009		201			0  3	13
+
+423, 	mrwhoop, 	mrwhoop, 	car, 		MRWHOOP, 	WHOOPEE, 	van,	ignore, 	10, 	0,	0,		-1, 0.81, 0.81,		-1 
+
+
+---------------------
+RESPECT Vehicles Pack
+www.MixMods.com.br

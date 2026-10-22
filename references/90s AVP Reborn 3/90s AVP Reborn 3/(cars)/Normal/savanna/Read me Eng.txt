@@ -1,0 +1,50 @@
+;Chevrolet impala 4 Door Hardtop '63
+;-----------------------
+;++++++++++++++++++++++++++++++++the car is made for:+++++++++++++++++++++++++++++++++++++++++++++
+;++++++++++++++++++++++++++++++ http://spc.gta.com.ua/  ++++++++++++++++++++++++++++++++++++++++++++
+
+;ATTENTION!  If you want to lay out this car on your own site, ask me first about permission!
+;(baker182@bk.ru http://spc.gta.com.ua/)
+
+;At use of all models issued by me, it is necessary the reference to my site (http://spc.gta.com.ua/),
+;And also on the author of models and the author convertings..(blinkman)
+
+;DO NOT EDIT OR KONVERTED THIS CAR WITHOUT MY PERMISSION!
+
+;AUTHOR & CONVERTED: blinkman (baker182@bk.ru http://spc.gta.com.ua/)
+
+
+;Big THANKS 
+;-pumbars for friendship http://spc.gta.com.ua/
+;-NRG for friendship http://3d-cars.ru
+;-To all users of forum http://gta.com.ua/forum2/  
+
+
+;Installation.
+
+;For replacement of license plates simply replace a file vehicle.txd in a folder models/generic in the catalogue with game 
+;
+;For installation use IMG Tool 2.0. This program lays on any site
+;about GTA in section of "tools". Having opened her(it) gta3.img (is in a folder models in the catalogue with game)
+;replace files savanna.dff, savanna.txd, exh_lr_sv1.dff, fbmp_lr_sv1.dff and rbmp_lr_sv1.dff  replace command or press Ctrl+R, on files from archive.
+;further we open "Notebook" a file vehicles.ide (a folder data), we find and we replace a trace. A line:
+
+567, 	savanna, 	savanna, 	car, 		SAVANNA, 	SAVANNA, 	null,	normal,		7, 	0,	2ff0,		-1, 0.77, 0.77,		2
+
+;further by the above mentioned program ("Notebook") it is opened handling.cfg and we find and we replace a trace. A line:
+
+SAVANNA      1500.0    2500.0   2.0    0.0 -0.15 0.1 125 0.75 0.84 0.53     4 160.0 24.0 5.0  R P   8.17  0.52 0 35.0   0.3  0.10  0.0  -0.10 -0.22 0.30 0.25       0.3  0.52 19000     40202000    02010004    2  2    0
+
+;following number in our program installation of colors it in a file carcols.dat:
+
+savanna, 93,44, 44,36, 123,92, 109,100, 101,101, 95,105, 83,110, 66,25
+
+;ALL!!!!!! WE START FOR GAME AND WE GO TO GO FOR A DRIVE!
+
+;in case of any trouble or there the question what will be - write on a e-mail
+;though if all to make as it is told above - questions will not be.
+
+;ATTENTION!!! I DO NOT RESPOND FOR CONSEQUENCES OF INSTALLATION!!!!
+;In any case, anything it is more terrible than reinstallation of game to you does not threaten
+
+;END!!!!!! WE START FOR GAME AND WE GO TO GO FOR A DRIVE!

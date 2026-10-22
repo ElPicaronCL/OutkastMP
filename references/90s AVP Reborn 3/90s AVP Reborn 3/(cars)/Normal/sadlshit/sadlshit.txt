@@ -1,0 +1,4 @@
+605,	sadlshit,	sadlshit,	car, 		SADLER,	 	SADLSHI, 	null,	normal, 	10, 	0,	0,		-1, 0.843, 0.843,		-1
+
+sadlshit, 13,1, 4,1, 28,1 72,1, 99,1, 113,1 114,1, 109,1, 25,25, 1,1, 16,1
+

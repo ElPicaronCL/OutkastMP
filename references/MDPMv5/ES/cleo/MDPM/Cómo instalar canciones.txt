@@ -1,0 +1,15 @@
+Coloca aquí los archivos de música. También puede organizarlos en carpetas.
+NO INSTALE ESTA PASTA Y LAS MÚSICAS EN EL MODLOADER — no se cargarán.
+
+Extensiones originalmente compatibles:
+.mp3 | .wav | .ogg | .aiff
+
+En la carpeta "(BONUS)" que viene en la descarga del mod hay una carpeta "bass plugins".
+Copia la carpeta a la carpeta de tu GTA SA, así que puedes usar también:
+.mp4 | .flac | .m4a | .aac | .3gp | .wma
+Sin embargo, según pruebas, fue necesario configurar "3DMode = 2" en el archivo "CLEO\MDPM.ini", sino causaba el error "K1".
+
+---------------------------------------------
+
+También en la carpeta "(BONUS)" hay un archivo .mp3 para que usted pruebe.
+Se recomienda instalarlo para probar si el mod está funcionando correctamente.

@@ -1,0 +1,78 @@
+  __  __ _      __  __           _     
+ |  \/  (_)    |  \/  |         | | 2019
+ | \  / |___  _| \  / | ___   __| |___ 
+ | |\/| | \ \/ / |\/| |/ _ \ / _` / __|
+ | |  | | |>  <| |  | | (_) | (_| \__ \
+ |_|  |_|_/_/\_\_|  |_|\___/ \__,_|___/
+                                       
+
+=======   MixMods.blogspot.com   =======
+
+
+------- Instruções:
+
+Extraia a pasta "cleo" para alguma pasta dentro do Modloader. Ou se preferir para a pasta do seu GTA SA.
+NÃO INSTALE A PASTA "DATA" DENTRO DO MODLOADER! Extraia a pasta "data" para a pasta do seu GTA SA.
+A pasta "(opcional)" vem com um pack de efeitos especiais chamado "Project Reality", este pack é usado somente para adicionar uma fumaça preta no arranque dos caminhões etc, você tem a total liberdade de não instalar este pack, simplesmente não terá as fumaças pretas (o mod Exhaust Tweaker já tem uma função semelhante), também pelo fato destes efeitos serem meio pesados (principalmente as explosões, causam muito lag)
+
+-- Download da última versão do Modloader: MixMods.com.br/2015/01/SA-Modloader.html
+
+
+
+
+
+ Detalhe: o NewOpcodes.cleo necessita da msvcp100d.dll e msvcr100d.dll, download aqui: http://mixmods.blogspot.com.br/2015/08/download-baixar-dll-microsoft-visual-directx9.html
+
+ O MOD *NÃO* FUNCIONA COM NOVAS VERSÕES DO NewOpcodes.cleo!!!
+
+ SE VOCÊ NÃO QUER O SISTEMA DE GASOLINA, DELETE O BENZIN.CS DA PASTA CLEO!!!
+
+ Se você não gostou de algum comando ou quer desativar os comandos, abra (com bloco de notas) e edite o arquivo "control_keys.cfg" - É legal mudar ou desativar alguns comandos, pois atrapalham, já que o mod têm comandos demais, para desativar os comandos, basta colocar "-1" no lugar do número da tecla.
+
+ Mais informações e avisos aqui: http://MixMods.com.br/2015/08/steering-active-dashboard-app.html
+
+
+ LEMBRANDO QUE VOCÊ PRECISA DOS VEÍCULOS ADAPTADOS PARA AS FUNÇÕES FUNCIONAREM
+
+
+CONTROLES PRINCIPAIS:
+- "K" - limpadores; 
+- "J" - desligar o motor;
+- "B" - trava de freio de mão (on/off); 
+- "P" - engatar/desengatar o reboque (trailer); 
+- "Z" - pisca alerta esquerdo
+- "X" - pisca alerta de emergencia
+- "C" - pisca alerta direito
+- "N" - abastecer o carro (parando em algum posto)
+- "9" - marcha reduzida (on/off, a uma taxa é de menos de 5 km/h); 
+- "0" - tração dianteira;
+- "-" - tração 4x4;
+- "=" - tração traseira;
+
+Controles do guindaste (de fora do caminhao do lado da cabine)
+"Num8" - de pé perto do aparelho para levantar a cabine; 
+"Num2" - de pé perto do aparelho para abaixar a cabine; 
+"Num7" / "Num1" - Elevador hidráulico
+
+Controles do guindaste (dentro do caminhao)
+"Num8" / "Num2" - levantar/abaixar
+"Num4" / "NUM6" - girar; 
+"NUM7" / "Num9" - empurrar a ponta;
+"Num1" / "Num3" - lançar/remover o suporte de chão; 
+"Num +" / "Num-" - rebobinar/descontrair o cabo.  
+
+
+
+VERSÃO: v3.2.1
+--------------------
+
+Autores:
+Autor principal: Izerli
+NewOpcodes.cleo: DK22Pac
+Sistema de gasolina: WinuX
+Termômetro e Hodômetro: D.i.M.o.N.
+
+Agradecimentos: DK22Pac e Den_spb pela assistência, também ao OIM, igor94, Xakep_tm, ZVER para idéias e testes. Vladislav para a criação do vídeo de adaptação.
+
+
+====   MixMods.blogspot.com        ====

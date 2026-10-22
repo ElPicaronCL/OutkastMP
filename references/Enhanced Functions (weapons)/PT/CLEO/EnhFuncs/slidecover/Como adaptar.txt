@@ -1,0 +1,15 @@
+1 - Modele sua arma
+
+2 - Deixe a mesh de alguma parte da arma na qual você quer que vai pra trás quando atirar com o nome "slidecover"
+ 2.1 - O eixo da parte pode estar posicionado em qualquer lugar, mas a rotação do eixo terá que ser totalmente 0
+
+3 - Crie nesta pasta um arquivo .cfg com o nome do .dff da arma que irá substituir (por exemplo: colt45.cfg)
+ 3.1 - Dentro da pasta "Exemplo" tem um arquivo .cfg de exemplo totalmente já configurado, você pode usar ele mesmo, basta tirar uma copia dele, colocar nesta pasta e configurar se preciso
+ 3.2 - O arquivo .cfg tem que estar na pasta "CLEO\EnhFuncs\slidecover", como por exemplo "CLEO\EnhFuncs\slidecover\colt45.cfg"
+
+4 - Ao publicar sua arma, publique o .dff e .txd dela normalmente, e acompanhado, o arquivo .cfg, nada mais
+ 4.1 - NUNCA publique arquivos .cs, .BMS etc junto com ela! forneça o link de download oficial do Enhanced Functions com a ultima e mais recente versão! http://juniordjjr.blogspot.com/2014/02/down-enhfuncs-enhanced-functions-inedito.html
+
+
+========
+Funciona com: Todas as armas de fogo. Incluindo camera.dff, bomb.dff, rocketla e heatseek.dff

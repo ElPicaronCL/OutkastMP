@@ -1,0 +1,69 @@
+;	
+;================== Chevrolet Impala coupe 1959 =====================
+
+;************************** version ********************** *******
+;*********************** GTA: San Andreas *********************** ***
+
+;Version 1.0
+
+;================== Http://gtamotors.keiby.com ===================
+
+;_________________________________________________________________
+
+;From the model and convert: nik287
+;Options: | H | K | S |, Flash Cadillac
+
+;Vehfuncs adaptation: Crowdigger
+
+;Paintjobs 2 & 3 autor: Meck
+;Paintjob 4 Autor: Victor Troquetti
+
+;_________________________________________________________________
+;
+;Distribution:
+;1) is forbidden to place the model on all resources, except http://gtamotors.keiby.com/ and http://gta.keiby.com/ within one month after release.
+;2) When other sites need to link to the site commands (GTA Motors) - http://gtamotors.keiby.com
+;3) When placing on other sites is prohibited to remove or modify the files contained in the archive.
+;4) are prohibited from using the model and the details contained in the files, without the permission of the author.
+
+;_________________________________________________________________
+
+;Used programs:
+;-ZModeler 1.0.7b
+;-ZModeler 2.0.8
+;-TXD Workshop 4.0
+;-Adobe Photoshop CS3
+;-Nero PhotoSnap
+
+;_________________________________________________________________
+
+;Thanks to:
+
+;- [H] [K] [S] for assistance in converting new ideas and splendid settings.
+;-Pumbars for the huge amount of photographic material, the rusty bottom and testing.
+;-Sabbath Black for friendship, support and assistance in the work.
+;-Olegator for help with textures.
+;-Dmitry216 for testing, and separate boards.
+;-DMC for the wonderful pictures.
+;-Flash Cadillac magnificent setting for the dynamics of the car.
+;-Venik for the friendship and support.
+;-Alexander for the VSA (miracle program)
+;-all visitors http://gta.keiby.com/forum, all those who waited and believed ...
+
+;________________________________________________________________
+
+;Features:
+
+;San Andreavsky working light.
+;Exploding-gas-tank, its own shadow, and the Coliseum.
+;-Emblems, engine and other small parts are made in 3D.
+;-A working suspension and engine parts.
+
+;________________________________________________________________
+
+
+412, 	voodoo, 	voodoo, 	car, 		VOODOO, 	VOODOO, null, poorfamily, 10, 0, 0, -1, 0.727, 0.727, 2
+
+voodoo, 10,10,11,0, 51,51,27,0, 3,14,31,0, 3,3,31,0, 1,1,37,0, 25,25,57,0, 55,1,23,0, 10,1,11,0, 30,30,27,0, 37,8,35,0,
+
+VOODOO       1655.6    6052.3   1.7    0.0 0.468 0.0 125 0.82 0.43 0.45     5 160.0 23.0 100.0  R P   4.50  0.50 0 35.49  0.4  0.06  0.5   0.134 -0.113 0.54 0.0      0.1  0.6  30000     00242000    03000001    1  1    0

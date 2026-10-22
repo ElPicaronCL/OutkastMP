@@ -1,0 +1,35 @@
+  ___              _                ___ _  _
+ |___\ _   _ _ __ (_) ___  _ __    /   (_)(_)_ __ 
+    \ \ | | | '_ \| |/ _ \| '__|  / /\ / || | '__|
+ /\_/ / |_| | | | | | (_) | |    / /_//| || | |
+ \___/ \____|_| |_|_|\___/|_|____|___,'_/ |/|_|
+                           |_____|BMS|__/__/
+
+=======   JuniorDjjr.blogspot.com   =======
+
+
+------- Instruções:
+
+xtraia a pasta "cleo" para alguma pasta dentro do Modloader. Ou se preferir para a pasta do seu GTA SA.
+-- Download da última versão do Modloader: MixMods.blogspot.com/2015/01/SA-Modloader.html
+
+(Recomendado usar CLEO 4.3 ou mais recente)
+-- Download da última versão da CLEO: MixMods.blogspot.com/2014/02/Livraria-CLEO.html
+
+
+
+ - Adaptar armas:   Abra qualquer pasta de alguma função (cleo\EnhFuncs\***) e leia o "Como Adaptar.txt" - Quando editar os .cfg, salve o arquivo em codificação ANSI!
+ - Camera especial: Digite "enhcam1" ou 2 ou 3 | Você pode press "G" e então "Y" ou "N" para aumentar ou abaixar a velocidade do jogo, legal para demonstrar suas armas em vídeos | As câmeras e outras coisas podem ser configuradas em "cleo\EnhFuncs\Enh_config (weapons).ini"
+
+ - O mod já virá com o .cfg para a sawn-off, já que a sawn-off original do jogo já é adaptada. Você pode ter problemas em usar um modelo "semi-adaptado". Caso você tenha trocado o modelo da sawn-off e ficado bugado, delete ou configure o arquivo "CLEO\EnhFuncs\sawbarl\sawnoff.cfg"
+
+
+
+Autor: Junior_Djjr
+
+VERSÃO: 3F (3 funções) 2.0
+
+
+====   JuniorDjjr.blogspot.com     ====
+====   MixMods.blogspot.com        ====
+====   BrModStudio.forumeiros.com  ====

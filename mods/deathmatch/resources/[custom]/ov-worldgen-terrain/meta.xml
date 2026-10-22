@@ -1,0 +1,7 @@
+<meta>
+    <info author="OutkastMP" version="0.1.0" name="OV WorldGen Terrain" description="Topography/GeoLibre terrain hints." type="script" />
+    <min_mta_version server="1.6.0-9.22470" client="1.6.0-9.22470"></min_mta_version>
+    <include resource="ov-worldgen-core" />
+    <script src="shared/config.lua" type="shared" />
+    <script src="server/core.lua" type="server" />
+</meta>

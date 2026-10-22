@@ -1,0 +1,10 @@
+;Credits:
+;Ford E-350 1982: Alex_SS, stratumx
+;Motorhome edit: (unknown), Junior_Djjr, ceec
+
+
+508, 	journey, 	journey, 	car, 		JOURNEY,	JOURNEY, 	null,	worker, 	10, 	0,	0,		-1, 0.82, 0.82,		-1
+
+JOURNEY      3500.0   14000.0   4.0    0.0 0.0  0.1  125 0.55 0.85 0.46 	5 140.0 18.0 20.0 R D 	4.5   0.60 0 30.0  	2.0  0.07  5.0   0.30 -0.15 0.5  0.0		0.46 0.53 22000 	4088		0			0  3	0
+
+journey, 1,1, 8,1, 19,1, 1,1, 1,1

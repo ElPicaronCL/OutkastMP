@@ -1,0 +1,29 @@
+;Chevrolet Chevelle "Rustelle"
+;http://www.gtainside.com/en/sanandreas/cars/19122-chevrolet-chevelle-rustelle/
+
+
+
+;---- Credits ----
+;Author: Burner, Mindfuck
+
+
+;- Edits -
+
+
+
+;----- Lines ----- = Keep inside Mod Loader.
+
+542, 	clover, 	clover, 	car, 		CLOVER,	 	CLOVER, 	null,	poorfamily,	10,	0, 0, -1,	0.7,	0.7,	0
+
+CLOVER       1200.0    2500.0   1.8   -0.25 0.0 -0.2 125 0.65 0.75 0.48 	4 180.0 20.0 7.0  R P   10.0  0.50 0 30.0   0.6  0.5   2.0   0.25 -0.10 0.45 0.0 		0.15 0.10 25000 	442004 	1004400    0  0    1
+
+clover, 	13,118,13,0, 24,118,55,0, 31,93,24,0, 32,92,110,0, 45,92,65,0, 113,92,14,0, 119,113,31,0, 122,113,61,0
+
+
+;---------------------
+;RESPECT Vehicles Pack
+;MixMods.com.br
+;Lastest version: MixMods.com.br/2017/06/RVP-RESPECT-Vehicles-Pack.html
+
+
+

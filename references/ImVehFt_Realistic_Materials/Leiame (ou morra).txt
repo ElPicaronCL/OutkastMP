@@ -1,0 +1,32 @@
+  __  __ _      __  __           _     
+ |  \/  (_)    |  \/  |         | | 2019
+ | \  / |___  _| \  / | ___   __| |___ 
+ | |\/| | \ \/ / |\/| |/ _ \ / _` / __|
+ | |  | | |>  <| |  | | (_) | (_| \__ \
+ |_|  |_|_/_/\_\_|  |_|\___/ \__,_|___/
+                                       
+
+=======   MixMods.com.br   ======= - Melhor visualizável em fontes mono-espaçadas, como "Consolas".
+
+
+------- Instruções:
+
+Extraia a pasta "ImVehFt" para onde o seu IVF v2.1.1 está instalado, assim substituindo os arquivos pelos novos.
+Somente disponível para o IVF v2.1.1: https://www.mixmods.com.br/2016/03/imvehft-ivf-improved-vehicle-features.html
+
+Na pasta "(HD License Plates)" há diferentes versões para as placas dos carros.
+Basta escolher alguma, e dentro da pasta haverá uma pasta "ImVehFt". Faça o mesmo para instalar, também substituindo os arquivos pelos novos.
+
+
+
+Versão: 17/10/19
+--------------------
+
+Autor: Kr0n0s800
+Placas HD: Mr. Explosive
+
+
+====   MixMods.com.br                ====
+====   fb.com/FamiliaMixMods         ====
+====   youtube.com/JuniorDjjrMixMods ====
+

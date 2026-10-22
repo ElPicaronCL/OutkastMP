@@ -1,0 +1,36 @@
+  __  __ _      __  __           _     
+ |  \/  (_)    |  \/  |         | | 2018
+ | \  / |___  _| \  / | ___   __| |___ 
+ | |\/| | \ \/ / |\/| |/ _ \ / _` / __|
+ | |  | | |>  <| |  | | (_) | (_| \__ \
+ |_|  |_|_/_/\_\_|  |_|\___/ \__,_|___/
+                                       
+
+=======   MixMods.com.br   ======= - Melhor visualizável em fontes mono-espaçadas, como "Consolas".
+
+
+------- Instruções:
+
+Extraia a pasta "Sprinting With Two Handed Weapons" para a pasta do Modloader.
+
+-- Download da última versão do Modloader: MixMods.com.br/2015/01/SA-Modloader.html
+
+
+
+ Nota: Na pasta "Sprinting With Two Handed Weapons\anim" há o arquivo ped.ifp original do jogo com somente a nova animação adicionada: playersprint_armed
+       Se você quiser adiciona esta animações em outro .ifp, siga este tutorial: http://www.mixmods.com.br/2015/11/tutorial-trocar-animacoes-entre-ifps.html
+ 
+ IMPORTANTE: Se deu crash com este .asi, foi porque você está com um ped.ifp não adaptado faltando esta animação!
+             Adapte-o com o tutorial acima (a animação fica no final da lista) ou verifique se você está usando este ped.ifp que veio no download e não outro que também esteja instalado em outra pasta do modloader.
+ 
+ Para funcionar também no CJ musculoso e gordo, use o mod BeSlim: https://www.mixmods.com.br/2018/12/be-slim.html
+
+
+--------------------
+
+Autor: _AG
+
+
+====   MixMods.com.br         ====
+====   fb.com/FamiliaMixMods  ====
+

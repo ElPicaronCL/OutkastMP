@@ -1,0 +1,609 @@
+
+☼
+-----------------------------------------------------------------------------------------→
+☼_______                    ______
+|   __♪ \     ______   	   /      \===============================►•••○
+|  |  |  |   /♫ ♠♠ ♫\     / ♦ /\ ♦ \
+|  |\_|  |==/   /\   \===/ • /==\ • \========================►•••○
+|   ____/\ /   /  \   \ / • /====\ • \=====►•••○
+|  |► \       /    \   / • /      \ • \==============►•••○
+|__|►  \_____/======\_/___/========\___\=========================►•••○
+☼
+----------------------------------------------------------------------------------------→
+☼
+			
+		
+
+
+			 --=(PORTUGUÊS)=--
+
+-Nada disso seria possível sem os animadores e modders existentes na comunidade do gta sa, um grande obrigado a 
+todos pelos mods sem cobrar um centavo por tantas modificações incríveis!
+
+_Gametuhr
+
+
+--==((Gametuhr))==--Melhor visualizável no bloco de notas com fontes mono-espaçadas, como "Lucida Console".
+
+MELHORIAS: V7.5=THE PARKOUR & SAMP UPDATE=RESUMO-----------------------------------------→
+
+--=(25 ANIMAÇÕES MELHORADAS
+ 
+--=(NOVO ESTILO DE PED.IFP EXCLUSIVO: 
+Ped.ifp adaptado para GTA SAMP
+
+--=(MODS essenciais para a experiência do projeto (em ".asi") estão agrupados no "PWA ESSENTIALS" 
+
+--=(Icones representativos e organização das pastas melhorados
+
+--=(Readme/leia-me melhorado
+
+--=(Ped.ifps Revisados
+
+
+
+
+
+PWA ESSENTIALS(2 melhorias)=--------------------------------------------------------------→
+
+Ativar animação ao abrir portas:
+Open Door Anim
+
+Ativar transição de Animações mais suaves:
+Improved Move
+
+
+
+Ped.ifp Traceur(9 melhorias)=-------------------------------------------------------------→
+
+Animação mais estável ao finalizar uma escalada:
+CLIMB_Stand_finish.ifp
+
+Animação tracer real de cair:
+FALL_glide.ifp
+
+Animação real de corrida padrão:
+run_player.ifp
+
+Animação melhor ao andar com rocket:
+walk_rocket.ifp
+walk_start_rocket.ifp
+
+Animação mais desenvolvida de Fucku:
+fucku.ifp
+
+Animação realistas de terminar conversas na rua:
+endchat_1.ifp
+endchat_2.ifp
+endchat_3.ifp
+
+
+
+Ped.ifp Remasterização(8 melhorias)=--------------------------------------------------→
+
+Animação real de corrida padrão:
+run_player.ifp
+
+Animação real de corrida padrão:
+run_player.ifp
+
+Animação melhor ao andar com rocket:
+walk_rocket.ifp
+walk_start_rocket.ifp
+
+Animação mais desenvolvida de Fucku:
+fucku.ifp
+
+Animação realistas de terminar conversas na rua:
+endchat_1.ifp
+endchat_2.ifp
+endchat_3.ifp
+
+
+
+PWA-Adds e/and Fixes(9 melhorias)=-------------------------------------------------------→
+
+Animações de recarregar mais realistas:
+buddy.ifp
+colt45.ifp
+python.ifp
+rifle.ifp
+silenced.ifp
+uzy.ifp
+
+ANimações mais realistas para:
+Pistola, Tec9, Micro Uzi
+Pistola silenciada
+Desert Eagle
+Spas12
+MP5
+AK47, M4
+Shotgun
+
+Animações Realistas para quando estiver gordo:
+Fat.ifp(FatSprint, FatRun. Animações Realistas para quando estiver gordo)
+
+Animações melhores para pedestres adicionando animação realista para idosos correndo:
+animgrp.Dat
+
+Removido o o default.ide (causador de crashes)
+
+
+Weapon.dat(Melhorias)=-------------------------------------------------------------------→
+
+Tiros de pistola, micro uzi, tec9, ak47, m7, minigun mais rápidos de acordo com o nível de experiência e o que é fisicamente possível no nosso mundo real e o nível de fodalidade do CJ 
+
+Tiros rápidos demais enquanto agachado com tec-9/micro uzi agora corrigidos
+
+
+
+CRÉDITOS=--------------------------------------------------------------------------------→
+
+==================================================================================
+
+Pack_de_Anima____es_Ultra_Realistas_HD_2021:
+
+https://www.mixmods.com.br/2021/04/pack-de-animacoes-ultra-realistas-hd.html
+
+==================================================================================
+
+GTA SA - MGR Mod - Metal Gear Rising Mod:
+https://www.mixmods.com.br/2020/11/mgr-mod-unofficial-fix-metal-gear.html
+
+
+Autores: 
+OCAME (Animações/scripts CLEO) https://www.youtube.com/channel/UCdH18VXPKFaNdOqlAmNPokA
+Visualsnake (Telas de Load/Menu) http://www.youtube.com/user/MasT3r0fMu
+GTA-Martin (Modelos/Skinning/Rigging) http://gta-martin.blogspot.jp/
+Dryann (Modelos/Skinning/Rigging) http://www.youtube.com/user/YannandFred/videos?view=0
+SSC (HUD/Efeitos editados) https://www.youtube.com/user/ssimonc1
+
+Correções e repack: Firefly, Junior_Djjr
+
+
+==================================================================================
+More_Realistic_Reload_Animation_Mod
+https://www.mixmods.com.br/2021/05/more-realistic-reload-weapon-animation.html
+
+Autor: Mutfurry (Simplemaker17)
+Versão Shotgun reload: Junior_Djjr
+
+==================================================================================
+
+Ped.ifp by IZUNA (Ultra Anims):
+https://www.mixmods.com.br/2013/01/mod-ultra-anims.html
+
+==================================================================================
+
+Improved Move v01.2b:
+https://www.mixmods.com.br/2019/10/Improved-Move.html
+
+==================================================================================
+First Person Fixed Weapon Anims:
+https://www.mixmods.com.br/2021/01/first-person-fixed-weapon-anims.html
+
+Animações: Makar S., Notorious MCJ
+Edição: Jéssica Natália
+
+==================================================================================
+
+Open Door Anim V1.2.1:
+https://www.mixmods.com.br/2020/09/open-door-anim-animacao-abrindo-porta.html
+
+Autor: Junior Djjr
+==================================================================================
+
+M4k3's New Car Animations:
+https://www.mixmods.com.br/2017/11/m4k3s-new-car-animations.html
+
+==================================================================================
+
+MMK_033 - Animation Fix:
+https://www.youtube.com/redirect?v=Q4GCH_aUuHU&redir_token=GCABB1CRkYQijRev5kL7uybkNqt8MTU1NzkyOTUwMkAxNTU3ODQzMTAy&event=video_description&q=https%3A%2F%2Fwww.mixmods.com.br%2F2017%2F10%2Fanimation-fix-corrigir-bugs-de-animacoes.html%3Fm%3D1
+
+Meheraj7
+
+Gedimas
+
+Aleksey_Move 
+
+Yurihdf
+
+DeeZire
+
+Evandro X
+
+SlingShot753's
+
+Charlie Vald
+
+==================================================================================
+
+HemiG-Animaзгo recarregar armas melhorado:
+https://www.youtube.com/redirect?redir_token=gfpoQk7XEN48v95BlMdZcQK5ovF8MTU0NjEwODY3NkAxNTQ2MDIyMjc2&event=video_description&v=EnyfKC13Rnw&q=https%3A%2F%2Fwww.mixmods.com.br%2F2012%2F08%2Fnovas-animacoes-para-armas.html
+
+==================================================================================
+
+Gta v online anims to sa:
+https://www.youtube.com/redirect?redir_token=gfpoQk7XEN48v95BlMdZcQK5ovF8MTU0NjEwODY3NkAxNTQ2MDIyMjc2&event=video_description&v=EnyfKC13Rnw&q=https%3A%2F%2Fwww.mixmods.com.br%2F2018%2F03%2Fgta-v-online-original-anims-to-sa.html
+
+
+Animações e correções: Eny_437
+Animações, weapon.dat e default.ide: Leather_45
+Animações: Charlie Vald
+
+==================================================================================
+
+_AG/NoxchoBoy - mod correr com  armas pesadas:
+https://www.youtube.com/redirect?redir_token=gfpoQk7XEN48v95BlMdZcQK5ovF8MTU0NjEwODY3NkAxNTQ2MDIyMjc2&event=video_description&v=EnyfKC13Rnw&q=https%3A%2F%2Fwww.mixmods.com.br%2F2018%2F10%2Fcorrer-com-armas-pesadas.html
+
+==================================================================================
+
+SwagNigga - SAPD animaзхes: 
+https://www.youtube.com/watch?v=-JsYmKPgpoA
+
+==================================================================================
+
+forma de  andar melhorada:
+https://lowpolymodsgtasa.blogspot.com/2018/11/pedifp.html
+https://www.youtube.com/watch?v=dj6NnCAmTx0
+
+==================================================================================
+
+passada de muro/estar parado(ped.ifp estilo remasterização):
+
+Animações GTA V ANIMS PHYSICS
+
+-Eny_437: Animaciones y fixeos
+-Leatherhoff (Leather_45): Animaciones
+-Charlie Vald: Animaciones
+
+Canais:
+-Eny_437: https://www.youtube.com/channel/UCMNWQRV35ujvUr3ZM6JzEfQ
+-Leatherhoff (Leather_45): https://www.youtube.com/channel/UChQq1PaQ8kHPmTddqnm3U2A
+-Charlie Vald (Xarli Star): https://www.youtube.com/watch?v=Uv65Ry95Iuk
+
+==================================================================================
+
+MILITARY ANIMATION V9 Unofficial Fix by Junnior_Djjr
+
+https://www.mixmods.com.br/2020/02/military-animation-fixed.html
+
+Author: xRx4life Frost
+Animations: mcsim2401 (Facial Animation Fix), Junior_Djjr ("idle_stance" improved)
+Fixes: Junior_Djjr
+
+==================================================================================
+
+Grip Animation
+https://www.mixmods.com.br/2020/02/grip-animation.html
+Anims Autor: FilipeS
+
+==================================================================================
+
+GTA SA - IV Better Animation
+
+https://www.youtube.com/watch?v=l63kUQKQIBA
+https://gtaforums.com/topic/853895-relsa-iv-better-animation/
+
+Credit:
+linevariy, niki, skript47
+
+==================================================================================
+
+Parkour mod
+https://www.mixmods.com.br/2018/03/parkour-mod.html?m=0
+Anims autor: П.А.Р.К.У.Р
+
+==================================================================================
+
+Realistic Animations Mod
+
+https://www.youtube.com/watch?v=yG3Ypzt0BE0
+
+==================================================================================
+
+Spiderman Mod V1.9 2021 by J16D (Animação específica de cair)
+
+https://sites.google.com/view/j16d/spider-man/spider-man-2021
+
+==================================================================================
+
+
+
+
+
+
+
+
+		--=(ENGLISH)=--
+
+
+-Nothing of this would be possible without the animators and modders from the gta sa community, thank you guys for all of the awesome work!
+
+_Gametuhr
+
+
+--==((Gametuhr))==--Best visualization in Notepad with monospaced font, as "Lucida Console".
+
+MELHORIAS: V7.5=THE PARKOUR & SAMP UPDATE=RESUME-----------------------------------------→
+
+--=(25 UPDATED ANIMATIONS
+ 
+--=(New EXCLUSIVE PED.IFP for GTA SAMP
+
+--=(Essential MODS for better playing with the project(".asi") are grouped into PWA ESSENTIALS
+
+--=(Better folders icons and organization
+
+--=(Better readme/leia-me
+
+--=(tested ped.ifps
+
+
+
+PWA ESSENTIALS(2 UPDATES)=--------------------------------------------------------------→
+
+Opening Door Animations:
+Open Door Anim
+
+Improved Animations Transitioning:
+Improved Move
+
+
+
+Ped.ifp Traceur(9 UPDATES)=-------------------------------------------------------------→
+
+More Stable CLimbing Animation:
+CLIMB_Stand_finish.ifp
+
+Real Tracer Falling Animation:
+FALL_glide.ifp
+
+Real Default Running Animations:
+run_player.ifp
+
+Better Walk with rocket animation:
+walk_rocket.ifp
+walk_start_rocket.ifp
+
+Better fucku animation:
+fucku.ifp
+
+Realistic ending conversation animations :
+endchat_1.ifp
+endchat_2.ifp
+endchat_3.ifp
+
+
+
+Ped.ifp Remasterization(8 updates)=--------------------------------------------------→
+
+Real Default Running Animations:
+run_player.ifp
+
+Better Walk with rocket animation:
+walk_rocket.ifp
+walk_start_rocket.ifp
+
+Better fucku animation:
+fucku.ifp
+
+Realistic ending conversation animations :
+endchat_1.ifp
+endchat_2.ifp
+endchat_3.ifp
+
+
+
+
+PWA-Adds and Fixes(9 updates)=-------------------------------------------------------→
+
+Realistic reloading animations:
+buddy.ifp
+colt45.ifp
+python.ifp
+rifle.ifp
+silenced.ifp
+uzy.ifp
+
+More realistic animations for:
+Pistol, Tec9, Micro Uzi
+Silenced Pistol 
+Desert Eagle
+Spas12
+MP5
+AK47, M4
+Shotgun
+
+More Realistic:
+Fat.ifp(FatSprint, FatRun. Realistic animations when being fat)
+
+Realistic Peds animations with better animations for old age people when running:
+animgrp.Dat
+
+Removed the default.ide file(in-game crash)
+
+
+Weapon.dat(updates)=-------------------------------------------------------------------→
+
+Pistol Firing, micro uzi, tec9, ak47, m7, minigun Faster according with the exp level and what it is fisically possible in the real world and what CJ can do 
+
+Fixed fast firing with pistol, tec-9/micro uzi when crouched
+
+
+
+
+
+CREDITS=-----------------------------------------------------------------------------→
+
+==================================================================================
+
+Pack_de_Anima____es_Ultra_Realistas_HD_2021:
+
+https://www.mixmods.com.br/2021/04/pack-de-animacoes-ultra-realistas-hd.html
+
+==================================================================================
+
+GTA SA - MGR Mod - Metal Gear Rising Mod:
+https://www.mixmods.com.br/2020/11/mgr-mod-unofficial-fix-metal-gear.html
+
+
+Authors: 
+OCAME (animations/scripts CLEO) https://www.youtube.com/channel/UCdH18VXPKFaNdOqlAmNPokA
+Visualsnake (Loadscreens/Menu) http://www.youtube.com/user/MasT3r0fMu
+GTA-Martin (Models/Skinning/Rigging) http://gta-martin.blogspot.jp/
+Dryann (Models/Skinning/Rigging) http://www.youtube.com/user/YannandFred/videos?view=0
+SSC (HUD/Effects) https://www.youtube.com/user/ssimonc1
+
+Fixes and repack: Firefly, Junior_Djjr
+
+
+==================================================================================
+More_Realistic_Reload_Animation_Mod
+https://www.mixmods.com.br/2021/05/more-realistic-reload-weapon-animation.html
+
+Autor: Mutfurry (Simplemaker17)
+Versão Shotgun reload: Junior_Djjr
+
+==================================================================================
+
+Ped.ifp by IZUNA (Ultra Anims):
+https://www.mixmods.com.br/2013/01/mod-ultra-anims.html
+
+==================================================================================
+
+Improved Move v01.2b:
+https://www.mixmods.com.br/2019/10/Improved-Move.html
+
+==================================================================================
+First Person Fixed Weapon Anims:
+https://www.mixmods.com.br/2021/01/first-person-fixed-weapon-anims.html
+
+Animations: Makar S., Notorious MCJ
+Edition: Jéssica Natália
+
+==================================================================================
+
+Open Door Anim V1.2.1:
+https://www.mixmods.com.br/2020/09/open-door-anim-animacao-abrindo-porta.html
+
+Author: Junior Djjr
+
+==================================================================================
+
+M4k3's New Car Animations:
+https://www.mixmods.com.br/2017/11/m4k3s-new-car-animations.html
+
+==================================================================================
+
+MMK_033 - Animation Fix:
+https://www.youtube.com/redirect?v=Q4GCH_aUuHU&redir_token=GCABB1CRkYQijRev5kL7uybkNqt8MTU1NzkyOTUwMkAxNTU3ODQzMTAy&event=video_description&q=https%3A%2F%2Fwww.mixmods.com.br%2F2017%2F10%2Fanimation-fix-corrigir-bugs-de-animacoes.html%3Fm%3D1
+
+Meheraj7
+
+Gedimas
+
+Aleksey_Move 
+
+Yurihdf
+
+DeeZire
+
+Evandro X
+
+SlingShot753's
+
+Charlie Vald
+
+==================================================================================
+
+HemiG-Animaзгo recarregar armas melhorado:
+https://www.youtube.com/redirect?redir_token=gfpoQk7XEN48v95BlMdZcQK5ovF8MTU0NjEwODY3NkAxNTQ2MDIyMjc2&event=video_description&v=EnyfKC13Rnw&q=https%3A%2F%2Fwww.mixmods.com.br%2F2012%2F08%2Fnovas-animacoes-para-armas.html
+
+==================================================================================
+
+Gta v online anims to sa:
+https://www.youtube.com/redirect?redir_token=gfpoQk7XEN48v95BlMdZcQK5ovF8MTU0NjEwODY3NkAxNTQ2MDIyMjc2&event=video_description&v=EnyfKC13Rnw&q=https%3A%2F%2Fwww.mixmods.com.br%2F2018%2F03%2Fgta-v-online-original-anims-to-sa.html
+
+
+Animações e correções: Eny_437
+Animações, weapon.dat e default.ide: Leather_45
+Animações: Charlie Vald
+
+==================================================================================
+
+_AG/NoxchoBoy - mod correr com  armas pesadas:
+https://www.youtube.com/redirect?redir_token=gfpoQk7XEN48v95BlMdZcQK5ovF8MTU0NjEwODY3NkAxNTQ2MDIyMjc2&event=video_description&v=EnyfKC13Rnw&q=https%3A%2F%2Fwww.mixmods.com.br%2F2018%2F10%2Fcorrer-com-armas-pesadas.html
+
+==================================================================================
+
+SwagNigga - SAPD animaзхes: 
+https://www.youtube.com/watch?v=-JsYmKPgpoA
+
+==================================================================================
+
+forma de  andar melhorada:
+https://lowpolymodsgtasa.blogspot.com/2018/11/pedifp.html
+https://www.youtube.com/watch?v=dj6NnCAmTx0
+
+==================================================================================
+
+passada de muro/estar parado(ped.ifp estilo remasterização):
+
+Animações GTA V ANIMS PHYSICS
+
+-Eny_437: Animaciones y fixeos
+-Leatherhoff (Leather_45): Animaciones
+-Charlie Vald: Animaciones
+
+Channels:
+-Eny_437: https://www.youtube.com/channel/UCMNWQRV35ujvUr3ZM6JzEfQ
+-Leatherhoff (Leather_45): https://www.youtube.com/channel/UChQq1PaQ8kHPmTddqnm3U2A
+-Charlie Vald (Xarli Star): https://www.youtube.com/watch?v=Uv65Ry95Iuk
+
+==================================================================================
+
+MILITARY ANIMATION V9 Unofficial Fix by Junnior_Djjr
+
+https://www.mixmods.com.br/2020/02/military-animation-fixed.html
+
+Author: xRx4life Frost
+Animations: mcsim2401 (Facial Animation Fix), Junior_Djjr ("idle_stance" improved)
+Fixes: Junior_Djjr
+
+==================================================================================
+
+Grip Animation
+https://www.mixmods.com.br/2020/02/grip-animation.html
+Anims Autor: FilipeS
+
+==================================================================================
+
+GTA SA - IV Better Animation
+
+https://www.youtube.com/watch?v=l63kUQKQIBA
+https://gtaforums.com/topic/853895-relsa-iv-better-animation/
+
+Credit:
+linevariy, niki, skript47
+
+==================================================================================
+
+Parkour mod
+https://www.mixmods.com.br/2018/03/parkour-mod.html?m=0
+Anims author: П.А.Р.К.У.Р
+
+==================================================================================
+
+Realistic Animations Mod
+
+https://www.youtube.com/watch?v=yG3Ypzt0BE0
+
+==================================================================================
+
+Spiderman Mod V1.9 2021 by J16D (specific falling animation)
+
+https://sites.google.com/view/j16d/spider-man/spider-man-2021
+
+==================================================================================

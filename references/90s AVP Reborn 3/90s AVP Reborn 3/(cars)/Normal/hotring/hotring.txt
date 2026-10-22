@@ -1,0 +1,13 @@
+HOTRING      1600.0    4500.0   1.4    0.0 0.2 -0.4  125 0.85 0.80 0.48 	5 220.0 26.0 5.0  R P 	10.0  0.52 0 30.0   1.5  0.10  10.0  0.29 -0.16 0.6  0.4		0.20 0.56 45000 	202904 	    C00000		1  1	25
+
+502,	hotrina, 	hotrina, 	car, 		HOTRING, 	HOTRINA, 	BF_injection,	ignore, 	1,	0,	4fff,		-1, 0.8, 0.8,		-1
+
+503,	hotrinb, 	hotrinb, 	car, 		HOTRING, 	HOTRINB, 	BF_injection,	ignore, 	1,	0,	4fff,		-1, 0.8, 0.8,		-1
+
+494,	hotring, 	hotring, 	car, 		HOTRING, 	HOTRING, 	BF_injection,	ignore, 	1,	0,	0,		-1, 0.82, 0.82,		-1
+
+hotrina, 36,117, 36,13, 42,30, 42,33, 54,36, 75,79, 92,101, 98,109
+
+hotrinb, 1,1
+
+hotring, 36,117, 36,13, 42,30, 42,33, 54,36, 75,79, 92,101, 98,109

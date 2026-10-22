@@ -1,0 +1,49 @@
+Smooth Criminal Bicycles v3
+
+v3:
+Added more bicycle extras.
+Adapted with Vehfuncs' paintjob function.
+Secondary colors (carcols) added.
+Adapted with Vehfuncs' f_brake function.
+Replaced some SCB bicycle meshes with improved/better meshes (aka less blocky/messy).
+New bicycle details.
+Retweaked some bicycle materials.
+Adapted with SkyGFX and RenderHook (Sormed's PS2 Atmosphere RH preset recommended).
+Added default GTA SA Dirt (vehiclegrunge256) to bicycles - adapted with Vehfuncs' dirt system (ECG recommended for high quality dirt texture).
+Removed the need of ISDC's bmx/bike wheels, and also removed the need of Rikintosh's textures.
+
+v2.5:
+Added more bicycle extras (ported from GTA V and Bully). 
+Added reflection to bike.dff (for SkyGFX mobile pipeline use). 
+Re-added specular back.
+Removed bike.dff's flag.
+Bug fixes.
+
+v2:
+Added bicycle extras (some ported from GTA V and some made from scratch), adapting Vehfuncs.
+Replaced some GTA SA bicycle parts with GTA V's (such as grips, rims, etc).
+Moved from Kam's to The_Hero/AAP's script - this elminated weird shading bugs, and optimized bicycle mb sizes.
+And stuff.
+
+v1:
+Meshsmoothed vanilla bmx/bike/mtbike models (except bmx's wheels which were replaced with ISDC's) and upscaled and then downscaled Rikintosh's bike textures. 
+Some GTA SA bicycle 2D parts were replaced with GTA V's 3D bicycle parts.
+
+
+Install:
+Put one of three data txts in "SCBv3" folder. data-env.txt is for SkyGFX's env pipeline. data-sky.txt is for SkyGFX's other pipelines. And data-rh.txt is for Renderhook.
+Put "SCBv3" folder in modloader.
+Modloader download: https://www.mixmods.com.br/2015/01/SA-Modloader.html
+
+Required mods to go with SCB:
+VehFuncs ( https://www.mixmods.com.br/2018/01/VehFuncs.html )
+
+Recommended (optional) mods to go with SCB:
+GFXHack ( Fixed chrome/reflect effect - https://www.mixmods.com.br/2014/12/gfx-hack-correcao-de-superficies.html ) - not needed for RenderHook.
+ECG ( Enhanced Classic Graphics - Higher quality of default GTA SA's dirt "vehiclegrunge256" texture - https://www.mixmods.com.br/2019/10/ecg-enhanced-classic-graphics.html ).
+
+NOTE:
+If you have both ImVehFt and ECG installed - you need to replace ImVehFt's "vehiclegrunge256" texture with ECG's. ImVehFt overrides ECG's high-res "vehiclegrunge256" texture with ImVehFt's own low-res "vehiclegrunge256" texture. Otherwise dirt on bicycles ingame be fuckin blurry.
+
+Authors:
+Zeneric/Kkjj (Smooth Criminal Bicycles) - https://forum.mixmods.com.br/f20-veiculos/t1946-meshsmoothed-bikes

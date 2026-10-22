@@ -1,0 +1,102 @@
+==Supported components (dummies)==
+breaklight/breakl _ l/r
+reversingl/revl _ l/r
+foglight/fogl _ l/r
+indicator/turnl _ lf/rf/lm/rm/lr/rr
+hub_rf
+hub_rm
+hub_rb
+hub_lf
+hub_lm
+hub_lb
+movspoiler
+movsteer
+
+Comment format for ImVehFt strings
+<param type: name: significance>
+Param type:
+  Integer/Float/Symbol
+Name:
+  Parameter name, explains its purpose
+Significance:
+  Required parameters are present at the line should necessarily
+  Optional parameters can be left in the line - then they will use the default settings.
+  You can't use parameters in isolation (all or none at the same time).
+
+=Steer=
+Format:
+ movsteer_<float: rotation multiplier: optional>
+Example:
+ movsteer_0.5, movsteer
+Default:
+ Default value is 1.0
+Number of max components:
+ 1
+
+=Animated spoiler=
+Format:
+ movspoiler<symbol: user_id : optional>_<float: rotation angle: optional>_<integer: rotation time: optional>
+Example:
+ movspoiler_45.0_4000, movspoiler2_25.0_3000, movspoiler, movspoiler3
+Default:
+ Default values are 30.0 and 3000
+Number of max components:
+ 3
+
+*It's not necessary to create additional components inside breakpads dummy. Just create hub_xx as component.
+Before
+ main
+ -hub_xx
+  -bp_xx
+Now
+ main
+ -hub_xx
+*For bikes use components hub_rf and hub_rb
+
+*Each light component can have a second variant, for example
+breaklight_l2
+or
+breaklight_la
+
+**It was _2 suffix in ImVehLM 1.0
+**You can use any suffix in this case
+
+_prm tag
+Used to set special settings for light effects.
+Format:
+ _prm<<integer: color: обязательный><integer: type: обязательный><integer: corona size: обязательный><integer: shadow size: обязательный>>
+Example:
+ turnl_rr_prmFF0000046, breakl_rr_prmFF0000046, last 3 digits - 0, 4, 6, - light type, corona size, shadow size.
+Light types
+
+      LIGHT_TYPE_DIRECTIONAL = 0,
+      // directional light with shadow taillight.bmp.
+      // used by default for turnlights and foglights.
+      LIGHT_TYPE_DIRECTIONAL_INVERSED = 1,
+      // inversed directional lights with shadow taillight.bmp. Used by default
+      for breaklights and reversinglights.
+      LIGHT_TYPE_NON_DIRECTIONAL = 2
+      // point light with shadow pointlight.bmp.
+
+==Supported materials==
+The new version has added materials
+light_night_material - night light
+light_allday_material - constant lighting
+default_day_material - disappears at night
+
+Name                   Version  Texture       Color(Hex) Color(RGB)
+breaklight_l_material           vehiclelights #B8FF00    184 255   0
+breaklight_r_material           vehiclelights #FF3B00    255  59   0
+revlight_l_material             vehiclelights #FFAD00    255 173   0
+revlight_r_material             vehiclelights #00FFC6      0 255 198
+foglight_l_material             vehiclelights #FFAE00    255 174   0
+foglight_r_material             vehiclelights #00FFC7      0 255 199
+indicator_lf_material           vehiclelights #B7FF00    183 255   0
+indicator_rf_material           vehiclelights #FF3A00    255  58   0
+indicator_lm_material           vehiclelights #B6FF00    182 255   0
+indicator_rm_material           vehiclelights #FF3900    255  57   0
+indicator_lr_material           vehiclelights #B5FF00    181 255   0
+indicator_rr_material           vehiclelights #FF3800    255  56   0
+light_night_material            vehiclelights #0010FF      0  16 255
+light_allday_material           vehiclelights #0011FF      0  17 255
+default_day_material            default       #0012FF      0  18 255

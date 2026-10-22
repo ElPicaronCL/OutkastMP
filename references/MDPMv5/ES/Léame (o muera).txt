@@ -1,0 +1,56 @@
+  __  __ _      __  __           _     
+ |  \/  (_)    |  \/  |         | | 2019
+ | \  / |___  _| \  / | ___   __| |___ 
+ | |\/| | \ \/ / |\/| |/ _ \ / _` / __|
+ | |  | | |>  <| |  | | (_) | (_| \__ \
+ |_|  |_|_/_/\_\_|  |_|\___/ \__,_|___/
+                                       
+
+=======   MixMods.com.br   ======= - Mejor visible con fuentes mono-espaciadas, como "Consolas".
+
+
+------- Instrucciones:
+
+Extraiga todo a la carpeta de su GTA SA. — También tiene la opción de instalar la carpeta "cleo" en "modloader\MDPM", excepto la carpeta "cleo\mdpm".
+
+-- Descargar la última versión de Modloader: MixMods.com.br/2015/01/SA-Modloader.html
+-- Necesario CLEO 4.3.23 o posterior: MixMods.com.br/2014/02/Livraria-CLEO.html
+-- En caso de crash al abrir el juego: MixMods.com.br/2014/09/iiivcsa-open-limit-adjuster.html
+
+
+
+== Cómo usar:
+Instale canciones en la carpeta "CLEO\MDPM". En esa carpeta hay un archivo .txt, lea.
+Entra en un vehículo y escribe "MDPM".
+Es necesario tener altavoces adaptados para vibrar, pero el mod funciona sin ellos.
+Si usted no tiene coches con altavoces adaptados, siga el tutorial: Forum.MixMods.com.br/f52-tutoriais/t13-mdpmv5-como-adaptar-aplicar-um-carro-para-vibrar
+Puede configurar varias cosas en el archivo "CLEO\MDPM.ini" y "MDPM - NPCs.ini".
+
+
+== Importante:
+Se recomienda 60 FPS para que la vibración sea realista. 50~40 es aceptable.
+Si tiene un monitor con más de 60 hz, por ejemplo 144 hz, utilice el mod en 144 FPS para ser aún más realista.
+Puede utilizar MixSets para ajustar el límite de FPS: MixMods.com.br/2015/12/mod-mix-sets.html
+
+
+== Links:
+Caso de problemas:  Forum.MixMods.com.br/f10-ajuda-com-o-jogo/t12-mdpmv5-problemas-e-solucoes-codigos-de-erros
+Altavoces:          TuningMod.MixMods.com.br/search/label/Alto%20falantes
+Skins:              Forum.MixMods.com.br/f9-mdpm
+Cómo adaptar:       Forum.MixMods.com.br/f52-tutoriais/t13-mdpmv5-como-adaptar-aplicar-um-carro-para-vibrar
+API para mods:      Forum.MixMods.com.br/f52-tutoriais/t29-mdpmv5-api
+ 
+
+
+Versión: v5.1 RC5 (11/06/19 - DD/MM/YY)
+--------------------
+
+Autor: Junior_Djjr
+.asi y ayudas: Fabio
+Agradecimientos: Shmoopy (por ayudar a resucitar la idea), K.b.sa (anims); HybridTheory (traducción al español del .ini); ArtututuVidor$ (pruebas)
+
+
+====   MixMods.com.br                ====
+====   fb.com/FamiliaMixMods         ====
+====   youtube.com/JuniorDjjrMixMods ====
+

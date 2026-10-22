@@ -1,0 +1,11 @@
+BusFuncs v0.5
+------------------------------
+https://central-mods.com.br/
+------------------------------
+Autor: PRK99
+Agradecimentos: ThirteenAG (CIniReader), Fábio, RetrKill0 e G3D
+------------------------------
+Veja as novidades do mod no arquivo "BusFuncs_Changes.log".
+------------------------------
+INSTALAÇÃO:
+Mova a pasta "BusFuncs" para dentro da pasta "modloader" ou copie os arquivos dentro da pasta e cole dentro da pasta raiz do seu jogo.

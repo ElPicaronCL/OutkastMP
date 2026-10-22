@@ -1,0 +1,56 @@
+[Format of date: MM/DD/YY]
+
+
+------ 26/08/15 (New script)
+- Main script rewritten from scratch with less CPU usage and RAM, not now lose more FPS. (EnhFuncs uses the same system for vehicles). Before the game could give lag if appears many people with weapons (such as police officers during high wanted level).
+- Fixed the "sawbarl" making the animation to reload twice.
+- Fixed Cameras commands (were wrong in the readme).
+- Added ability to change the game speed during the camera mode, thus being able to visualize the movement of the functions in slow motion etc. Cool to test and create videos demonstrating their weapons.
+- Less limit of models such as the "knifeblade" working for any melee weapon, and not only the knife.
+- Fixed camera 3 having the same configuration as the 1.
+- Rewritten error warnings, better and more warnings, such as checking files and version of crack.
+- Improved the default setting of the sawn-off (best locations and times).
+- Improvements in .txt of tutorial of how to adapt the functions.
+- Fixed the "slidecover" activating immediately at pick up a gun adapted to it.
+- Funções não duplicando na mesma arma.
+- The gun did not bugs if the .cfg not be loaded.
+- .ini file with some settings, including the camera positions.
+- English and Portuguese using the same scripts. Language set in the .ini.
+- Among other improvements not visible to the player.
+
+
+------ 09/13/14
+- Fixed knifeblade not working after last version
+- Fixed sawbarl not working the "StRotY" configuration after reload
+
+
+------ 09/11/14
+- Best errors message
+- No bug and crash when don't have a .cfg file
+- Sawnoff.cfg by default on Sawbarl folder
+- Little performance improvements
+
+
+------ 09/08/14 (Return to work)
+- 3F (penknife | knifeblade)
+- Very highs improvements in performance
+- Added 3 player cams configurable by ini files, nice to test functions and printscreen the weapons
+- Fixed the bugs of the function don't work in some times (IS REALLY FIXED NOW!?)
+
+
+------ 02/27/14
+- Now work with others peds
+- Now you can put a high number in movemment speed
+- Fixed the bugs of the function don't work in some times
+
+
+------ 02/11/14
+- Fixed the bug with slide cover don't works for some people with much cleo scripts in folder
+
+
+------ 02/08/14
+- 2F (slide cover | slidecover)
+
+
+------ 01/28/14
+- 1F (break action | sawbarl)

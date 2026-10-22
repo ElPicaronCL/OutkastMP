@@ -1,0 +1,245 @@
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+;» » » » » » 1957 Chevrolet Bel Air Sport Coupe (2454) « « « « « «
+
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+                                                                                 
+;	Original Author: Turn 10, Forza Motorsport 4
+;        Authors of some parts: THQ, EA Games, Ubisoft
+;	Converted and improved to SA: Mad Driver (Mad_Driver10 - 2й ник)             	 
+;
+;	This car is exlusive for gta-unlimited.ru.gg!
+;
+;	Version: 1.0
+;	Release date: 13.09.2015
+;
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+;
+;» » » » » » Car's history and Specifications « « « « « «
+;
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+;For 1955, Chevrolet's full-size model received all new styling and power. It was called the "Hot One" in GM's advertising campaign. Chevrolet's styling was crisp, clean and incorporated a Ferrari-inspired grille. 
+;Bel Airs came with features found on cars in the lower models ranges plus interior carpet, chrome headliner bands on hardtops, chrome spears on front fenders, stainless steel window moldings, and full wheel covers. 
+;Models were further distinguished by the Bel Air name script in gold lettering later in the year.[8] For 1955 Chevrolets gained a V8 engine option.and the option of the 2 speed Powerglide automatic, or a standard three speed Synchro-Mesh manual transmission with optional overdrive. 
+
+;The new 265 cu in (4,340 cc) V8 featured a modern, overhead valve high compression, short stroke design that was so good that it remained in production in various displacements for many decades. 
+;The base V8 had a two-barrel carburetor and was rated at 162 hp (121 kW), and the "Power Pack" option featured a four-barrel carburetor and other upgrades yielding 180 bhp (130 kW). Later in the year, a "Super Power Pack" option added high-compression and a further 15 bhp (11 kW). 
+;"Idiot" lights replaced gauges for the generator and oil pressure.
+
+;This was not the first Chevrolet to be installed with a V8 engine. The first Chevrolet with a V8 engine was introduced in 1917 called the Series D which was built for two years, and was manufactured before Chevrolet joined General Motors.
+;Motor Trend magazine gave the Bel Air top marks for handling. Popular Mechanics reported acceleration for a V8 Bel Air with Powerglide as being 0-60 mph in 12.9 seconds, plus a comfortable ride, and good visibility. 
+;On the other hand, the horn ring blocked some of the speedometer, regular gasoline made the engine knock, and the first V8 engines off the line burned too much oil. Front legroom was 43.1". Brakes were 11" drums. 
+
+;A new option for V8-equipped 1955 models was air conditioning, with outlets on each side of the dashboard; a heavy-duty generator was included on cars equipped with this option; in 1955 and 1956, air conditioning could be installed on cars ordered with the standard 
+;three-speed manual transmission, overdrive or Powerglide, but from 1957 onward, an automatic transmission (or minus that, 4-speed manual transmission) was a pre-requisite option.
+;The 1956 Bel Air received a face-lift with a more conventional full-width grille, pleasing those customers who didn't favor the Ferrari-inspired '55 front end. Distinctive two-tone bodyside treatments and graceful front and rear wheel openings completed the "speedline" restyling. 
+;Single housings incorporated the taillight, stoplight, and backup light, and the left one held the gas filler - an idea popularized on Cadillacs. Among the seven Bel Air models was a new Sport Sedan, a pillarless four-door hardtop that looked handsome with all the 
+;windows rolled down and allowed easy entry into the back seat. Production exceeded 103,000, compared to 128,000 two-door hardtops. Shapely two-door Nomad wagons topped the price chart at $2,608, but now carried the same interior and rear-wheel sheetmetal as other Bel Airs, 
+;lacking the original's unique trim. Only 7,886 were built. The least costly Bel Air, at $2,025, was the two-door sedan. Seatbelts, shoulder harnesses, and a padded dashboard were available,[9] and full-size cars could even get the hot Corvette 225-horsepower engine. 
+;In 1956 sales material there was an optional rain-sensing automatic top, which was first seen on the first on the 1951 LaSabre concept car. However, it is believed that it was never installed on a car. 
+;Popular Mechanis reported only 7.4% of owners in their survey ordered seat belts.
+
+;In 1957 engine displacement grew to 283 cu in (4,640 cc) with the "Super Turbo Fire V8" option producing 283 hp (211 kW) with the help of continuous (closed loop) mechanical fuel injection. These so-called "fuelie" cars are quite rare, since most Bel Airs were fitted with carburetion. 
+;The 1957 Bel Air is among the most recognizable American cars of all time; well-maintained examples, especially Sport Coupes and Convertibles are highly sought after by collectors and enthusiasts. They are roomy, with tastefully restrained, period use tail fins and chrome. 
+;A second automatic transmission, Turboglide, was optional. While the original two-speed Powerglide continued unchanged, Turboglide provided a continuously variable gear ratio which made "shifting" imperceptible. The shift quadrant on Turboglide cars followed a "P R N D Gr" pattern.
+;From 1955 to 1957, production of the two-door Nomad station wagon was assigned to the Bel Air series, although its body and trim were unique to that model. Prior to becoming a regular production model, the Nomad first appeared as a Corvette-based concept vehicle in 1954. 
+;Chevrolet has since unveiled two concept cars bearing the Nomad name, most recently in 1999. The 1955–1957 Chevrolets are commonly referred to as TriFives.
+;The 1955-1957s were made in right-hand drive and shipped from Oshawa, Canada, for local assembly in Australia (CKD), New Zealand (SKD), and South Africa. All three model years had a reversed version of the '55 LHD dashboard and did not get the LHD models' 1957 redesign.
+
+;	→ Specifications:
+
+;Top speed: 184 km/h
+;0-95 km/h: 8,5 s.
+;Engine type: V-8
+;Displacement: 4637 cm3
+;Transmission type: manual, 3-gear
+;Horsepower gross: 164 кВт при 4800 об/мин
+;Torque gross: 366 Нм при 2800 об/мин
+;Shipping weight: 1550 кг
+
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+;» » » » » » Car's features
+ 
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬                                                                                                   
+
+;	→ Quality convert from Forza Motorsport 4
+;	→ 2 extras
+;	→ 2 tuning kits
+;	→ 3 colors support
+;	→ 4 custom paintjobs (+ template)
+;	→ Perfectly fits in SA Atmosphere
+;	→ SA-Plate and orignal SA-Colors support
+;	→ Fully working: turnlights, brakelights, foglights (only in extra!), reverselights, headlights, taillights 
+;	→ Fully working: steering wheel, speedometer, tahometer, fuel oil and water temperature indicators, wipers, brakepads
+;	→ Quality interior's gauges lightning
+;	→ Perfectly tailored ped_frontseat
+;	→ Custom Shadow, Collision, chassis_vlo
+;	→ Realistic damage and handling 
+;	→ Perfectly adapted for ENB Series and without him
+;	→ Adapted for Active Dashboard 3.2.1 
+;	→ Adapted for Improved Vehicle Features 2.1.1 
+;	→ Adapted for High Quality Light Mod 2.0
+;	→ Adapted for GFX Hack.asi plugin
+;	→ Doesn't support SAMP or MTA!
+;	→ Replaces: TORNADO
+;	
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+
+;» » » » » » Installation                                                                                                 
+
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+
+;Installation:
+
+;	1. Use imgtool 2.0 (or Spark) and open gta3.img archive (#:\Grand Theft Auto - San Andreas\models\)
+;	2. Find files TORNADO.dff and TORNADO.txd, and replace them from files included in car mod's archive
+;       3. Save all changes
+;
+;Settings:
+
+;Warning! Modification without these settings willn't work properly!
+
+;	1. Opn with notepad handling.cfg (#:\Grand Theft Auto - San Andreas\data)
+;	2. Find a line, which started from "TORNADO", and replace this line with new one from ReadMe file 
+;	3. Make same thing with files: vehicles.dat, carcols.dat, carmods.dat, vehsets.dat
+
+; ● handling.dat
+
+TORNADO       1558.0 6516.0 1.5 0.0 0.0 -0.13 125 0.77 0.73 0.51 5 168.9 22.3 6.1  R P   3.84 0.58 0 32.0  0.673  0.783  1.1  0.10  -0.05  0.50  0.03  0.23  0.49  45000  442000  3800002   1    1   0
+
+; ● vehicles.dat
+
+576, 	tornado, 	tornado, 	car, 		TORNADO, 	TORNADO, 	null,	poorfamily,	7, 	0,	0,		-1, 0.76, 0.76,	        2
+
+; ● carcols.dat:
+
+;#NOTE! Delete old settings for Tornado and add NEW line to group "car4" after Squalo.
+
+tornado, 0,17,0,0, 3,3,1,0, 6,59,1,0, 43,14,1,0, 65,65,1,0, 114,73,73,0, 93,93,1,0, 94,3,94,0
+
+;#Tip: 1st color - exterior and disk spin, 2nd - interior panels, 3nd - roof
+
+; ● carmods.dat
+
+tornado, exh_lr_t1, exh_lr_t2, fbmp_lr_t1, fbmp_lr_t2, nto_b_l, nto_b_s, nto_b_tw, rbmp_lr_t1, rbmp_lr_t2, wg_l_lr_t1
+
+; ● veh_mods.ide
+
+1134, wg_l_lr_t1, tornado, 100, 0
+1135, exh_lr_t2, tornado, 100, 0
+1136, exh_lr_t1, tornado, 100, 0
+1137, wg_r_lr_t1, tornado, 100, 0
+
+1190, fbmp_lr_t2, tornado, 100, 4096
+1191, fbmp_lr_t1, tornado, 100, 4096
+1192, rbmp_lr_t1, tornado, 100, 4096
+1193, rbmp_lr_t2, tornado, 100, 4096
+
+; ● vehsets.dat (application for "Active Dash 3.2.1") (not nessesary to install)
+;576        1.8   1.7        2.0          0.7           0.8     0.9       0.0       0.8    0.8         0.8         0.0     0.0         0.0        0.0         0.0
+
+;For properly working of my car mod, you need to download and install these tools:
+
+;	● Active Dash 3.2.1 (Author: izerli): http://www.libertycity.ru/files/gta-san-andreas/57230-app-3.2b.html
+;	● Improved Vehicle Features 2.1.1 (Author: DK22Pac): http://www.mediafire.com/download/g8wtzh1w30s1t2f/ImVehFt_Upd_t21052014.rar
+;	● High Quality Light Mod 2.0: http://gta.com.ua/file_sa_details.phtml?id=1337
+;	● GFX Hack (Author: Alexander): http://www.dev-c.com/files/SAGXFHackLoader.rar
+
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+
+;» » » » » »  Copyright
+
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+;1. All rights of original models of computer games and applications owned by the original developers.
+;So all of the envelopes are preserving the originality of the model and give delight to drive in the GTA World.
+
+;2. DO NOT MAKE CHANGES TO ARCHIVE WITH MODIFICATIONS! NAMELY, DELETE, RENAME, STANDART FILES AND UPLOADING!
+
+;3. DO NOT USE MODIFICATION FOR COMMERCIAL PURPOSES!
+
+;4. DO NOT USE MODEL'S DETAILS TO OWN PURPOSES! 
+
+;This modification are exclusive for this following sites:
+;http://gta-unlimited.ru/ 
+;http://gta-unlimited.ru.gg/ 
+;http://gta-worldmods.t-n-network.de/ 
+;http://vol-gta.com/
+;http://www.gtainside.com/en/news.php
+;http://gtainside.com/
+;http://world-gta.net/
+;http://n-gine.ru/
+;http://gta.com.ua/
+;http://gtadrom.com/
+
+;Files from the "Limited Edition Cars" spread to other sites is PROHIBITED!. 
+;These models are exclusives ONLY for http://gta-unlimited.ru.gg/!!!
+
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+
+;» » » » » » Special Thanks!
+
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+;	● GTA-Unlimited.ru team
+;	● Turn 10 - for source model
+;	● EA Games, Atari, Turn 10, Ubisoft, THQ - for textures and parts
+;	● Pav3l - for frienship, support, beta-testing 
+;	● Artem_87 - for frienship, support, beta-testing, car info
+;	● Hanan-SRB - for frienship, support, beta-testing
+;	● rosacasso - for frienship, paintjob #4, support, beta-testing 
+;	● Maxim_Parkour - for frienship, support, beta-testing
+;	● Hollow_man - for frienship, support, beta-testing
+;	● ibilnaz - for frienship, support
+;	● Grady - for frienship, support
+;	● KaMikaDZE_S13 - for frienship, support
+;	● TheUselessDerp - for frienship, support
+;	● mad-dog666 - for frienship, support
+;	● DMN - for frienship, support
+;	● MagnuM - for frienship, support
+;	● izerli - for script Active Dash 3.2.1 
+;	● DK22Pac - for modification Improved Vehicle Features 2.1.1
+;	● And all others who helps me and wathing for this project)
+;
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+;» » » » » » Contacts:
+
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+;[Web-pages]
+
+;	● Home Web-page: 	www.GTA-Unlimited.ru.gg
+;	● Team (old): 	        www.GTA-Unlimited.ru
+;	● Team (new): 	        http://vk.com/alfa_team_sa
+;	● Gallery: 	        www.mad-driver.gallery.ru/
+;	● Blog (abandoned): 	www.mad-driver-blog.blogspot.com/
+;	● Твиттер: 	www.twitter.com/#!/Mad_Driver1001
+;	● Е-Mail: 	podkol2007@rambler.ru
+;
+;[Forums]
+
+;	● GTA.COM.UA: http://gta.com.ua/forum2/index.php?showtopic=4155
+;	● Vol-GTA: http://vol-gta.3dn.ru/forum/41-738-1
+;	● GTA-Unlimited.ru (archive): http://gta-unlimited.ru/forum/forum/45-mad-driver/
+;	● World-GTA (archive): http://world-gta.info/forum/index.php?showforum=21
+;	● GWM (archive): http://www.gta-worldmods.de/forum/thread.php?threadid=11615&threadview=0&hilight=&hilightuser=0&page=1
+
+;[GTA-Unlimited Modding Team]
+
+;	● Web-page:  www.GTA-Unlimited.ru
+;	● YouTube:   www.youtube.com/user/DMNgut
+;	● Gallery:   www.gtaunlimited.gallery.ru/
+;	● Twitter:   www.twitter.com/GTAUnlimited
+;	● VKontakte: www.vkontakte.ru/gtaunlimited
+;	● Facebook:  www.facebook.com/GUT.MT
+
+;	© Turn 10, THQ, EA Games, Atari
+;	© Mad_Driver
+;	© "Alfa-Team" 2009-2015
+;
+;	13.09.2015
+
+;▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬												

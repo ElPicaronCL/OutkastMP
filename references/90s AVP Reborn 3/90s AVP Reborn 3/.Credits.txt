@@ -1,0 +1,337 @@
+﻿Versăo: Reborn 3 - créditos atualizados 13/04/2020 (build v3.130420)
+--------------------
+
+Autora do pack: Firefly
+Créditos: (ver Credits.txt)
+
+
+*********************************Correções*********************************
+
+Crowdigger, Zeneric, Junior_Djjr
+
+*********************************Mods*********************************
+ECG Vehicle.txd - Junior_Djjr
+
+Lure Rancher - Junior_Djjr
+
+Wild Upgraded Your Cars 2 - YourCreatedHell
+
+Smooth Criminal Bicycles - Zeneric
+
+Walters Brown Streak - Zeneric
+
+Walters Freight - Zeneric
+
+
+******************************Sports Cars******************************
+Alpha  http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/37496-dodge-stealth-rt-twin-turbo-1994.html
+
+Banshee https://www.gtaall.com.br/gta-san-andreas/cars/66079-dodge-viper-rt-10-1992.html
+
+Buffalo https://www.gtaall.com.br/gta-san-andreas/cars/90981-chevrolet-camaro-iroc-z-1990-110-ivf.html
+
+Bullet http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/42413-ford-gt40-1965-mki.html
+
+Cheetah http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/37872-ferrari-testarossa-1986.html
+
+Comet  http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/55110-porsche-911-carrera-4-targa-964-1989.html 
+
+Euros http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/50190-nissan-300zx-imvehft.html
+
+Hotknife https://www.gtagaming.com/1932-ford-hot-rod-f1992.html
+
+Infernus https://www.gtainside.com/en/sanandreas/cars/135094-acura-nsx-1991/
+
+Phoenix https://www.gtaall.com.br/gta-san-andreas/cars/56491-pontiac-turbo-trans-am-1980-bandit-edition.html
+
+Super GT https://www.gtaall.com.br/gta-san-andreas/cars/84558-mistubishi-3000gt-1992.html
+
+Turismo https://www.gtaall.com.br/gta-san-andreas/cars/82594-ferrari-f40-eu-spec-1989-ivf.html
+
+ZR-350 https://www.gtainside.com/en/sanandreas/cars/85409-1993-mazda-rx-7-v1-1/
+
+windsor https://www.gtaall.com.br/gta-san-andreas/cars/17135-1986-alfa-romeo-spider-115.html
+
+******************************SUVs & Pickup Trucks******************************
+
+Bobcat http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/55326-ford-f-150-ranger-1984.html
+
+Huntley https://www.gtaall.com.br/gta-san-andreas/cars/1931-range-rover-county-classic-1990.html
+
+Landstalker https://www.gtaall.com.br/gta-san-andreas/cars/99224-jeep-grand-wagoneer-1991.html
+
+Mesa https://www.gtaall.com.br/gta-san-andreas/cars/64103-jeep-cj-7-renegade-1982.html
+
+Monster
+
+Patriot http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/36150-hummer-h1.html
+
+Picador https://www.gtainside.com/en/sanandreas/cars/93509-chevrolet-el-camino-1973-used/
+
+Rancher https://www.gtainside.com/en/sanandreas/cars/93594-ford-bronco-1980/
+
+Sadler https://www.gtaall.com.br/gta-san-andreas/cars/55284-chevrolet-c10-1972.html
+
+Sandking https://www.gtaall.com.br/gta-vice-city/cars/26650-jeep-cherokee-1984-sandking.html
+
+Walton   https://www.gtaall.com.br/gta-san-andreas/cars/105934-ford-f-100-v8-1956.html
+
+Yosemite  http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/70490-1988-gmc-sierra-1500-v12.html 
+
+******************************Lowriders******************************
+Blade (FlashG (Johannes Saari)) https://www.gtainside.com/en/sanandreas/cars/9209-dodge-coronet-1967/
+
+Broadway https://gta.com.ua/file_sa_details.phtml?id=2381
+
+Remington http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/6542-lincoln-continental-town-coupe-1979.html
+
+Savanna https://gamemodding.com/en/gta-san-andreas/cars/70785-1963-chevrolet-impala-ss.html
+
+Slamvan https://www.gtaall.com.br/gta-san-andreas/cars/8796-chevrolet-c10-1966-slamvan-pickup-truck.html
+
+Tahoma http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/62621-chevrolet-impala-1984.html
+
+Tornado http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/66745-1957-chevrolet-bel-air-sport-coupe.html
+
+Voodoo https://www.gtainside.com/en/sanandreas/cars/46961-chevrolet-biscayne-1959-v1-0
+
+******************************Tuners******************************
+Elegy https://www.mixmods.com.br/2016/09/nissan-skyline-r32-gts-t-tunavel.html
+
+Flash http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/70436-honda-civic-si-1986.html
+
+Jester http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/62035-toyota-supra-tunable.html
+
+Stratum  Credits in stratum.txt file
+
+Sultan http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/66614-subaru-impreza-wrx-sti-gc8-1999.html
+
+Uranus https://www.gtainside.com/en/sanandreas/cars/121014-nissan-240sx-se-fastback-s13-1991/
+
+******************************Coupes & Hatchbacks******************************
+
+Blista Compact http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/37455-honda-cr-x-1991.html
+
+Bravura https://www.gtaall.com.br/gta-san-andreas/cars/107633-bmw-3-series-e36-compact-318ti-1995-us-spec.html
+
+Buccaner https://www.gtaall.com.br/gta-san-andreas/cars/107591-chevrolet-nova-ii-ss-1966.html
+
+Cadrona https://www.gtaall.com.br/gta-san-andreas/cars/108569-honda-prelude-si-mk4-1994-us-spec.html
+
+Clover 
+
+Club https://www.gtaall.com.br/gta-san-andreas/cars/39286-volkswagen-scirocco-s-typ-53-1981-hqlm.html
+
+Esperanto https://www.gtaall.com.br/gta-san-andreas/cars/1720-mercury-marquis-2dr-1971.html
+
+Feltzer http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/69260-1989-mercedes-benz-500sl-r129.html
+
+Fortune https://www.gtainside.com/en/sanandreas/cars/80896-1991-ford-mustang-hatchback-v1-2/
+
+Hermes https://www.gtaall.com.br/gta-san-andreas/cars/112731-mercury-eight-custom-9cm-72-1949-hqlm.html
+
+Hustler http://www.gta-worldmods.de/phpkit/start/include.php?path=content/download.php&contentid=3733&PHPKITSID=9f66f5952302bf117573bfaa21bfd732
+
+Majestic http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/67067-1987-buick-gnx.html
+
+Manana http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/8609-dodge-aries-1983.html
+
+Previon https://www.gtainside.com/en/sanandreas/cars-149/115477-mitsubishi-starion-esi-r-us-spec-1986-1-1-0/
+
+Sabre https://www.gtaall.com.br/gta-san-andreas/cars/58398-oldsmobile-442-holiday-coupe-1969-hqlm.html
+
+Stallion https://www.gtaall.com.br/gta-san-andreas/cars/7737-chevrolet-camaro-rs-ss-396-1968-convertible.html
+
+Tampa https://www.gtainside.com/en/sanandreas/cars/49888-chevrolet-corvair-monza-1969/
+
+Virgo https://www.gtaall.com/gta-san-andreas/cars/91762-lincoln-continental-mark-iv-1972.html
+
+******************************Sedans & Station Wagons******************************
+
+Admiral https://www.gtaall.com.br/gta-san-andreas/cars/1615-mercedes-benz-230-w123.html
+
+Elegant https://gamemodding.com/en/gta-san-andreas/cars/70636-buick-roadmaster-1996.html
+
+Emperor  https://libertycity.net/files/gta-san-andreas/116176-dodge-intrepid-1993.html
+
+Glendale http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/36414-plymouth-belvedere-sport-sedan-1957.html
+
+Greenwood Credits in .txt file
+
+Intruder  http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/70484-subaru-legacy-1989-20-rs-bc.html
+
+Merit  http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/66983-mercedes-benz-500se.html 
+
+Nebula https://www.gtainside.com/en/sanandreas/cars/95475-buick-century-1986
+
+Oceanic https://www.gtaall.com.br/gta-san-andreas/cars/49332-lincoln-continental-sedan-53a-1962.html
+
+Perennial  https://www.gtaall.com.br/gta-san-andreas/cars/107999-plymouth-belvedere-station-wagon-1965.html
+
+Premier https://www.gtaall.com.br/gta-san-andreas/cars/109420-chevrolet-caprice-1993-civilian.html
+
+Primo  http://www.gtainside.com/en/sanandreas/cars/15969-oldsmobile-cutlass-ciera-1993/
+
+Regina http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/41521-chevrolet-caprice-1989-station-wagon.html
+
+Romero https://gamemodding.com/en/gta-san-andreas/cars/6553-cadillac-fleetwood-hearse-1985.html
+
+Sentinel https://www.gtaall.com.br/gta-san-andreas/cars/92375-bmw-750i-e38-1996.html
+
+Solair   http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/41718-volvo-850-estate-turbo-1994.html
+
+Stafford https://www.gtaall.com.br/gta-san-andreas/cars/59747-mercedes-benz-300-sel-63-w109-1967-hqlm.html
+
+Stretch https://www.gtaall.com.br/gta-san-andreas/cars/5259-cadillac-fleetwood-limousine-1985.html
+
+Sunrise https://gamemodding.com/en/gta-san-andreas/cars/74471-1987-mitsubishi-galant-vr-4-e39a-v2.html
+
+Vincent 
+
+Washington https://gamemodding.com/en/gta-san-andreas/cars/36937-cadillac-fleetwood-brougham-85.html
+
+Willard  https://www.gtaall.com.br/gta-san-andreas/cars/69952-chrysler-new-yorker-1988.html
+
+************************************Vans*************************************
+
+Berkley's RC Van 
+
+Burrito https://www.gtaall.com.br/gta-san-andreas/cars/33422-gmc-vandura-g-1500-1983.html
+
+Hotdog http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/6447-volkswagen-transporter-t1-hot-dog.html 
+
+Moonbeam https://www.gtaall.com.br/gta-san-andreas/cars/76591-chevrolet-astro-1988.html
+
+Mr Whoopee Credits in .txt file
+
+Newsvan   https://www.gtaall.com.br/gta-san-andreas/cars/84565-ford-e150-news-van.html
+
+Pony https://www.gtaall.com.br/gta-san-andreas/cars/82945-ford-e-150-commercial-van-1982-20-ivf.html
+
+Rumpo https://gamemodding.com/en/gta-san-andreas/cars/61669-ford-e-250-extended-van-1979.html
+
+Securicar 
+
+**********************************Industrial********************************************
+
+Benson https://gamemodding.com/en/gta-san-andreas/cars/63611-ford-f-350-u-haul-1971-v11.html
+
+Boxville https://gamemodding.com/en/gta-san-andreas/cars/74748-chevrolet-stepvan-30-1985-v2.html
+
+Boxburg https://gamemodding.com/en/gta-san-andreas/cars/74748-chevrolet-stepvan-30-1985-v2.html
+
+Cement Truck https://www.gtaall.com.br/gta-san-andreas/cars/88988-mack-rd690-cement-mixer-truck-1992.html
+
+Combine Harvester https://www.gtaall.com.br/gta-san-andreas/cars/11026-holland-tx-34-c.html
+
+DFT-30 
+
+Dozer https://www.gtaall.com.br/gta-san-andreas/cars/17656-caterpillar-t530.html
+
+Dumper https://www.gtaall.com.br/gta-san-andreas/cars/95762-belaz-75214-ivf.html
+
+Flatbed 
+
+Forklift http://www.gtainside.com/en/sanandreas/cars/112887-gta-v-hvy-forklift/
+
+Linerunner https://www.mixmods.com.br/2016/06/samys-rignroll-pack-pack-de-caminhoes.html
+
+Mule https://www.gtaall.com.br/gta-san-andreas/cars/42344-ford-e-350-1982.html
+
+Packer https://libertycity.net/files/gta-san-andreas/9700-kenworth-car-hauler.html
+
+Roadtrain https://libertycity.net/files/gta-san-andreas/104592-kenworth-w900-trailer-pack.html
+
+Tanker https://www.mixmods.com.br/2016/06/samys-rignroll-pack-pack-de-caminhoes.html
+WIP: http://www.gtagarage.com/mods/show.php?id=26763 
+
+Tractor https://www.gtainside.com/en/sanandreas/cars-244/94721-firefly-s-tractor/
+
+Yankee https://libertycity.net/files/gta-san-andreas/100826-gmc-topkick-1990.html
+
+*****************************************Public Service****************************************
+
+Baggage
+Bus https://www.gtainside.com/en/sanandreas/cars/127595-1994-motor-coach-industries-mci-mc-12/
+Cabbie 
+Coach https://www.gtainside.com/en/sanandreas/cars/127595-1994-motor-coach-industries-mci-mc-12/
+Sweeper 
+Taxi https://libertycity.net/files/gta-san-andreas/104605-chevrolet-caprice-taxi-1986.html
+Tow Truck https://vk.com/wall-162595223_25
+Trashmaster  http://www.gtainside.com/en/sanandreas/cars/104933-gta-v-jobuilt-trashmaster-2/
+Tug 
+Utility https://www.gtaall.com.br/gta-san-andreas/cars/87741-chevrolet-silverado-2500hd-utility-2001-ivf.html
+
+***************************************Novelty*********************************
+Bandito 
+BF Injection 
+Caddy 
+Camper https://www.gtaall.com/gta-san-andreas/cars/85434-volkswagen-transporter-t1-stance-v2.html
+Dune 
+Journey 
+Kart
+Mothership
+Mower http://www.gtainside.com/en/sanandreas/cars/110375-gta-v-jacksheepe-lawn-mower/
+Quad
+Vortex http://gtaforums.com/topic/303247-relfinal-high-qualityhd-gta-cars/page-235#entry1069844363
+
+****************************************Emergency & Government**************************
+Ambulance http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/57629-ford-e-350-ambulance-1982.html
+Barracks http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/35539-am-general-m35a2.html
+Enforcer
+FBI Truck  http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/52301-aro-dragon.html http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/22611-hummer-h2.html
+FBI Rancher http://www.gtainside.com/en/sanandreas/cars/84370-gta-5-declasse-granger-fib/
+Fire Truck
+HPV-1000
+LSPD https://www.gtaall.com.br/gta-san-andreas/cars/75410-chevrolet-caprice-1991-crash-division.html
+SFPD http://www.gtainside.com/en/sanandreas/cars/114416-declasse-premier-sfpd
+LVPD http://www.gtainside.com/en/sanandreas/cars/114475-declasse-premier-lvpd
+Copcarru https://www.gtainside.com/en/sanandreas/cars/93595-ford-bronco-1982-police/
+
+Ranger
+Rhino http://www.gtainside.com/en/sanandreas/cars/80034-gta-v-rhino-tank-v-2/
+S.W.A.T.
+*******************************************Miscellaneous*********************
+Bandito  https://libertycity.ru/files/gta-san-andreas/79632-ravaged-buggy.html
+Bf injection 
+Bloadring banger http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/56846-hd-bloodring-banger.html
+BloodringA 
+BloodringB http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/29989-vaz-2105-gladiator.html
+Caddy https://libertycity.net/files/gta-san-andreas/78316-golfkart.html 
+Camper http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/18094-volkswagen-transporter-t1-van-1958.html
+Dune  https://libertycity.net/files/gta-san-andreas/95804-gta-v-hvy-brickade.html
+Hotring 
+HotringA
+HotringB
+Journey http://www.sitedogta.com.br/carros-importados/chevrolet/camper.htm http://www.gtainside.com/en/sanandreas/cars/105757-gta-v-brute-camper  http://www.gtainside.com/en/sanandreas/cars/106011-gta-v-zirconium-journey-cleaner/
+Kart https://libertycity.ru/files/gta-san-andreas/110963-shifter-kart-125cc.html https://libertycity.ru/files/gta-san-andreas/56917-2011-simraceway-kart.html
+Mower http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/6488-mtd-nogamatic-11.html http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/53982-gta-v-mower.html
+Quad  https://libertycity.ru/files/gta-san-andreas/77931-trike-i-quad-iz-igry-ravaged.html https://libertycity.ru/files/gta-san-andreas/100548-quad.html  https://libertycity.ru/files/gta-san-andreas/89467-updated-quad.html https://libertycity.ru/files/gta-san-andreas/72735-kvadrocikl-atv-iz-battlefield-2-special.html https://libertycity.ru/files/gta-san-andreas/57284-atv-50.html https://libertycity.ru/files/gta-san-andreas/78934-gta-v-quad-bike.html 
+Vortex http://gtaforums.com/topic/303247-relfinal-high-qualityhd-gta-cars/page-235#entry1069844363
+
+
+*********************************************Other*****************************
+Laure rancher https://gamemodding.com/en/gta-san-andreas/cars/55392-land-rover-series-iia-lwb-wagon-1962-1971.html
+Glenshit  http://www.gamemodding.net/en/gta-san-andreas/gta-sa-cars/22600-razbityy-pontiak.html
+Sadleshit https://www.gtaall.com.br/gta-san-andreas/cars/52156-ford-pickup-rusted.html
+
+********************************************* Bikes *********************************************
+Bike https://forum.mixmods.com.br/f20-veiculos/t1946-meshsmoothed-bikes
+BMX https://forum.mixmods.com.br/f20-veiculos/t1946-meshsmoothed-bikes
+Mt Bike https://forum.mixmods.com.br/f20-veiculos/t1946-meshsmoothed-bikes
+Faggio http://www.gta-worldmods.de/phpkit/start/include.php?path=content/download.php&contentid=4224
+Pizzaboy http://www.gta-worldmods.de/phpkit/start/include.php?path=content/download.php&contentid=4224
+
+Bf400 https://libertycity.net/files/gta-san-andreas/113182-1988-honda-dream-50-rc142.html
+
+Fcr 900 https://libertycity.net/files/gta-san-andreas/98398-gta-v-pegassi-esskey.html  https://libertycity.net/files/gta-san-andreas/107683-gta-v-imp-exp-fcr1000-normal-version.html https://libertycity.net/files/gta-san-andreas/113184-1990-harley-davidson-flstf-v1.1.html https://libertycity.net/files/gta-san-andreas/100240-custom-bike.html
+
+Freeway https://libertycity.net/files/gta-san-andreas/113185-1992-harley-davidson-fat-boy-lo-vintage.html  https://libertycity.net/files/gta-san-andreas/98556-gta-v-western-zombie.html
+
+Nrg https://www.mixmods.com.br/2018/03/nrg-500-hd-by-ezekiel.html https://libertycity.net/files/gta-san-andreas/113183-1985-honda-cb750f.html
+
+Pcj 600 https://libertycity.net/files/gta-san-andreas/113186-1975-kawasaki-z1-v1.1.html
+
+Sanchez https://libertycity.net/files/gta-san-andreas/113503-1990-yamaha-dt180-v-1.1.html http://www.gtainside.com/en/sanandreas/cars/106638-gta-v-pegassi-oppressor-street-hawk/ https://libertycity.net/files/gta-san-andreas/113041-tomos-atx-50.html
+
+Wayfarer https://libertycity.net/files/gta-san-andreas/113502-1990-honda-goldwing-gl-1500.html

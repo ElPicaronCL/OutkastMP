@@ -1,0 +1,62 @@
+Volkswagen Transporter T1 Deluxe Bus
+------------------------------------------------------------------------------------------------
+Volkswagen Transporter T1 Deluxe Bus for GTA San Andreas. 
+
+Features: 
+- Model fits perfectly into the atmosphere of the game 
+- Supports all major functions of the game 
+- Own collision 
+- Custom settings 
+- Good quality textures 
+- Correct fit of the player 
+- Contains 2 painting works 
+
+By default, the model replaces the Camper, however, because of our proprietary autoinstaller mods for GTA San Andreas, you can set the model of Volkswagen Transporter T1 Deluxe Bus to any other in the game! Free download the mod at the link below.
+
+################################################################################################
+
+AUTHORS
+------------------------------------------------------------------------------------------------
+Author of completions stratumx
+
+################################################################################################
+
+INSTALLATION INSTRUCTIONS
+------------------------------------------------------------------------------------------------
+1. Import files in the IMG archive
+You can download IMG Manager 2.0 here: http://www.gtaall.com/gta-san-andreas/programs/37425-img-manager-20.html
+Crazy IMG Editor here : http://www.gtaall.com/gta-san-andreas/programs/3884-gta-sa-crazy-img-editor.html
+
+Use IMG Manager 2.0 or Crazy IMG Editor to import files from the folder "01 - Import to gta3.img" to archive [GAME FOLDER]\models\gta3.img:
+camper.dff
+camper.txd
+camper1.txd
+camper2.txd
+------------------------------------------------------------------------------------------------
+2. Changes in text files
+
+In file [Game folder]\data\vehicles.ide
+
+483, 	camper, 	camper, 	car, 		CAMPER, 	CAMPER, 	van,	normal, 	4,	0,	0,		- -1, 0.783, 0.783, -1
+
+In file [Game folder]\data\handling.cfg
+
+CAMPER       1150 5110 3.1 0 -0.132 -0.1 125 0.575 0.642 0.5 4 93 15.2 69 R P 2.8 0.6 0 31 0.5 0.08 0 0.07 -0.07 0.46 0.5 0.1 0.5 26000 11C010 2 1 1 13
+
+In file [Game folder]\data\carcols.dat
+
+camper, 14,51,51,0, 9,9,13,0, 14,93,105,0, 14,3,3,0, 99,113,113,0, 14,6,119,0, 17,36,27,0, 38,37,15,0
+
+
+
+################################################################################################
+
+This modification has been downloaded from www.gtaall.com
+
+Permanent link to modification`s page: https://www.gtaall.com/gta-san-andreas/cars/81650-volkswagen-transporter-t1-deluxe-bus.html
+
+Check out our social groups!
+http://vk.com/gtaallcom
+https://twitter.com/gtaallcom
+http://www.facebook.com/gtaallcom
+http://www.youtube.com/gtaallcom

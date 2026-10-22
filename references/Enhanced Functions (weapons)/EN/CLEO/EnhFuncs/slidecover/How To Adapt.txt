@@ -1,0 +1,14 @@
+1 - Model your weapon
+
+2 - Let the mesh in any part of the gun where you want to go back when shooting with the name "slidecover"
+ 2.1 - The axis of Part may be positioned anywhere but the axis rotation must be completely 0
+
+3 - Create a cfg file in this folder with the .dff name of the gun that it will replace (eg colt45.cfg)
+ 3.1 - Within the "Example" folder has a cfg file already fully configured example, you can use it yourself, just take a copy of it, put in this folder and configure if necessary
+ 3.2 - The cfg file must be in "CLEO\EnhFuncs\slidecover" folder, eg "CLEO\EnhFuncs\slidecover\colt45.cfg"
+
+4 - By publish your weapon, publish the .dff .txd it normally, and accompanied the .cfg file, nothing more
+ 4.1 - NEVER publish .cs, .BMS files etc along with it! provide the official link to download of the Enhanced Functions with the latest and newest version! http://juniordjjr.blogspot.com/2014/02/down-enhfuncs-enhanced-functions-inedito.html
+
+========
+Work with: All fire weapons. Including camera.dff, bomb.dff, rocketla and heatseek.dff

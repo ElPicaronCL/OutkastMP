@@ -1,0 +1,11 @@
+
+DO NOT USE SONGS WITH DOTS(.) ON THEIR NAME!!!
+
+DO NOT USE SONGS WITH MORE THAN 63 CHARACTERS ON THEIR NAME!!!
+
+USE MP3 LAME FILES!!!
+
+
+Read the "cleo\Tuning Mod\Tuning Mod - SNG.ini" to configure the songs.
+Press "tab+u" to Enable/Disable the songs inside the game, and "tab+i" to go to the next song (you can't go back).
+The installed song list is only updated when you exit-enter in the garage.

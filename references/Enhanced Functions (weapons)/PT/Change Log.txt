@@ -1,0 +1,56 @@
+[Formato de data: DD/MM/YY]
+
+
+------ 26/08/15 (Novo script)
+- Script principal reescrito do zero com menos uso de CPU e RAM, agora não perderá mais FPS. (usa o mesmo sistema do EnhFuncs para veículos). Antes o jogo podia dar lag caso aparecer muitas pessoas com armas (como policiais durante alto nível de procurado).
+- Corrigida a função "sawbarl" fazendo a animação de recarregar duas vezes.
+- Corrigido os comandos das câmeras (estavam errados no leiame).
+- Adicionada possibilidade de mudar a velocidade do jogo durante o modo de câmera, assim podendo visualizar o movimento das funções em câmera lenta etc. Legal para testar e criar vídeos demonstrando suas armas.
+- Menos limite de modelos, como a função "knifeblade" funcionando para qualquer arma branca e não só a faca.
+- Corrigido a câmera 3 tendo a mesma configuração da 1.
+- Avisos de erros reescritos, melhores e mais avisos, como checagem de arquivos e versão do crack.
+- Melhorada a configuração padrão da sawn-off (melhores posições e tempos).
+- Melhorias nos .txt de tutorial de como adaptar as funções.
+- Corrigida a função "slidecover" se ativando logo ao pegar uma arma adaptada a ela.
+- Funções não duplicando na mesma arma.
+- A arma não bugará caso o .cfg não ser carregado.
+- Arquivo .ini com algumas configurações, incluindo posições das câmeras.
+- Inglês e português usando os mesmos scripts. Idioma definido no .ini.
+- Entre outras melhorias não visíveis ao jogador.
+
+
+------ 13/09/14
+- Arrumada knifeblade não funcionando depois da ultima versão
+- Arrumada sawbarl não funcionando a configuração "StRotY" depois de recarregar
+
+
+------ 11/09/14
+- Melhorias nas mensagens de erro
+- Sem bug e crash caso não tenha o arquivo .cfg da arma
+- Sawnoff.cfg por padrão na pasta Sawbarl
+- Pequenas melhorias na performance
+
+
+------ 09/09/14 (Retorno ao trabalho)
+- 3F (penknife | knifeblade)
+- Grandes melhorias na performance
+- Adicionado 3 cameras configuráveis por .ini, legal para visualizar funções e tirar prints das armas
+- Arrumado o bug da função não funcionar as vezes (REALMENTE ARRUMADO AGORA!?)
+
+
+------ 27/02/14
+- Agora funciona com pedestres etc
+- Agora você pode colocar um numero grande na velocidade de movimento
+- Arrumado o bug da função não funcionar as vezes
+
+
+------ 11/02/14
+- Arrumado o bug do slidecover não funcionar com algumas pessoas que tem muitos mods cleos no jogo
+
+
+------ 08/02/14
+- 2F (slide cover | slidecover)
+
+
+------ 28/01/14
+- 1F (break action | sawbarl)

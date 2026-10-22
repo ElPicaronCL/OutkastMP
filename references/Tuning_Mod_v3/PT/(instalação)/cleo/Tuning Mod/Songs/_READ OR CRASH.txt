@@ -1,0 +1,11 @@
+
+NÃO USE MÚSICAS COM PONTOS(.) EM SEU NOME!!!
+
+NÃO USE MÚSICAS COM MAIS DE 63 CARACTERES EM SEU NOME!!!
+
+SOMENTE ARQUIVOS MP3 LAME!!!
+
+
+Leia o "cleo\Tuning Mod\Tuning Mod - SNG.ini" para configurar as músicas
+Press "tab+u" para Ativar/Desativar as musicas dentro do jogo, e "tab+i" para ir até a próxima música (não é possível voltar pra trás)
+A lista de músicas instaladas só é atualizada ao sair-entrar na garagem.

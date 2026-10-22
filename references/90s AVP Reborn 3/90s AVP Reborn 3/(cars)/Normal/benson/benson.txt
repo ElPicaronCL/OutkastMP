@@ -1,0 +1,40 @@
+Ford F-350 U-Haul 1971 v1.1
+-------------------------------------------------------------
+Ford F-350 компании U-Haul.
+Поддерживает основные функции игры.
+-------------------------------------------------------------
+Installation instructions:
+-------------------------------------------------------------
+1) Author: Stratumx, StratenSurf/533
+Was added to the site by user: RostikRUS
+Replace: Benson
+-------------------------------------------------------------
+2) Importing files into the game archive:
+With the IMGTool 2.0 or Crazy IMG Editor program import files from the folder "To import to gta3.img" in the archive [Game folder]\models\gta3.img
+
+You can download IMGTool 2.0 here: http://www.gamemodding.net/gta-san-andreas/gta-sa-programms/829-imgtool-20.html
+Crazy IMG Editor here:  http://www.gamemodding.net/gta-san-andreas/gta-sa-programms/828-gta-san-andreas-crazy-img-editor.html
+-------------------------------------------------------------
+3) Replacement options for transport (Make changes to text files):
+
+in the file - [Game folder]\data\handling.cfg
+Replace the lines with the settings with:
+
+BENSON 3500.0   13865.8   2.3    0.0 0.0 -0.2  125  0.75 0.70 0.46 	5 140.0 14.0 20.0 R D 	4.5   0.60 0 30.0  	1.2  0.20  0.0   0.35 -0.15 0.45 0.0		0.46 0.53 22000 	4088		1			1  3	0
+
+in the file - [Game folder]\data\vehicles.ide
+Replace the lines with the settings with:
+
+499, 	benson, 	benson, 	car, 		BENSON,		BENSON, null,	worker, 	10, 	0,	0,		-1, 0.8, 0.8,		-1
+
+in the file - [Game folder]\data\carcols.dat
+Replace the lines with the settings with:
+
+benson, 109,25, 109,32, 112,32, 10,32, 30,44, 32,52, 84,66, 84,69
+-------------------------------------------------------------
+This modification was downloaded from http://www.gamemodding.net website
+Follow us in social networks!
+http://vk.com/gamemoddingnet
+https://twitter.com/GameModdingNet
+http://www.facebook.com/gamemodding
+http://www.youtube.com/user/GameModdingPreview

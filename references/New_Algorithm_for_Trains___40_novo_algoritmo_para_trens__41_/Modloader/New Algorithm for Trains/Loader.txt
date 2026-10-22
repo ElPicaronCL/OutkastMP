@@ -1,0 +1,5 @@
+NÃO DELETE ESTE ARQUIVO E NEM MUDE O NOME DA PASTA
+
+
+COLFILE 0 Modloader\New Algorithm for Trains\colltl.col
+IDE Modloader\New Algorithm for Trains\tllgs.IDE
