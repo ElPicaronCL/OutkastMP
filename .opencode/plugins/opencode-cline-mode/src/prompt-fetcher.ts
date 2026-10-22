@@ -6,7 +6,21 @@ import { fetchMultipleFiles, checkRateLimit } from "./utils/github-api.js";
 import { GitHubAPIError } from "./utils/github-api.js";
 import { PromptCache } from "./utils/cache.js";
 
+/**
+ * Upstream Cline prompt files.
+ *
+ * Cline restructured its repository: the per-component prompts under
+ * `src/core/prompts/system-prompt/components/` were consolidated into a single
+ * system prompt at `sdk/packages/shared/src/prompt/system/`. Both the current
+ * and legacy locations are listed so the plugin keeps working across the
+ * transition (missing files are skipped by `fetchMultipleFiles`).
+ */
 export const CLINE_PROMPT_FILES = [
+  // Current layout (sdk/packages/shared).
+  "sdk/packages/shared/src/prompt/system/index.ts",
+  "sdk/packages/shared/src/prompt/system/act.ts",
+  "sdk/packages/shared/src/prompt/system/yolo.ts",
+  // Legacy layout (still referenced by the prompt adapter for compatibility).
   "src/core/prompts/system-prompt/components/act_vs_plan_mode.ts",
   "src/core/prompts/system-prompt/components/capabilities.ts",
   "src/core/prompts/system-prompt/components/rules.ts",

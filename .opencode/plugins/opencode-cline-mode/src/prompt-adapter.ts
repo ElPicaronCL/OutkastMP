@@ -33,6 +33,29 @@ export class PromptAdapter {
   ): AdaptedPrompt {
     const sections: string[] = [];
 
+    // Current upstream layout: one consolidated system prompt plus optional
+    // YOLO variant. Prefer these when present.
+    const currentSystemIndex = prompts.get(
+      "sdk/packages/shared/src/prompt/system/index.ts",
+    );
+    const currentAct = prompts.get(
+      "sdk/packages/shared/src/prompt/system/act.ts",
+    );
+    const currentYolo = prompts.get(
+      "sdk/packages/shared/src/prompt/system/yolo.ts",
+    );
+
+    if (currentSystemIndex) {
+      sections.push(this.extractPromptContent(currentSystemIndex.rawContent));
+    }
+    if (currentAct) {
+      sections.push(this.extractPromptContent(currentAct.rawContent));
+    }
+    if (mode === "act" && this.context.yoloModeEnabled && currentYolo) {
+      sections.push(this.extractPromptContent(currentYolo.rawContent));
+    }
+
+    // Legacy upstream layout: per-component fragments.
     const systemPromptIndex = prompts.get(
       "src/core/prompts/system-prompt/index.ts",
     );

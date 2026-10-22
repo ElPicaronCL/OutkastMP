@@ -2,8 +2,8 @@
  * Cache management for Cline prompts
  *
  * Note: This cache is used for temporary storage during the session.
- * Since the plugin must fail on startup if prompts can't be fetched,
- * persistent caching is not implemented.
+ * Fetching upstream prompts is best-effort: the plugin loads even when the
+ * fetch fails, so this cache is an optimization rather than a requirement.
  */
 
 import * as fs from "fs";

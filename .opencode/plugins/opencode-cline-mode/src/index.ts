@@ -5,6 +5,7 @@ import { Logger } from "./logger.js";
 import { loadPluginConfig } from "./config-loader.js";
 import { buildClineAgents, toClineAgentInfo } from "./agent-builder.js";
 import { PromptFetcher } from "./prompt-fetcher.js";
+import type { FetchedPrompt } from "./prompt-fetcher.js";
 import { GitHubAPIError } from "./utils/github-api.js";
 import { PromptAdapter } from "./prompt-adapter.js";
 import { getClineTools } from "./tools/index.js";
@@ -72,7 +73,7 @@ export default Plugin.define({
         cwd: directory,
       });
 
-      let prompts;
+      let prompts = new Map<string, FetchedPrompt>();
       try {
         prompts = await fetcher.fetchAll();
         await logger.info("Successfully fetched Cline prompts", {
@@ -80,40 +81,24 @@ export default Plugin.define({
           files: Array.from(prompts.keys()),
         });
       } catch (error: unknown) {
-        if (error instanceof GitHubAPIError) {
-          await logger.error("Failed to fetch Cline prompts from GitHub", {
-            error: error.message,
-            status: error.status,
-            rateLimitReset: error.rateLimitReset?.toISOString(),
-          });
-
-          const errorMessage = `
-╔═══════════════════════════════════════════════════════════════╗
-║  Cline Mode Plugin - Failed to Fetch Prompts                  ║
-╠═══════════════════════════════════════════════════════════════╣
-║  The plugin could not fetch prompts from Cline's official     ║
-║  GitHub repository.                                           ║
-║                                                               ║
-║  Error: ${error.message.padEnd(52)}║
-${error.rateLimitReset ? `║  Rate limit resets at: ${error.rateLimitReset.toLocaleTimeString().padEnd(36)}║` : ""}
-║                                                               ║
-║  Solutions:                                                   ║
-║  1. Check your internet connection                            ║
-║  2. Try again in a few minutes                                ║
-║  3. If rate limited, wait until the reset time                ║
-║  4. Check GitHub's status: https://status.github.com          ║
-╚═══════════════════════════════════════════════════════════════╝
-        `.trim();
-
-          console.error(errorMessage);
-          throw new Error(errorMessage);
-        }
-
-        if (error instanceof Error) {
-          throw error;
-        }
-
-        throw new Error(String(error));
+        // Fetching the upstream prompts is best-effort. Cline's repository
+        // layout changes over time and the network may be unavailable, so a
+        // failure must NOT prevent the plugin from loading. The plugin's own
+        // integration notes (see PromptAdapter#getModeNote) still fully
+        // describe plan/act behavior; upstream fragments only add flavor.
+        const message = error instanceof Error ? error.message : String(error);
+        await logger.warn("Failed to fetch Cline prompts from GitHub", {
+          error: message,
+          status: error instanceof GitHubAPIError ? error.status : undefined,
+          rateLimitReset:
+            error instanceof GitHubAPIError
+              ? error.rateLimitReset?.toISOString()
+              : undefined,
+        });
+        console.error(
+          "[opencode-cline-mode] Could not fetch upstream Cline prompts; " +
+            "continuing with built-in prompt notes. Errors are non-fatal.",
+        );
       }
 
       const planPrompt = adapter.adapt(prompts, "plan");
@@ -190,14 +175,11 @@ ${error.rateLimitReset ? `║  Rate limit resets at: ${error.rateLimitReset.toLo
           yoloMode: pluginConfig.yolo_mode,
         });
       } else {
-        await logger.info(
-          "Cline Mode: Cline agents added alongside defaults",
-          {
-            clineAgents: clineAgentInfos.map((a) => a.id),
-            promptsFetchedFrom: "GitHub - cline/cline (main branch)",
-            yoloMode: pluginConfig.yolo_mode,
-          },
-        );
+        await logger.info("Cline Mode: Cline agents added alongside defaults", {
+          clineAgents: clineAgentInfos.map((a) => a.id),
+          promptsFetchedFrom: "GitHub - cline/cline (main branch)",
+          yoloMode: pluginConfig.yolo_mode,
+        });
       }
 
       // ---------------------------------------------------------------------

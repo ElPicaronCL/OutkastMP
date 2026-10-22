@@ -39,7 +39,10 @@ export interface ClineToolDefinition {
   execute: (
     input: unknown,
     context: ToolContext,
-  ) => Promise<{ content: string } | { content: string; metadata?: Record<string, unknown> }>;
+  ) => Promise<
+    | { content: string }
+    | { content: string; metadata?: Record<string, unknown> }
+  >;
 }
 
 interface PlanModeRespondInput {
@@ -361,8 +364,7 @@ export const updateFocusStepTool: ClineToolDefinition = {
 
     if (!stateManager) {
       return {
-        content:
-          "⚠️ Warning: Session state not available. Cannot update step.",
+        content: "⚠️ Warning: Session state not available. Cannot update step.",
       };
     }
 

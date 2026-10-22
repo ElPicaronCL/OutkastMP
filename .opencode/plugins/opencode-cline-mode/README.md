@@ -40,7 +40,7 @@ A plugin for [OpenCode](https://opencode.ai) that brings **authentic Cline exper
 - **Tool Name Mapping**: Intelligent conversion of Cline tool names (e.g., `read_file` → `read`)
 - **MCP Removal**: Automatically removes MCP-related content not supported by OpenCode
 - **Alternative Suggestions**: Provides OpenCode alternatives for unsupported Cline features
-- **Startup Validation**: Ensures prompts are fetched successfully before plugin initialization
+- **Startup Validation**: Prompts are fetched on startup; a failed fetch degrades gracefully to built-in notes
 
 ## 📦 Installation
 
@@ -194,31 +194,21 @@ Some Cline features are not available in OpenCode. The plugin provides alternati
 
 ## 🛡️ Error Handling
 
-If the plugin cannot fetch prompts from GitHub (network issues, rate limits, etc.), it will:
+Fetching the upstream prompts is **best-effort**. If the plugin cannot fetch
+prompts from GitHub (network issues, rate limits, or upstream layout changes),
+it will:
 
-1. Display a clear error message with the specific issue
-2. Provide troubleshooting steps
-3. **Fail to start** - ensuring you're aware of the problem
+1. Log a warning describing the specific issue
+2. Continue loading using the plugin's built-in plan/act prompt notes
 
-This strict approach ensures you always use the latest official Cline prompts.
+The plugin always starts: upstream prompt fragments only add flavor, while the
+built-in notes fully describe plan/act behavior, tools, and restrictions.
 
-## 📖 Example Error Message
+## 📖 Example Warning
 
 ```
-╔═══════════════════════════════════════════════════════════════╗
-║  Cline Mode Plugin - Failed to Fetch Prompts                  ║
-╠═══════════════════════════════════════════════════════════════╣
-║  The plugin could not fetch prompts from Cline's official     ║
-║  GitHub repository.                                           ║
-║                                                               ║
-║  Error: Network timeout                                       ║
-║                                                               ║
-║  Solutions:                                                   ║
-║  1. Check your internet connection                            ║
-║  2. Try again in a few minutes                                ║
-║  3. If rate limited, wait until the reset time                ║
-║  4. Check GitHub's status: https://status.github.com          ║
-╚═══════════════════════════════════════════════════════════════╝
+[opencode-cline-mode] Could not fetch upstream Cline prompts; continuing with
+built-in prompt notes. Errors are non-fatal.
 ```
 
 ## 🔧 Development
