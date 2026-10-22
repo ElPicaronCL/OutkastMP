@@ -20,6 +20,26 @@ __pycache__/
 assets/build/
 assets/review/
 
+# Agent harness runtime state (databases and model caches are regenerable, never commit)
+.harness-memory/memory.sqlite
+.harness-memory/models/
+.harness-memory/.conversation-buffer.json
+.harness-memory/.dream-extract-state.json
+.harness-memory/harness-memory.log
+.sadie/sadie.db
+.sadie/sadie_vault_sync.py
+.serena/
+
+# OpenCode plugin dependencies and build output (reinstall: see .opencode/package.json)
+.opencode/node_modules/
+.opencode/plugins/*/node_modules/
+.opencode/plugins/*/dist/
+
+# OpenCode plugin local state and machine-specific settings (never commit)
+.opencode/plugins/*/.claude/
+.opencode/plugins/*/.opencode/
+.opencode/plans/
+
 # Preserve source checkouts as a local workspace unless explicitly vendored
 mods/deathmatch/ov-source/
 

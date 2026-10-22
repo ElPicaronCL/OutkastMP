@@ -55,7 +55,7 @@ When any documentation layer disagrees with the Neon CLI, the CLI wins.
 | 1 | Conversation | Current session | Instant | Already in context |
 | 2 | Operating contract | `AGENTS.md`, `NEON_AGENT.md`, `README.md` | Instant | `Read()` |
 | 3 | Neon context | `.neon/agent-context.json`, `.neon/api-index.json` | ~50ms | `Read()` |
-| 4 | Docs vault | `docs/**/*.md`, `implementation_plan.md`, `tests/README.md` | ~50ms | `Read()` / grep |
+| 4 | Docs vault + local agent memory | `docs/**/*.md`, `implementation_plan.md`, `tests/README.md`, `memory-bank/`, `.serena/memories/`, `.sadie/sadie.db` | ~50-200ms | `Read()` / grep / `python3 .sadie/sadie.py search` |
 | 5 | Neon CLI (authority) | `tools/neon api search/get`, `check`, `context verify` | ~200-500ms | shell |
 | 6 | Git | Repository history, submodules | ~500ms | `git log/diff/show` |
 | 7 | Runtime evidence | `mods/deathmatch/logs/`, `mtaserver.conf`, `acl.xml`, `resources/[custom]/ov-core` | ~200ms | `Read()` / grep |
@@ -97,6 +97,8 @@ on demand in Tier 2. **Decision gate:** answer found → STOP, else descend.
 9.  docs/gamemode/overview.md + revamp-plan.md (Layer 4) — design direction
 10. tools/neon api search "<intent>" --json (Layer 5) — discovery by intent
 11. implementation_plan.md backlog/gates (Layer 4) — is this already planned?
+12. python3 .sadie/sadie.py search "<topic>" (Layer 4) — indexed memories + docs vault
+13. memory-bank/activeContext.md (Layer 4) — current task, blockers, next steps
 ```
 
 **Decision gate:** answer found → STOP, else descend.
@@ -170,6 +172,24 @@ tests/README.md           ← DEPTH 2: static/runtime/vertical-slice test strate
 docs/gamemode/districtmta-reference.md ← DEPTH 3: summarized original design
 docs/story, docs/maps, docs/assets, docs/fla75 ← DEPTH 3: specialized design docs
 ```
+
+### Layer 4 (local memory) Subdivisions — project agent harness
+
+```
+memory-bank/activeContext.md   ← DEPTH 1: current focus, decisions, blockers (read first)
+memory-bank/progress.md        ← DEPTH 1: active task progress (clears on new task)
+memory-bank/history.md         ← write-only daily buffer (do not read; use git log)
+.serena/memories/project.md    ← DEPTH 1: project overview and current state
+.serena/memories/build-process.md ← DEPTH 1: validation loop, server start, evidence
+.serena/memories/debugging.md  ← DEPTH 2: known issues (F-02/F-03/F-04), rules
+.serena/memories/vault-refs.md ← DEPTH 2: docs vault + references/scripts map
+.sadie/sadie.py search "<q>"   ← DEPTH 2: SQLite index over memories + docs/ vault
+.harness-memory/memory.sqlite  ← DEPTH 3: npx harness-memory consolidated store
+```
+
+`.sadie/sadie.db` and `.harness-memory/memory.sqlite` are git-ignored runtime state.
+Reindex after editing memories/skills/commands: `python3 .sadie/sadie.py init`;
+resync the vault: `python3 .sadie/sadie_vault_sync.py`.
 
 ### Layer 6: Git Subdivisions (by time)
 
@@ -246,10 +266,12 @@ Total token budget per query cycle: **~2000 tokens**
 
 1. Read AGENTS.md, NEON_AGENT.md, README.md (required context)
 2. Read .neon/agent-context.json — files, used API, validation status
-3. git log --oneline -5 — recent changes
-4. git submodule status — reference/library drift
-5. Read implementation_plan.md §11 (progress log) — what was in flight
-6. If mid-task: read the target resource's meta.xml before touching it
+3. Read memory-bank/activeContext.md — current task, decisions, blockers
+4. Read .serena/memories/project.md — project overview and state
+5. git log --oneline -5 — recent changes
+6. git submodule status — reference/library drift
+7. Read implementation_plan.md §11 (progress log) — what was in flight
+8. If mid-task: read the target resource's meta.xml before touching it
 ```
 
 **Cost: ~300 tokens | Time: ~200ms**
@@ -276,11 +298,13 @@ Total token budget per query cycle: **~2000 tokens**
 /memory-octree debug "<issue>"
 
 1. Conversation context for clues (L1)
-2. mods/deathmatch/logs/server.log + scripts.log — actual error text (L7)
-3. tools/neon check --json — static validation diagnostics (L5)
-4. Target resource meta.xml vs actual files — sides, includes, deps (L2/L7)
-5. git log --all --grep="<keyword>" — related commits (L6)
-6. tests/README.md — which runtime check should prove the fix
+2. memory-bank/activeContext.md — current state and known blockers (L4)
+3. .serena/memories/debugging.md — known issues and rules (L4)
+4. mods/deathmatch/logs/server.log + scripts.log — actual error text (L7)
+5. tools/neon check --json — static validation diagnostics (L5)
+6. Target resource meta.xml vs actual files — sides, includes, deps (L2/L7)
+7. git log --all --grep="<keyword>" — related commits (L6)
+8. tests/README.md — which runtime check should prove the fix
 ```
 
 **Cost: ~500-1500 tokens | Time: ~1-3s**
@@ -307,8 +331,8 @@ Total token budget per query cycle: **~2000 tokens**
 1. git log --oneline --all --grep="<topic>"
 2. git log --oneline --since="<date>" -- <file>
 3. implementation_plan.md §11 progress log — session-level context
-4. git show <commit> -- <file>
-5. docs/ gitignored? then check .gitattributes/.gitmodules for submodule moves
+4. memory-bank/history.md — daily completed-task buffer
+5. git show <commit> -- <file>
 ```
 
 **Cost: ~300-800 tokens | Time: ~1-2s**
@@ -323,7 +347,8 @@ Total token budget per query cycle: **~2000 tokens**
 3. tools/neon context verify --json — must pass
 4. Compare implementation_plan.md §11 dates with git log dates
 5. git submodule status — flag drifted reference/library submodules
-6. Report stale layers with recommended actions
+6. python3 .sadie/sadie.py stats — local memory index health (L4)
+7. Report stale layers with recommended actions
 ```
 
 **Cost: ~500 tokens | Time: ~2-5s**
@@ -347,6 +372,8 @@ A layer is **stale** if:
 - `.neon/` artifacts' sha256 no longer matches current project files
 - `implementation_plan.md` §11 progress log is older than recent git commits
 - A docs vault note contradicts `implementation_plan.md` or `docs/architecture.md`
+- `memory-bank/activeContext.md` predates recent git commits
+- `.serena/memories/` or `memory-bank/` changed without a `python3 .sadie/sadie.py init` reindex
 - `git submodule status` shows drifted `references/` or `scripts/` checkouts
 - `ov-core` files changed without a matching `neon.project.json` entry
 
@@ -355,6 +382,8 @@ A layer is **stale** if:
 - Neon context stale → `tools/neon generate project --json`, then `tools/neon context verify --json`
 - Validation unclear → `tools/neon check --json` and inspect the JSON; never claim a pass without running it
 - Plan stale → update §11 progress log with change summary and evidence
+- Memory bank stale → update `activeContext.md`; archive completed work to `history.md`
+- Local index stale → `python3 .sadie/sadie.py init` and `python3 .sadie/sadie_vault_sync.py`
 - Docs stale → edit the vault note (Obsidian frontmatter/tags/wikilinks preserved)
 - Submodule drifted → note it; do not update submodules as a side effect of another task
 
@@ -366,6 +395,8 @@ A layer is **stale** if:
 - `scripts/districtMTA` and all `scripts/*` / `references/*` submodules are read-only reference until explicitly audited and approved.
 - Do not modify server data, databases, logs, cache, or `server-id.keys` as part of a source change.
 - Do not grant ACL rights to silence a warning; every ACL request goes to security review.
+- `memory-bank/history.md` is write-only (do not read it; use `git log`).
+- `.sadie/sadie.db` and `.harness-memory/memory.sqlite` are runtime state — never commit them.
 
 ## Quick Reference Card
 
@@ -380,6 +411,7 @@ A layer is **stale** if:
 │ TIER 2 (fast, ~400 tok):                                 │
 │   L3: .neon/api-index.json                               │
 │   L4: docs/architecture, security, lua-neon, gamemode    │
+│   L4: memory-bank/activeContext, .serena/memories, sadie │
 │   L5: tools/neon api search "<intent>" --json            │
 ├──────────────────────────────────────────────────────────┤
 │ TIER 3 (moderate, ~500 tok):                             │
@@ -399,8 +431,8 @@ A layer is **stale** if:
 
 ## Companion CLI
 
-There is no separate companion script; the Neon CLI plus standard tools cover
-every protocol. Mapping:
+There is no separate companion script; the Neon CLI plus the local memory harness
+cover every protocol. Mapping:
 
 ```bash
 # init / sync
@@ -408,6 +440,12 @@ git log --oneline -5 && git submodule status
 tools/neon check --json
 tools/neon generate project --json
 tools/neon context verify --json
+
+# local memory (Layer 4)
+python3 .sadie/sadie.py search "<topic>"
+python3 .sadie/sadie.py init            # reindex memories/skills/commands/memory-bank
+python3 .sadie/sadie_vault_sync.py      # sync docs/ vault
+npx harness-memory memory:stats --db .harness-memory/memory.sqlite
 
 # api
 tools/neon api search "<intent>" --json
