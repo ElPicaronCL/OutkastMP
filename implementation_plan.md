@@ -128,7 +128,7 @@ Priority: P0 = blocks everything; P1 = needed for the first slice; P2 = later.
 | ID | Priority | Finding | Evidence | Impact |
 | --- | --- | --- | --- | --- |
 | F-01 | P0 | ~~MCP server unusable~~ **Closed 2026-10-20 (obsolete)**: `mcp-mta-tools/` and `.vscode/mcp.json` removed; logs are read directly (`mods/deathmatch/logs/`), Neon API via CLI | — | None; CLI + file access cover it |
-| F-02 | P0 | CI is broken | `.github/workflows/ci.yml` runs `npm ci && npm test` at repo root; no root `package.json`; triggers on `main` but default branch is `master` | No automated validation on push/PR |
+| F-02 | P0 | ~~CI is broken~~ **Closed 2026-10-21**: `.github/workflows/ci.yml` now runs `tools/neon generate project`, `check`, and `context verify --json` on Python 3.12, triggered on `master`/`main`; root `package.json` and `npm ci/test` removed | `tools/neon check\|context verify --json` both `pass` locally | Green CI on push/PR |
 | F-03 | P1 | OV runtime ACL/errors unresolved | `server.log`: `Access denied @ 'loadstring'`, `Access denied @ 'fetchRemote'`, then `scene.lua:37: attempt to call a nil value` | OV libraries may be partially broken at runtime |
 | F-04 | P1 | Neon project context omits OV runtime | `neon.project.json` `resources` contains only `ov-core`; `modules` and `externalDependencies` empty | `check` passes without covering OV resources; API requirements invisible |
 | F-05 | P1 | No persistence layer | No `ov-persistence`; no DB schema/migrations | Cannot store accounts, characters, economy |
