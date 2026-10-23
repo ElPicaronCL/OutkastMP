@@ -6,17 +6,43 @@ on:
   pull_request:
     branches: ["master", "main"]
 
+permissions:
+  contents: read
+
 jobs:
   neon-validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            .github
+            .neon
+            .neon-tooling
+            mods
+            tests
+            tools
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Test repository checker
+        run: python3 -m unittest discover -s tests -p test_repository_structure.py -v
+
+      - name: Check repository structure
+        run: python3 tools/check_repository.py
+
+      - name: Install Lua 5.1
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes lua5.1
+
+      - name: Test world modules without MTA
+        run: lua5.1 tools/worldgen/test_modules.lua
 
       - name: Generate project artifacts
         run: tools/neon generate project --json

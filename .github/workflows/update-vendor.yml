@@ -1,29 +1,72 @@
-name: Auto-Update Vendor Submodules
+name: Propose Runtime Dependency Updates
+
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight
-  workflow_dispatch: # Allows manual trigger
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: runtime-dependency-updates
+  cancel-in-progress: false
 
 jobs:
   update:
+    if: github.event.repository.fork == false
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      BASE_BRANCH: ${{ github.event.repository.default_branch }}
     steps:
-      - name: Checkout Code
+      - name: Checkout project sources
         uses: actions/checkout@v4
         with:
-          submodules: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.repository.default_branch }}
+          sparse-checkout: |
+            scripts
+            mods
+            tests
+            tools
 
-      - name: Pull Latest Submodules
+      - name: Propose pinned runtime library updates
+        shell: bash
         run: |
-          git submodule update --remote --merge
-
-      - name: Commit and Push Updates
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add vendor/
-          if ! git diff-index --quiet HEAD; then
-            git commit -m "chore: auto-update vendor dependencies"
-            git push
+          set -euo pipefail
+          existing_updates=$(gh api --paginate "repos/$GH_REPO/pulls?state=open&per_page=100" \
+            --jq '.[] | select(.head.ref | startswith("chore/update-runtime-libraries-")) | .number')
+          if [ -n "$existing_updates" ]; then
+            echo "An update PR is already open; keeping its commits available for review."
+            exit 0
           fi
+
+          # Unique branches keep closed PR branches and review work intact.
+          UPDATE_BRANCH="chore/update-runtime-libraries-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          libraries=(
+            scripts/Animify.library
+            scripts/Assetify.library
+            scripts/Beautify.library
+            scripts/Cinemify-Library
+            scripts/Graphify.library
+            scripts/dgs
+            scripts/mtasa-pAttach
+          )
+          git switch -c "$UPDATE_BRANCH"
+          git submodule update --init -- "${libraries[@]}"
+          git submodule update --remote -- "${libraries[@]}"
+          python3 tools/check_repository.py --require-dependencies
+          git add -- "${libraries[@]}"
+          if git diff --cached --quiet; then
+            echo "Runtime libraries are already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: update runtime library pins"
+          git push origin "$UPDATE_BRANCH"
+          gh pr create --base "$BASE_BRANCH" --head "$UPDATE_BRANCH" \
+            --title "chore: update runtime library pins" \
+            --body "Updates only the seven linked runtime libraries. Repository structure was checked with dependencies required. Review upstream changes and run validation before merging; no game or server was started."
