@@ -1,0 +1,12 @@
+<meta>
+    <info author="OutkastMP" version="0.1.0" name="Neon Adapters" description="Neon-specific glue with Blue-compatible fallbacks." type="script" />
+
+    <include resource="ok-core" />
+
+    <script src="shared/config.lua" type="shared" />
+    <script src="client/core.lua" type="client" />
+    <script src="server/core.lua" type="server" />
+
+    <export function="neonAdaptersGetVersion" type="server" />
+    <export function="neonAdaptersHasFeature" type="server" />
+</meta>

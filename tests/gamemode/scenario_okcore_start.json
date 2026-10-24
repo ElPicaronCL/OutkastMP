@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "ovcore-start",
+  "profile": "neon-server",
+  "workspace": ".",
+  "steps": [
+    {
+      "id": "check-project",
+      "action": "check",
+      "inputs": {
+        "project": "neon.project.json"
+      },
+      "expectedStatus": "pass"
+    },
+    {
+      "id": "resolve-project",
+      "action": "project.resolve",
+      "inputs": {
+        "project": "neon.project.json"
+      },
+      "expectedStatus": "pass"
+    }
+  ],
+  "assertions": [
+    {
+      "schemaVersion": "1.0.0",
+      "id": "ovcore-registered",
+      "kind": "contains",
+      "actual": "steps.resolve-project.output",
+      "expected": "ok-core",
+      "message": "ok-core must be registered in project"
+    }
+  ]
+}
